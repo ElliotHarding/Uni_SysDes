@@ -1,0 +1,20 @@
+combining the features
+to a catalog
+took --> take
+
+MS Excel or previous similar software?
+
+Asumptions needs re-work
+
+Scope & constraints -->
+	for ntu, not enterprises
+	dosent apply
+	Using sql not my sql, no other database being used.
+	Cost isnt something relevant to scope
+	Just for the computer
+	Object oriented, unless talking about mvc type stuff
+	
+why would a company need to modify our program
+these formats do not apply to us
+ram & disk space arnt really constraints
+

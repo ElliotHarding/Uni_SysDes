@@ -1,0 +1,7 @@
+Languages: HTML, CSS, C++, Python, Java, JavaScript, MySQL, Android Java.
+  
+Strengths: good at designing layouts for applications such as 
+websites which I learnt on placement (mostly front end). 
+So will be good at designing GUI for the system.
+
+Weakness: due to learning difficulty, I am bad at: writing word docs, concentration, short term memory. 

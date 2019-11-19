@@ -1,0 +1,12 @@
+Pros
+- Easy to use
+    - Simple interface and less button
+- A good way to manage store
+
+Cons
+- without a data statistics
+- Poor security
+    - Add some verification code function or second password when log in or taking out product
+- Typing long ID number
+    - If we don’t have barcode scanner function
+- Without searching or filter function

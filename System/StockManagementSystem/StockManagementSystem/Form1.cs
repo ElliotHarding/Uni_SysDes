@@ -15,6 +15,16 @@ namespace StockManagementSystem
         public Form1()
         {
             InitializeComponent();
+
+            DatabaseComms.uploadData("SELECT * FROM HOME", cb);
+        }
+
+        public void cb(bool result)
+        {
+            if(result == true)
+            {
+
+            }
         }
     }
 }

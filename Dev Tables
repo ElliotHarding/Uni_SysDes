@@ -1,0 +1,91 @@
+User
+
+N number
+Password
+Department
+Role
+
+
+Expected Shipment
+
+Shipment ID
+Date expected
+Supplier Name
+Supplier ID
+
+
+Department
+
+Name
+
+
+Shipment
+
+Supplier Name
+Supplier Site name
+Supplier remit to address line 1
+Supplier remit to address line 2
+Supplier remit to address line 3
+Supplier remit to address Postcode
+(4 fields)
+Order no
+Date
+Requested date
+Promised date
+Goods & Services
+VAT
+Invoice total
+Supplier ID Number and/or universal product code
+Item Description
+Quantity
+Unit of measure
+Unit of price
+Extened price
+
+
+Product
+
+ID
+External ID
+Image
+Information
+Location X
+Location Y
+Quantity
+Expiry Date
+Price
+VAT
+Danger Description	->	If null, not dangerous
+
+Ret Product
+
+N number
+
+
+Invoice
+
+ID
+Department ID
+Product ID
+Date
+Price
+Quantity
+VAT
+
+
+Address
+
+Line 1
+Line 2
+Line 3
+Post Code
+
+
+Transaction
+
+ID
+Date
+Product ID
+Quantity
+N number
+Department

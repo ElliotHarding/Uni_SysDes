@@ -8,12 +8,23 @@ namespace StockManagementSystem
 {
     class Invoice
     {
-        string id { get; set; }
-        string departmentId { get; set; }
-        string productId { get; set; }
-        string date { get; set; }
-        string price { get; set; }
-        string quantitiy { get; set; }
-        string vat { get; set; }
+        public Invoice(string id_, string departmentId_, string productId_, string date_,
+            string price_, string quantity_, string vat_)
+        {
+            id = id_;
+            departmentId = departmentId_;
+            productId = productId_;
+            date = date_;
+            price = price_;
+            quantitiy = quantity_;
+            vat = vat_;
+        }
+        public string id { get; set; }
+        public string departmentId { get; set; }
+        public string productId { get; set; }
+        public string date { get; set; }
+        public string price { get; set; }
+        public string quantitiy { get; set; }
+        public string vat { get; set; }
     }
 }

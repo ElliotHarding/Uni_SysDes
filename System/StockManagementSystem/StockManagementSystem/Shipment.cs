@@ -10,15 +10,12 @@ namespace StockManagementSystem
     {
         public Shipment(string id_, string supplierName_, string supplierSiteName_, string supplierRemitToAddressLine1, string supplierRemitToAddressLine2, string supplierRemitToAddressLine3, string supplierRemitToAddressPostCode, string orderNo_,
             string date_, string requestedDate_, string promisedDate_, string goodsAndServices_, string vat_, string invoiceTotal_, string supplierIdNumber_, string universalProductCode_, string itemDescription_, string quantity_, string unitOfMeasure_,
-            string unitOfPrice_, string extendedPrice_            )
+            string unitOfPrice_, string extendedPrice_)
         {
             id = id_;
             supplierName = supplierName_;
             supplierSiteName = supplierSiteName_;
-            supplierRemitToAddress.addressLine1 = supplierRemitToAddressLine1;
-            supplierRemitToAddress.addressLine2 = supplierRemitToAddressLine2;
-            supplierRemitToAddress.addressLine3 = supplierRemitToAddressLine3;
-            supplierRemitToAddress.postCode = supplierRemitToAddressPostCode;
+            supplierRemitToAddress = new Address(supplierRemitToAddressLine1, supplierRemitToAddressLine2, supplierRemitToAddressLine3, supplierRemitToAddressPostCode);
             orderNo = orderNo_;
             date = date_;
             requestedDate = requestedDate_;

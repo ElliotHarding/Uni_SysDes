@@ -281,9 +281,9 @@ namespace StockManagementSystem
                 command.Parameters.AddWithValue("@id", "NEWID()");
                 command.Parameters.AddWithValue("@supplierName", shipment.supplierName);
                 command.Parameters.AddWithValue("@supplierSiteName", shipment.supplierSiteName);
-                command.Parameters.AddWithValue("@supplierRemitToAddressLine1", shipment.supplierRemitToAddress.addressLine1);
-                command.Parameters.AddWithValue("@supplierRemitToAddressLine2", shipment.supplierRemitToAddress.addressLine2);
-                command.Parameters.AddWithValue("@supplierRemitToAddressLine3", shipment.supplierRemitToAddress.addressLine3);
+                command.Parameters.AddWithValue("@supplierRemitToAddressLine1", shipment.supplierRemitToAddress.line1);
+                command.Parameters.AddWithValue("@supplierRemitToAddressLine2", shipment.supplierRemitToAddress.line2);
+                command.Parameters.AddWithValue("@supplierRemitToAddressLine3", shipment.supplierRemitToAddress.line3);
                 command.Parameters.AddWithValue("@supplierRemitToAddressPostCode", shipment.supplierRemitToAddress.postCode);
                 command.Parameters.AddWithValue("@orderNo", shipment.orderNo);
                 command.Parameters.AddWithValue("@date", shipment.date);
@@ -342,9 +342,9 @@ namespace StockManagementSystem
                 command.Parameters.AddWithValue("@id", shipment.id);
                 command.Parameters.AddWithValue("@supplierName", shipment.supplierName);
                 command.Parameters.AddWithValue("@supplierSiteName", shipment.supplierSiteName);
-                command.Parameters.AddWithValue("@supplierRemitToAddressLine1", shipment.supplierRemitToAddress.addressLine1);
-                command.Parameters.AddWithValue("@supplierRemitToAddressLine2", shipment.supplierRemitToAddress.addressLine2);
-                command.Parameters.AddWithValue("@supplierRemitToAddressLine3", shipment.supplierRemitToAddress.addressLine3);
+                command.Parameters.AddWithValue("@supplierRemitToAddressLine1", shipment.supplierRemitToAddress.line1);
+                command.Parameters.AddWithValue("@supplierRemitToAddressLine2", shipment.supplierRemitToAddress.line2);
+                command.Parameters.AddWithValue("@supplierRemitToAddressLine3", shipment.supplierRemitToAddress.line3);
                 command.Parameters.AddWithValue("@supplierRemitToAddressPostCode", shipment.supplierRemitToAddress.postCode);
                 command.Parameters.AddWithValue("@orderNo", shipment.orderNo);
                 command.Parameters.AddWithValue("@date", shipment.date);
@@ -392,12 +392,6 @@ namespace StockManagementSystem
                 //Execute connection
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
-
-                if (!reader.Read())
-                {
-                    connection.Close();
-                    callback(null);
-                }
 
                 //Read results of query into list
                 List<Shipment> results = new List<Shipment>();
@@ -653,12 +647,6 @@ namespace StockManagementSystem
                 //Execute connection
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
-
-                if (!reader.Read())
-                {
-                    connection.Close();
-                    callback(null);
-                }
 
                 //Read results of query into list
                 List<ExpectedShipment> results = new List<ExpectedShipment>();

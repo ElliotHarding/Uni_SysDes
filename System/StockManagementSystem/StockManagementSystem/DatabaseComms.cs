@@ -270,7 +270,7 @@ namespace StockManagementSystem
                     "@goodsAndServices," +
                     "@vat," +
                     "@invoiceTotal," +
-                    "@supplierIdNumber," +
+                    "@supplierIDNumber," +
                     "@universalProductCode," +
                     "@itemDescription," +
                     "@quantity," +
@@ -292,7 +292,7 @@ namespace StockManagementSystem
                 command.Parameters.AddWithValue("@goodsAndServices", shipment.goodsAndServices);
                 command.Parameters.AddWithValue("@vat", shipment.vat);
                 command.Parameters.AddWithValue("@invoiceTotal", shipment.invoiceTotal);
-                command.Parameters.AddWithValue("@supplierIdNumber", shipment.supplierIdNumber);
+                command.Parameters.AddWithValue("@supplierIDNumber", shipment.supplierIdNumber);
                 command.Parameters.AddWithValue("@universalProductCode", shipment.universalProductCode);
                 command.Parameters.AddWithValue("@itemDescription", shipment.itemDescription);
                 command.Parameters.AddWithValue("@quantity", shipment.quantity);
@@ -331,13 +331,13 @@ namespace StockManagementSystem
                     "goodsAndServices=@goodsAndServices," +
                     "vat=@vat," +
                     "invoiceTotal=@invoiceTotal," +
-                    "supplierIdNumber=@supplierIdNumber," +
+                    "supplierIDNumber=@supplierIDNumber," +
                     "universalProductCode=@universalProductCode," +
                     "itemDescription=@itemDescription," +
                     "quantity=@quantity," +
                     "unitOfMeasure=@unitOfMeasure," +
                     "unitOfPrice=@unitOfPrice," +
-                    "extendedPrice=@extendedPrice where id = @id;", connection);
+                    "extenedPrice=@extenedPrice where id = @id;", connection);
 
                 command.Parameters.AddWithValue("@id", shipment.id);
                 command.Parameters.AddWithValue("@supplierName", shipment.supplierName);
@@ -353,13 +353,13 @@ namespace StockManagementSystem
                 command.Parameters.AddWithValue("@goodsAndServices", shipment.goodsAndServices);
                 command.Parameters.AddWithValue("@vat", shipment.vat);
                 command.Parameters.AddWithValue("@invoiceTotal", shipment.invoiceTotal);
-                command.Parameters.AddWithValue("@supplierIdNumber", shipment.supplierIdNumber);
+                command.Parameters.AddWithValue("@supplierIDNumber", shipment.supplierIdNumber);
                 command.Parameters.AddWithValue("@universalProductCode", shipment.universalProductCode);
                 command.Parameters.AddWithValue("@itemDescription", shipment.itemDescription);
                 command.Parameters.AddWithValue("@quantity", shipment.quantity);
                 command.Parameters.AddWithValue("@unitOfMeasure", shipment.unitOfMeasure);
                 command.Parameters.AddWithValue("@unitOfPrice", shipment.unitOfPrice);
-                command.Parameters.AddWithValue("@extendedPrice", shipment.extendedPrice);
+                command.Parameters.AddWithValue("@extenedPrice", shipment.extendedPrice);
 
                 connection.Open();
                 command.ExecuteNonQuery();
@@ -418,7 +418,7 @@ namespace StockManagementSystem
                     reader["quantity"].ToString(),
                     reader["unitOfMeasure"].ToString(),
                     reader["unitOfPrice"].ToString(),
-                    reader["extendedPrice"].ToString()
+                    reader["extenedPrice"].ToString()
                     ));
                 }
 

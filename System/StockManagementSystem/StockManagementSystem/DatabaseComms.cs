@@ -90,13 +90,22 @@ namespace StockManagementSystem
             }
         }
 
-        public static async void getProducts(string where, Action<List<Product>> callback)
+        public static async void getProducts(Action<List<Product>> callback, string where = null)
         {
             try
             {
                 //Prep connection to database & query for user with given id
                 SqlConnection connection = new SqlConnection(m_connectionString);
-                SqlCommand command = new SqlCommand("SELECT * FROM PRODUCTS WHERE " + where + ";", connection);
+                SqlCommand command;
+                if (where == null)
+                {
+                    command = new SqlCommand("SELECT * FROM PRODUCTS;", connection);
+                }
+                else
+                {
+                    command = new SqlCommand("SELECT * FROM PRODUCTS WHERE " + where + ";", connection);
+                }
+                
 
                 //Execute connection
                 connection.Open();
@@ -204,13 +213,21 @@ namespace StockManagementSystem
             }
         }
 
-        public static async void getInvoices(string where, Action<List<Invoice>> callback)
+        public static async void getInvoices(Action<List<Invoice>> callback, string where = null)
         {
             try
             {
                 //Prep connection to database & query for user with given id
                 SqlConnection connection = new SqlConnection(m_connectionString);
-                SqlCommand command = new SqlCommand("SELECT * FROM INVOICES WHERE " + where + ";", connection);
+                SqlCommand command;
+                if (where == null)
+                {
+                    command = new SqlCommand("SELECT * FROM INVOICES;", connection);
+                }
+                else
+                {
+                    command = new SqlCommand("SELECT * FROM INVOICES WHERE " + where + ";", connection);
+                }
 
                 //Execute connection
                 connection.Open();
@@ -369,13 +386,21 @@ namespace StockManagementSystem
             }
         }
 
-        public static async void getShipments(string where, Action<List<Shipment>> callback)
+        public static async void getShipments(Action<List<Shipment>> callback, string where = null)
         {
             try
             {
                 //Prep connection to database & query for user with given id
                 SqlConnection connection = new SqlConnection(m_connectionString);
-                SqlCommand command = new SqlCommand("SELECT * FROM SHIPMENTS WHERE " + where + ";", connection);
+                SqlCommand command;
+                if(where == null)
+                {
+                    command = new SqlCommand("SELECT * FROM SHIPMENTS;", connection);
+                }
+                else
+                {
+                    command = new SqlCommand("SELECT * FROM SHIPMENTS WHERE " + where + ";", connection);
+                }
 
                 //Execute connection
                 connection.Open();
@@ -456,13 +481,21 @@ namespace StockManagementSystem
         {
         }*/
 
-        public static async void getTransations(string where, Action<List<Transation>> callback)
+        public static async void getTransations(Action<List<Transation>> callback, string where = null)
         {
             try
             {
                 //Prep connection to database & query for user with given id
                 SqlConnection connection = new SqlConnection(m_connectionString);
-                SqlCommand command = new SqlCommand("SELECT * FROM EXPECTED_SHIPMENTS WHERE " + where + ";", connection);
+                SqlCommand command;
+                if(where == null)
+                {
+                    command = new SqlCommand("SELECT * FROM EXPECTED_SHIPMENTS;", connection);
+                }
+                else
+                {
+                    command = new SqlCommand("SELECT * FROM EXPECTED_SHIPMENTS WHERE " + where + ";", connection);
+                }
 
                 //Execute connection
                 connection.Open();
@@ -550,13 +583,21 @@ namespace StockManagementSystem
             }
         }
 
-        public static async void getUsers(string where, Action<List<User>> callback)
+        public static async void getUsers(Action<List<User>> callback, string where = null)
         {
             try
             {
                 //Prep connection to database & query for user with given id
                 SqlConnection connection = new SqlConnection(m_connectionString);
-                SqlCommand command = new SqlCommand("SELECT * FROM USERS WHERE " + where + ";", connection);
+                SqlCommand command;
+                if(where == null)
+                {
+                    command = new SqlCommand("SELECT * FROM USERS;", connection);
+                }
+                else
+                {
+                    command = new SqlCommand("SELECT * FROM USERS WHERE " + where + ";", connection);
+                }
 
                 //Execute connection
                 connection.Open();
@@ -624,7 +665,15 @@ namespace StockManagementSystem
             {
                 //Prep connection to database & query for user with given id
                 SqlConnection connection = new SqlConnection(m_connectionString);
-                SqlCommand command = new SqlCommand("SELECT * FROM EXPECTED_SHIPMENTS WHERE " + where + ";", connection);
+                SqlCommand command;
+                if (where == null)
+                {
+                    command = new SqlCommand("SELECT * FROM EXPECTED_SHIPMENTS;", connection);
+                }
+                else
+                {
+                    command = new SqlCommand("SELECT * FROM EXPECTED_SHIPMENTS WHERE " + where + ";", connection);
+                }
 
                 //Execute connection
                 connection.Open();

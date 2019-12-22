@@ -314,7 +314,6 @@ namespace StockManagementSystem
             {
                 SqlConnection connection = new SqlConnection(m_connectionString);
                 SqlCommand command = new SqlCommand("UPDATE SHIPMENTS SET " +
-                    "id=@id," +
                     "supplierName=@supplierName," +
                     "supplierSiteName=@supplierSiteName," +
                     "supplierRemitToAddressLine1=@supplierRemitToAddressLine1," +
@@ -334,9 +333,9 @@ namespace StockManagementSystem
                     "quantity=@quantity," +
                     "unitOfMeasure=@unitOfMeasure," +
                     "unitOfPrice=@unitOfPrice," +
-                    "extendedPrice=@extendedPrice);", connection);
+                    "extendedPrice=@extendedPrice where id = @id;", connection);
 
-                command.Parameters.AddWithValue("@id", "NEWID()");
+                command.Parameters.AddWithValue("@id", shipment.id);
                 command.Parameters.AddWithValue("@supplierName", shipment.supplierName);
                 command.Parameters.AddWithValue("@supplierSiteName", shipment.supplierSiteName);
                 command.Parameters.AddWithValue("@supplierRemitToAddressLine1", shipment.supplierRemitToAddress.addressLine1);
@@ -523,9 +522,33 @@ namespace StockManagementSystem
             }
         }
 
-        //public static async void updateUser(User product, Action<bool> callback)
-        //{
-        //}
+        public static async void updateUser(User user, Action<bool> callback)
+        {
+            try
+            {
+                SqlConnection connection = new SqlConnection(m_connectionString);
+                SqlCommand command = new SqlCommand("UPDATE USERS SET " +
+                    "password=@password," +
+                    "department=@department," +
+                    "role=@role " +
+                    "where nNumber=@nNumber;", connection);
+
+                command.Parameters.AddWithValue("@nNumber", user.nNumber);
+                command.Parameters.AddWithValue("@department", user.department);
+                command.Parameters.AddWithValue("@role", user.role);
+                command.Parameters.AddWithValue("@password", user.password);                
+
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+
+                callback(true);
+            }
+            catch (Exception e)
+            {
+                callback(false);
+            }
+        }
 
         public static async void getUsers(string where, Action<List<User>> callback)
         {

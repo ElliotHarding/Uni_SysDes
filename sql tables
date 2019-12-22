@@ -1,0 +1,75 @@
+
+CREATE TABLE USERS (
+    nNumber varchar(9),
+	password varchar(16),
+	department varchar(32),
+	role varchar(32)
+);
+
+CREATE TABLE EXPECTED_SHIPMENTS (
+    shipmentId varchar(max),
+	dateExpected varchar(max),
+	supplierName varchar(max),
+	supplierId varchar(max)
+);
+
+CREATE TABLE DEPARTMENTS (
+	name varchar(max)
+);
+
+CREATE TABLE SHIPMENTS (
+	supplierName varchar(32),
+	supplierSiteName varchar(32),
+	supplierRemitToAddressLine1 varchar(32),
+	supplierRemitToAddressLine2 varchar(32),
+	supplierRemitToAddressLine3 varchar(32),
+	supplierRemitToAddressPostcode varchar(32),
+	orderNo varchar(32),
+	date varchar(32),
+	requestedDate varchar(32),
+	promisedDate varchar(32),
+	goodsAndServices varchar(32),
+	vat varchar(32),
+	invoiceTotal varchar(32),
+	supplierIDNumber varchar(32),
+	universalProductCode varchar(32),
+	itemDescription varchar(32),
+	quantity varchar(32),
+	unitOfMeasure varchar(32),
+	unitOfPrice varchar(32),
+	extenedPrice varchar(32)
+);
+
+CREATE TABLE PRODUCTS (
+	id varchar(32),
+	externalId varchar(32),
+	image nvarchar(max),
+	information varchar(32),
+	locationX varchar(32),
+	locationY varchar(32),
+	quantity varchar(32),
+	expiryDate varchar(32),
+	price varchar(32),
+	vat varchar(32),
+	dangerDescription varchar(32),
+	retProductNo varchar(32)
+);
+
+CREATE TABLE INVOICES (
+	id varchar(32),
+	departmentId varchar(32),
+	productId varchar(32),
+	date varchar(32),
+	price varchar(32),
+	quantitiy varchar(32),
+	vat varchar(32)
+);
+
+CREATE TABLE TRANSACTIONS (
+	id varchar(32),
+	date varchar(32),
+	productId varchar(32),
+	quantity varchar(32),
+	nNumber varchar(32),
+	department varchar(32)
+);

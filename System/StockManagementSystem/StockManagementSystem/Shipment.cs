@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StockManagementSystem
 {
-    class Shipment
+    public class Shipment
     {
         public Shipment(string id_, string supplierName_, string supplierSiteName_, string supplierRemitToAddressLine1, string supplierRemitToAddressLine2, string supplierRemitToAddressLine3, string supplierRemitToAddressPostCode, string orderNo_,
             string date_, string requestedDate_, string promisedDate_, string goodsAndServices_, string vat_, string invoiceTotal_, string supplierIdNumber_, string universalProductCode_, string itemDescription_, string quantity_, string unitOfMeasure_,

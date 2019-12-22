@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StockManagementSystem
 {
-    class ExpectedShipment
+    public class ExpectedShipment
     {
         public ExpectedShipment(string shipmentId_, string dateExpected_, string supplierName_, string supplierId_)
         {

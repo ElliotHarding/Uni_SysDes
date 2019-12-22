@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StockManagementSystem
 {
-    class Invoice
+    public class Invoice
     {
         public Invoice(string id_, string departmentId_, string productId_, string date_,
             string price_, string quantity_, string vat_)

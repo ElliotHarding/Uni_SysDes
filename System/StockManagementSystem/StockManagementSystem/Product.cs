@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StockManagementSystem
 {
-    class Product
+    public class Product
     {
         public Product(string id_, string externalId_, string image_, string information_, string locationX_, string locationY_, string quantitiy_, string expieryDate_, string price_, string vat_, string dangerDescription_, string retProductNo_)
         {

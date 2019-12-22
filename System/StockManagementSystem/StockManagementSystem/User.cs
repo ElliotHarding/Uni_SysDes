@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StockManagementSystem
 {
-    class User
+    public class User
     {
         public User(string nNumber_, string password_, string department_, string role_)
         {

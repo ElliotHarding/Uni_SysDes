@@ -12,7 +12,7 @@ namespace StockManagementSystem
 {
     class DatabaseComms
     {
-        private const string m_connectionString = "";
+        private const string m_connectionString = "Data Source=den1.mssql7.gear.host;Initial Catalog=smdatabase;User ID=smdatabase;Password=Jj80-f1I!M3c";
 
         public static async void uploadProduct(Product product, Action<bool> callback)
         {
@@ -20,7 +20,7 @@ namespace StockManagementSystem
             {
                 SqlConnection connection = new SqlConnection(m_connectionString);
                 SqlCommand command = new SqlCommand("INSERT INTO PRODUCTS VALUES(" +
-                    "@id,  @externalId,  @information, @locationX,  @locationY, @quantity, @expiryDate, @price, @vat, @dangerDescription, @retProductNno;", connection);
+                    "@id,  @externalId, @image,  @information, @locationX,  @locationY, @quantity, @expiryDate, @price, @vat, @dangerDescription, @retProductNo);", connection);
 
                 command.Parameters.AddWithValue("@id", product.id);
                 command.Parameters.AddWithValue("@externalId", product.externalId);
@@ -33,7 +33,7 @@ namespace StockManagementSystem
                 command.Parameters.AddWithValue("@price", product.price);
                 command.Parameters.AddWithValue("@vat", product.vat);
                 command.Parameters.AddWithValue("@dangerDescription", product.dangerDescription);
-                command.Parameters.AddWithValue("@retProductNno", product.retProductNo);
+                command.Parameters.AddWithValue("@retProductNo", product.retProductNo);
 
                 connection.Open();
                 command.ExecuteNonQuery();
@@ -63,7 +63,7 @@ namespace StockManagementSystem
                     " price = @price," +
                     " vat = @vat," +
                     " dangerDescription = @dangerDescription," +
-                    " retProductNno = @retProductNno WHERE id=@id;", connection);
+                    " retProductNo = @retProductNo WHERE id=@id;", connection);
 
                 command.Parameters.AddWithValue("@id", product.id);
                 command.Parameters.AddWithValue("@externalId", product.externalId);
@@ -76,7 +76,7 @@ namespace StockManagementSystem
                 command.Parameters.AddWithValue("@price", product.price);
                 command.Parameters.AddWithValue("@vat", product.vat);
                 command.Parameters.AddWithValue("@dangerDescription", product.dangerDescription);
-                command.Parameters.AddWithValue("@retProductNno", product.retProductNo);
+                command.Parameters.AddWithValue("@retProductNo", product.retProductNo);
 
                 connection.Open();
                 command.ExecuteNonQuery();
@@ -106,16 +106,9 @@ namespace StockManagementSystem
                     command = new SqlCommand("SELECT * FROM PRODUCTS WHERE " + where + ";", connection);
                 }
                 
-
                 //Execute connection
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
-
-                if (!reader.Read())
-                {
-                    connection.Close();
-                    callback(null);
-                }
 
                 //Read results of query into list
                 List<Product> results = new List<Product>();
@@ -232,12 +225,6 @@ namespace StockManagementSystem
                 //Execute connection
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
-
-                if (!reader.Read())
-                {
-                    connection.Close();
-                    callback(null);
-                }
 
                 //Read results of query into list
                 List<Invoice> results = new List<Invoice>();
@@ -456,7 +443,7 @@ namespace StockManagementSystem
             {
                 SqlConnection connection = new SqlConnection(m_connectionString);
                 SqlCommand command = new SqlCommand("INSERT INTO TRANSACTIONS VALUES (" +
-                    "@id, @date, @productId, @quantitiy, @nNumber, @department;", connection);
+                    "@id, @date, @productId, @quantitiy, @nNumber, @department);", connection);
 
                 command.Parameters.AddWithValue("@id", "NEWID()");
                 command.Parameters.AddWithValue("@date", transaction.date);
@@ -490,22 +477,16 @@ namespace StockManagementSystem
                 SqlCommand command;
                 if(where == null)
                 {
-                    command = new SqlCommand("SELECT * FROM EXPECTED_SHIPMENTS;", connection);
+                    command = new SqlCommand("SELECT * FROM TRANSACTIONS;", connection);
                 }
                 else
                 {
-                    command = new SqlCommand("SELECT * FROM EXPECTED_SHIPMENTS WHERE " + where + ";", connection);
+                    command = new SqlCommand("SELECT * FROM TRANSACTIONS WHERE " + where + ";", connection);
                 }
 
                 //Execute connection
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
-
-                if (!reader.Read())
-                {
-                    connection.Close();
-                    callback(null);
-                }
 
                 //Read results of query into list
                 List<Transation> results = new List<Transation>();
@@ -536,7 +517,7 @@ namespace StockManagementSystem
             {
                 SqlConnection connection = new SqlConnection(m_connectionString);
                 SqlCommand command = new SqlCommand("INSERT INTO USERS VALUES(" +
-                    "@nNumber, @password,  @department, @role;", connection);
+                    "@nNumber, @password,  @department, @role);", connection);
 
                 command.Parameters.AddWithValue("@nNumber", user.nNumber);
                 command.Parameters.AddWithValue("@password", user.password);
@@ -603,12 +584,6 @@ namespace StockManagementSystem
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
 
-                if (!reader.Read())
-                {
-                    connection.Close();
-                    callback(null);
-                }
-
                 //Read results of query into list
                 List<User> users = new List<User>();
                 while(reader.Read())
@@ -636,12 +611,12 @@ namespace StockManagementSystem
             {
                 SqlConnection connection = new SqlConnection(m_connectionString);
                 SqlCommand command = new SqlCommand("INSERT INTO EXPECTED_SHIPMENTS VALUES (" +
-                    "@shipmentId, @dateExpected, @supplierName, @supplierId;", connection);
+                    "@shipmentId, @dateExpected, @supplierName, @supplierId);", connection);
 
-                command.Parameters.AddWithValue("@date", expectedShipment.shipmentId);
-                command.Parameters.AddWithValue("@productId", expectedShipment.dateExpected);
-                command.Parameters.AddWithValue("@quantitiy", expectedShipment.supplierName);
-                command.Parameters.AddWithValue("@nNumber", expectedShipment.supplierId);
+                command.Parameters.AddWithValue("@shipmentId", expectedShipment.shipmentId);
+                command.Parameters.AddWithValue("@dateExpected", expectedShipment.dateExpected);
+                command.Parameters.AddWithValue("@supplierName", expectedShipment.supplierName);
+                command.Parameters.AddWithValue("@supplierId", expectedShipment.supplierId);
 
                 connection.Open();
                 command.ExecuteNonQuery();
@@ -659,7 +634,7 @@ namespace StockManagementSystem
         //{
         //}
 
-        public static async void getExpectedShipment(string where, Action<List<ExpectedShipment>> callback)
+        public static async void getExpectedShipment(Action<List<ExpectedShipment>> callback, string where = null)
         {
             try
             {

@@ -6,4 +6,5 @@ Gear host password:
 StockMan66_
 
 Database:
+den1.mssql7.gear.host
 smdatabase	Jj80-f1I!M3c

@@ -14,37 +14,40 @@ namespace StockManagementSystem
     {
         private const string m_connectionString = "Data Source=den1.mssql7.gear.host;Initial Catalog=smdatabase;User ID=smdatabase;Password=Jj80-f1I!M3c";
 
-        public static async void uploadProduct(Product product, Action<bool> callback)
+        public static void uploadProduct(Product product, Action<bool> callback)
         {
-            try
+            new Task(() => 
             {
-                SqlConnection connection = new SqlConnection(m_connectionString);
-                SqlCommand command = new SqlCommand("INSERT INTO PRODUCTS VALUES(" +
-                    "@id,  @externalId, @image,  @information, @locationX,  @locationY, @quantity, @expiryDate, @price, @vat, @dangerDescription, @retProductNo);", connection);
+                try
+                {
+                    SqlConnection connection = new SqlConnection(m_connectionString);
+                    SqlCommand command = new SqlCommand("INSERT INTO PRODUCTS VALUES(" +
+                        "@id,  @externalId, @image,  @information, @locationX,  @locationY, @quantity, @expiryDate, @price, @vat, @dangerDescription, @retProductNo);", connection);
 
-                command.Parameters.AddWithValue("@id", product.id);
-                command.Parameters.AddWithValue("@externalId", product.externalId);
-                command.Parameters.AddWithValue("@image", product.image);
-                command.Parameters.AddWithValue("@information", product.information);
-                command.Parameters.AddWithValue("@locationX", product.locationX);
-                command.Parameters.AddWithValue("@locationY", product.locationY);
-                command.Parameters.AddWithValue("@quantity", product.quantity);
-                command.Parameters.AddWithValue("@expiryDate", product.expiryDate);
-                command.Parameters.AddWithValue("@price", product.price);
-                command.Parameters.AddWithValue("@vat", product.vat);
-                command.Parameters.AddWithValue("@dangerDescription", product.dangerDescription);
-                command.Parameters.AddWithValue("@retProductNo", product.retProductNo);
+                    command.Parameters.AddWithValue("@id", product.id);
+                    command.Parameters.AddWithValue("@externalId", product.externalId);
+                    command.Parameters.AddWithValue("@image", product.image);
+                    command.Parameters.AddWithValue("@information", product.information);
+                    command.Parameters.AddWithValue("@locationX", product.locationX);
+                    command.Parameters.AddWithValue("@locationY", product.locationY);
+                    command.Parameters.AddWithValue("@quantity", product.quantity);
+                    command.Parameters.AddWithValue("@expiryDate", product.expiryDate);
+                    command.Parameters.AddWithValue("@price", product.price);
+                    command.Parameters.AddWithValue("@vat", product.vat);
+                    command.Parameters.AddWithValue("@dangerDescription", product.dangerDescription);
+                    command.Parameters.AddWithValue("@retProductNo", product.retProductNo);
 
-                connection.Open();
-                command.ExecuteNonQuery();
-                connection.Close();
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
 
-                callback(true);
-            }
-            catch (Exception e)
-            {
-                callback(false);
-            }
+                    callback(true);
+                }
+                catch (Exception e)
+                {
+                    callback(false);
+                }
+            }).Start();
         }
 
         public static async void updateProduct(Product product, Action<bool> callback)

@@ -38,6 +38,7 @@ namespace StockManagementSystem.Pages
         {
             if(users == null)
             {
+                lbl_error.Invoke();
                 setError("Network connection error. Check internet");
             }
             else if(users.Count > 0)

@@ -7,3 +7,5 @@ C:\Users\User\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockMana
 C:\Users\User\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.exe
 C:\Users\User\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.pdb
 C:\Users\User\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Form1.resources
+C:\Users\User\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Login.resources
+C:\Users\User\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.SignUp.resources

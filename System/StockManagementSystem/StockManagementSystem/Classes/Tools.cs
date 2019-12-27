@@ -11,7 +11,12 @@ namespace StockManagementSystem.Classes
     {
         public static string passwordHash(string password)
         {
-            return hash(password, 10, 16, 16);
+            return hash(password, 10, 10, 8);
+        }
+
+        private static string hash_(string password)
+        {
+
         }
 
         private static string hash(string password, int iterations, int hashSize, int saltSize)
@@ -33,7 +38,7 @@ namespace StockManagementSystem.Classes
             var base64Hash = Convert.ToBase64String(hashBytes);
 
             // Format hash with extra information
-            return string.Format("$MYHASH$V1${0}${1}", iterations, base64Hash);
+            return string.Format("$CH$V1${0}${1}", iterations, base64Hash);
         }
     }
 }

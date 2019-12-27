@@ -27,6 +27,7 @@ namespace StockManagementSystem.Pages
 
         private void btn_signUp_Click(object sender, EventArgs e)
         {
+            lbl_error.Visible = false;
             string nNumber = txt_username.Text;
             string password = txt_password.Text;
             string department = cb_department.Text;
@@ -41,12 +42,13 @@ namespace StockManagementSystem.Pages
             {
                 ProductsPage productsPage = new ProductsPage();
                 productsPage.Show();
-                this.Close();
+                this.Invoke((Action)delegate { this.Close(); });
             }
             else
             {
-                lbl_error.Text = "Failed to register details.";
-                lbl_error.Visible = true;
+                //Need to invoke since properties of GUI thread items are changed in callback function
+                lbl_error.Invoke((Action)delegate { lbl_error.Text = "Failed to register details."; });
+                lbl_error.Invoke((Action)delegate { lbl_error.Visible = true; });
             }
         }
 

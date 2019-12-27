@@ -26,26 +26,26 @@ namespace StockManagementSystem.Pages
 
         private void btn_login_Click(object sender, EventArgs e)
         {
+            lbl_error.Visible = false;
             string nNumber = txt_username.Text;
             string password = txt_password.Text;
 
             string passwordHash = Tools.passwordHash(password);
 
-            DatabaseComms.getUsers(loginCallback, "nNumber = " + nNumber + " AND password = " + passwordHash);
+            DatabaseComms.getUsers(loginCallback, "nNumber = '" + nNumber + "' AND password = '" + passwordHash + "'") ;
         }
 
         private void loginCallback(List<User> users)
         {
             if(users == null)
             {
-                //lbl_error.Invoke(); todo fix runtime error
                 setError("Network connection error. Check internet");
             }
             else if(users.Count > 0)
             {
                 ProductsPage productsPage = new ProductsPage();
                 productsPage.Show();
-                this.Close();
+                this.Invoke((Action)delegate { this.Close(); });
             }
             else
             {
@@ -55,9 +55,8 @@ namespace StockManagementSystem.Pages
 
         private void setError(string errorStr)
         {
-            lbl_error.Text = errorStr;
-            if(!lbl_error.Visible)
-                lbl_error.Visible = true;
+            lbl_error.Invoke((Action)delegate {lbl_error.Text = errorStr;});
+            lbl_error.Invoke((Action)delegate {lbl_error.Visible = true;});
         }
 
         private void btn_signUp_Click(object sender, EventArgs e)

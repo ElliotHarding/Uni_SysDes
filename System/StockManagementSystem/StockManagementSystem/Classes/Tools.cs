@@ -11,12 +11,17 @@ namespace StockManagementSystem.Classes
     {
         public static string passwordHash(string password)
         {
-            return hash(password, 10, 10, 8);
+            //return hash(password, 10, 10, 8);
+            return hash_(password);
         }
 
         private static string hash_(string password)
         {
-
+            var md5 = new MD5CryptoServiceProvider();
+            var md5data = md5.ComputeHash(Encoding.ASCII.GetBytes(password));
+            return Convert.ToBase64String(md5data);
+            //var hashedPassword = ASCIIEncoding.GetString(md5data);
+            //return hashedPassword;
         }
 
         private static string hash(string password, int iterations, int hashSize, int saltSize)

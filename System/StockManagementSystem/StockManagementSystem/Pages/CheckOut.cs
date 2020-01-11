@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace StockManagementSystem.Pages
 {
-    public partial class CheckOut : Form
+    public partial class CheckOut : BaseForm
     {
         public CheckOut()
         {
             InitializeComponent();
+            addNavBar(NavBarType.User);
         }
     }
 }

@@ -13,9 +13,9 @@ namespace StockManagementSystem.Classes
 {
     public partial class NavBar : UserControl
     {
-        Form m_currentForm;
+        BaseForm m_currentForm;
 
-        public NavBar(Form currentForm)
+        public NavBar(BaseForm currentForm)
         {
             m_currentForm = currentForm;
             SetBounds(0, currentForm.Height - 100, currentForm.Width, 100);
@@ -24,25 +24,19 @@ namespace StockManagementSystem.Classes
 
         private void btn_messages_Click(object sender, EventArgs e)
         {
-            m_currentForm.Hide();
-            Messages messagesPage = new Messages();
-            messagesPage.ShowDialog();
+            m_currentForm.nextPage = SystemPage.Messages;
             m_currentForm.Close();
         }
 
         private void btn_products_Click(object sender, EventArgs e)
         {
-            m_currentForm.Hide();
-            ProductsPage productsPage = new ProductsPage();
-            productsPage.ShowDialog();
+            m_currentForm.nextPage = SystemPage.ProductsPage;
             m_currentForm.Close();
         }
 
         private void btn_checkout_Click(object sender, EventArgs e)
         {
-            m_currentForm.Hide();
-            CheckOut checkOutPage = new CheckOut();
-            checkOutPage.ShowDialog();
+            m_currentForm.nextPage = SystemPage.CheckOut;
             m_currentForm.Close();
         }
     }

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace StockManagementSystem.Pages
 {
-    public partial class SignUp : Form
+    public partial class SignUp : BaseForm
     {
         public SignUp()
         {

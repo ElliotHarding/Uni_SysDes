@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace StockManagementSystem.Pages
 {
-    public partial class Messages : Form
+    public partial class Messages : BaseForm
     {
         public Messages()
         {
             InitializeComponent();
+            addNavBar(NavBarType.User);
         }
     }
 }

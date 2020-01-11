@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace StockManagementSystem.Pages
 {
-    public partial class Login : Form
+    public partial class Login : BaseForm
     {
         public Login()
         {
@@ -43,9 +43,7 @@ namespace StockManagementSystem.Pages
             }
             else if(users.Count > 0)
             {
-                ProductsPage productsPage = new ProductsPage();
-                productsPage.Show();
-                this.Invoke((Action)delegate { this.Close(); });
+                this.Invoke((Action)delegate { goToNextPage(SystemPage.ProductsPage); });               
             }
             else
             {
@@ -61,9 +59,7 @@ namespace StockManagementSystem.Pages
 
         private void btn_signUp_Click(object sender, EventArgs e)
         {
-            SignUp signUp = new SignUp();
-            signUp.Show();
-            this.Hide();
+            goToNextPage(SystemPage.SignUp);
         }
     }
 }

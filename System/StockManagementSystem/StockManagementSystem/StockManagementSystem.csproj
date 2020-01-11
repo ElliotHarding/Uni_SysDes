@@ -66,6 +66,9 @@
     <Compile Include="Classes\Invoice.cs" />
     <Compile Include="Classes\Product.cs" />
     <Compile Include="Classes\Program.cs" />
+    <Compile Include="Pages\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Pages\CheckOut.cs">
       <SubType>Form</SubType>
     </Compile>

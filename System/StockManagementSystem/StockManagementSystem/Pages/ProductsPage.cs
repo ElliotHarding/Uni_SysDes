@@ -11,13 +11,12 @@ using System.Windows.Forms;
 
 namespace StockManagementSystem.Pages
 {
-    public partial class ProductsPage : Form
+    public partial class ProductsPage : BaseForm
     {
         public ProductsPage()
         {
             InitializeComponent();
-            NavBar navigationBar = new NavBar(this);
-            Controls.Add(navigationBar);
+            addNavBar(NavBarType.User);
         }
     }
 }

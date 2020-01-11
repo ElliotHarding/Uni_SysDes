@@ -17,8 +17,41 @@ namespace StockManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Login());
-            Application.Run(new ProductsPage());
+
+            BaseForm currentPage = null;
+            SystemPage nextPage = SystemPage.Login;
+            while(nextPage != SystemPage.EndPage)
+            {
+                switch (nextPage)
+                {
+                    case SystemPage.Messages:
+                        currentPage = new Messages();
+                        break;
+                    case SystemPage.Login:
+                        currentPage = new Login();
+                        break;
+                    case SystemPage.CheckOut:
+                        currentPage = new CheckOut();
+                        break;
+                    case SystemPage.ProductsPage:
+                        currentPage = new ProductsPage();
+                        break;
+                    case SystemPage.SignUp:
+                        currentPage = new SignUp();
+                        break;                   
+                    case SystemPage.EndPage:                        
+                        break;
+                    default:
+                        nextPage = SystemPage.EndPage;
+                        break;
+                }
+
+                if(currentPage != null)
+                {
+                    Application.Run(currentPage);
+                    nextPage = currentPage.nextPage;
+                }                
+            }
         }
     }
 }

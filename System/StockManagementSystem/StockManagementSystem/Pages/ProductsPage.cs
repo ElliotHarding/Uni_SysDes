@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StockManagementSystem.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,8 @@ namespace StockManagementSystem.Pages
         public ProductsPage()
         {
             InitializeComponent();
+            NavBar navigationBar = new NavBar(this);
+            Controls.Add(navigationBar);
         }
     }
 }

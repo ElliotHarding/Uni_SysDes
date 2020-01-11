@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>StockManagementSystem</RootNamespace>
     <AssemblyName>StockManagementSystem</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -49,6 +50,12 @@
     <Compile Include="Classes\Address.cs" />
     <Compile Include="Classes\DatabaseComms.cs" />
     <Compile Include="Classes\ExpectedShipment.cs" />
+    <Compile Include="Classes\NavBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\NavBar.Designer.cs">
+      <DependentUpon>NavBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Tools.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -59,11 +66,23 @@
     <Compile Include="Classes\Invoice.cs" />
     <Compile Include="Classes\Product.cs" />
     <Compile Include="Classes\Program.cs" />
+    <Compile Include="Pages\CheckOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\CheckOut.Designer.cs">
+      <DependentUpon>CheckOut.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pages\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Messages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Messages.Designer.cs">
+      <DependentUpon>Messages.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\ProductsPage.cs">
       <SubType>Form</SubType>
@@ -81,11 +100,17 @@
     <Compile Include="Classes\Shipment.cs" />
     <Compile Include="Classes\Transation.cs" />
     <Compile Include="Classes\User.cs" />
+    <EmbeddedResource Include="Classes\NavBar.resx">
+      <DependentUpon>NavBar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ProductsPage.resx">
+      <DependentUpon>ProductsPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
@@ -98,6 +123,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

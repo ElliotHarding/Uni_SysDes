@@ -13,21 +13,27 @@ namespace StockManagementSystem.Pages
         Messages,
         Login,
         CheckOut,
+        CheckIn,
         ProductsPage,
         SignUp,
+        Inspection,
+        Invoices,
+        ExpectedDelivery,
+        NewShipment,
         EndPage
     }
 
     public enum NavBarType
     {
         User,
-        Admin,
+        Staff,
         None
     }
 
     public class BaseForm : Form
     {
         public SystemPage nextPage = SystemPage.EndPage;
+        static User m_currentUser = null;
 
         public BaseForm()
         {          
@@ -37,7 +43,7 @@ namespace StockManagementSystem.Pages
         {
             switch (navBarType)
             {
-                case NavBarType.Admin:
+                case NavBarType.Staff:
                     break;
                 case NavBarType.User:
                     NavBar navigationBar = new NavBar(this);

@@ -9,9 +9,6 @@ namespace StockManagementSystem
 {
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
@@ -38,7 +35,24 @@ namespace StockManagementSystem
                         break;
                     case SystemPage.SignUp:
                         currentPage = new SignUp();
-                        break;                   
+                        break;
+                    case SystemPage.CheckIn:
+                        currentPage = new CheckIn();
+                        break;
+                    case SystemPage.ExpectedDelivery:
+                        currentPage = new ExpectedDelivery();
+                        break;
+                    case SystemPage.Invoices:
+                        currentPage = new Invoices();
+                        break;
+                    case SystemPage.NewShipment:
+                        currentPage = new NewShipment();
+                        break;
+                    case SystemPage.Inspection:
+                        currentPage = new Inspection();
+                        break;
+
+                    //End cases:
                     case SystemPage.EndPage:                        
                         break;
                     default:

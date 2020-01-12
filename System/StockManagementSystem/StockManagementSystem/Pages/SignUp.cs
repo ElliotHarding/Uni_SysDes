@@ -40,9 +40,7 @@ namespace StockManagementSystem.Pages
         {
             if(uploaded)
             {
-                ProductsPage productsPage = new ProductsPage();
-                productsPage.Show();
-                this.Invoke((Action)delegate { this.Close(); });
+                this.Invoke((Action)delegate { goToNextPage(SystemPage.ProductsPage); });
             }
             else
             {
@@ -54,9 +52,7 @@ namespace StockManagementSystem.Pages
 
         private void btn_back_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
-            login.Show();
-            this.Close();
+            goToNextPage(SystemPage.Login);
         }
     }
 }

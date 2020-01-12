@@ -35,9 +35,10 @@
             // 
             // btn_checkout
             // 
-            this.btn_checkout.Location = new System.Drawing.Point(512, 5);
+            this.btn_checkout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_checkout.Location = new System.Drawing.Point(524, 5);
             this.btn_checkout.Name = "btn_checkout";
-            this.btn_checkout.Size = new System.Drawing.Size(200, 41);
+            this.btn_checkout.Size = new System.Drawing.Size(220, 41);
             this.btn_checkout.TabIndex = 5;
             this.btn_checkout.Text = "Check Out";
             this.btn_checkout.UseVisualStyleBackColor = true;
@@ -45,9 +46,10 @@
             // 
             // btn_products
             // 
+            this.btn_products.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_products.Location = new System.Drawing.Point(305, 5);
             this.btn_products.Name = "btn_products";
-            this.btn_products.Size = new System.Drawing.Size(200, 41);
+            this.btn_products.Size = new System.Drawing.Size(220, 41);
             this.btn_products.TabIndex = 4;
             this.btn_products.Text = "Products";
             this.btn_products.UseVisualStyleBackColor = true;
@@ -55,9 +57,10 @@
             // 
             // btn_messages
             // 
-            this.btn_messages.Location = new System.Drawing.Point(99, 5);
+            this.btn_messages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_messages.Location = new System.Drawing.Point(86, 5);
             this.btn_messages.Name = "btn_messages";
-            this.btn_messages.Size = new System.Drawing.Size(200, 41);
+            this.btn_messages.Size = new System.Drawing.Size(220, 41);
             this.btn_messages.TabIndex = 3;
             this.btn_messages.Text = "Messages";
             this.btn_messages.UseVisualStyleBackColor = true;

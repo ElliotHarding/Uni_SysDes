@@ -50,11 +50,65 @@
     <Compile Include="Classes\Address.cs" />
     <Compile Include="Classes\DatabaseComms.cs" />
     <Compile Include="Classes\ExpectedShipment.cs" />
-    <Compile Include="Classes\NavBar.cs">
+    <Compile Include="Pages\CheckIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\CheckIn.Designer.cs">
+      <DependentUpon>CheckIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ExpectedDelivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\ExpectedDelivery.Designer.cs">
+      <DependentUpon>ExpectedDelivery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Inspection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Inspection.Designer.cs">
+      <DependentUpon>Inspection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Invoices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Invoices.Designer.cs">
+      <DependentUpon>Invoices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NewShipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\NewShipment.Designer.cs">
+      <DependentUpon>NewShipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ViewProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\ViewProduct.Designer.cs">
+      <DependentUpon>ViewProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\LogOut.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Classes\NavBar.Designer.cs">
+    <Compile Include="User Controls\LogOut.Designer.cs">
+      <DependentUpon>LogOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\NavBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\NavBar.Designer.cs">
       <DependentUpon>NavBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\ProductDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\ProductDisplay.Designer.cs">
+      <DependentUpon>ProductDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\StaffNavBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\StaffNavBar.Designer.cs">
+      <DependentUpon>StaffNavBar.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Tools.cs" />
     <Compile Include="Form1.cs">
@@ -103,8 +157,38 @@
     <Compile Include="Classes\Shipment.cs" />
     <Compile Include="Classes\Transation.cs" />
     <Compile Include="Classes\User.cs" />
-    <EmbeddedResource Include="Classes\NavBar.resx">
+    <EmbeddedResource Include="Pages\CheckIn.resx">
+      <DependentUpon>CheckIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\CheckOut.resx">
+      <DependentUpon>CheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ExpectedDelivery.resx">
+      <DependentUpon>ExpectedDelivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Inspection.resx">
+      <DependentUpon>Inspection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Invoices.resx">
+      <DependentUpon>Invoices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Messages.resx">
+      <DependentUpon>Messages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\NewShipment.resx">
+      <DependentUpon>NewShipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\LogOut.resx">
+      <DependentUpon>LogOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\NavBar.resx">
       <DependentUpon>NavBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\ProductDisplay.resx">
+      <DependentUpon>ProductDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\StaffNavBar.resx">
+      <DependentUpon>StaffNavBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

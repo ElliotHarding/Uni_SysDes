@@ -43,6 +43,7 @@ namespace StockManagementSystem.Pages
             }
             else if(users.Count > 0)
             {
+                m_currentUser = users[0];
                 this.Invoke((Action)delegate { goToNextPage(SystemPage.ProductsPage); });               
             }
             else

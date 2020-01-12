@@ -28,19 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel_products = new System.Windows.Forms.Panel();
             this.SuspendLayout();
+            // 
+            // panel_products
+            // 
+            this.panel_products.Location = new System.Drawing.Point(12, 12);
+            this.panel_products.Name = "panel_products";
+            this.panel_products.Size = new System.Drawing.Size(772, 406);
+            this.panel_products.TabIndex = 0;
             // 
             // ProductsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 709);
+            this.Controls.Add(this.panel_products);
             this.Name = "ProductsPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductsPage";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panel_products;
     }
 }

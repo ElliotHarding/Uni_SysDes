@@ -15,6 +15,7 @@ namespace StockManagementSystem.Pages
         public Inspection()
         {
             InitializeComponent();
+            addNavBar();
         }
     }
 }

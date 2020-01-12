@@ -15,7 +15,7 @@ namespace StockManagementSystem.Pages
         public Messages()
         {
             InitializeComponent();
-            addNavBar(NavBarType.User);
+            addNavBar();
         }
     }
 }

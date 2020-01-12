@@ -15,6 +15,7 @@ namespace StockManagementSystem.Pages
         CheckOut,
         CheckIn,
         ProductsPage,
+        ViewProduct,
         SignUp,
         Inspection,
         Invoices,
@@ -23,39 +24,49 @@ namespace StockManagementSystem.Pages
         EndPage
     }
 
-    public enum NavBarType
-    {
-        User,
-        Staff,
-        None
-    }
-
     public class BaseForm : Form
     {
-        public SystemPage nextPage = SystemPage.EndPage;
-        static User m_currentUser = null;
+        protected SystemPage m_nextPage { get; private set; } = SystemPage.EndPage;
+        protected static User m_currentUser = null;
 
         public BaseForm()
-        {          
+        {
         }
 
-        protected void addNavBar(NavBarType navBarType)
+        protected void addNavBar()
         {
-            switch (navBarType)
+            if(m_currentUser != null)
             {
-                case NavBarType.Staff:
-                    break;
-                case NavBarType.User:
+                /*if(m_currentUser.role == "admin" || m_currentUser.role == "staff")
+                {
+                    StaffNavBar navigationBar = new StaffNavBar(this);
+                    Controls.Add(navigationBar);
+                }
+                else
+                {
                     NavBar navigationBar = new NavBar(this);
                     Controls.Add(navigationBar);
-                    break;
+                }*/
+                StaffNavBar navigationBar = new StaffNavBar(this);
+                Controls.Add(navigationBar);
             }
         }
 
-        protected void goToNextPage(SystemPage page)
+        public void goToNextPage(SystemPage page)
         {
-            nextPage = page;
+            m_nextPage = page;
             this.Close();
+        }
+
+        public void logOut()
+        {
+            m_currentUser = null;
+            goToNextPage(SystemPage.Login);
+        }
+
+        public SystemPage getNextPage()
+        {
+            return m_nextPage;
         }
     }
 }

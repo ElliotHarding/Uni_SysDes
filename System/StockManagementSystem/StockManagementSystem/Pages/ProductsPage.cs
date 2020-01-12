@@ -1,4 +1,5 @@
 ﻿using StockManagementSystem.Classes;
+using StockManagementSystem.User_Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,21 @@ namespace StockManagementSystem.Pages
         public ProductsPage()
         {
             InitializeComponent();
-            addNavBar(NavBarType.User);
+            addNavBar();
+
+            DatabaseComms.getProducts(productsCallback);
+        }
+
+        public void productsCallback(List<Product> products)
+        {
+            if (products != null && products.Count() > 0)
+            {
+                const int productWidth = 150;
+                const int productHeight = 150;
+                const int margin = 30;
+                int itemsAcross = (panel_products.Width / (productWidth + margin)) + margin;
+                int itemsUp = (panel_products.Height / (productHeight + margin)) + margin;
+            }
         }
     }
 }

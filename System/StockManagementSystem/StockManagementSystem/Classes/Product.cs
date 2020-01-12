@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,7 @@ namespace StockManagementSystem
         }
         public string id { get; set; }
         public string externalId { get; set; }
+        public string name { get; set; }
         public string image { get; set; }
         public string information { get; set; }
         public string locationX { get; set; }
@@ -35,6 +37,17 @@ namespace StockManagementSystem
         public string vat { get; set; }
         public string dangerDescription { get; set; }//If null not dangerous
         public string retProductNo { get; set; }//if null not return product
+
+        public Bitmap getBitmap()
+        {
+            //todo
+            return null;
+        }
+
+        public void setBitmap(Bitmap bmp)
+        {
+            //todo
+        }
 
     }
 }

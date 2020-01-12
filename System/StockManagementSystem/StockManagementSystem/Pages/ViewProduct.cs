@@ -10,12 +10,13 @@ using System.Windows.Forms;
 
 namespace StockManagementSystem.Pages
 {
-    public partial class CheckIn : BaseForm
+    public partial class ViewProduct : BaseForm
     {
-        public CheckIn()
+        public static Product product = null;
+
+        public ViewProduct()
         {
             InitializeComponent();
-            addNavBar();
         }
     }
 }

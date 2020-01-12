@@ -51,6 +51,9 @@ namespace StockManagementSystem
                     case SystemPage.Inspection:
                         currentPage = new Inspection();
                         break;
+                    case SystemPage.ViewProduct:
+                        currentPage = new ViewProduct();
+                        break;
 
                     //End cases:
                     case SystemPage.EndPage:                        
@@ -63,7 +66,7 @@ namespace StockManagementSystem
                 if(currentPage != null)
                 {
                     Application.Run(currentPage);
-                    nextPage = currentPage.nextPage;
+                    nextPage = currentPage.getNextPage();
                 }                
             }
         }

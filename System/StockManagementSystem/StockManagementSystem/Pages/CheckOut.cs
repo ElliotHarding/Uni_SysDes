@@ -15,7 +15,7 @@ namespace StockManagementSystem.Pages
         public CheckOut()
         {
             InitializeComponent();
-            addNavBar(NavBarType.User);
+            addNavBar();
         }
     }
 }

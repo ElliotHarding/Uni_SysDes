@@ -1,6 +1,6 @@
 ﻿namespace StockManagementSystem.Pages
 {
-    partial class Messages
+    partial class ViewProduct
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // Messages
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Messages";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Messages";
-            this.ResumeLayout(false);
-
+            this.Text = "ViewProduct";
         }
 
         #endregion

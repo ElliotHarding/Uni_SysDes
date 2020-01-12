@@ -19,55 +19,81 @@ namespace StockManagementSystem.Classes
         {
             m_currentForm = currentForm;
             SetBounds(0, currentForm.Height - 100, currentForm.Width, 100);
+
             InitializeComponent();
+
+            if (currentForm.GetType() == typeof(ProductsPage))
+            {
+                btn_products.BackColor = Color.Green;
+            }
+            else if (currentForm.GetType() == typeof(Messages))
+            {
+                btn_messages.BackColor = Color.Green;
+            }
+            else if (currentForm.GetType() == typeof(Inspection))
+            {
+                btn_inspection.BackColor = Color.Green;
+            }
+            else if (currentForm.GetType() == typeof(ExpectedDelivery))
+            {
+                btn_expectedDelivery.BackColor = Color.Green;
+            }
+            else if (currentForm.GetType() == typeof(NewShipment))
+            {
+                btn_newShipment.BackColor = Color.Green;
+            }
+            else if (currentForm.GetType() == typeof(CheckIn))
+            {
+                btn_checkIn.BackColor = Color.Green;
+            }
+            else if (currentForm.GetType() == typeof(Invoices))
+            {
+                btn_invoices.BackColor = Color.Green;
+            }
+            else
+            {
+                btn_checkout.BackColor = Color.Green;
+            }
         }
 
         private void btn_messages_Click(object sender, EventArgs e)
         {
-            m_currentForm.nextPage = SystemPage.Messages;
-            m_currentForm.Close();
+            m_currentForm.goToNextPage(SystemPage.Messages);
         }
 
         private void btn_products_Click(object sender, EventArgs e)
         {
-            m_currentForm.nextPage = SystemPage.ProductsPage;
-            m_currentForm.Close();
+            m_currentForm.goToNextPage(SystemPage.ProductsPage);
         }
 
         private void btn_inspection_Click(object sender, EventArgs e)
         {
-            m_currentForm.nextPage = SystemPage.Inspection;
-            m_currentForm.Close();
+            m_currentForm.goToNextPage(SystemPage.Inspection);
         }
 
         private void btn_invoices_Click(object sender, EventArgs e)
         {
-            m_currentForm.nextPage = SystemPage.Invoices;
-            m_currentForm.Close();
+            m_currentForm.goToNextPage(SystemPage.Invoices);
         }
 
         private void btn_expectedDelivery_Click(object sender, EventArgs e)
         {
-            m_currentForm.nextPage = SystemPage.ExpectedDelivery;
-            m_currentForm.Close();
+            m_currentForm.goToNextPage(SystemPage.ExpectedDelivery);
         }
 
         private void btn_newShipment_Click(object sender, EventArgs e)
         {
-            m_currentForm.nextPage = SystemPage.NewShipment;
-            m_currentForm.Close();
+            m_currentForm.goToNextPage(SystemPage.NewShipment);
         }
 
         private void btn_checkIn_Click(object sender, EventArgs e)
         {
-            m_currentForm.nextPage = SystemPage.CheckIn;
-            m_currentForm.Close();
+            m_currentForm.goToNextPage(SystemPage.CheckIn);
         }
 
         private void btn_checkout_Click(object sender, EventArgs e)
         {
-            m_currentForm.nextPage = SystemPage.CheckOut;
-            m_currentForm.Close();
+            m_currentForm.goToNextPage(SystemPage.CheckOut);
         }
     }
 }

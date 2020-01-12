@@ -19,25 +19,36 @@ namespace StockManagementSystem.Classes
         {
             m_currentForm = currentForm;
             SetBounds(0, currentForm.Height - 100, currentForm.Width, 100);
+
             InitializeComponent();
+
+            if (currentForm.GetType() == typeof(ProductsPage))
+            {
+                btn_products.BackColor = Color.Green;
+            }
+            else if(currentForm.GetType() == typeof(Messages))
+            {
+                btn_messages.BackColor = Color.Green;
+            }
+            else
+            {
+                btn_checkout.BackColor = Color.Green;
+            }
         }
 
         private void btn_messages_Click(object sender, EventArgs e)
         {
-            m_currentForm.nextPage = SystemPage.Messages;
-            m_currentForm.Close();
+            m_currentForm.goToNextPage(SystemPage.Messages);
         }
 
         private void btn_products_Click(object sender, EventArgs e)
         {
-            m_currentForm.nextPage = SystemPage.ProductsPage;
-            m_currentForm.Close();
+            m_currentForm.goToNextPage(SystemPage.ProductsPage);
         }
 
         private void btn_checkout_Click(object sender, EventArgs e)
         {
-            m_currentForm.nextPage = SystemPage.CheckOut;
-            m_currentForm.Close();
+            m_currentForm.goToNextPage(SystemPage.CheckOut);
         }
     }
 }

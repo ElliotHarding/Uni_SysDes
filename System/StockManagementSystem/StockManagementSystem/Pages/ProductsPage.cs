@@ -1,14 +1,7 @@
-﻿using StockManagementSystem.Classes;
-using StockManagementSystem.User_Controls;
+﻿using StockManagementSystem.User_Controls;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace StockManagementSystem.Pages
 {
@@ -18,10 +11,12 @@ namespace StockManagementSystem.Pages
         {
             InitializeComponent();
             addNavBar();
+            panel_products.AutoScroll = true;
 
             DatabaseComms.getProducts(productsCallback);
         }
 
+        //Populate panel_products with products
         public void productsCallback(List<Product> products)
         {
             if (products != null && products.Count() > 0)
@@ -29,7 +24,7 @@ namespace StockManagementSystem.Pages
                 const int productWidth = 150;
                 const int productHeight = 150;
                 const int numBoxesAcross = 4;
-                int margin = (panel_products.Width - productWidth * numBoxesAcross) / (numBoxesAcross + 1);
+                int margin = (panel_products.Width - 10 - productWidth * numBoxesAcross) / (numBoxesAcross + 1);
 
                 int posX = margin;
                 int posY = margin;
@@ -43,9 +38,6 @@ namespace StockManagementSystem.Pages
 
                     ProductDisplay productDisplay = new ProductDisplay(this, product);
                     productDisplay.SetBounds(posX, posY, productWidth, productHeight);
-
-                    if(posY > panel_products.Height - (productHeight / 2))
-                        productDisplay.Hide();
 
                     panel_products.Invoke((Action)delegate { panel_products.Controls.Add(productDisplay); });
 

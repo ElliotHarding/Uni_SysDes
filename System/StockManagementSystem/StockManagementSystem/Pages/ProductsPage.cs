@@ -30,7 +30,35 @@ namespace StockManagementSystem.Pages
                 const int productHeight = 150;
                 const int margin = 30;
                 int itemsAcross = (panel_products.Width / (productWidth + margin)) + margin;
-                int itemsUp = (panel_products.Height / (productHeight + margin)) + margin;
+                int itemsDown = (panel_products.Height / (productHeight + margin)) + margin;
+
+                int posX = margin;
+                int posY = margin;
+                int across = 0;
+                int down = 0;
+                foreach (Product product in products)
+                {
+                    ProductDisplay productDisplay = new ProductDisplay(this, product);
+                    productDisplay.SetBounds(posX, posY, productWidth, productHeight);
+
+                    if(down > itemsDown)
+                        productDisplay.Hide();
+
+                    panel_products.Controls.Add(productDisplay);
+
+                    //Next
+                    across++;
+                    if (across >= itemsAcross)
+                    {
+                        posX = margin;
+                        posY += margin + productHeight;
+                        down++;
+                    }
+                    else
+                    {
+                        posX += margin + productWidth;
+                    }                    
+                }
             }
         }
     }

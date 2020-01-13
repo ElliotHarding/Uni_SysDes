@@ -22,7 +22,7 @@ namespace StockManagementSystem
                 {
                     SqlConnection connection = new SqlConnection(m_connectionString);
                     SqlCommand command = new SqlCommand("INSERT INTO PRODUCTS VALUES(" +
-                        "@id,  @externalId, @image,  @information, @locationX,  @locationY, @quantity, @expiryDate, @price, @vat, @dangerDescription, @retProductNo);", connection);
+                        "@id,  @externalId, @image,  @information, @locationX,  @locationY, @quantity, @expiryDate, @price, @vat, @dangerDescription, @retProductNo, @name);", connection);
 
                     command.Parameters.AddWithValue("@id", product.id);
                     command.Parameters.AddWithValue("@externalId", product.externalId);
@@ -36,6 +36,7 @@ namespace StockManagementSystem
                     command.Parameters.AddWithValue("@vat", product.vat);
                     command.Parameters.AddWithValue("@dangerDescription", product.dangerDescription);
                     command.Parameters.AddWithValue("@retProductNo", product.retProductNo);
+                    command.Parameters.AddWithValue("@name", product.name);
 
                     connection.Open();
                     command.ExecuteNonQuery();
@@ -68,7 +69,9 @@ namespace StockManagementSystem
                         " price = @price," +
                         " vat = @vat," +
                         " dangerDescription = @dangerDescription," +
-                        " retProductNo = @retProductNo WHERE id=@id;", connection);
+                        " retProductNo = @retProductNo," +
+                        " name = @name" +   
+                        " WHERE id=@id;", connection);
 
                     command.Parameters.AddWithValue("@id", product.id);
                     command.Parameters.AddWithValue("@externalId", product.externalId);
@@ -82,6 +85,7 @@ namespace StockManagementSystem
                     command.Parameters.AddWithValue("@vat", product.vat);
                     command.Parameters.AddWithValue("@dangerDescription", product.dangerDescription);
                     command.Parameters.AddWithValue("@retProductNo", product.retProductNo);
+                    command.Parameters.AddWithValue("@name", product.name);
 
                     connection.Open();
                     command.ExecuteNonQuery();
@@ -134,7 +138,8 @@ namespace StockManagementSystem
                         reader["price"].ToString(),
                         reader["vat"].ToString(),
                         reader["dangerDescription"].ToString(),
-                        reader["retProductNo"].ToString()
+                        reader["retProductNo"].ToString(),
+                        reader["name"].ToString()
                         ));
                     }
 

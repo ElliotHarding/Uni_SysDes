@@ -32,7 +32,7 @@ namespace StockManagementSystem
         {
             if(users != null && users.Count() > 0)
             {
-                Product product = new Product("test","test","test", "test", "test", "test", "test", "test", "test", "test", "test", "test");
+                Product product = new Product("test","test","test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test");
                 DatabaseComms.uploadProduct(product, productUploadCallback);
             }
         }

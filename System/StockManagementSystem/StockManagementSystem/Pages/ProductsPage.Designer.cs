@@ -35,7 +35,7 @@
             // 
             this.panel_products.Location = new System.Drawing.Point(12, 12);
             this.panel_products.Name = "panel_products";
-            this.panel_products.Size = new System.Drawing.Size(772, 406);
+            this.panel_products.Size = new System.Drawing.Size(772, 596);
             this.panel_products.TabIndex = 0;
             // 
             // ProductsPage

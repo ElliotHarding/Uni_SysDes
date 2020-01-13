@@ -28,36 +28,29 @@ namespace StockManagementSystem.Pages
             {
                 const int productWidth = 150;
                 const int productHeight = 150;
-                const int margin = 30;
-                int itemsAcross = (panel_products.Width / (productWidth + margin)) + margin;
-                int itemsDown = (panel_products.Height / (productHeight + margin)) + margin;
+                const int numBoxesAcross = 4;
+                int margin = (panel_products.Width - productWidth * numBoxesAcross) / (numBoxesAcross + 1);
 
                 int posX = margin;
                 int posY = margin;
-                int across = 0;
-                int down = 0;
                 foreach (Product product in products)
                 {
-                    ProductDisplay productDisplay = new ProductDisplay(this, product);
-                    productDisplay.SetBounds(posX, posY, productWidth, productHeight);
-
-                    if(down > itemsDown)
-                        productDisplay.Hide();
-
-                    panel_products.Controls.Add(productDisplay);
-
-                    //Next
-                    across++;
-                    if (across >= itemsAcross)
+                    if (posX >= panel_products.Width - (productWidth/2))
                     {
                         posX = margin;
                         posY += margin + productHeight;
-                        down++;
                     }
-                    else
-                    {
-                        posX += margin + productWidth;
-                    }                    
+
+                    ProductDisplay productDisplay = new ProductDisplay(this, product);
+                    productDisplay.SetBounds(posX, posY, productWidth, productHeight);
+
+                    if(posY > panel_products.Height - (productHeight / 2))
+                        productDisplay.Hide();
+
+                    panel_products.Invoke((Action)delegate { panel_products.Controls.Add(productDisplay); });
+
+                    //Next
+                    posX += productWidth + margin;                    
                 }
             }
         }

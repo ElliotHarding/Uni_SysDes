@@ -50,7 +50,7 @@ namespace StockManagementSystem.Classes
             {
                 btn_invoices.BackColor = Color.Green;
             }
-            else
+            else if (currentForm.GetType() == typeof(CheckOut))
             {
                 btn_checkout.BackColor = Color.Green;
             }

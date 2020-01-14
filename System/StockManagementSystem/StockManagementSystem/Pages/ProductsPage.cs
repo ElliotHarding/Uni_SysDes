@@ -23,7 +23,7 @@ namespace StockManagementSystem.Pages
             {
                 const int productWidth = 150;
                 const int productHeight = 150;
-                const int numBoxesAcross = 4;
+                const int numBoxesAcross = 5;
                 int margin = (panel_products.Width - 10 - productWidth * numBoxesAcross) / (numBoxesAcross + 1);
 
                 int posX = margin;

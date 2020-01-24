@@ -9,7 +9,7 @@ namespace StockManagementSystem
 {
     public class Product
     {
-        public Product(string id_, string externalId_, string image_, string information_, string locationX_, string locationY_, string quantitiy_, string expieryDate_, string price_, string vat_, string dangerDescription_, string retProductNo_)
+        public Product(string id_, string externalId_, string image_, string information_, string locationX_, string locationY_, string quantitiy_, string expieryDate_, string price_, string vat_, string dangerDescription_, string retProductNo_, string name_)
         {
             id = id_;
             externalId = externalId_;
@@ -23,6 +23,7 @@ namespace StockManagementSystem
             vat = vat_;
             dangerDescription = dangerDescription_;
             retProductNo = retProductNo_;
+            name = name_;
         }
         public string id { get; set; }
         public string externalId { get; set; }

@@ -30,7 +30,7 @@ namespace StockManagementSystem.Classes
             {
                 btn_messages.BackColor = Color.Green;
             }
-            else
+            else if (currentForm.GetType() == typeof(CheckOut))
             {
                 btn_checkout.BackColor = Color.Green;
             }

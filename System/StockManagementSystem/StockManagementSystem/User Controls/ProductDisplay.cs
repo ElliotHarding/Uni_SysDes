@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using StockManagementSystem.Pages;
 
@@ -19,7 +13,17 @@ namespace StockManagementSystem.User_Controls
         public ProductDisplay(BaseForm currentForm, Product product)
         {
             InitializeComponent();
-            pictureBox.Image = product.getBitmap();
+
+            Bitmap bitmap = product.getBitmap();
+            if(bitmap != null)
+            {
+                pictureBox.Image = bitmap;
+            }
+            else
+            {
+                pictureBox.Image = StockManagementSystem.Properties.Resources.NoImage;
+            }
+            
             lbl_productName.Text = product.name;
 
             m_currentForm = currentForm;

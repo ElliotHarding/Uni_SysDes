@@ -178,6 +178,9 @@
     <EmbeddedResource Include="Pages\NewShipment.resx">
       <DependentUpon>NewShipment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ViewProduct.resx">
+      <DependentUpon>ViewProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Controls\LogOut.resx">
       <DependentUpon>LogOut.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,5 +229,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\NoImage.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

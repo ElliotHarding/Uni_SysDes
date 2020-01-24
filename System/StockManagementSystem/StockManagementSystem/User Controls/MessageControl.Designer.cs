@@ -1,13 +1,13 @@
-﻿namespace StockManagementSystem.Pages
+﻿namespace StockManagementSystem.User_Controls
 {
-    partial class Messages
+    partial class MessageControl
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,39 +20,40 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.messagesPanel = new System.Windows.Forms.Panel();
+            this.lbl_message = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // messagesPanel
+            // lbl_message
             // 
-            this.messagesPanel.Location = new System.Drawing.Point(41, 94);
-            this.messagesPanel.Name = "messagesPanel";
-            this.messagesPanel.Size = new System.Drawing.Size(720, 512);
-            this.messagesPanel.TabIndex = 0;
+            this.lbl_message.AutoSize = true;
+            this.lbl_message.Location = new System.Drawing.Point(18, 18);
+            this.lbl_message.Name = "lbl_message";
+            this.lbl_message.Size = new System.Drawing.Size(35, 13);
+            this.lbl_message.TabIndex = 0;
+            this.lbl_message.Text = "label1";
             // 
-            // Messages
+            // MessageControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(816, 709);
-            this.Controls.Add(this.messagesPanel);
-            this.Name = "Messages";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Messages";
+            this.Controls.Add(this.lbl_message);
+            this.Name = "MessageControl";
+            this.Size = new System.Drawing.Size(700, 50);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel messagesPanel;
+        private System.Windows.Forms.Label lbl_message;
     }
 }

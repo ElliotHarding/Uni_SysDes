@@ -80,6 +80,18 @@
     <Compile Include="Pages\NewShipment.Designer.cs">
       <DependentUpon>NewShipment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\UserInputParagraphDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\UserInputParagraphDialog.Designer.cs">
+      <DependentUpon>UserInputParagraphDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserInputStringDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\UserInputStringDialog.Designer.cs">
+      <DependentUpon>UserInputStringDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ViewProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +189,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\NewShipment.resx">
       <DependentUpon>NewShipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\UserInputParagraphDialog.resx">
+      <DependentUpon>UserInputParagraphDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\UserInputStringDialog.resx">
+      <DependentUpon>UserInputStringDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ViewProduct.resx">
       <DependentUpon>ViewProduct.cs</DependentUpon>

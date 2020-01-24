@@ -104,6 +104,12 @@
     <Compile Include="User Controls\LogOut.Designer.cs">
       <DependentUpon>LogOut.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Controls\MessageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\MessageControl.Designer.cs">
+      <DependentUpon>MessageControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Controls\NavBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\LogOut.resx">
       <DependentUpon>LogOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\MessageControl.resx">
+      <DependentUpon>MessageControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\NavBar.resx">
       <DependentUpon>NavBar.cs</DependentUpon>

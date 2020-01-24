@@ -12,10 +12,30 @@ namespace StockManagementSystem.Pages
 {
     public partial class CheckOut : BaseForm
     {
+        public static List<Product> products;
+        ListBox checkOut = new ListBox();
+
         public CheckOut()
         {
             InitializeComponent();
             addNavBar();
+
+            cOutBox.Items = products.
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

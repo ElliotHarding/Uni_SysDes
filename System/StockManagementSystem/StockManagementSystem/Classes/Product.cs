@@ -25,6 +25,23 @@ namespace StockManagementSystem
             retProductNo = retProductNo_;
             name = name_;
         }
+
+        public Product(Product p)
+        {
+            id = p.id;
+            externalId = p.externalId;
+            image = p.image;
+            information = p.information;
+            locationX = p.locationX;
+            locationY = p.locationY;
+            quantity = p.quantity;
+            expiryDate = p.expiryDate;
+            price = p.price;
+            vat = p.vat;
+            dangerDescription = p.dangerDescription;
+            retProductNo = p.retProductNo;
+            name = p.name;
+        }
         public string id { get; set; }
         public string externalId { get; set; }
         public string name { get; set; }

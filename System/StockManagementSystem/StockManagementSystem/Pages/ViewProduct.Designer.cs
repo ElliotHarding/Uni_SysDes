@@ -30,7 +30,7 @@
         {
             this.btn_editMapLocation = new System.Windows.Forms.Button();
             this.btn_updateSupplierCode = new System.Windows.Forms.Button();
-            this.bttn_changeStockAmount = new System.Windows.Forms.Button();
+            this.btn_changeStockAmount = new System.Windows.Forms.Button();
             this.txt_actionQuantitiy = new System.Windows.Forms.TextBox();
             this.btn_checkout = new System.Windows.Forms.Button();
             this.btn_checkIn = new System.Windows.Forms.Button();
@@ -46,6 +46,7 @@
             this.btn_saveChanges = new System.Windows.Forms.Button();
             this.lbl_uploadError = new System.Windows.Forms.Label();
             this.lbl_CheckInOutError = new System.Windows.Forms.Label();
+            this.lbl_supplierCode = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
@@ -63,7 +64,7 @@
             // 
             // btn_updateSupplierCode
             // 
-            this.btn_updateSupplierCode.Location = new System.Drawing.Point(553, 159);
+            this.btn_updateSupplierCode.Location = new System.Drawing.Point(553, 179);
             this.btn_updateSupplierCode.Name = "btn_updateSupplierCode";
             this.btn_updateSupplierCode.Size = new System.Drawing.Size(132, 23);
             this.btn_updateSupplierCode.TabIndex = 11;
@@ -71,15 +72,15 @@
             this.btn_updateSupplierCode.UseVisualStyleBackColor = true;
             this.btn_updateSupplierCode.Click += new System.EventHandler(this.btn_updateSupplierCode_Click);
             // 
-            // bttn_changeStockAmount
+            // btn_changeStockAmount
             // 
-            this.bttn_changeStockAmount.Location = new System.Drawing.Point(415, 160);
-            this.bttn_changeStockAmount.Name = "bttn_changeStockAmount";
-            this.bttn_changeStockAmount.Size = new System.Drawing.Size(132, 23);
-            this.bttn_changeStockAmount.TabIndex = 10;
-            this.bttn_changeStockAmount.Text = "Change Stock Amount";
-            this.bttn_changeStockAmount.UseVisualStyleBackColor = true;
-            this.bttn_changeStockAmount.Click += new System.EventHandler(this.bttn_changeStockAmount_Click);
+            this.btn_changeStockAmount.Location = new System.Drawing.Point(415, 160);
+            this.btn_changeStockAmount.Name = "btn_changeStockAmount";
+            this.btn_changeStockAmount.Size = new System.Drawing.Size(132, 23);
+            this.btn_changeStockAmount.TabIndex = 10;
+            this.btn_changeStockAmount.Text = "Change Stock Amount";
+            this.btn_changeStockAmount.UseVisualStyleBackColor = true;
+            this.btn_changeStockAmount.Click += new System.EventHandler(this.bttn_changeStockAmount_Click);
             // 
             // txt_actionQuantitiy
             // 
@@ -172,6 +173,7 @@
             this.pictureBoxMap.Size = new System.Drawing.Size(500, 300);
             this.pictureBoxMap.TabIndex = 12;
             this.pictureBoxMap.TabStop = false;
+            this.pictureBoxMap.Click += new System.EventHandler(this.PictureBoxMap_Click);
             // 
             // pictureBox
             // 
@@ -220,11 +222,21 @@
             this.lbl_CheckInOutError.TabIndex = 16;
             this.lbl_CheckInOutError.Text = "Enter correct quantitiy";
             // 
+            // lbl_supplierCode
+            // 
+            this.lbl_supplierCode.AutoSize = true;
+            this.lbl_supplierCode.Location = new System.Drawing.Point(553, 160);
+            this.lbl_supplierCode.Name = "lbl_supplierCode";
+            this.lbl_supplierCode.Size = new System.Drawing.Size(29, 13);
+            this.lbl_supplierCode.TabIndex = 17;
+            this.lbl_supplierCode.Text = "label";
+            // 
             // ViewProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 709);
+            this.Controls.Add(this.lbl_supplierCode);
             this.Controls.Add(this.lbl_CheckInOutError);
             this.Controls.Add(this.lbl_uploadError);
             this.Controls.Add(this.btn_saveChanges);
@@ -232,7 +244,7 @@
             this.Controls.Add(this.btn_editMapLocation);
             this.Controls.Add(this.pictureBoxMap);
             this.Controls.Add(this.btn_updateSupplierCode);
-            this.Controls.Add(this.bttn_changeStockAmount);
+            this.Controls.Add(this.btn_changeStockAmount);
             this.Controls.Add(this.txt_actionQuantitiy);
             this.Controls.Add(this.btn_checkout);
             this.Controls.Add(this.btn_checkIn);
@@ -266,7 +278,7 @@
         private System.Windows.Forms.Button btn_checkIn;
         private System.Windows.Forms.Button btn_checkout;
         private System.Windows.Forms.TextBox txt_actionQuantitiy;
-        private System.Windows.Forms.Button bttn_changeStockAmount;
+        private System.Windows.Forms.Button btn_changeStockAmount;
         private System.Windows.Forms.Button btn_updateSupplierCode;
         private System.Windows.Forms.PictureBox pictureBoxMap;
         private System.Windows.Forms.Button btn_editMapLocation;
@@ -274,5 +286,6 @@
         private System.Windows.Forms.Button btn_saveChanges;
         private System.Windows.Forms.Label lbl_uploadError;
         private System.Windows.Forms.Label lbl_CheckInOutError;
+        private System.Windows.Forms.Label lbl_supplierCode;
     }
 }

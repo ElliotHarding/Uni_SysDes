@@ -36,6 +36,7 @@
             this.btn_newShipment = new System.Windows.Forms.Button();
             this.btn_checkIn = new System.Windows.Forms.Button();
             this.btn_checkout = new System.Windows.Forms.Button();
+            this.lbl_numMessages = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_messages
@@ -127,10 +128,21 @@
             this.btn_checkout.UseVisualStyleBackColor = true;
             this.btn_checkout.Click += new System.EventHandler(this.btn_checkout_Click);
             // 
+            // lbl_numMessages
+            // 
+            this.lbl_numMessages.AutoSize = true;
+            this.lbl_numMessages.ForeColor = System.Drawing.Color.Red;
+            this.lbl_numMessages.Location = new System.Drawing.Point(89, 14);
+            this.lbl_numMessages.Name = "lbl_numMessages";
+            this.lbl_numMessages.Size = new System.Drawing.Size(13, 13);
+            this.lbl_numMessages.TabIndex = 8;
+            this.lbl_numMessages.Text = "1";
+            // 
             // StaffNavBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbl_numMessages);
             this.Controls.Add(this.btn_checkout);
             this.Controls.Add(this.btn_checkIn);
             this.Controls.Add(this.btn_newShipment);
@@ -142,6 +154,7 @@
             this.Name = "StaffNavBar";
             this.Size = new System.Drawing.Size(812, 50);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -155,5 +168,6 @@
         private System.Windows.Forms.Button btn_newShipment;
         private System.Windows.Forms.Button btn_checkIn;
         private System.Windows.Forms.Button btn_checkout;
+        private System.Windows.Forms.Label lbl_numMessages;
     }
 }

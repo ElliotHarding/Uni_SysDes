@@ -31,6 +31,7 @@
             this.btn_checkout = new System.Windows.Forms.Button();
             this.btn_products = new System.Windows.Forms.Button();
             this.btn_messages = new System.Windows.Forms.Button();
+            this.lbl_numMessages = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_checkout
@@ -66,16 +67,28 @@
             this.btn_messages.UseVisualStyleBackColor = true;
             this.btn_messages.Click += new System.EventHandler(this.btn_messages_Click);
             // 
+            // lbl_numMessages
+            // 
+            this.lbl_numMessages.AutoSize = true;
+            this.lbl_numMessages.ForeColor = System.Drawing.Color.Red;
+            this.lbl_numMessages.Location = new System.Drawing.Point(292, 8);
+            this.lbl_numMessages.Name = "lbl_numMessages";
+            this.lbl_numMessages.Size = new System.Drawing.Size(13, 13);
+            this.lbl_numMessages.TabIndex = 6;
+            this.lbl_numMessages.Text = "1";
+            // 
             // NavBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbl_numMessages);
             this.Controls.Add(this.btn_checkout);
             this.Controls.Add(this.btn_products);
             this.Controls.Add(this.btn_messages);
             this.Name = "NavBar";
             this.Size = new System.Drawing.Size(812, 50);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -84,5 +97,6 @@
         private System.Windows.Forms.Button btn_checkout;
         private System.Windows.Forms.Button btn_products;
         private System.Windows.Forms.Button btn_messages;
+        private System.Windows.Forms.Label lbl_numMessages;
     }
 }

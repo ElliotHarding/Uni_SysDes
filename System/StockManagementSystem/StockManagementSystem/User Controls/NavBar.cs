@@ -25,7 +25,7 @@ namespace StockManagementSystem.Classes
             if (currentForm.GetType() == typeof(ProductsPage))
             {
                 btn_products.BackColor = Color.Green;
-            }
+            }   
             else if(currentForm.GetType() == typeof(Messages))
             {
                 btn_messages.BackColor = Color.Green;
@@ -33,6 +33,23 @@ namespace StockManagementSystem.Classes
             else if (currentForm.GetType() == typeof(CheckOut))
             {
                 btn_checkout.BackColor = Color.Green;
+            }
+
+            if (currentForm.GetType() != typeof(Messages))
+                setNumMessages();
+            else
+                lbl_numMessages.Hide();
+        }
+
+        private void setNumMessages()
+        {
+            if(Messages.messages.Count > 0)
+            {
+                lbl_numMessages.Text = Messages.messages.Count.ToString();
+            } 
+            else
+            {
+                lbl_numMessages.Hide();
             }
         }
 

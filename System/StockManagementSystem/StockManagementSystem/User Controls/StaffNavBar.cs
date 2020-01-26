@@ -54,6 +54,27 @@ namespace StockManagementSystem.Classes
             {
                 btn_checkout.BackColor = Color.Green;
             }
+
+            if (currentForm.GetType() != typeof(Messages))
+            {
+                setNumMessages();
+            }
+            else
+            {
+                lbl_numMessages.Hide();
+            }
+        }
+
+        private void setNumMessages()
+        {
+            if (Messages.messages.Count > 0)
+            {
+                lbl_numMessages.Text = Messages.messages.Count.ToString();
+            }
+            else
+            {
+                lbl_numMessages.Hide();
+            }
         }
 
         private void btn_messages_Click(object sender, EventArgs e)

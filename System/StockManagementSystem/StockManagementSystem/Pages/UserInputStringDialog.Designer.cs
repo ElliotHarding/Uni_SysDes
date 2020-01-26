@@ -75,11 +75,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(200, 94);
+            this.ControlBox = false;
             this.Controls.Add(this.lbl_text);
             this.Controls.Add(this.txt_text);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_okay);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "UserInputStringDialog";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Enter Value";
             this.ResumeLayout(false);
             this.PerformLayout();

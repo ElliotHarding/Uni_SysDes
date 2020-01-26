@@ -171,6 +171,7 @@
             this.pictureBoxMap.Location = new System.Drawing.Point(148, 276);
             this.pictureBoxMap.Name = "pictureBoxMap";
             this.pictureBoxMap.Size = new System.Drawing.Size(500, 300);
+            this.pictureBoxMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBoxMap.TabIndex = 12;
             this.pictureBoxMap.TabStop = false;
             this.pictureBoxMap.Click += new System.EventHandler(this.PictureBoxMap_Click);
@@ -180,6 +181,7 @@
             this.pictureBox.Location = new System.Drawing.Point(112, 37);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(143, 116);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             // 

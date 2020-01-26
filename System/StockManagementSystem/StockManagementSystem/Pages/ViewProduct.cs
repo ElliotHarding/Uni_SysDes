@@ -26,24 +26,11 @@ namespace StockManagementSystem.Pages
 
             Bitmap bitmap = product.getBitmap();
             if (bitmap != null)
-            {
                 pictureBox.Image = bitmap;
-
-                int mapX = 0;
-                int mapY = 0;
-                if (Int32.TryParse(product.locationX, out mapX) && Int32.TryParse(product.locationY, out mapY))
-                {
-                    Graphics graphics = Graphics.FromImage(bitmap);
-                    graphics.DrawString("X", new Font(new FontFamily("Times New Roman"), 32, FontStyle.Regular, GraphicsUnit.Pixel),
-                        new SolidBrush(Color.Black), mapX, mapY);
-
-                    pictureBox.Image = bitmap;
-                }
-            }
             else
-            {
-                pictureBox.Image = StockManagementSystem.Properties.Resources.NoImage;                
-            }            
+                pictureBox.Image = StockManagementSystem.Properties.Resources.NoImage;
+
+            refreshMapLocation();
 
             if (m_currentUser.role != "admin")
             {
@@ -54,6 +41,24 @@ namespace StockManagementSystem.Pages
                 btn_checkIn.Hide();
                 btn_editMapLocation.Hide();
             }
+        }
+
+        private void refreshMapLocation()
+        {
+            //todo get map image...
+            Bitmap bitmap = StockManagementSystem.Properties.Resources.NoImage;
+            int mapX = 0;
+            int mapY = 0;           
+            if (Int32.TryParse(product.locationX, out mapX) && Int32.TryParse(product.locationY, out mapY))
+            {
+                const int drawOffsetX = -11; //TODO: VALUES BASED OF HALF IMAGE SIZE THAT IS USED AS MARKER
+                const int drawOffsety = -20;
+                Graphics graphics = Graphics.FromImage(bitmap);
+                graphics.DrawString("x", new Font(new FontFamily("Calibri"), 32, FontStyle.Regular, GraphicsUnit.Pixel),
+                    new SolidBrush(Color.Black), mapX + drawOffsetX, mapY + drawOffsety);
+            }
+
+            pictureBoxMap.Image = bitmap;
         }
 
         private void btn_editPicture_Click(object sender, EventArgs e)
@@ -103,10 +108,17 @@ namespace StockManagementSystem.Pages
                     if(iStockAmount > 0)
                     {
                         product.quantity = stockAmount;
+                        lbl_currentStock.Text = "Current Stock : " + stockAmount;
                     }
-                    MessageBox.Show("Can't have a negative number", "Warning");
+                    else
+                    {
+                        MessageBox.Show("Can't have a negative number", "Warning");
+                    }                    
                 }
-                MessageBox.Show("Invalid input", "Warning");
+                else
+                {
+                    MessageBox.Show("Invalid input", "Warning");
+                }               
             }
         }
 
@@ -131,13 +143,11 @@ namespace StockManagementSystem.Pages
         {
             if(m_bAwaitingClick)
             {
-                Point p = Cursor.Position;
-                if(p.X > pictureBoxMap.Location.X && p.X < pictureBoxMap.Location.X + pictureBoxMap.Width && p.Y > pictureBoxMap.Location.Y && p.Y < pictureBoxMap.Location.Y + pictureBoxMap.Height)
-                {
-                    product.locationX = (p.X - pictureBoxMap.Location.X).ToString();
-                    product.locationY = (p.Y - pictureBoxMap.Location.Y).ToString();
-                }
+                Point p = pictureBoxMap.PointToClient(Cursor.Position);
+                product.locationX = p.X.ToString();
+                product.locationY = p.Y.ToString();
                 m_bAwaitingClick = false;
+                refreshMapLocation();
             }
         }
 
@@ -146,15 +156,9 @@ namespace StockManagementSystem.Pages
             int quantitiy = 0;
             if (Int32.TryParse(txt_actionQuantitiy.Text, out quantitiy))
             {
-                int currentQuantitiy = 0;
-                if (Int32.TryParse(product.quantity, out currentQuantitiy))
-                {
-                    product.quantity = (currentQuantitiy + quantitiy).ToString();
-                }
-                else
-                {
-                    product.quantity = quantitiy.ToString();
-                }
+                Product p = new Product(product);
+                p.quantity = txt_actionQuantitiy.Text;
+                //todo add to checkin page....
             }
             else
             {
@@ -201,7 +205,7 @@ namespace StockManagementSystem.Pages
 
         private void onUpdateProductRequest(bool success)
         {
-            if(!success)
+            if(success)
             {
                 lbl_uploadError.Invoke((Action)delegate { lbl_uploadError.Visible = true; });
             }

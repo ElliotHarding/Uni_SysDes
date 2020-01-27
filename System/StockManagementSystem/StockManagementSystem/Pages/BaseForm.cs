@@ -35,19 +35,21 @@ namespace StockManagementSystem.Pages
 
         protected void addNavBar()
         {
-            if(m_currentUser != null)
-            {
-                if(m_currentUser.role == "admin" || m_currentUser.role == "staff")
-                {
-                    StaffNavBar navigationBar = new StaffNavBar(this);
-                    Controls.Add(navigationBar);
-                }
-                else
-                {
-                    NavBar navigationBar = new NavBar(this);
-                    Controls.Add(navigationBar);
-                };
-            }
+            StaffNavBar navigationBar = new StaffNavBar(this);
+            Controls.Add(navigationBar);
+            //if(m_currentUser != null)
+            //{
+            //    if(m_currentUser.role == "admin" || m_currentUser.role == "staff")
+            //    {
+            //        StaffNavBar navigationBar = new StaffNavBar(this);
+            //        Controls.Add(navigationBar);
+            //    }
+            //    else
+            //    {
+            //        NavBar navigationBar = new NavBar(this);
+            //        Controls.Add(navigationBar);
+            //    };
+            //}
         }
 
         public void goToNextPage(SystemPage page)

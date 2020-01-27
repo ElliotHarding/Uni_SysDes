@@ -46,6 +46,7 @@
             this.btn_messages.Name = "btn_messages";
             this.btn_messages.Size = new System.Drawing.Size(102, 29);
             this.btn_messages.TabIndex = 0;
+            this.btn_messages.TabStop = false;
             this.btn_messages.Text = "Messages";
             this.btn_messages.UseVisualStyleBackColor = true;
             this.btn_messages.Click += new System.EventHandler(this.btn_messages_Click);
@@ -57,6 +58,7 @@
             this.btn_products.Name = "btn_products";
             this.btn_products.Size = new System.Drawing.Size(102, 29);
             this.btn_products.TabIndex = 1;
+            this.btn_products.TabStop = false;
             this.btn_products.Text = "Products";
             this.btn_products.UseVisualStyleBackColor = true;
             this.btn_products.Click += new System.EventHandler(this.btn_products_Click);
@@ -68,6 +70,7 @@
             this.btn_inspection.Name = "btn_inspection";
             this.btn_inspection.Size = new System.Drawing.Size(102, 29);
             this.btn_inspection.TabIndex = 2;
+            this.btn_inspection.TabStop = false;
             this.btn_inspection.Text = "Inspection";
             this.btn_inspection.UseVisualStyleBackColor = true;
             this.btn_inspection.Click += new System.EventHandler(this.btn_inspection_Click);
@@ -79,6 +82,7 @@
             this.btn_invoices.Name = "btn_invoices";
             this.btn_invoices.Size = new System.Drawing.Size(102, 29);
             this.btn_invoices.TabIndex = 3;
+            this.btn_invoices.TabStop = false;
             this.btn_invoices.Text = "Invoices";
             this.btn_invoices.UseVisualStyleBackColor = true;
             this.btn_invoices.Click += new System.EventHandler(this.btn_invoices_Click);
@@ -90,6 +94,7 @@
             this.btn_expectedDelivery.Name = "btn_expectedDelivery";
             this.btn_expectedDelivery.Size = new System.Drawing.Size(103, 29);
             this.btn_expectedDelivery.TabIndex = 4;
+            this.btn_expectedDelivery.TabStop = false;
             this.btn_expectedDelivery.Text = "Expected Delivery";
             this.btn_expectedDelivery.UseVisualStyleBackColor = true;
             this.btn_expectedDelivery.Click += new System.EventHandler(this.btn_expectedDelivery_Click);
@@ -101,6 +106,7 @@
             this.btn_newShipment.Name = "btn_newShipment";
             this.btn_newShipment.Size = new System.Drawing.Size(102, 29);
             this.btn_newShipment.TabIndex = 5;
+            this.btn_newShipment.TabStop = false;
             this.btn_newShipment.Text = "New Shipment";
             this.btn_newShipment.UseVisualStyleBackColor = true;
             this.btn_newShipment.Click += new System.EventHandler(this.btn_newShipment_Click);
@@ -113,6 +119,7 @@
             this.btn_checkIn.Name = "btn_checkIn";
             this.btn_checkIn.Size = new System.Drawing.Size(102, 29);
             this.btn_checkIn.TabIndex = 6;
+            this.btn_checkIn.TabStop = false;
             this.btn_checkIn.Text = "Check-In";
             this.btn_checkIn.UseVisualStyleBackColor = false;
             this.btn_checkIn.Click += new System.EventHandler(this.btn_checkIn_Click);
@@ -124,6 +131,7 @@
             this.btn_checkout.Name = "btn_checkout";
             this.btn_checkout.Size = new System.Drawing.Size(102, 29);
             this.btn_checkout.TabIndex = 7;
+            this.btn_checkout.TabStop = false;
             this.btn_checkout.Text = "Check-Out";
             this.btn_checkout.UseVisualStyleBackColor = true;
             this.btn_checkout.Click += new System.EventHandler(this.btn_checkout_Click);

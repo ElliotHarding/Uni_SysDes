@@ -26,7 +26,7 @@ namespace StockManagementSystem.Pages
 
     public class BaseForm : Form
     {
-        protected SystemPage m_nextPage { get; private set; } = SystemPage.EndPage;
+        protected SystemPage m_nextPage { get; private set; } = SystemPage.Login;
         protected static User m_currentUser = null;
 
         public BaseForm()

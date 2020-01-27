@@ -66,6 +66,7 @@
             this.btn_messages.Name = "btn_messages";
             this.btn_messages.Size = new System.Drawing.Size(220, 41);
             this.btn_messages.TabIndex = 3;
+            this.btn_messages.TabStop = false;
             this.btn_messages.Text = "Messages";
             this.btn_messages.UseVisualStyleBackColor = true;
             this.btn_messages.Click += new System.EventHandler(this.btn_messages_Click);
@@ -87,6 +88,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(220, 41);
             this.button1.TabIndex = 4;
+            this.button1.TabStop = false;
             this.button1.Text = "Products";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btn_products_Click);
@@ -98,6 +100,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(220, 41);
             this.button2.TabIndex = 5;
+            this.button2.TabStop = false;
             this.button2.Text = "Check Out";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.btn_checkout_Click);

@@ -237,7 +237,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(796, 709);
+            this.ClientSize = new System.Drawing.Size(1008, 681);
             this.Controls.Add(this.lbl_supplierCode);
             this.Controls.Add(this.lbl_CheckInOutError);
             this.Controls.Add(this.lbl_uploadError);
@@ -256,7 +256,12 @@
             this.Controls.Add(this.lbl_productName);
             this.Controls.Add(this.btn_editPicture);
             this.Controls.Add(this.pictureBox);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1024, 720);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1024, 720);
             this.Name = "ViewProduct";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Product";
             this.panel1.ResumeLayout(false);

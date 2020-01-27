@@ -42,9 +42,9 @@
             // btn_messages
             // 
             this.btn_messages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_messages.Location = new System.Drawing.Point(4, 11);
+            this.btn_messages.Location = new System.Drawing.Point(111, 11);
             this.btn_messages.Name = "btn_messages";
-            this.btn_messages.Size = new System.Drawing.Size(102, 30);
+            this.btn_messages.Size = new System.Drawing.Size(102, 29);
             this.btn_messages.TabIndex = 0;
             this.btn_messages.Text = "Messages";
             this.btn_messages.UseVisualStyleBackColor = true;
@@ -53,9 +53,9 @@
             // btn_products
             // 
             this.btn_products.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_products.Location = new System.Drawing.Point(104, 11);
+            this.btn_products.Location = new System.Drawing.Point(211, 11);
             this.btn_products.Name = "btn_products";
-            this.btn_products.Size = new System.Drawing.Size(102, 30);
+            this.btn_products.Size = new System.Drawing.Size(102, 29);
             this.btn_products.TabIndex = 1;
             this.btn_products.Text = "Products";
             this.btn_products.UseVisualStyleBackColor = true;
@@ -64,9 +64,9 @@
             // btn_inspection
             // 
             this.btn_inspection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_inspection.Location = new System.Drawing.Point(204, 11);
+            this.btn_inspection.Location = new System.Drawing.Point(311, 11);
             this.btn_inspection.Name = "btn_inspection";
-            this.btn_inspection.Size = new System.Drawing.Size(102, 30);
+            this.btn_inspection.Size = new System.Drawing.Size(102, 29);
             this.btn_inspection.TabIndex = 2;
             this.btn_inspection.Text = "Inspection";
             this.btn_inspection.UseVisualStyleBackColor = true;
@@ -75,9 +75,9 @@
             // btn_invoices
             // 
             this.btn_invoices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_invoices.Location = new System.Drawing.Point(304, 11);
+            this.btn_invoices.Location = new System.Drawing.Point(411, 11);
             this.btn_invoices.Name = "btn_invoices";
-            this.btn_invoices.Size = new System.Drawing.Size(102, 30);
+            this.btn_invoices.Size = new System.Drawing.Size(102, 29);
             this.btn_invoices.TabIndex = 3;
             this.btn_invoices.Text = "Invoices";
             this.btn_invoices.UseVisualStyleBackColor = true;
@@ -86,9 +86,9 @@
             // btn_expectedDelivery
             // 
             this.btn_expectedDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_expectedDelivery.Location = new System.Drawing.Point(404, 11);
+            this.btn_expectedDelivery.Location = new System.Drawing.Point(511, 11);
             this.btn_expectedDelivery.Name = "btn_expectedDelivery";
-            this.btn_expectedDelivery.Size = new System.Drawing.Size(103, 30);
+            this.btn_expectedDelivery.Size = new System.Drawing.Size(103, 29);
             this.btn_expectedDelivery.TabIndex = 4;
             this.btn_expectedDelivery.Text = "Expected Delivery";
             this.btn_expectedDelivery.UseVisualStyleBackColor = true;
@@ -97,9 +97,9 @@
             // btn_newShipment
             // 
             this.btn_newShipment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_newShipment.Location = new System.Drawing.Point(505, 11);
+            this.btn_newShipment.Location = new System.Drawing.Point(612, 11);
             this.btn_newShipment.Name = "btn_newShipment";
-            this.btn_newShipment.Size = new System.Drawing.Size(102, 30);
+            this.btn_newShipment.Size = new System.Drawing.Size(102, 29);
             this.btn_newShipment.TabIndex = 5;
             this.btn_newShipment.Text = "New Shipment";
             this.btn_newShipment.UseVisualStyleBackColor = true;
@@ -109,9 +109,9 @@
             // 
             this.btn_checkIn.BackColor = System.Drawing.SystemColors.Control;
             this.btn_checkIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_checkIn.Location = new System.Drawing.Point(605, 11);
+            this.btn_checkIn.Location = new System.Drawing.Point(712, 11);
             this.btn_checkIn.Name = "btn_checkIn";
-            this.btn_checkIn.Size = new System.Drawing.Size(102, 30);
+            this.btn_checkIn.Size = new System.Drawing.Size(102, 29);
             this.btn_checkIn.TabIndex = 6;
             this.btn_checkIn.Text = "Check-In";
             this.btn_checkIn.UseVisualStyleBackColor = false;
@@ -120,9 +120,9 @@
             // btn_checkout
             // 
             this.btn_checkout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_checkout.Location = new System.Drawing.Point(705, 11);
+            this.btn_checkout.Location = new System.Drawing.Point(812, 11);
             this.btn_checkout.Name = "btn_checkout";
-            this.btn_checkout.Size = new System.Drawing.Size(102, 30);
+            this.btn_checkout.Size = new System.Drawing.Size(102, 29);
             this.btn_checkout.TabIndex = 7;
             this.btn_checkout.Text = "Check-Out";
             this.btn_checkout.UseVisualStyleBackColor = true;
@@ -132,7 +132,7 @@
             // 
             this.lbl_numMessages.AutoSize = true;
             this.lbl_numMessages.ForeColor = System.Drawing.Color.Red;
-            this.lbl_numMessages.Location = new System.Drawing.Point(89, 14);
+            this.lbl_numMessages.Location = new System.Drawing.Point(196, 14);
             this.lbl_numMessages.Name = "lbl_numMessages";
             this.lbl_numMessages.Size = new System.Drawing.Size(13, 13);
             this.lbl_numMessages.TabIndex = 8;
@@ -151,8 +151,10 @@
             this.Controls.Add(this.btn_inspection);
             this.Controls.Add(this.btn_products);
             this.Controls.Add(this.btn_messages);
+            this.MaximumSize = new System.Drawing.Size(1024, 50);
+            this.MinimumSize = new System.Drawing.Size(1024, 50);
             this.Name = "StaffNavBar";
-            this.Size = new System.Drawing.Size(812, 50);
+            this.Size = new System.Drawing.Size(1024, 50);
             this.ResumeLayout(false);
             this.PerformLayout();
 

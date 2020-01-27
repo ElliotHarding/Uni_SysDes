@@ -35,16 +35,19 @@
             // 
             this.messagesPanel.Location = new System.Drawing.Point(41, 94);
             this.messagesPanel.Name = "messagesPanel";
-            this.messagesPanel.Size = new System.Drawing.Size(720, 512);
+            this.messagesPanel.Size = new System.Drawing.Size(924, 512);
             this.messagesPanel.TabIndex = 0;
             // 
             // Messages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(816, 709);
+            this.ClientSize = new System.Drawing.Size(1008, 681);
             this.Controls.Add(this.messagesPanel);
+            this.MaximumSize = new System.Drawing.Size(1024, 720);
+            this.MinimumSize = new System.Drawing.Size(1024, 720);
             this.Name = "Messages";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Messages";
             this.ResumeLayout(false);

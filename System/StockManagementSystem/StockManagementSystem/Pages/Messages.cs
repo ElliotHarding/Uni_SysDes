@@ -7,7 +7,7 @@ namespace StockManagementSystem.Pages
 {
     public partial class Messages : BaseForm
     {
-        public static List<string> messages;
+        public static List<string> messages = new List<string>();
 
         public Messages()
         {

@@ -35,6 +35,9 @@ namespace StockManagementSystem.Pages
 
         protected void addNavBar()
         {
+            StaffNavBar navigationBar = new StaffNavBar(this);
+            Controls.Add(navigationBar);
+            /*
             if(m_currentUser != null)
             {
                 if(m_currentUser.role == "admin" || m_currentUser.role == "staff")
@@ -47,7 +50,7 @@ namespace StockManagementSystem.Pages
                     NavBar navigationBar = new NavBar(this);
                     Controls.Add(navigationBar);
                 };
-            }
+            }*/
         }
 
         public void goToNextPage(SystemPage page)

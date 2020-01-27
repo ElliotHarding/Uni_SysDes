@@ -35,16 +35,21 @@
             // 
             this.panel_products.Location = new System.Drawing.Point(2, 2);
             this.panel_products.Name = "panel_products";
-            this.panel_products.Size = new System.Drawing.Size(812, 613);
+            this.panel_products.Size = new System.Drawing.Size(1006, 613);
             this.panel_products.TabIndex = 0;
             // 
             // ProductsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(816, 709);
+            this.ClientSize = new System.Drawing.Size(1008, 681);
             this.Controls.Add(this.panel_products);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1024, 720);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1024, 720);
             this.Name = "ProductsPage";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Products";
             this.ResumeLayout(false);

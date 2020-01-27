@@ -16,7 +16,7 @@ namespace StockManagementSystem
             Application.SetCompatibleTextRenderingDefault(false);
 
             BaseForm currentPage = null;
-            SystemPage nextPage = SystemPage.Login;
+            SystemPage nextPage = /*SystemPage.Login*/ SystemPage.ProductsPage;
             while(nextPage != SystemPage.EndPage)
             {
                 switch (nextPage)

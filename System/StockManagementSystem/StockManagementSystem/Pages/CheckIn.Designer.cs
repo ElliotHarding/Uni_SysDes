@@ -34,8 +34,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(816, 709);
+            this.ClientSize = new System.Drawing.Size(1008, 681);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1024, 720);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1024, 720);
             this.Name = "CheckIn";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CheckIn";
             this.ResumeLayout(false);

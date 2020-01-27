@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace StockManagementSystem
 {
-    static class Program
+    static class Program //Elliot
     {
         [STAThread]
         static void Main()

@@ -1,12 +1,7 @@
-﻿using System;
+﻿using StockManagementSystem.User_Controls;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace StockManagementSystem.Pages
 {
@@ -16,6 +11,22 @@ namespace StockManagementSystem.Pages
         {
             InitializeComponent();
             addNavBar();
+        }        
+
+        private void Btn_add_row_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void populateInvoices(List<Transation> transations)
+        {
+            int spacing = 0;
+            foreach(Transation product in transations)
+            {
+                ProductRow productRow = new ProductRow();
+                productRow.Parent = pnl_invoice;
+                productRow.Location = new Point(0, spacing += 30);
+            }
         }
     }
 }

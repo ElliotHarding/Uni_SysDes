@@ -104,6 +104,12 @@
     <Compile Include="Pages\ViewProduct.Designer.cs">
       <DependentUpon>ViewProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Controls\ProductRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\ProductRow.Designer.cs">
+      <DependentUpon>ProductRow.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Controls\LogOut.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -213,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ViewProduct.resx">
       <DependentUpon>ViewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\ProductRow.resx">
+      <DependentUpon>ProductRow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\LogOut.resx">
       <DependentUpon>LogOut.cs</DependentUpon>

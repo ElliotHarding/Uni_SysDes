@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>StockManagementSystem.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -85,6 +88,12 @@
     </Compile>
     <Compile Include="Pages\ViewProduct.Designer.cs">
       <DependentUpon>ViewProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\InspectionRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\InspectionRow.Designer.cs">
+      <DependentUpon>InspectionRow.cs</DependentUpon>
     </Compile>
     <Compile Include="User Controls\LogOut.cs">
       <SubType>UserControl</SubType>
@@ -180,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ViewProduct.resx">
       <DependentUpon>ViewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\InspectionRow.resx">
+      <DependentUpon>InspectionRow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\LogOut.resx">
       <DependentUpon>LogOut.cs</DependentUpon>

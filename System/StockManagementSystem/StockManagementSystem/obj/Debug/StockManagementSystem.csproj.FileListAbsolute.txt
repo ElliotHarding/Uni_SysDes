@@ -90,3 +90,4 @@ C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManageme
 C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.CoreCompileInputs.cache
 C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.exe
 C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.pdb
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.AdminSettings.resources

@@ -50,6 +50,12 @@
     <Compile Include="Classes\Address.cs" />
     <Compile Include="Classes\DatabaseComms.cs" />
     <Compile Include="Classes\ExpectedShipment.cs" />
+    <Compile Include="Pages\AdminSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\AdminSettings.Designer.cs">
+      <DependentUpon>AdminSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CheckIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     <Compile Include="Classes\Shipment.cs" />
     <Compile Include="Classes\Transation.cs" />
     <Compile Include="Classes\User.cs" />
+    <EmbeddedResource Include="Pages\AdminSettings.resx">
+      <DependentUpon>AdminSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\CheckIn.resx">
       <DependentUpon>CheckIn.cs</DependentUpon>
     </EmbeddedResource>

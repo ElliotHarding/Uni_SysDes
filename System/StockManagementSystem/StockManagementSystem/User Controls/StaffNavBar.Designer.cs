@@ -37,6 +37,7 @@
             this.btn_checkIn = new System.Windows.Forms.Button();
             this.btn_checkout = new System.Windows.Forms.Button();
             this.lbl_numMessages = new System.Windows.Forms.Label();
+            this.btn_settings = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_messages
@@ -146,10 +147,21 @@
             this.lbl_numMessages.TabIndex = 8;
             this.lbl_numMessages.Text = "1";
             // 
+            // btn_settings
+            // 
+            this.btn_settings.Location = new System.Drawing.Point(993, 19);
+            this.btn_settings.Name = "btn_settings";
+            this.btn_settings.Size = new System.Drawing.Size(30, 30);
+            this.btn_settings.TabIndex = 9;
+            this.btn_settings.Text = "S";
+            this.btn_settings.UseVisualStyleBackColor = true;
+            this.btn_settings.Click += new System.EventHandler(this.Btn_settings_Click);
+            // 
             // StaffNavBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_settings);
             this.Controls.Add(this.lbl_numMessages);
             this.Controls.Add(this.btn_checkout);
             this.Controls.Add(this.btn_checkIn);
@@ -179,5 +191,6 @@
         private System.Windows.Forms.Button btn_checkIn;
         private System.Windows.Forms.Button btn_checkout;
         private System.Windows.Forms.Label lbl_numMessages;
+        private System.Windows.Forms.Button btn_settings;
     }
 }

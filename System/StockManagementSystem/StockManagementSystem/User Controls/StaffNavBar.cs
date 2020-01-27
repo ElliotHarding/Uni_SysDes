@@ -15,12 +15,15 @@ namespace StockManagementSystem.Classes
     {
         BaseForm m_currentForm;
 
-        public StaffNavBar(BaseForm currentForm)
+        public StaffNavBar(BaseForm currentForm, bool isAdmin)
         {
             m_currentForm = currentForm;
             SetBounds(0, currentForm.Height - 100, currentForm.Width, 100);
 
             InitializeComponent();
+
+            if(!isAdmin)
+                btn_settings.Hide();
 
             if (currentForm.GetType() == typeof(ProductsPage))
             {
@@ -115,6 +118,11 @@ namespace StockManagementSystem.Classes
         private void btn_checkout_Click(object sender, EventArgs e)
         {
             m_currentForm.goToNextPage(SystemPage.CheckOut);
+        }
+
+        private void Btn_settings_Click(object sender, EventArgs e)
+        {
+            m_currentForm.goToNextPage(SystemPage.AdminSettings);
         }
     }
 }

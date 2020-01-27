@@ -25,7 +25,7 @@ namespace StockManagementSystem.Pages
             }
         }
 
-        public static void CheckMessages()
+        public static void checkMessages()
         {
             messages.Clear();
             string currentDate = DateTime.Now.AddDays(30).ToString("dd-MM-yyyy");

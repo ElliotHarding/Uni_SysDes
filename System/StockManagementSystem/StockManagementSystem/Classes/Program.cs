@@ -68,7 +68,7 @@ namespace StockManagementSystem
 
                 if(currentPage != null)
                 {
-                    Application.Run(new Invoices());
+                    Application.Run(new AdminSettings());
                     nextPage = currentPage.getNextPage();
                 }                
             }

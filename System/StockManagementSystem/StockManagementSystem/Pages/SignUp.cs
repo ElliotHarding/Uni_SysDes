@@ -19,10 +19,24 @@ namespace StockManagementSystem.Pages
             lbl_error.Text = "";
             lbl_error.Visible = false;
 
-            //Todo query database for departments & fill cb_department from callback
-            cb_department.Items.Add("Department 1");
-            cb_department.Items.Add("Department 2");
-            cb_department.Items.Add("Department 3");
+            DatabaseComms.getDepartments(getDepartmentsCallback);
+        }
+        private void getDepartmentsCallback(List<string> departments)
+        {
+            if (departments != null && departments.Count > 0)
+            {
+                cb_department.Invoke((Action)delegate {
+
+                    foreach (string department in departments)
+                    {
+                        cb_department.Items.Add(department);
+                    }
+                });
+            }
+            else
+            {
+                MessageBox.Show("Network connection error.", "Warning");
+            }
         }
 
         private void btn_signUp_Click(object sender, EventArgs e)

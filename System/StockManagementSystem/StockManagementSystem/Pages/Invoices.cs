@@ -12,6 +12,25 @@ namespace StockManagementSystem.Pages
         {
             InitializeComponent();
             addNavBar();
+
+            DatabaseComms.getDepartments(getDepartmentsCallback);
+        }
+        private void getDepartmentsCallback(List<string> departments)
+        {
+            if(departments != null && departments.Count > 0)
+            {
+                cmb_department.Invoke((Action)delegate {
+
+                    foreach(string department in departments)
+                    {
+                        cmb_department.Items.Add(department);
+                    }                    
+                });
+            }
+            else
+            {
+                MessageBox.Show("Network connection error.", "Warning");
+            }
         }
 
         const int m_rowInc = 30;
@@ -85,7 +104,6 @@ namespace StockManagementSystem.Pages
         public void removeElement(TransationRow t)
         {
             List<TransationRow> transationRows = new List<TransationRow>();
-            bool found = false;
             foreach(TransationRow tr in pnl_invoice.Controls)
             {
                 if(t != tr)

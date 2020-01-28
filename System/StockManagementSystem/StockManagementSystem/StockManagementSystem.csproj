@@ -104,6 +104,12 @@
     <Compile Include="Pages\ViewProduct.Designer.cs">
       <DependentUpon>ViewProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Controls\TextfieldRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\TextfieldRow.Designer.cs">
+      <DependentUpon>TextfieldRow.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Controls\TransationRow.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ViewProduct.resx">
       <DependentUpon>ViewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\TextfieldRow.resx">
+      <DependentUpon>TextfieldRow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\TransationRow.resx">
       <DependentUpon>TransationRow.cs</DependentUpon>

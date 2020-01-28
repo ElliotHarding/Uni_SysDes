@@ -722,5 +722,57 @@ namespace StockManagementSystem
                 }
             }).Start();
         }
+
+        public static async void getDepartments(Action<List<string>> callback)
+        {
+            new Task(() =>
+            {
+                try
+                {
+                    //Prep connection to database & query for user with given id
+                    SqlConnection connection = new SqlConnection(m_connectionString);
+                    SqlCommand command = new SqlCommand("SELECT * FROM DEPARTMENTS;", connection);
+
+                    //Execute connection
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    //Read results of query into list
+                    List<string> results = new List<string>();
+                    while (reader.Read())
+                        results.Add(reader["name"].ToString());
+
+                    connection.Close();
+                    callback(results);
+                }
+                catch (Exception e)
+                {
+                    callback(null);
+                }
+            }).Start();
+        }
+
+        public static async void setDepartments(List<string> departments, Action<bool> callback)
+        {
+            new Task(() =>
+            {
+                try
+                {
+                    SqlConnection connection = new SqlConnection(m_connectionString);
+                    SqlCommand command = new SqlCommand("DELETE DEPARTMENTS; INSERT INTO DEPARTMENTS (name) VALUES (" +
+                        string.Join(",", departments.ToArray())+");", connection);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+
+                    callback(true);
+                }
+                catch (Exception e)
+                {
+                    callback(false);
+                }
+            }).Start();
+        }
     }
 }

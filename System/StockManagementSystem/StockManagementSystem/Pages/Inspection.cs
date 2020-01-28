@@ -23,14 +23,13 @@ namespace StockManagementSystem.Pages
                 
         private void populatePanel()
         {
-            int spacing = 0;
-
-            foreach(Product product in products)
-            {
-                ProductRow productRow = new ProductRow();
-                productRow.Parent = pnl_inspection;
-                productRow.Location = new Point(0, spacing += 30);
-            }
+            //int spacing = 0;
+            //foreach(Product product in products)
+            //{
+            //    TransationRow productRow = new TransationRow();
+            //    productRow.Parent = pnl_inspection;
+            //    productRow.Location = new Point(0, spacing += 30);
+            //}
         }
 
         private void Btn_sendToStores_Click(object sender, EventArgs e)

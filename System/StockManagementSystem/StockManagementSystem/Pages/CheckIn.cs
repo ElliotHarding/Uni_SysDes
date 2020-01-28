@@ -12,7 +12,7 @@ namespace StockManagementSystem.Pages
 {
     public partial class CheckIn : BaseForm
     {
-        //log number with product taken out, that product has expierydate which can be applied to product if it were to be returned,
+        //log Nnumber with product taken out, that product has expierydate which can be applied to product if it were to be returned,
         //Quality which method to take in terms of inspecting prodouct or not when returning
 
         public CheckIn()

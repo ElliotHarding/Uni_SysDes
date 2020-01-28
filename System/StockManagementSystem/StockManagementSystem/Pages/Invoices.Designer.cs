@@ -38,14 +38,15 @@
             this.lbl_item = new System.Windows.Forms.Label();
             this.btn_add_row = new System.Windows.Forms.Button();
             this.btn_send_invoice = new System.Windows.Forms.Button();
+            this.btn_clear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // pnl_invoice
             // 
             this.pnl_invoice.AutoScroll = true;
-            this.pnl_invoice.Location = new System.Drawing.Point(118, 211);
+            this.pnl_invoice.Location = new System.Drawing.Point(42, 211);
             this.pnl_invoice.Name = "pnl_invoice";
-            this.pnl_invoice.Size = new System.Drawing.Size(772, 160);
+            this.pnl_invoice.Size = new System.Drawing.Size(938, 296);
             this.pnl_invoice.TabIndex = 39;
             // 
             // btn_create_from_log
@@ -56,6 +57,7 @@
             this.btn_create_from_log.TabIndex = 38;
             this.btn_create_from_log.Text = "Create From Log";
             this.btn_create_from_log.UseVisualStyleBackColor = true;
+            this.btn_create_from_log.Click += new System.EventHandler(this.Btn_create_from_log_Click);
             // 
             // cmb_department
             // 
@@ -118,6 +120,7 @@
             this.btn_add_row.TabIndex = 41;
             this.btn_add_row.Text = "Add Row";
             this.btn_add_row.UseVisualStyleBackColor = true;
+            this.btn_add_row.Click += new System.EventHandler(this.Btn_add_row_Click);
             // 
             // btn_send_invoice
             // 
@@ -127,12 +130,24 @@
             this.btn_send_invoice.TabIndex = 40;
             this.btn_send_invoice.Text = "Create and Send Invoice";
             this.btn_send_invoice.UseVisualStyleBackColor = true;
+            this.btn_send_invoice.Click += new System.EventHandler(this.Btn_send_invoice_Click);
+            // 
+            // btn_clear
+            // 
+            this.btn_clear.Location = new System.Drawing.Point(803, 186);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(75, 23);
+            this.btn_clear.TabIndex = 46;
+            this.btn_clear.Text = "Clear";
+            this.btn_clear.UseVisualStyleBackColor = true;
+            this.btn_clear.Click += new System.EventHandler(this.Btn_clear_Click);
             // 
             // Invoices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 681);
+            this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.pnl_invoice);
             this.Controls.Add(this.btn_create_from_log);
             this.Controls.Add(this.cmb_department);
@@ -168,5 +183,6 @@
         private System.Windows.Forms.Label lbl_item;
         private System.Windows.Forms.Button btn_add_row;
         private System.Windows.Forms.Button btn_send_invoice;
+        private System.Windows.Forms.Button btn_clear;
     }
 }

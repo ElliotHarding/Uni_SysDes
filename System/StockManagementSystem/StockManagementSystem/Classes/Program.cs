@@ -37,7 +37,7 @@ namespace StockManagementSystem
                         currentPage = new SignUp();
                         break;
                     case SystemPage.CheckIn:
-                        currentPage = new CheckIn();
+                        currentPage = new u();
                         break;
                     case SystemPage.ExpectedDelivery:
                         currentPage = new ExpectedDelivery();

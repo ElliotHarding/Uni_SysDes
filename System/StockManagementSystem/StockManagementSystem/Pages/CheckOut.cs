@@ -19,6 +19,7 @@ namespace StockManagementSystem.Pages
         {
             InitializeComponent();
             addNavBar();
+           /* 
             Product product = new Product("test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test");
             Product jack = new Product("jack", "jack", "jack", "jack", "jack", "jack", "jack", "jack", "jack", "jack", "jack", "jack", "jack");
             Product bomb = new Product("bomb", "bomb", "bomb", "bomb", "bomb", "bomb", "bomb", "bomb", "bomb", "bomb", "bomb", "bomb", "bomb");
@@ -28,6 +29,7 @@ namespace StockManagementSystem.Pages
             products.Add(product);
             products.Add(bomb);
             products.Add(jack);
+            */
             populate();
 
 

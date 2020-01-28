@@ -42,7 +42,7 @@ namespace StockManagementSystem.Classes
             {
                 btn_newShipment.BackColor = Color.Green;
             }
-            else if (currentForm.GetType() == typeof(CheckIn))
+            else if (currentForm.GetType() == typeof(u))
             {
                 btn_checkIn.BackColor = Color.Green;
             }

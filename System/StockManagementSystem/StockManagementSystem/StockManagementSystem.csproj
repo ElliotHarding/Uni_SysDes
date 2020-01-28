@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -85,6 +86,12 @@
     </Compile>
     <Compile Include="Pages\ViewProduct.Designer.cs">
       <DependentUpon>ViewProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\CheckInItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\CheckInItem.Designer.cs">
+      <DependentUpon>CheckInItem.cs</DependentUpon>
     </Compile>
     <Compile Include="User Controls\CheckoutItem.cs">
       <SubType>UserControl</SubType>
@@ -186,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ViewProduct.resx">
       <DependentUpon>ViewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\CheckInItem.resx">
+      <DependentUpon>CheckInItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\CheckoutItem.resx">
       <DependentUpon>CheckoutItem.cs</DependentUpon>

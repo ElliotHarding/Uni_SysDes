@@ -35,10 +35,13 @@ namespace StockManagementSystem.Pages
 
         private static void ExpiringProducts(List<Product> products)
         {
-            foreach(Product p in products)
+            if(products != null)
             {
-                messages.Add(p.name + " is about to expire : " + p.expiryDate);
-            }
+                foreach (Product p in products)
+                {
+                    messages.Add(p.name + " is about to expire : " + p.expiryDate);
+                }
+            }            
         }
     }
 }

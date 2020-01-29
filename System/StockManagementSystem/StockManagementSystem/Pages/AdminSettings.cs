@@ -40,7 +40,10 @@ namespace StockManagementSystem.Pages
             }
             else
             {
-                addNewDepartmentRow();
+                pnl_departments.Invoke((Action)delegate
+                {
+                    addNewDepartmentRow();
+                });                
             }
             m_bGettingDepartments = false;
         }

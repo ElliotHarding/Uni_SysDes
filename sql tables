@@ -73,3 +73,7 @@ CREATE TABLE TRANSACTIONS (
 	nNumber varchar(32),
 	department varchar(32)
 );
+
+CREATE TABLE DEPARTMENTS {
+	name varchar(32)
+};

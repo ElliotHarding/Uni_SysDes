@@ -759,8 +759,8 @@ namespace StockManagementSystem
                 try
                 {
                     SqlConnection connection = new SqlConnection(m_connectionString);
-                    SqlCommand command = new SqlCommand("DELETE DEPARTMENTS; INSERT INTO DEPARTMENTS (name) VALUES (" +
-                        string.Join(",", departments.ToArray())+");", connection);
+                    SqlCommand command = new SqlCommand("DELETE DEPARTMENTS; INSERT INTO DEPARTMENTS (name) VALUES ('" +
+                        string.Join("'),('", departments.ToArray())+"');", connection);
 
                     connection.Open();
                     command.ExecuteNonQuery();

@@ -45,6 +45,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_nNumber = new System.Windows.Forms.Label();
             this.lbl_ProductId = new System.Windows.Forms.Label();
+            this.lbl_total = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // pnl_invoice
@@ -120,7 +121,7 @@
             // 
             // btn_add_row
             // 
-            this.btn_add_row.Location = new System.Drawing.Point(898, 537);
+            this.btn_add_row.Location = new System.Drawing.Point(130, 537);
             this.btn_add_row.Name = "btn_add_row";
             this.btn_add_row.Size = new System.Drawing.Size(82, 22);
             this.btn_add_row.TabIndex = 41;
@@ -140,7 +141,7 @@
             // 
             // btn_clear
             // 
-            this.btn_clear.Location = new System.Drawing.Point(810, 537);
+            this.btn_clear.Location = new System.Drawing.Point(42, 537);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(82, 23);
             this.btn_clear.TabIndex = 46;
@@ -198,11 +199,21 @@
             this.lbl_ProductId.TabIndex = 52;
             this.lbl_ProductId.Text = "Product Id";
             // 
+            // lbl_total
+            // 
+            this.lbl_total.AutoSize = true;
+            this.lbl_total.Location = new System.Drawing.Point(881, 542);
+            this.lbl_total.Name = "lbl_total";
+            this.lbl_total.Size = new System.Drawing.Size(92, 13);
+            this.lbl_total.TabIndex = 53;
+            this.lbl_total.Text = "Total Charge :  £0";
+            // 
             // Invoices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 681);
+            this.Controls.Add(this.lbl_total);
             this.Controls.Add(this.lbl_ProductId);
             this.Controls.Add(this.lbl_nNumber);
             this.Controls.Add(this.label2);
@@ -252,5 +263,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_nNumber;
         private System.Windows.Forms.Label lbl_ProductId;
+        private System.Windows.Forms.Label lbl_total;
     }
 }

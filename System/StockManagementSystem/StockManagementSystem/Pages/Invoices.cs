@@ -16,6 +16,7 @@ namespace StockManagementSystem.Pages
 
             DatabaseComms.getDepartments(getDepartmentsCallback);
         }
+
         private void getDepartmentsCallback(List<string> departments)
         {
             if(departments != null && departments.Count > 0)
@@ -108,10 +109,20 @@ namespace StockManagementSystem.Pages
             clearElements();
         }
 
-        void clearElements()
+        private void clearElements()
         {
             m_rowIndex = 0;
             pnl_invoice.Controls.Clear();
+        }
+
+        public void calculateTotalCharge()
+        {
+            int charge = 0;
+            foreach (TransationRow tr in pnl_invoice.Controls)
+            {
+                charge += tr.getCharge();
+            }
+            lbl_total.Text = "Total Charge : £" + charge.ToString();
         }
 
         public void removeElement(TransationRow t)
@@ -135,6 +146,8 @@ namespace StockManagementSystem.Pages
                 transationRow.Location = new Point(0, m_rowIndex * m_rowInc);
                 m_rowIndex++;
             }
+
+            calculateTotalCharge();
 
             this.ResumeLayout();
         }

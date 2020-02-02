@@ -88,6 +88,7 @@
             this.txt_price.Name = "txt_price";
             this.txt_price.Size = new System.Drawing.Size(50, 20);
             this.txt_price.TabIndex = 45;
+            this.txt_price.TextChanged += new System.EventHandler(this.txt_price_TextChanged);
             // 
             // TransationRow
             // 

@@ -24,7 +24,7 @@ namespace StockManagementSystem.User_Controls
 
             txt_name.Text = "todo";
             txt_nNumber.Text = transation.nNumber;
-            txt_price.Text = "todo";
+            txt_price.Text = "todo" + "£";
             txt_quantity.Text = transation.quantity;
             txt_productId.Text = transation.productId;
             DateTime dt;
@@ -43,6 +43,19 @@ namespace StockManagementSystem.User_Controls
         {
             Transation t = new Transation(m_transation.id, dateTime.Text, txt_productId.Text, txt_quantity.Text, txt_nNumber.Text, m_transation.department);
             return t;
+        }
+
+        public int getCharge()
+        {
+            int charge;
+            if (Int32.TryParse(txt_price.Text.Replace("£",""), out charge))
+                return charge;
+            return 0;
+        }
+
+        private void txt_price_TextChanged(object sender, EventArgs e)
+        {
+            m_invoicesPage.calculateTotalCharge();
         }
     }
 }

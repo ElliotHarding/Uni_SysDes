@@ -49,14 +49,14 @@
             // 
             // txt_quantity
             // 
-            this.txt_quantity.Location = new System.Drawing.Point(804, 5);
+            this.txt_quantity.Location = new System.Drawing.Point(784, 5);
             this.txt_quantity.Name = "txt_quantity";
-            this.txt_quantity.Size = new System.Drawing.Size(40, 20);
+            this.txt_quantity.Size = new System.Drawing.Size(50, 20);
             this.txt_quantity.TabIndex = 37;
             // 
             // dateTime
             // 
-            this.dateTime.Location = new System.Drawing.Point(663, 5);
+            this.dateTime.Location = new System.Drawing.Point(643, 5);
             this.dateTime.Name = "dateTime";
             this.dateTime.Size = new System.Drawing.Size(135, 20);
             this.dateTime.TabIndex = 41;
@@ -84,9 +84,9 @@
             // 
             // txt_price
             // 
-            this.txt_price.Location = new System.Drawing.Point(850, 5);
+            this.txt_price.Location = new System.Drawing.Point(840, 5);
             this.txt_price.Name = "txt_price";
-            this.txt_price.Size = new System.Drawing.Size(40, 20);
+            this.txt_price.Size = new System.Drawing.Size(50, 20);
             this.txt_price.TabIndex = 45;
             // 
             // TransationRow

@@ -62,13 +62,24 @@ namespace StockManagementSystem.Pages
 
         private void Btn_create_from_log_Click(object sender, EventArgs e)
         {
-            if(cmb_department.Text != null)
+            clearElements();
+            if (cmb_department.Text != null)
             {
-                DatabaseComms.getTransations(transactionsCallback, "WHERE department = '" + cmb_department.Text + "'");
+                DateTime fromDate = dateFrom.Value;
+                DateTime toDate = dateTo.Value;
+
+                if (fromDate != null && toDate != null)
+                {                
+                    DatabaseComms.getTransations(transactionsCallback, "department = '" + cmb_department.Text + "' AND date > '" + fromDate.ToString("yyyy-MM-dd") + "' AND date < '" + toDate.ToString("yyyy-MM-dd") + "'");
+                }
+                else
+                {
+                    MessageBox.Show("Please make sure dates are correct.", "Warning");
+                }               
             }
             else
             {
-                MessageBox.Show("No transactions found matching the deparment selected", "Warning");
+                MessageBox.Show("No transactions found matching the requirements selected", "Warning");
             }            
         }
 

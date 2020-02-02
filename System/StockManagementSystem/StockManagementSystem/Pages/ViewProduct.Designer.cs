@@ -46,6 +46,7 @@
             this.btn_saveChanges = new System.Windows.Forms.Button();
             this.lbl_supplierCode = new System.Windows.Forms.Label();
             this.btn_editName = new System.Windows.Forms.Button();
+            this.btn_removeProduct = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
@@ -209,7 +210,7 @@
             // lbl_supplierCode
             // 
             this.lbl_supplierCode.AutoSize = true;
-            this.lbl_supplierCode.Location = new System.Drawing.Point(660, 160);
+            this.lbl_supplierCode.Location = new System.Drawing.Point(579, 160);
             this.lbl_supplierCode.Name = "lbl_supplierCode";
             this.lbl_supplierCode.Size = new System.Drawing.Size(29, 13);
             this.lbl_supplierCode.TabIndex = 17;
@@ -225,11 +226,21 @@
             this.btn_editName.UseVisualStyleBackColor = true;
             this.btn_editName.Click += new System.EventHandler(this.btn_editName_Click);
             // 
+            // btn_removeProduct
+            // 
+            this.btn_removeProduct.Location = new System.Drawing.Point(401, 189);
+            this.btn_removeProduct.Name = "btn_removeProduct";
+            this.btn_removeProduct.Size = new System.Drawing.Size(132, 23);
+            this.btn_removeProduct.TabIndex = 19;
+            this.btn_removeProduct.Text = "Remove Product";
+            this.btn_removeProduct.UseVisualStyleBackColor = true;
+            // 
             // ViewProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 681);
+            this.Controls.Add(this.btn_removeProduct);
             this.Controls.Add(this.btn_editName);
             this.Controls.Add(this.lbl_supplierCode);
             this.Controls.Add(this.btn_saveChanges);
@@ -284,5 +295,6 @@
         private System.Windows.Forms.Button btn_saveChanges;
         private System.Windows.Forms.Label lbl_supplierCode;
         private System.Windows.Forms.Button btn_editName;
+        private System.Windows.Forms.Button btn_removeProduct;
     }
 }

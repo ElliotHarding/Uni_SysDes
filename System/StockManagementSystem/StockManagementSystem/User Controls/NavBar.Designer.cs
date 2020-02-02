@@ -32,12 +32,13 @@
             this.btn_products = new System.Windows.Forms.Button();
             this.btn_checkOut = new System.Windows.Forms.Button();
             this.lbl_messageCount = new System.Windows.Forms.Label();
+            this.btn_settings = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_messages
             // 
             this.btn_messages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_messages.Location = new System.Drawing.Point(183, 5);
+            this.btn_messages.Location = new System.Drawing.Point(73, 6);
             this.btn_messages.Name = "btn_messages";
             this.btn_messages.Size = new System.Drawing.Size(220, 41);
             this.btn_messages.TabIndex = 3;
@@ -49,7 +50,7 @@
             // btn_products
             // 
             this.btn_products.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_products.Location = new System.Drawing.Point(402, 5);
+            this.btn_products.Location = new System.Drawing.Point(292, 6);
             this.btn_products.Name = "btn_products";
             this.btn_products.Size = new System.Drawing.Size(220, 41);
             this.btn_products.TabIndex = 4;
@@ -61,7 +62,7 @@
             // btn_checkOut
             // 
             this.btn_checkOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_checkOut.Location = new System.Drawing.Point(621, 5);
+            this.btn_checkOut.Location = new System.Drawing.Point(511, 6);
             this.btn_checkOut.Name = "btn_checkOut";
             this.btn_checkOut.Size = new System.Drawing.Size(220, 41);
             this.btn_checkOut.TabIndex = 5;
@@ -74,16 +75,29 @@
             // 
             this.lbl_messageCount.AutoSize = true;
             this.lbl_messageCount.ForeColor = System.Drawing.Color.Red;
-            this.lbl_messageCount.Location = new System.Drawing.Point(389, 8);
+            this.lbl_messageCount.Location = new System.Drawing.Point(279, 9);
             this.lbl_messageCount.Name = "lbl_messageCount";
             this.lbl_messageCount.Size = new System.Drawing.Size(13, 13);
             this.lbl_messageCount.TabIndex = 6;
             this.lbl_messageCount.Text = "1";
             // 
+            // btn_settings
+            // 
+            this.btn_settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_settings.Location = new System.Drawing.Point(730, 6);
+            this.btn_settings.Name = "btn_settings";
+            this.btn_settings.Size = new System.Drawing.Size(220, 41);
+            this.btn_settings.TabIndex = 7;
+            this.btn_settings.TabStop = false;
+            this.btn_settings.Text = "Settings";
+            this.btn_settings.UseVisualStyleBackColor = true;
+            this.btn_settings.Click += new System.EventHandler(this.btn_settings_Click);
+            // 
             // NavBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_settings);
             this.Controls.Add(this.lbl_messageCount);
             this.Controls.Add(this.btn_checkOut);
             this.Controls.Add(this.btn_products);
@@ -103,5 +117,6 @@
         private System.Windows.Forms.Button btn_products;
         private System.Windows.Forms.Button btn_checkOut;
         private System.Windows.Forms.Label lbl_messageCount;
+        private System.Windows.Forms.Button btn_settings;
     }
 }

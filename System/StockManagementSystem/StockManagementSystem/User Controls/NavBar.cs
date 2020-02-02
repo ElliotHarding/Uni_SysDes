@@ -34,23 +34,15 @@ namespace StockManagementSystem.Classes
             {
                 btn_checkOut.BackColor = Color.Green;
             }
-
-            if (currentForm.GetType() != typeof(Messages))
-                setNumMessages();
-            else
-                lbl_messageCount.Hide();
-        }
-
-        private void setNumMessages()
-        {
-            if(Messages.messages.Count > 0)
+            else if(currentForm.GetType() == typeof(Settings))
             {
-                lbl_messageCount.Text = Messages.messages.Count.ToString();
-            } 
-            else
-            {
-                lbl_messageCount.Hide();
+                btn_settings.BackColor = Color.Green;
             }
+
+            if (currentForm.GetType() != typeof(Messages) && Messages.messages.Count > 0)
+                lbl_messageCount.Text = Messages.messages.Count.ToString();
+            else
+                lbl_messageCount.Hide();
         }
 
         private void btn_messages_Click(object sender, EventArgs e)
@@ -66,6 +58,11 @@ namespace StockManagementSystem.Classes
         private void btn_checkout_Click(object sender, EventArgs e)
         {
             m_currentForm.goToNextPage(SystemPage.CheckOut);
+        }
+
+        private void btn_settings_Click(object sender, EventArgs e)
+        {
+            m_currentForm.goToNextPage(SystemPage.Settings);
         }
     }
 }

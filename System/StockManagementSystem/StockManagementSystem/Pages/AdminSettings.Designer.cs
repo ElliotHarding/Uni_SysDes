@@ -39,6 +39,11 @@
             this.btn_updateDepartments = new System.Windows.Forms.Button();
             this.pnl_departments = new System.Windows.Forms.Panel();
             this.btn_addDepartment = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tb_newPassword2 = new System.Windows.Forms.TextBox();
+            this.tb_newPassword1 = new System.Windows.Forms.TextBox();
+            this.btn_setPassword = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cb_privilege
@@ -152,11 +157,60 @@
             this.btn_addDepartment.UseVisualStyleBackColor = true;
             this.btn_addDepartment.Click += new System.EventHandler(this.Btn_addDepartment_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(259, 124);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 13);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "New Password";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(259, 75);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 13);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "New Password";
+            // 
+            // tb_newPassword2
+            // 
+            this.tb_newPassword2.Location = new System.Drawing.Point(259, 140);
+            this.tb_newPassword2.Name = "tb_newPassword2";
+            this.tb_newPassword2.Size = new System.Drawing.Size(163, 20);
+            this.tb_newPassword2.TabIndex = 31;
+            this.tb_newPassword2.UseSystemPasswordChar = true;
+            // 
+            // tb_newPassword1
+            // 
+            this.tb_newPassword1.Location = new System.Drawing.Point(259, 91);
+            this.tb_newPassword1.Name = "tb_newPassword1";
+            this.tb_newPassword1.Size = new System.Drawing.Size(163, 20);
+            this.tb_newPassword1.TabIndex = 30;
+            this.tb_newPassword1.UseSystemPasswordChar = true;
+            // 
+            // btn_setPassword
+            // 
+            this.btn_setPassword.Location = new System.Drawing.Point(281, 176);
+            this.btn_setPassword.Name = "btn_setPassword";
+            this.btn_setPassword.Size = new System.Drawing.Size(118, 23);
+            this.btn_setPassword.TabIndex = 29;
+            this.btn_setPassword.Text = "Set New Password";
+            this.btn_setPassword.UseVisualStyleBackColor = true;
+            this.btn_setPassword.Click += new System.EventHandler(this.btn_setPassword_Click);
+            // 
             // AdminSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 681);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.tb_newPassword2);
+            this.Controls.Add(this.tb_newPassword1);
+            this.Controls.Add(this.btn_setPassword);
             this.Controls.Add(this.btn_addDepartment);
             this.Controls.Add(this.pnl_departments);
             this.Controls.Add(this.btn_updateDepartments);
@@ -193,5 +247,10 @@
         private System.Windows.Forms.Button btn_updateDepartments;
         private System.Windows.Forms.Panel pnl_departments;
         private System.Windows.Forms.Button btn_addDepartment;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tb_newPassword2;
+        private System.Windows.Forms.TextBox tb_newPassword1;
+        private System.Windows.Forms.Button btn_setPassword;
     }
 }

@@ -20,7 +20,7 @@ namespace StockManagementSystem.Pages
             lbl_currentStock.Text = "Current Stock : " + product.quantity;
             lbl_price.Text = "Price : " + product.price + "£";
             lbl_vat.Text = "VAT : " + product.vat + "£";
-            lbl_supplierCode.Text = "todo"; //product.supplierCode....
+            lbl_supplierCode.Text = "Supplier Id : " + product.externalId;
 
             Bitmap bitmap = product.getBitmap();
             if (bitmap != null)
@@ -281,9 +281,8 @@ namespace StockManagementSystem.Pages
 
                 if (dialogResult == DialogResult.OK)
                 {
-                    //Todo verify && add supplierCode
-                    string supplierCode = userInputStringDialog.result;
-                    //product.
+                    product.externalId = userInputStringDialog.result;
+                    lbl_supplierCode.Text = "Supplier Id : " + product.externalId;
                 }
             }
         }

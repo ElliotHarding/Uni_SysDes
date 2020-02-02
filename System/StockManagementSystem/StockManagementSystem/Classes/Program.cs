@@ -1,8 +1,5 @@
 ﻿using StockManagementSystem.Pages;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StockManagementSystem
@@ -59,6 +56,15 @@ namespace StockManagementSystem
                         break;
                     case SystemPage.Settings:
                         currentPage = new Settings();
+                        break;
+                    case SystemPage.ShipmentUpdateStock:
+                        currentPage = new ShipmentUpdateStock();
+                        break;
+                    case SystemPage.ShipmentNewProducts:
+                        currentPage = new ShipmentNewProducts();
+                        break;
+                    case SystemPage.ShipmentDetails:
+                        currentPage = new ShipmentDetails();
                         break;
 
                     //End cases:

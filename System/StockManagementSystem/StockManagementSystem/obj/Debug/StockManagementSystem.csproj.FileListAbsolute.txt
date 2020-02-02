@@ -126,3 +126,6 @@ C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockMa
 C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.TextfieldRow.resources
 C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.TransationRow.resources
 C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Settings.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ShipmentDetails.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ShipmentNewProducts.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ShipmentUpdateStock.resources

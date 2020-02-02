@@ -1,9 +1,4 @@
 ﻿using StockManagementSystem.Classes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StockManagementSystem.Pages
@@ -22,6 +17,7 @@ namespace StockManagementSystem.Pages
         ExpectedDelivery,
         NewShipment,
         AdminSettings,
+        Settings,
         EndPage
     }
 
@@ -66,6 +62,11 @@ namespace StockManagementSystem.Pages
         public SystemPage getNextPage()
         {
             return m_nextPage;
+        }
+
+        protected void notifyUser(string error, string title = "Warning")
+        {
+            MessageBox.Show(error, title);
         }
     }
 }

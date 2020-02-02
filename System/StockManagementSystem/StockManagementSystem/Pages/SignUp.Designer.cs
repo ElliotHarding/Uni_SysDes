@@ -36,13 +36,12 @@
             this.txt_username = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cb_department = new System.Windows.Forms.ComboBox();
-            this.lbl_error = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_signUp
             // 
             this.btn_signUp.Location = new System.Drawing.Point(289, 466);
-            this.btn_signUp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_signUp.Margin = new System.Windows.Forms.Padding(2);
             this.btn_signUp.Name = "btn_signUp";
             this.btn_signUp.Size = new System.Drawing.Size(64, 26);
             this.btn_signUp.TabIndex = 4;
@@ -53,7 +52,7 @@
             // btn_back
             // 
             this.btn_back.Location = new System.Drawing.Point(9, 10);
-            this.btn_back.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_back.Margin = new System.Windows.Forms.Padding(2);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(64, 26);
             this.btn_back.TabIndex = 5;
@@ -84,7 +83,7 @@
             // txt_password
             // 
             this.txt_password.Location = new System.Drawing.Point(286, 379);
-            this.txt_password.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_password.Margin = new System.Windows.Forms.Padding(2);
             this.txt_password.Name = "txt_password";
             this.txt_password.PasswordChar = '*';
             this.txt_password.Size = new System.Drawing.Size(226, 20);
@@ -94,7 +93,7 @@
             // txt_username
             // 
             this.txt_username.Location = new System.Drawing.Point(286, 329);
-            this.txt_username.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_username.Margin = new System.Windows.Forms.Padding(2);
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(226, 20);
             this.txt_username.TabIndex = 10;
@@ -113,28 +112,16 @@
             // 
             this.cb_department.FormattingEnabled = true;
             this.cb_department.Location = new System.Drawing.Point(286, 433);
-            this.cb_department.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_department.Margin = new System.Windows.Forms.Padding(2);
             this.cb_department.Name = "cb_department";
             this.cb_department.Size = new System.Drawing.Size(226, 21);
             this.cb_department.TabIndex = 15;
-            // 
-            // lbl_error
-            // 
-            this.lbl_error.AutoSize = true;
-            this.lbl_error.ForeColor = System.Drawing.Color.Red;
-            this.lbl_error.Location = new System.Drawing.Point(357, 473);
-            this.lbl_error.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_error.Name = "lbl_error";
-            this.lbl_error.Size = new System.Drawing.Size(28, 13);
-            this.lbl_error.TabIndex = 16;
-            this.lbl_error.Text = "error";
             // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 681);
-            this.Controls.Add(this.lbl_error);
             this.Controls.Add(this.cb_department);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -143,7 +130,7 @@
             this.Controls.Add(this.txt_username);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_signUp);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1024, 720);
             this.MinimizeBox = false;
@@ -166,6 +153,5 @@
         private System.Windows.Forms.TextBox txt_username;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cb_department;
-        private System.Windows.Forms.Label lbl_error;
     }
 }

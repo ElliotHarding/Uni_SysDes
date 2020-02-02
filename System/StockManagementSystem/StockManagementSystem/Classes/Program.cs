@@ -57,6 +57,9 @@ namespace StockManagementSystem
                     case SystemPage.AdminSettings:
                         currentPage = new AdminSettings();
                         break;
+                    case SystemPage.Settings:
+                        currentPage = new Settings();
+                        break;
 
                     //End cases:
                     case SystemPage.EndPage:                        

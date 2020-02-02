@@ -1,4 +1,5 @@
-﻿using StockManagementSystem.User_Controls;
+﻿using StockManagementSystem.Classes;
+using StockManagementSystem.User_Controls;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -29,7 +30,7 @@ namespace StockManagementSystem.Pages
             }
             else
             {
-                MessageBox.Show("Network connection error.", "Warning");
+                notifyUser("Network connection error.");
             }
         }
 
@@ -50,6 +51,7 @@ namespace StockManagementSystem.Pages
         private void Btn_send_invoice_Click(object sender, EventArgs e)
         {
             //Todo
+            //Tools.sendEmail("", );
         }
 
         private void Btn_add_row_Click(object sender, EventArgs e)
@@ -74,12 +76,12 @@ namespace StockManagementSystem.Pages
                 }
                 else
                 {
-                    MessageBox.Show("Please make sure dates are correct.", "Warning");
+                    notifyUser("Please make sure dates are correct.", "Warning");
                 }               
             }
             else
             {
-                MessageBox.Show("No transactions found matching the requirements selected", "Warning");
+                notifyUser("No transactions found matching the requirements selected", "Warning");
             }            
         }
 
@@ -87,7 +89,7 @@ namespace StockManagementSystem.Pages
         {
             if (transations == null || transations.Count == 0)
             {
-                MessageBox.Show("No transactions found matching the deparment selected", "Warning");
+                notifyUser("No transactions found matching the deparment selected", "Warning");
             }
             else
             {

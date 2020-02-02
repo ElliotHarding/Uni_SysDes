@@ -11,6 +11,12 @@ namespace StockManagementSystem.Classes
             var md5 = new MD5CryptoServiceProvider();
             var md5data = md5.ComputeHash(Encoding.ASCII.GetBytes(password));
             return Convert.ToBase64String(md5data);
-        }       
+        }
+        
+        public static bool sendEmail(string recipient, string[] contents)
+        {
+            //todo
+            return false;
+        }
     }
 }

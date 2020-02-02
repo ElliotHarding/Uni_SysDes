@@ -44,9 +44,8 @@
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.lbl_currentStock = new System.Windows.Forms.Label();
             this.btn_saveChanges = new System.Windows.Forms.Button();
-            this.lbl_uploadError = new System.Windows.Forms.Label();
-            this.lbl_CheckInOutError = new System.Windows.Forms.Label();
             this.lbl_supplierCode = new System.Windows.Forms.Label();
+            this.btn_editName = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
@@ -54,7 +53,7 @@
             // 
             // btn_editMapLocation
             // 
-            this.btn_editMapLocation.Location = new System.Drawing.Point(537, 247);
+            this.btn_editMapLocation.Location = new System.Drawing.Point(644, 247);
             this.btn_editMapLocation.Name = "btn_editMapLocation";
             this.btn_editMapLocation.Size = new System.Drawing.Size(111, 23);
             this.btn_editMapLocation.TabIndex = 13;
@@ -64,7 +63,7 @@
             // 
             // btn_updateSupplierCode
             // 
-            this.btn_updateSupplierCode.Location = new System.Drawing.Point(553, 179);
+            this.btn_updateSupplierCode.Location = new System.Drawing.Point(660, 179);
             this.btn_updateSupplierCode.Name = "btn_updateSupplierCode";
             this.btn_updateSupplierCode.Size = new System.Drawing.Size(132, 23);
             this.btn_updateSupplierCode.TabIndex = 11;
@@ -74,7 +73,7 @@
             // 
             // btn_changeStockAmount
             // 
-            this.btn_changeStockAmount.Location = new System.Drawing.Point(415, 160);
+            this.btn_changeStockAmount.Location = new System.Drawing.Point(565, 37);
             this.btn_changeStockAmount.Name = "btn_changeStockAmount";
             this.btn_changeStockAmount.Size = new System.Drawing.Size(132, 23);
             this.btn_changeStockAmount.TabIndex = 10;
@@ -84,14 +83,14 @@
             // 
             // txt_actionQuantitiy
             // 
-            this.txt_actionQuantitiy.Location = new System.Drawing.Point(224, 221);
+            this.txt_actionQuantitiy.Location = new System.Drawing.Point(321, 248);
             this.txt_actionQuantitiy.Name = "txt_actionQuantitiy";
             this.txt_actionQuantitiy.Size = new System.Drawing.Size(100, 20);
             this.txt_actionQuantitiy.TabIndex = 9;
             // 
             // btn_checkout
             // 
-            this.btn_checkout.Location = new System.Drawing.Point(249, 247);
+            this.btn_checkout.Location = new System.Drawing.Point(428, 247);
             this.btn_checkout.Name = "btn_checkout";
             this.btn_checkout.Size = new System.Drawing.Size(93, 23);
             this.btn_checkout.TabIndex = 8;
@@ -101,7 +100,7 @@
             // 
             // btn_checkIn
             // 
-            this.btn_checkIn.Location = new System.Drawing.Point(149, 247);
+            this.btn_checkIn.Location = new System.Drawing.Point(527, 247);
             this.btn_checkIn.Name = "btn_checkIn";
             this.btn_checkIn.Size = new System.Drawing.Size(93, 23);
             this.btn_checkIn.TabIndex = 7;
@@ -112,7 +111,7 @@
             // lbl_quantitiy
             // 
             this.lbl_quantitiy.AutoSize = true;
-            this.lbl_quantitiy.Location = new System.Drawing.Point(164, 224);
+            this.lbl_quantitiy.Location = new System.Drawing.Point(261, 251);
             this.lbl_quantitiy.Name = "lbl_quantitiy";
             this.lbl_quantitiy.Size = new System.Drawing.Size(54, 13);
             this.lbl_quantitiy.TabIndex = 6;
@@ -121,7 +120,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.lbl_productInfo);
-            this.panel1.Location = new System.Drawing.Point(261, 61);
+            this.panel1.Location = new System.Drawing.Point(368, 61);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(424, 92);
             this.panel1.TabIndex = 5;
@@ -137,7 +136,7 @@
             // 
             // btn_editInfo
             // 
-            this.btn_editInfo.Location = new System.Drawing.Point(261, 160);
+            this.btn_editInfo.Location = new System.Drawing.Point(368, 160);
             this.btn_editInfo.Name = "btn_editInfo";
             this.btn_editInfo.Size = new System.Drawing.Size(93, 23);
             this.btn_editInfo.TabIndex = 4;
@@ -149,7 +148,7 @@
             // 
             this.lbl_productName.AutoSize = true;
             this.lbl_productName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_productName.Location = new System.Drawing.Point(262, 38);
+            this.lbl_productName.Location = new System.Drawing.Point(369, 38);
             this.lbl_productName.Name = "lbl_productName";
             this.lbl_productName.Size = new System.Drawing.Size(57, 20);
             this.lbl_productName.TabIndex = 2;
@@ -157,7 +156,7 @@
             // 
             // btn_editPicture
             // 
-            this.btn_editPicture.Location = new System.Drawing.Point(112, 160);
+            this.btn_editPicture.Location = new System.Drawing.Point(219, 160);
             this.btn_editPicture.Name = "btn_editPicture";
             this.btn_editPicture.Size = new System.Drawing.Size(75, 23);
             this.btn_editPicture.TabIndex = 1;
@@ -168,7 +167,7 @@
             // pictureBoxMap
             // 
             this.pictureBoxMap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxMap.Location = new System.Drawing.Point(148, 276);
+            this.pictureBoxMap.Location = new System.Drawing.Point(255, 276);
             this.pictureBoxMap.Name = "pictureBoxMap";
             this.pictureBoxMap.Size = new System.Drawing.Size(500, 300);
             this.pictureBoxMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -178,7 +177,7 @@
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(112, 37);
+            this.pictureBox.Location = new System.Drawing.Point(219, 37);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(143, 116);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -188,7 +187,7 @@
             // lbl_currentStock
             // 
             this.lbl_currentStock.AutoSize = true;
-            this.lbl_currentStock.Location = new System.Drawing.Point(596, 43);
+            this.lbl_currentStock.Location = new System.Drawing.Point(703, 43);
             this.lbl_currentStock.Name = "lbl_currentStock";
             this.lbl_currentStock.Size = new System.Drawing.Size(78, 13);
             this.lbl_currentStock.TabIndex = 4;
@@ -196,7 +195,7 @@
             // 
             // btn_saveChanges
             // 
-            this.btn_saveChanges.Location = new System.Drawing.Point(354, 582);
+            this.btn_saveChanges.Location = new System.Drawing.Point(461, 582);
             this.btn_saveChanges.Name = "btn_saveChanges";
             this.btn_saveChanges.Size = new System.Drawing.Size(89, 23);
             this.btn_saveChanges.TabIndex = 14;
@@ -204,43 +203,32 @@
             this.btn_saveChanges.UseVisualStyleBackColor = true;
             this.btn_saveChanges.Click += new System.EventHandler(this.btn_saveChanges_Click);
             // 
-            // lbl_uploadError
-            // 
-            this.lbl_uploadError.AutoSize = true;
-            this.lbl_uploadError.ForeColor = System.Drawing.Color.Red;
-            this.lbl_uploadError.Location = new System.Drawing.Point(338, 608);
-            this.lbl_uploadError.Name = "lbl_uploadError";
-            this.lbl_uploadError.Size = new System.Drawing.Size(126, 13);
-            this.lbl_uploadError.TabIndex = 15;
-            this.lbl_uploadError.Text = "Failed to upload changes";
-            // 
-            // lbl_CheckInOutError
-            // 
-            this.lbl_CheckInOutError.AutoSize = true;
-            this.lbl_CheckInOutError.ForeColor = System.Drawing.Color.Red;
-            this.lbl_CheckInOutError.Location = new System.Drawing.Point(348, 252);
-            this.lbl_CheckInOutError.Name = "lbl_CheckInOutError";
-            this.lbl_CheckInOutError.Size = new System.Drawing.Size(110, 13);
-            this.lbl_CheckInOutError.TabIndex = 16;
-            this.lbl_CheckInOutError.Text = "Enter correct quantitiy";
-            // 
             // lbl_supplierCode
             // 
             this.lbl_supplierCode.AutoSize = true;
-            this.lbl_supplierCode.Location = new System.Drawing.Point(553, 160);
+            this.lbl_supplierCode.Location = new System.Drawing.Point(660, 160);
             this.lbl_supplierCode.Name = "lbl_supplierCode";
             this.lbl_supplierCode.Size = new System.Drawing.Size(29, 13);
             this.lbl_supplierCode.TabIndex = 17;
             this.lbl_supplierCode.Text = "label";
+            // 
+            // btn_editName
+            // 
+            this.btn_editName.Location = new System.Drawing.Point(467, 160);
+            this.btn_editName.Name = "btn_editName";
+            this.btn_editName.Size = new System.Drawing.Size(93, 23);
+            this.btn_editName.TabIndex = 18;
+            this.btn_editName.Text = "Edit Name";
+            this.btn_editName.UseVisualStyleBackColor = true;
+            this.btn_editName.Click += new System.EventHandler(this.btn_editName_Click);
             // 
             // ViewProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 681);
+            this.Controls.Add(this.btn_editName);
             this.Controls.Add(this.lbl_supplierCode);
-            this.Controls.Add(this.lbl_CheckInOutError);
-            this.Controls.Add(this.lbl_uploadError);
             this.Controls.Add(this.btn_saveChanges);
             this.Controls.Add(this.lbl_currentStock);
             this.Controls.Add(this.btn_editMapLocation);
@@ -291,8 +279,7 @@
         private System.Windows.Forms.Button btn_editMapLocation;
         private System.Windows.Forms.Label lbl_currentStock;
         private System.Windows.Forms.Button btn_saveChanges;
-        private System.Windows.Forms.Label lbl_uploadError;
-        private System.Windows.Forms.Label lbl_CheckInOutError;
         private System.Windows.Forms.Label lbl_supplierCode;
+        private System.Windows.Forms.Button btn_editName;
     }
 }

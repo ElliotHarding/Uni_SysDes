@@ -36,7 +36,7 @@ namespace StockManagementSystem.Pages
             }
             else if(departments == null)
             {
-                MessageBox.Show("Network connection error.", "Warning");                
+                notifyUser("Network connection error.");                
             }
             else
             {
@@ -87,17 +87,17 @@ namespace StockManagementSystem.Pages
                     }
                     else
                     {
-                        MessageBox.Show("Please select a privilege for the user.", "Warning");
+                        notifyUser("Please select a privilege for the user.");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Invalid password ~ must be at least 4 characters long", "Warning");
+                    notifyUser("Invalid password ~ must be at least 4 characters long");
                 }
             }   
             else
             {
-                MessageBox.Show("Missing username", "Warning");
+                notifyUser("Missing username");
             }
         }
 
@@ -105,11 +105,11 @@ namespace StockManagementSystem.Pages
         {
             if(success)
             {
-                MessageBox.Show("User created.", "Success");
+                notifyUser("User created.", "Success");
             }
             else
             {
-                MessageBox.Show("Creating new user: failed to connect to the server. Check internet.", "Warning");
+                notifyUser("Creating new user: failed to connect to the server. Check internet.", "Warning");
             }
         }
 
@@ -123,7 +123,7 @@ namespace StockManagementSystem.Pages
            
             if(departments == null || departments.Count == 0)
             {
-                MessageBox.Show("No departments set.", "Warning");
+                notifyUser("No departments set.", "Warning");
             }
             else
             {
@@ -135,11 +135,11 @@ namespace StockManagementSystem.Pages
         {
             if (success)
             {
-                MessageBox.Show("Departments set.", "Success");
+                notifyUser("Departments set.", "Success");
             }
             else
             {
-                MessageBox.Show("Uploading new departments: failed to connect to the server. Check internet.", "Warning");
+                notifyUser("Uploading new departments: failed to connect to the server. Check internet.");
             }
         }
 

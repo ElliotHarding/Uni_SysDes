@@ -14,16 +14,16 @@ namespace StockManagementSystem.Classes
     public partial class StaffNavBar : UserControl
     {
         BaseForm m_currentForm;
+        bool m_bIsAdmin;
 
         public StaffNavBar(BaseForm currentForm, bool isAdmin)
         {
             m_currentForm = currentForm;
+            m_bIsAdmin = isAdmin;
+
             SetBounds(0, currentForm.Height - 100, currentForm.Width, 100);
 
-            InitializeComponent();
-
-            if(!isAdmin)
-                btn_settings.Hide();
+            InitializeComponent();            
 
             if (currentForm.GetType() == typeof(ProductsPage))
             {
@@ -120,9 +120,12 @@ namespace StockManagementSystem.Classes
             m_currentForm.goToNextPage(SystemPage.CheckOut);
         }
 
-        private void Btn_settings_Click(object sender, EventArgs e)
+        private void btn_settings_Click(object sender, EventArgs e)
         {
-            m_currentForm.goToNextPage(SystemPage.AdminSettings);
+            if (m_bIsAdmin)
+                m_currentForm.goToNextPage(SystemPage.AdminSettings);
+            else
+                m_currentForm.goToNextPage(SystemPage.Settings);
         }
     }
 }

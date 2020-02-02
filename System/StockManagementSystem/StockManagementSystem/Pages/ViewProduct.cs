@@ -17,8 +17,6 @@ namespace StockManagementSystem.Pages
 
             addNavBar();
 
-            lbl_uploadError.Visible = false;
-            lbl_CheckInOutError.Visible = false;
             lbl_productName.Text = product.name;
             lbl_productInfo.Text = product.information;
             lbl_currentStock.Text = "Current Stock : " + product.quantity;
@@ -40,6 +38,8 @@ namespace StockManagementSystem.Pages
                 btn_updateSupplierCode.Hide();
                 btn_checkIn.Hide();
                 btn_editMapLocation.Hide();
+                lbl_supplierCode.Hide();
+                btn_saveChanges.Hide();
             }
         }
 
@@ -91,6 +91,7 @@ namespace StockManagementSystem.Pages
             if (dialogResult == DialogResult.OK)
             {
                 product.information = userInputParagraphDialog.paragraph;
+                lbl_productInfo.Text = userInputParagraphDialog.paragraph;
             }
         }
 
@@ -112,12 +113,12 @@ namespace StockManagementSystem.Pages
                     }
                     else
                     {
-                        MessageBox.Show("Can't have a negative number", "Warning");
+                        notifyUser("Can't have a negative number");
                     }                    
                 }
                 else
                 {
-                    MessageBox.Show("Invalid input", "Warning");
+                    notifyUser("Invalid input");
                 }               
             }
         }
@@ -131,6 +132,7 @@ namespace StockManagementSystem.Pages
             {
                 //Todo verify && add supplierCode
                 string supplierCode = userInputStringDialog.result;
+                //product.
             }
         }
 
@@ -162,13 +164,12 @@ namespace StockManagementSystem.Pages
             }
             else
             {
-                lbl_CheckInOutError.Visible = true;
+                notifyUser("Enter correct quantitiy");
             }
         }
 
         private void btn_checkout_Click(object sender, EventArgs e)
         {
-            lbl_CheckInOutError.Visible = false;
             int quantitiy = 0;
             if (Int32.TryParse(txt_actionQuantitiy.Text, out quantitiy))
             {
@@ -183,36 +184,43 @@ namespace StockManagementSystem.Pages
                     }
                     else
                     {
-                        MessageBox.Show("Invalid ammount", "Warning");
+                        notifyUser("Invalid ammount");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Database error #E1", "Warning");
+                    notifyUser("Database error #E1");
                 }           
             }
             else
             {
-                lbl_CheckInOutError.Visible = true;
+                notifyUser("Enter correct quantitiy");
             }
         }
 
         private void btn_saveChanges_Click(object sender, EventArgs e)
         {
-            lbl_uploadError.Visible = false;
             DatabaseComms.updateProduct(product, onUpdateProductRequest);
         }
 
         private void onUpdateProductRequest(bool success)
         {
             if(success)
-            {
-                lbl_uploadError.Invoke((Action)delegate { lbl_uploadError.Visible = true; });
-            }
+                notifyUser("Updated product");
             else
+                notifyUser("Failed to upload product changes");
+        }
+
+        private void btn_editName_Click(object sender, EventArgs e)
+        {
+            UserInputStringDialog userInputStringDialog = new UserInputStringDialog("Enter new name: ");
+            DialogResult dialogResult = userInputStringDialog.ShowDialog();
+
+            if (dialogResult == DialogResult.OK)
             {
-                MessageBox.Show("Failed to upload product changes", "Warning");
-            }
+                product.name = userInputStringDialog.result;
+                lbl_productName.Text = userInputStringDialog.result;
+            }            
         }
     }
 }

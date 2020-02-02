@@ -16,8 +16,6 @@ namespace StockManagementSystem.Pages
         public SignUp()
         {
             InitializeComponent();
-            lbl_error.Text = "";
-            lbl_error.Visible = false;
 
             DatabaseComms.getDepartments(getDepartmentsCallback);
         }
@@ -35,17 +33,18 @@ namespace StockManagementSystem.Pages
             }
             else
             {
-                MessageBox.Show("Network connection error.", "Warning");
+                notifyUser("Network connection error.", "Warning");
             }
         }
 
         private void btn_signUp_Click(object sender, EventArgs e)
         {
-            lbl_error.Visible = false;
             string nNumber = txt_username.Text;
             string password = txt_password.Text;
             string department = cb_department.Text;
             string passwordHash = Tools.passwordHash(password);
+
+            //todo validate...
 
             DatabaseComms.uploadUser(new User(nNumber, passwordHash, department, "user"), uploadUserCallback);
         }
@@ -58,9 +57,7 @@ namespace StockManagementSystem.Pages
             }
             else
             {
-                //Need to invoke since properties of GUI thread items are changed in callback function
-                lbl_error.Invoke((Action)delegate { lbl_error.Text = "Failed to register details."; });
-                lbl_error.Invoke((Action)delegate { lbl_error.Visible = true; });
+                notifyUser("Failed to register details");
             }
         }
 

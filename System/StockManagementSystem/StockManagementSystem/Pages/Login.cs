@@ -1,12 +1,6 @@
 ﻿using StockManagementSystem.Classes;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StockManagementSystem.Pages
@@ -20,13 +14,10 @@ namespace StockManagementSystem.Pages
 
         private void Login_Load(object sender, EventArgs e)
         {
-            lbl_error.Text = "";
-            lbl_error.Visible = false;
         }
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            lbl_error.Visible = false;
             string nNumber = txt_username.Text;
             string password = txt_password.Text;
 
@@ -39,7 +30,7 @@ namespace StockManagementSystem.Pages
         {
             if(users == null)
             {
-                setError("Network connection error. Check internet");
+                notifyUser("Network connection error. Check internet");
             }
             else if(users.Count > 0)
             {
@@ -49,14 +40,8 @@ namespace StockManagementSystem.Pages
             }
             else
             {
-                setError("Inocrrect details.");
+                notifyUser("Inocrrect details.");
             }
-        }
-
-        private void setError(string errorStr)
-        {
-            lbl_error.Invoke((Action)delegate {lbl_error.Text = errorStr;});
-            lbl_error.Invoke((Action)delegate {lbl_error.Visible = true;});
         }
 
         private void btn_signUp_Click(object sender, EventArgs e)
@@ -68,6 +53,39 @@ namespace StockManagementSystem.Pages
         {
             string passwordHash = Tools.passwordHash("password");
             DatabaseComms.getUsers(loginCallback, "nNumber = 'n0688119' AND password = '" + passwordHash + "'");
+        }
+
+        private void btn_forgottenDetails_Click(object sender, EventArgs e)
+        {
+            UserInputStringDialog nNumberDialog = new UserInputStringDialog("Enter your nNumber");
+            DialogResult dialogResult = nNumberDialog.ShowDialog();
+
+            if (dialogResult == DialogResult.OK)
+                DatabaseComms.getUsers(forgottenPassowrdCallback, "nNumber = '" + nNumberDialog.result + "'");
+        }
+
+        private void forgottenPassowrdCallback(List<User> users)
+        {
+            if (users == null)
+            {
+                notifyUser("Failed to send email. Check internet?");
+            }
+            else if (users.Count > 0)
+            {
+                string[] contents = { "Dear, " + users[0].nNumber, "Your password for ntu stores is: " + users[0].password };
+                if (Tools.sendEmail(users[0].nNumber + "@my.ntu.ac.uk", contents))
+                {
+                    notifyUser("Password sent to corresponding email.", "Message");
+                }
+                else
+                {
+                    notifyUser("Failed to send email. Check internet?");
+                }
+            }
+            else
+            {
+                notifyUser("Inocrrect details.");
+            }
         }
     }
 }

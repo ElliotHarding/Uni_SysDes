@@ -43,7 +43,7 @@
             // btn_messages
             // 
             this.btn_messages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_messages.Location = new System.Drawing.Point(111, 11);
+            this.btn_messages.Location = new System.Drawing.Point(61, 11);
             this.btn_messages.Name = "btn_messages";
             this.btn_messages.Size = new System.Drawing.Size(102, 29);
             this.btn_messages.TabIndex = 0;
@@ -55,7 +55,7 @@
             // btn_products
             // 
             this.btn_products.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_products.Location = new System.Drawing.Point(211, 11);
+            this.btn_products.Location = new System.Drawing.Point(161, 11);
             this.btn_products.Name = "btn_products";
             this.btn_products.Size = new System.Drawing.Size(102, 29);
             this.btn_products.TabIndex = 1;
@@ -67,7 +67,7 @@
             // btn_inspection
             // 
             this.btn_inspection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_inspection.Location = new System.Drawing.Point(311, 11);
+            this.btn_inspection.Location = new System.Drawing.Point(261, 11);
             this.btn_inspection.Name = "btn_inspection";
             this.btn_inspection.Size = new System.Drawing.Size(102, 29);
             this.btn_inspection.TabIndex = 2;
@@ -79,7 +79,7 @@
             // btn_invoices
             // 
             this.btn_invoices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_invoices.Location = new System.Drawing.Point(411, 11);
+            this.btn_invoices.Location = new System.Drawing.Point(361, 11);
             this.btn_invoices.Name = "btn_invoices";
             this.btn_invoices.Size = new System.Drawing.Size(102, 29);
             this.btn_invoices.TabIndex = 3;
@@ -91,7 +91,7 @@
             // btn_expectedDelivery
             // 
             this.btn_expectedDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_expectedDelivery.Location = new System.Drawing.Point(511, 11);
+            this.btn_expectedDelivery.Location = new System.Drawing.Point(461, 11);
             this.btn_expectedDelivery.Name = "btn_expectedDelivery";
             this.btn_expectedDelivery.Size = new System.Drawing.Size(103, 29);
             this.btn_expectedDelivery.TabIndex = 4;
@@ -103,7 +103,7 @@
             // btn_newShipment
             // 
             this.btn_newShipment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_newShipment.Location = new System.Drawing.Point(612, 11);
+            this.btn_newShipment.Location = new System.Drawing.Point(562, 11);
             this.btn_newShipment.Name = "btn_newShipment";
             this.btn_newShipment.Size = new System.Drawing.Size(102, 29);
             this.btn_newShipment.TabIndex = 5;
@@ -116,7 +116,7 @@
             // 
             this.btn_checkIn.BackColor = System.Drawing.SystemColors.Control;
             this.btn_checkIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_checkIn.Location = new System.Drawing.Point(712, 11);
+            this.btn_checkIn.Location = new System.Drawing.Point(662, 11);
             this.btn_checkIn.Name = "btn_checkIn";
             this.btn_checkIn.Size = new System.Drawing.Size(102, 29);
             this.btn_checkIn.TabIndex = 6;
@@ -128,7 +128,7 @@
             // btn_checkout
             // 
             this.btn_checkout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_checkout.Location = new System.Drawing.Point(812, 11);
+            this.btn_checkout.Location = new System.Drawing.Point(762, 11);
             this.btn_checkout.Name = "btn_checkout";
             this.btn_checkout.Size = new System.Drawing.Size(102, 29);
             this.btn_checkout.TabIndex = 7;
@@ -141,7 +141,7 @@
             // 
             this.lbl_numMessages.AutoSize = true;
             this.lbl_numMessages.ForeColor = System.Drawing.Color.Red;
-            this.lbl_numMessages.Location = new System.Drawing.Point(196, 14);
+            this.lbl_numMessages.Location = new System.Drawing.Point(146, 14);
             this.lbl_numMessages.Name = "lbl_numMessages";
             this.lbl_numMessages.Size = new System.Drawing.Size(13, 13);
             this.lbl_numMessages.TabIndex = 8;
@@ -149,13 +149,15 @@
             // 
             // btn_settings
             // 
-            this.btn_settings.Location = new System.Drawing.Point(993, 19);
+            this.btn_settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_settings.Location = new System.Drawing.Point(863, 11);
             this.btn_settings.Name = "btn_settings";
-            this.btn_settings.Size = new System.Drawing.Size(30, 30);
+            this.btn_settings.Size = new System.Drawing.Size(102, 29);
             this.btn_settings.TabIndex = 9;
-            this.btn_settings.Text = "S";
+            this.btn_settings.TabStop = false;
+            this.btn_settings.Text = "Settings";
             this.btn_settings.UseVisualStyleBackColor = true;
-            this.btn_settings.Click += new System.EventHandler(this.Btn_settings_Click);
+            this.btn_settings.Click += new System.EventHandler(this.btn_settings_Click);
             // 
             // StaffNavBar
             // 

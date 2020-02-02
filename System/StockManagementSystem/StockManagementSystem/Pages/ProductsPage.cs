@@ -19,6 +19,9 @@ namespace StockManagementSystem.Pages
         //Populate panel_products with products
         public void productsCallback(List<Product> products)
         {
+            if(!this.IsHandleCreated)
+                return;
+
             panel_products.Invoke((Action)delegate { panel_products.Controls.Clear(); });
 
             if (products != null && products.Count() > 0)

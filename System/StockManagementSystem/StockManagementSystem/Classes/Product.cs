@@ -84,7 +84,11 @@ namespace StockManagementSystem
             if(bmp != null)
             {
                 System.IO.MemoryStream ms = new System.IO.MemoryStream();
-                bmp.Save(ms, ImageFormat.Jpeg);
+
+                var encoder = ImageCodecInfo.GetImageEncoders().First(c => c.FormatID == ImageFormat.Jpeg.Guid);
+                var encParams = new EncoderParameters() { Param = new[] { new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, 10L) } };
+
+                bmp.Save(ms, encoder, encParams);
                 byte[] byteImage = ms.ToArray();
                 image = Convert.ToBase64String(byteImage);
             }            

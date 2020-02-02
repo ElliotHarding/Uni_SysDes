@@ -37,14 +37,14 @@
             this.lbl_quantitiy = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_productInfo = new System.Windows.Forms.Label();
+            this.lbl_currentStock = new System.Windows.Forms.Label();
+            this.lbl_supplierCode = new System.Windows.Forms.Label();
             this.btn_editInfo = new System.Windows.Forms.Button();
             this.lbl_productName = new System.Windows.Forms.Label();
             this.btn_editPicture = new System.Windows.Forms.Button();
             this.pictureBoxMap = new System.Windows.Forms.PictureBox();
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.lbl_currentStock = new System.Windows.Forms.Label();
             this.btn_saveChanges = new System.Windows.Forms.Button();
-            this.lbl_supplierCode = new System.Windows.Forms.Label();
             this.btn_editName = new System.Windows.Forms.Button();
             this.btn_removeProduct = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -64,7 +64,7 @@
             // 
             // btn_updateSupplierCode
             // 
-            this.btn_updateSupplierCode.Location = new System.Drawing.Point(660, 179);
+            this.btn_updateSupplierCode.Location = new System.Drawing.Point(522, 160);
             this.btn_updateSupplierCode.Name = "btn_updateSupplierCode";
             this.btn_updateSupplierCode.Size = new System.Drawing.Size(132, 23);
             this.btn_updateSupplierCode.TabIndex = 11;
@@ -74,7 +74,7 @@
             // 
             // btn_changeStockAmount
             // 
-            this.btn_changeStockAmount.Location = new System.Drawing.Point(565, 37);
+            this.btn_changeStockAmount.Location = new System.Drawing.Point(660, 160);
             this.btn_changeStockAmount.Name = "btn_changeStockAmount";
             this.btn_changeStockAmount.Size = new System.Drawing.Size(132, 23);
             this.btn_changeStockAmount.TabIndex = 10;
@@ -122,9 +122,11 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.lbl_productInfo);
-            this.panel1.Location = new System.Drawing.Point(368, 61);
+            this.panel1.Controls.Add(this.lbl_currentStock);
+            this.panel1.Controls.Add(this.lbl_supplierCode);
+            this.panel1.Location = new System.Drawing.Point(368, 66);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(424, 92);
+            this.panel1.Size = new System.Drawing.Size(424, 87);
             this.panel1.TabIndex = 5;
             // 
             // lbl_productInfo
@@ -135,6 +137,24 @@
             this.lbl_productInfo.Size = new System.Drawing.Size(35, 13);
             this.lbl_productInfo.TabIndex = 3;
             this.lbl_productInfo.Text = "label2";
+            // 
+            // lbl_currentStock
+            // 
+            this.lbl_currentStock.AutoSize = true;
+            this.lbl_currentStock.Location = new System.Drawing.Point(315, 64);
+            this.lbl_currentStock.Name = "lbl_currentStock";
+            this.lbl_currentStock.Size = new System.Drawing.Size(78, 13);
+            this.lbl_currentStock.TabIndex = 4;
+            this.lbl_currentStock.Text = "Current Stock :";
+            // 
+            // lbl_supplierCode
+            // 
+            this.lbl_supplierCode.AutoSize = true;
+            this.lbl_supplierCode.Location = new System.Drawing.Point(11, 64);
+            this.lbl_supplierCode.Name = "lbl_supplierCode";
+            this.lbl_supplierCode.Size = new System.Drawing.Size(79, 13);
+            this.lbl_supplierCode.TabIndex = 17;
+            this.lbl_supplierCode.Text = "Supplier Code :";
             // 
             // btn_editInfo
             // 
@@ -188,18 +208,9 @@
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             // 
-            // lbl_currentStock
-            // 
-            this.lbl_currentStock.AutoSize = true;
-            this.lbl_currentStock.Location = new System.Drawing.Point(703, 43);
-            this.lbl_currentStock.Name = "lbl_currentStock";
-            this.lbl_currentStock.Size = new System.Drawing.Size(78, 13);
-            this.lbl_currentStock.TabIndex = 4;
-            this.lbl_currentStock.Text = "Current Stock :";
-            // 
             // btn_saveChanges
             // 
-            this.btn_saveChanges.Location = new System.Drawing.Point(461, 582);
+            this.btn_saveChanges.Location = new System.Drawing.Point(660, 582);
             this.btn_saveChanges.Name = "btn_saveChanges";
             this.btn_saveChanges.Size = new System.Drawing.Size(89, 23);
             this.btn_saveChanges.TabIndex = 14;
@@ -207,18 +218,9 @@
             this.btn_saveChanges.UseVisualStyleBackColor = true;
             this.btn_saveChanges.Click += new System.EventHandler(this.btn_saveChanges_Click);
             // 
-            // lbl_supplierCode
-            // 
-            this.lbl_supplierCode.AutoSize = true;
-            this.lbl_supplierCode.Location = new System.Drawing.Point(579, 160);
-            this.lbl_supplierCode.Name = "lbl_supplierCode";
-            this.lbl_supplierCode.Size = new System.Drawing.Size(29, 13);
-            this.lbl_supplierCode.TabIndex = 17;
-            this.lbl_supplierCode.Text = "label";
-            // 
             // btn_editName
             // 
-            this.btn_editName.Location = new System.Drawing.Point(467, 160);
+            this.btn_editName.Location = new System.Drawing.Point(699, 38);
             this.btn_editName.Name = "btn_editName";
             this.btn_editName.Size = new System.Drawing.Size(93, 23);
             this.btn_editName.TabIndex = 18;
@@ -228,12 +230,13 @@
             // 
             // btn_removeProduct
             // 
-            this.btn_removeProduct.Location = new System.Drawing.Point(401, 189);
+            this.btn_removeProduct.Location = new System.Drawing.Point(548, 582);
             this.btn_removeProduct.Name = "btn_removeProduct";
-            this.btn_removeProduct.Size = new System.Drawing.Size(132, 23);
+            this.btn_removeProduct.Size = new System.Drawing.Size(106, 23);
             this.btn_removeProduct.TabIndex = 19;
             this.btn_removeProduct.Text = "Remove Product";
             this.btn_removeProduct.UseVisualStyleBackColor = true;
+            this.btn_removeProduct.Click += new System.EventHandler(this.btn_removeProduct_Click);
             // 
             // ViewProduct
             // 
@@ -242,9 +245,7 @@
             this.ClientSize = new System.Drawing.Size(1008, 681);
             this.Controls.Add(this.btn_removeProduct);
             this.Controls.Add(this.btn_editName);
-            this.Controls.Add(this.lbl_supplierCode);
             this.Controls.Add(this.btn_saveChanges);
-            this.Controls.Add(this.lbl_currentStock);
             this.Controls.Add(this.btn_editMapLocation);
             this.Controls.Add(this.pictureBoxMap);
             this.Controls.Add(this.btn_updateSupplierCode);

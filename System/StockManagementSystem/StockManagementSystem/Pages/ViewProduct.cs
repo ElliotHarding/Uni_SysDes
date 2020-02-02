@@ -39,6 +39,7 @@ namespace StockManagementSystem.Pages
                 lbl_supplierCode.Hide();
                 btn_saveChanges.Hide();
                 btn_editName.Hide();
+                btn_removeProduct.Hide();
             }
         }
 
@@ -220,6 +221,28 @@ namespace StockManagementSystem.Pages
                 product.name = userInputStringDialog.result;
                 lbl_productName.Text = userInputStringDialog.result;
             }            
+        }
+
+        private void btn_removeProduct_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you wish to remove the product and all it's information?", "Remove product?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                DatabaseComms.query("DELETE FROM PRODUCTS WHERE id = '" + product.id + "';", removeProductCallback);
+            }            
+        }
+
+        private void removeProductCallback(bool success)
+        {
+            if(success)
+            {
+                notifyUser("Product removed");
+                this.Invoke((Action)delegate { goToNextPage(SystemPage.ProductsPage); });
+            }
+            else
+            {
+                notifyUser("Failed to remove product. Check network.");
+            }
         }
     }
 }

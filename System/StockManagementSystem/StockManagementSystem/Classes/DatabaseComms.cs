@@ -774,5 +774,27 @@ namespace StockManagementSystem
                 }
             }).Start();
         }
+
+        public static async void query(string query, Action<bool> callback)
+        {
+            new Task(() =>
+            {
+                try
+                {
+                    SqlConnection connection = new SqlConnection(m_connectionString);
+                    SqlCommand command = new SqlCommand(query, connection);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+
+                    callback(true);
+                }
+                catch (Exception e)
+                {
+                    callback(false);
+                }
+            }).Start();
+        }
     }
 }

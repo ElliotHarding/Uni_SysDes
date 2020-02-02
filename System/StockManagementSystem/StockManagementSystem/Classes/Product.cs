@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,13 +59,35 @@ namespace StockManagementSystem
 
         public Bitmap getBitmap()
         {
-            //todo
-            return null;
+            if (image == null)
+                return null;
+
+            Bitmap bmp = null;
+            try
+            {
+                System.IO.MemoryStream memoryStream = new System.IO.MemoryStream(Convert.FromBase64String(image));
+                memoryStream.Position = 0;
+
+                bmp = (Bitmap)Bitmap.FromStream(memoryStream);
+
+                memoryStream.Close();
+            }
+            catch (Exception)
+            {               
+            }            
+
+            return bmp;
         }
 
         public void setBitmap(Bitmap bmp)
         {
-            //todo
+            if(bmp != null)
+            {
+                System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                bmp.Save(ms, ImageFormat.Jpeg);
+                byte[] byteImage = ms.ToArray();
+                image = Convert.ToBase64String(byteImage);
+            }            
         }
 
     }

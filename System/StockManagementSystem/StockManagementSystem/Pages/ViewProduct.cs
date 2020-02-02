@@ -40,6 +40,7 @@ namespace StockManagementSystem.Pages
                 btn_editMapLocation.Hide();
                 lbl_supplierCode.Hide();
                 btn_saveChanges.Hide();
+                btn_editName.Hide();
             }
         }
 

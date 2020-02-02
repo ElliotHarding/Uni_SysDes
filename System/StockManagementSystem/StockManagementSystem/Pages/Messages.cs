@@ -30,7 +30,7 @@ namespace StockManagementSystem.Pages
             messages.Clear();
             string currentDate = DateTime.Now.AddDays(30).ToString("dd-MM-yyyy");
 
-            DatabaseComms.getProducts(ExpiringProducts, "expiryDate < " + currentDate);
+            //DatabaseComms.getProducts(ExpiringProducts, "expiryDate < " + currentDate);
         }
 
         private static void ExpiringProducts(List<Product> products)

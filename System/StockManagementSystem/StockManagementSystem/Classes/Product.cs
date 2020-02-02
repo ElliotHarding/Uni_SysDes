@@ -56,6 +56,7 @@ namespace StockManagementSystem
         public string vat { get; set; }
         public string dangerDescription { get; set; }//If null not dangerous
         public string retProductNo { get; set; }//if null not return product
+        public string supplierId { get; set; }
 
         public Bitmap getBitmap()
         {

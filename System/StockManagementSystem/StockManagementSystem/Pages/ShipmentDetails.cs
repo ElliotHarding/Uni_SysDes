@@ -1,10 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using StockManagementSystem.User_Controls;
 
 namespace StockManagementSystem.Pages
 {
     public partial class ShipmentDetails : BaseForm
     {
-        private Shipment m_shipment;
+        private const int m_cRowIncrement = 110;
+        private int m_iRowIndex = 0;
+        List<Product> newProducts = new List<Product>();
 
         public ShipmentDetails()
         {
@@ -33,16 +38,80 @@ namespace StockManagementSystem.Pages
 
             //Todo validation
 
-            m_shipment = new Shipment(null, supplierName, supplierSiteName,
+            Shipment shipment = new Shipment(null, supplierName, supplierSiteName,
                 supplierRemitToAddressLine1, supplierRemitToAddressLine2, supplierRemitToAddressLine3, supplierRemitToAddressLine4,
                 orderNo, orderLine, orderDate, requestedDate, promisedDate,
                 goodsAndServicesAddressLine1, goodsAndServicesAddressLine2, goodsAndServicesAddressLine3, goodsAndServicesAddressLine4,
                 vat, invoiceTotal);
+
+            newProducts = new List<Product>();
+            foreach (NewProductRow npr in pnl_newProducts.Controls)
+            {
+                newProducts.Add(npr.GetProduct());
+            }
+
+            DatabaseComms.uploadShipment(shipment, addShipmentCallback);
         }
 
         private void addShipmentCallback(bool success)
         {
+            if(success)
+            {               
+                DatabaseComms.uploadProducts(newProducts, uploadProductsCallback);
+            }
+            else
+            {
+                notifyUser("Failed to upload new shipment. Check internet.");
+            }            
+        }
 
+        private void uploadProductsCallback(bool success)
+        {
+            if (success)
+            {
+                notifyUser("Added shipment and products.", "Success");
+                this.Invoke((Action)delegate { goToNextPage(SystemPage.NewShipment); });                
+            }
+            else
+            {
+                notifyUser("Failed to add products of shipment. Check internet.");
+            }
+        }
+
+        public void removeNewProductRow(NewProductRow productRowToRemove)
+        {
+            List<NewProductRow> products = new List<NewProductRow>();
+            foreach (NewProductRow npr in pnl_newProducts.Controls)
+            {
+                if (productRowToRemove != npr)
+                {
+                    products.Add(npr);
+                }
+            }
+
+            this.SuspendLayout();
+
+            m_iRowIndex = 0;
+            pnl_newProducts.Controls.Clear();
+
+            foreach (NewProductRow npr in products)
+            {
+                addRow(npr);
+            }
+
+            this.ResumeLayout();
+        }
+
+        private void btn_addNewProductRow_Click(object sender, EventArgs e)
+        {
+            addRow(new NewProductRow(this));
+        }
+
+        private void addRow(NewProductRow productRow)
+        {            
+            productRow.Parent = pnl_newProducts;
+            productRow.Location = new Point(0, m_iRowIndex * m_cRowIncrement);
+            m_iRowIndex++;
         }
     }
 }

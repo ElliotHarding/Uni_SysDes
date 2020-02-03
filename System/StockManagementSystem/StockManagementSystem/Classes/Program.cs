@@ -60,9 +60,6 @@ namespace StockManagementSystem
                     case SystemPage.ShipmentUpdateStock:
                         currentPage = new ShipmentUpdateStock();
                         break;
-                    case SystemPage.ShipmentNewProducts:
-                        currentPage = new ShipmentNewProducts();
-                        break;
                     case SystemPage.ShipmentDetails:
                         currentPage = new ShipmentDetails();
                         break;

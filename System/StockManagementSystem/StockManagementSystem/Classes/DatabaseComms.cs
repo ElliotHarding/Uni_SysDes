@@ -24,7 +24,7 @@ namespace StockManagementSystem
                     SqlCommand command = new SqlCommand("INSERT INTO PRODUCTS VALUES(" +
                         "@id,  @externalId, @image,  @information, @locationX,  @locationY, @quantity, @expiryDate, @price, @vat, @dangerDescription, @retProductNo, @name);", connection);
 
-                    command.Parameters.AddWithValue("@id", product.id);
+                    command.Parameters.AddWithValue("@id", "NEWID()");
                     command.Parameters.AddWithValue("@externalId", product.externalId);
                     command.Parameters.AddWithValue("@image", product.image);
                     command.Parameters.AddWithValue("@information", product.information);
@@ -37,6 +37,36 @@ namespace StockManagementSystem
                     command.Parameters.AddWithValue("@dangerDescription", product.dangerDescription);
                     command.Parameters.AddWithValue("@retProductNo", product.retProductNo);
                     command.Parameters.AddWithValue("@name", product.name);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+
+                    callback(true);
+                }
+                catch (Exception e)
+                {
+                    callback(false);
+                }
+            }).Start();
+        }
+
+        public static void uploadProducts(List<Product> products, Action<bool> callback)
+        {
+            new Task(() =>
+            {
+                try
+                {
+                    string productsValues = "";
+                    foreach(Product product in products)
+                    {
+                        productsValues += " ( 'NEWID()', '" + product.externalId + "', '" + product.image + "', '" + product.information + "', '" + product.locationX + "', '" + product.locationY + "', '" + product.quantity + "', '" + product.expiryDate + "', '" + product.price + "', '" + product.vat + "', '" + product.dangerDescription + "', '" + product.retProductNo + "', '" + product.name + "'),";
+                    }
+                    productsValues = productsValues.Substring(0, productsValues.Length - 1);
+
+                    SqlConnection connection = new SqlConnection(m_connectionString);
+                    SqlCommand command = new SqlCommand("INSERT INTO PRODUCTS (id, externalId, image, information, locationX, locationY, quantity, expiryDate, price, vat, dangerDescription, retProductNo, name) VALUES" +
+                        productsValues +";", connection);
 
                     connection.Open();
                     command.ExecuteNonQuery();
@@ -288,21 +318,18 @@ namespace StockManagementSystem
                         "@supplierRemitToAddressLine1," +
                         "@supplierRemitToAddressLine2," +
                         "@supplierRemitToAddressLine3," +
-                        "@supplierRemitToAddressPostCode," +
+                        "@supplierRemitToAddressLine4," +
                         "@orderNo," +
-                        "@date," +
+                        "@orderLine," +
+                        "@orderDate," +
                         "@requestedDate," +
                         "@promisedDate," +
-                        "@goodsAndServices," +
+                        "@goodsAndServicesAddressLine1," +
+                        "@goodsAndServicesAddressLine2," +
+                        "@goodsAndServicesAddressLine3," +
+                        "@goodsAndServicesAddressLine4," +
                         "@vat," +
-                        "@invoiceTotal," +
-                        "@supplierIDNumber," +
-                        "@universalProductCode," +
-                        "@itemDescription," +
-                        "@quantity," +
-                        "@unitOfMeasure," +
-                        "@unitOfPrice," +
-                        "@extendedPrice);", connection);
+                        "@invoiceTotal);", connection);
 
                     command.Parameters.AddWithValue("@id", "NEWID()");
                     command.Parameters.AddWithValue("@supplierName", shipment.supplierName);
@@ -310,21 +337,18 @@ namespace StockManagementSystem
                     command.Parameters.AddWithValue("@supplierRemitToAddressLine1", shipment.supplierRemitToAddress.line1);
                     command.Parameters.AddWithValue("@supplierRemitToAddressLine2", shipment.supplierRemitToAddress.line2);
                     command.Parameters.AddWithValue("@supplierRemitToAddressLine3", shipment.supplierRemitToAddress.line3);
-                    command.Parameters.AddWithValue("@supplierRemitToAddressPostCode", shipment.supplierRemitToAddress.postCode);
+                    command.Parameters.AddWithValue("@supplierRemitToAddressLine4", shipment.supplierRemitToAddress.postCode);
                     command.Parameters.AddWithValue("@orderNo", shipment.orderNo);
-                    command.Parameters.AddWithValue("@date", shipment.date);
+                    command.Parameters.AddWithValue("@orderLine", shipment.orderLine);
+                    command.Parameters.AddWithValue("@orderDate", shipment.orderDate);
                     command.Parameters.AddWithValue("@requestedDate", shipment.requestedDate);
                     command.Parameters.AddWithValue("@promisedDate", shipment.promisedDate);
-                    command.Parameters.AddWithValue("@goodsAndServices", shipment.goodsAndServices);
+                    command.Parameters.AddWithValue("@goodsAndServicesAddressLine1", shipment.goodsAndServicesAddress.line1);
+                    command.Parameters.AddWithValue("@goodsAndServicesAddressLine2", shipment.goodsAndServicesAddress.line2);
+                    command.Parameters.AddWithValue("@goodsAndServicesAddressLine3", shipment.goodsAndServicesAddress.line3);
+                    command.Parameters.AddWithValue("@goodsAndServicesAddressLine4", shipment.goodsAndServicesAddress.postCode);
                     command.Parameters.AddWithValue("@vat", shipment.vat);
                     command.Parameters.AddWithValue("@invoiceTotal", shipment.invoiceTotal);
-                    command.Parameters.AddWithValue("@supplierIDNumber", shipment.supplierIdNumber);
-                    command.Parameters.AddWithValue("@universalProductCode", shipment.universalProductCode);
-                    command.Parameters.AddWithValue("@itemDescription", shipment.itemDescription);
-                    command.Parameters.AddWithValue("@quantity", shipment.quantity);
-                    command.Parameters.AddWithValue("@unitOfMeasure", shipment.unitOfMeasure);
-                    command.Parameters.AddWithValue("@unitOfPrice", shipment.unitOfPrice);
-                    command.Parameters.AddWithValue("@extendedPrice", shipment.extendedPrice);
 
                     connection.Open();
                     command.ExecuteNonQuery();
@@ -352,21 +376,17 @@ namespace StockManagementSystem
                         "supplierRemitToAddressLine1=@supplierRemitToAddressLine1," +
                         "supplierRemitToAddressLine2=@supplierRemitToAddressLine2," +
                         "supplierRemitToAddressLine3=@supplierRemitToAddressLine3," +
-                        "supplierRemitToAddressPostCode=@supplierRemitToAddressPostCode," +
+                        "supplierRemitToAddressLine4=@supplierRemitToAddressLine4," +
                         "orderNo=@orderNo," +
-                        "date=@date," +
+                        "orderDate=@orderDate," +
                         "requestedDate=@requestedDate," +
                         "promisedDate=@promisedDate," +
-                        "goodsAndServices=@goodsAndServices," +
+                        "goodsAndServicesAddressLine1=@goodsAndServicesAddressLine1," +
+                        "goodsAndServicesAddressLine2=@goodsAndServicesAddressLine2," +
+                        "goodsAndServicesAddressLine3=@goodsAndServicesAddressLine3," +
+                        "goodsAndServicesAddressLine4=@goodsAndServicesAddressLine4," +
                         "vat=@vat," +
-                        "invoiceTotal=@invoiceTotal," +
-                        "supplierIDNumber=@supplierIDNumber," +
-                        "universalProductCode=@universalProductCode," +
-                        "itemDescription=@itemDescription," +
-                        "quantity=@quantity," +
-                        "unitOfMeasure=@unitOfMeasure," +
-                        "unitOfPrice=@unitOfPrice," +
-                        "extenedPrice=@extenedPrice where id = @id;", connection);
+                        "invoiceTotal=@invoiceTotal, where id = @id;", connection);
 
                     command.Parameters.AddWithValue("@id", shipment.id);
                     command.Parameters.AddWithValue("@supplierName", shipment.supplierName);
@@ -374,21 +394,17 @@ namespace StockManagementSystem
                     command.Parameters.AddWithValue("@supplierRemitToAddressLine1", shipment.supplierRemitToAddress.line1);
                     command.Parameters.AddWithValue("@supplierRemitToAddressLine2", shipment.supplierRemitToAddress.line2);
                     command.Parameters.AddWithValue("@supplierRemitToAddressLine3", shipment.supplierRemitToAddress.line3);
-                    command.Parameters.AddWithValue("@supplierRemitToAddressPostCode", shipment.supplierRemitToAddress.postCode);
+                    command.Parameters.AddWithValue("@supplierRemitToAddressLine4", shipment.supplierRemitToAddress.postCode);
                     command.Parameters.AddWithValue("@orderNo", shipment.orderNo);
-                    command.Parameters.AddWithValue("@date", shipment.date);
+                    command.Parameters.AddWithValue("@orderDate", shipment.orderDate);
                     command.Parameters.AddWithValue("@requestedDate", shipment.requestedDate);
                     command.Parameters.AddWithValue("@promisedDate", shipment.promisedDate);
-                    command.Parameters.AddWithValue("@goodsAndServices", shipment.goodsAndServices);
+                    command.Parameters.AddWithValue("@goodsAndServicesAddressLine1", shipment.goodsAndServicesAddress.line1);
+                    command.Parameters.AddWithValue("@goodsAndServicesAddressLine2", shipment.goodsAndServicesAddress.line2);
+                    command.Parameters.AddWithValue("@goodsAndServicesAddressLine3", shipment.goodsAndServicesAddress.line3);
+                    command.Parameters.AddWithValue("@goodsAndServicesAddressLine4", shipment.goodsAndServicesAddress.postCode);
                     command.Parameters.AddWithValue("@vat", shipment.vat);
                     command.Parameters.AddWithValue("@invoiceTotal", shipment.invoiceTotal);
-                    command.Parameters.AddWithValue("@supplierIDNumber", shipment.supplierIdNumber);
-                    command.Parameters.AddWithValue("@universalProductCode", shipment.universalProductCode);
-                    command.Parameters.AddWithValue("@itemDescription", shipment.itemDescription);
-                    command.Parameters.AddWithValue("@quantity", shipment.quantity);
-                    command.Parameters.AddWithValue("@unitOfMeasure", shipment.unitOfMeasure);
-                    command.Parameters.AddWithValue("@unitOfPrice", shipment.unitOfPrice);
-                    command.Parameters.AddWithValue("@extenedPrice", shipment.extendedPrice);
 
                     connection.Open();
                     command.ExecuteNonQuery();
@@ -436,21 +452,18 @@ namespace StockManagementSystem
                         reader["supplierRemitToAddressLine1"].ToString(),
                         reader["supplierRemitToAddressLine2"].ToString(),
                         reader["supplierRemitToAddressLine3"].ToString(),
-                        reader["supplierRemitToAddressPostCode"].ToString(),
+                        reader["supplierRemitToAddressLine4"].ToString(),
                         reader["orderNo"].ToString(),
-                        reader["date"].ToString(),
+                        reader["orderLine"].ToString(),
+                        reader["orderDate"].ToString(),
                         reader["requestedDate"].ToString(),
                         reader["promisedDate"].ToString(),
-                        reader["goodsAndServices"].ToString(),
+                        reader["goodsAndServicesAddressLine1"].ToString(),
+                        reader["goodsAndServicesAddressLine2"].ToString(),
+                        reader["goodsAndServicesAddressLine3"].ToString(),
+                        reader["goodsAndServicesAddressLine4"].ToString(),
                         reader["vat"].ToString(),
-                        reader["invoiceTotal"].ToString(),
-                        reader["supplierIdNumber"].ToString(),
-                        reader["universalProductCode"].ToString(),
-                        reader["itemDescription"].ToString(),
-                        reader["quantity"].ToString(),
-                        reader["unitOfMeasure"].ToString(),
-                        reader["unitOfPrice"].ToString(),
-                        reader["extenedPrice"].ToString()
+                        reader["invoiceTotal"].ToString()
                         ));
                     }
 

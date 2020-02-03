@@ -98,12 +98,6 @@
     <Compile Include="Pages\ShipmentDetails.Designer.cs">
       <DependentUpon>ShipmentDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ShipmentNewProducts.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pages\ShipmentNewProducts.Designer.cs">
-      <DependentUpon>ShipmentNewProducts.cs</DependentUpon>
-    </Compile>
     <Compile Include="Pages\ShipmentUpdateStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +121,12 @@
     </Compile>
     <Compile Include="Pages\ViewProduct.Designer.cs">
       <DependentUpon>ViewProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\NewProductRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\NewProductRow.Designer.cs">
+      <DependentUpon>NewProductRow.cs</DependentUpon>
     </Compile>
     <Compile Include="User Controls\TextfieldRow.cs">
       <SubType>UserControl</SubType>
@@ -247,9 +247,6 @@
     <EmbeddedResource Include="Pages\ShipmentDetails.resx">
       <DependentUpon>ShipmentDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\ShipmentNewProducts.resx">
-      <DependentUpon>ShipmentNewProducts.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Pages\ShipmentUpdateStock.resx">
       <DependentUpon>ShipmentUpdateStock.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ViewProduct.resx">
       <DependentUpon>ViewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\NewProductRow.resx">
+      <DependentUpon>NewProductRow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\TextfieldRow.resx">
       <DependentUpon>TextfieldRow.cs</DependentUpon>

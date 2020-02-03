@@ -19,7 +19,6 @@ namespace StockManagementSystem.Pages
         AdminSettings,
         Settings,
         ShipmentUpdateStock,
-        ShipmentNewProducts,
         ShipmentDetails,
         EndPage
     }

@@ -3,11 +3,11 @@ using System.Windows.Forms;
 
 namespace StockManagementSystem.User_Controls
 {
-    public partial class NewProductRow : UserControl
+    public partial class NewProductRow : BaseForm
     {
-        ShipmentDetails m_shipmentDetails;
+        ExpectedDelivery m_shipmentDetails;
 
-        public NewProductRow(ShipmentDetails shipmentDetails)
+        public NewProductRow(ExpectedDelivery shipmentDetails)
         {
             InitializeComponent();
             m_shipmentDetails = shipmentDetails;

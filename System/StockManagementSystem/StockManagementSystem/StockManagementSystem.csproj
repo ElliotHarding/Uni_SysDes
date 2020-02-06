@@ -92,18 +92,6 @@
     <Compile Include="Pages\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ShipmentDetails.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pages\ShipmentDetails.Designer.cs">
-      <DependentUpon>ShipmentDetails.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\ShipmentUpdateStock.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pages\ShipmentUpdateStock.Designer.cs">
-      <DependentUpon>ShipmentUpdateStock.cs</DependentUpon>
-    </Compile>
     <Compile Include="Pages\UserInputParagraphDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,7 +111,7 @@
       <DependentUpon>ViewProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="User Controls\NewProductRow.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="User Controls\NewProductRow.Designer.cs">
       <DependentUpon>NewProductRow.cs</DependentUpon>
@@ -243,12 +231,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\ShipmentDetails.resx">
-      <DependentUpon>ShipmentDetails.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\ShipmentUpdateStock.resx">
-      <DependentUpon>ShipmentUpdateStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\UserInputParagraphDialog.resx">
       <DependentUpon>UserInputParagraphDialog.cs</DependentUpon>

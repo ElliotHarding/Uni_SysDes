@@ -17,15 +17,5 @@ namespace StockManagementSystem.Pages
             InitializeComponent();
             addNavBar();
         }
-
-        private void btn_updateShipment_Click(object sender, EventArgs e)
-        {
-            goToNextPage(SystemPage.ShipmentUpdateStock);
-        }
-
-        private void btn_newShipment_Click(object sender, EventArgs e)
-        {
-            goToNextPage(SystemPage.ShipmentDetails);
-        }
     }
 }

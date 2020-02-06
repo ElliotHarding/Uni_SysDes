@@ -7,7 +7,6 @@ namespace StockManagementSystem.Pages
 {
     public partial class ExpectedDelivery : BaseForm
     {
-        private const int m_cRowIncrement = 110;
         private int m_iRowIndex = 0;
         List<Product> newProducts = new List<Product>();
 
@@ -58,7 +57,8 @@ namespace StockManagementSystem.Pages
         {
             if (success)
             {
-                DatabaseComms.uploadProducts(newProducts, uploadProductsCallback);
+                if (newProducts.Count > 0)
+                    DatabaseComms.uploadProducts(newProducts, uploadProductsCallback);
             }
             else
             {
@@ -111,7 +111,7 @@ namespace StockManagementSystem.Pages
         private void addRow(NewProductRow productRow)
         {
             productRow.Parent = pnl_newProducts;
-            productRow.Location = new Point(0, m_iRowIndex * m_cRowIncrement);
+            productRow.Location = new Point(0, m_iRowIndex * (productRow.Height + 10));
             m_iRowIndex++;
         }
     }

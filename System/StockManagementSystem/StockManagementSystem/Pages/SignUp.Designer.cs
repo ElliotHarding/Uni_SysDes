@@ -40,7 +40,7 @@
             // 
             // btn_signUp
             // 
-            this.btn_signUp.Location = new System.Drawing.Point(289, 466);
+            this.btn_signUp.Location = new System.Drawing.Point(394, 447);
             this.btn_signUp.Margin = new System.Windows.Forms.Padding(2);
             this.btn_signUp.Name = "btn_signUp";
             this.btn_signUp.Size = new System.Drawing.Size(64, 26);
@@ -63,7 +63,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(286, 362);
+            this.label2.Location = new System.Drawing.Point(391, 343);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
@@ -73,7 +73,7 @@
             // Username
             // 
             this.Username.AutoSize = true;
-            this.Username.Location = new System.Drawing.Point(286, 313);
+            this.Username.Location = new System.Drawing.Point(391, 294);
             this.Username.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Username.Name = "Username";
             this.Username.Size = new System.Drawing.Size(55, 13);
@@ -82,7 +82,7 @@
             // 
             // txt_password
             // 
-            this.txt_password.Location = new System.Drawing.Point(286, 379);
+            this.txt_password.Location = new System.Drawing.Point(391, 360);
             this.txt_password.Margin = new System.Windows.Forms.Padding(2);
             this.txt_password.Name = "txt_password";
             this.txt_password.PasswordChar = '*';
@@ -92,7 +92,7 @@
             // 
             // txt_username
             // 
-            this.txt_username.Location = new System.Drawing.Point(286, 329);
+            this.txt_username.Location = new System.Drawing.Point(391, 310);
             this.txt_username.Margin = new System.Windows.Forms.Padding(2);
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(226, 20);
@@ -101,7 +101,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(286, 416);
+            this.label1.Location = new System.Drawing.Point(391, 397);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
@@ -111,7 +111,7 @@
             // cb_department
             // 
             this.cb_department.FormattingEnabled = true;
-            this.cb_department.Location = new System.Drawing.Point(286, 433);
+            this.cb_department.Location = new System.Drawing.Point(391, 414);
             this.cb_department.Margin = new System.Windows.Forms.Padding(2);
             this.cb_department.Name = "cb_department";
             this.cb_department.Size = new System.Drawing.Size(226, 21);
@@ -138,7 +138,7 @@
             this.Name = "SignUp";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SignUp";
+            this.Text = "Sign Up";
             this.ResumeLayout(false);
             this.PerformLayout();
 

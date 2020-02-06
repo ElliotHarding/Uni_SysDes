@@ -67,6 +67,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.orderHeadTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_addNewProductRow
@@ -237,7 +238,7 @@
             this.VATTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.VATTxt.Location = new System.Drawing.Point(439, 105);
             this.VATTxt.Name = "VATTxt";
-            this.VATTxt.Size = new System.Drawing.Size(153, 20);
+            this.VATTxt.Size = new System.Drawing.Size(126, 20);
             this.VATTxt.TabIndex = 137;
             // 
             // label4
@@ -416,11 +417,22 @@
             this.label1.TabIndex = 117;
             this.label1.Text = "Order Head";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label15.Location = new System.Drawing.Point(571, 108);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(13, 13);
+            this.label15.TabIndex = 157;
+            this.label15.Text = "£";
+            // 
             // ExpectedDelivery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 681);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.btn_addNewProductRow);
             this.Controls.Add(this.pnl_newProducts);
             this.Controls.Add(this.label17);
@@ -514,5 +526,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox orderHeadTxt;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label15;
     }
 }

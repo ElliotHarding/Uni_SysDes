@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace StockManagementSystem.User_Controls
 {
-    public partial class NewProductRow : BaseForm
+    public partial class NewProductRow : UserControl
     {
         ExpectedDelivery m_shipmentDetails;
 

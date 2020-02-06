@@ -36,7 +36,6 @@
             this.dt_requested = new System.Windows.Forms.DateTimePicker();
             this.dt_order = new System.Windows.Forms.DateTimePicker();
             this.supplierRemitToAddressTxt4 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.btn_addShipmentDetails = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -72,7 +71,7 @@
             // 
             // btn_addNewProductRow
             // 
-            this.btn_addNewProductRow.Location = new System.Drawing.Point(877, 300);
+            this.btn_addNewProductRow.Location = new System.Drawing.Point(883, 240);
             this.btn_addNewProductRow.Name = "btn_addNewProductRow";
             this.btn_addNewProductRow.Size = new System.Drawing.Size(85, 23);
             this.btn_addNewProductRow.TabIndex = 156;
@@ -84,16 +83,16 @@
             // 
             this.pnl_newProducts.AutoScroll = true;
             this.pnl_newProducts.BackColor = System.Drawing.SystemColors.Control;
-            this.pnl_newProducts.Location = new System.Drawing.Point(60, 329);
+            this.pnl_newProducts.Location = new System.Drawing.Point(60, 269);
             this.pnl_newProducts.Name = "pnl_newProducts";
-            this.pnl_newProducts.Size = new System.Drawing.Size(910, 265);
+            this.pnl_newProducts.Size = new System.Drawing.Size(910, 325);
             this.pnl_newProducts.TabIndex = 155;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label17.Location = new System.Drawing.Point(571, 131);
+            this.label17.Location = new System.Drawing.Point(571, 56);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(13, 13);
             this.label17.TabIndex = 154;
@@ -103,7 +102,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label16.Location = new System.Drawing.Point(571, 157);
+            this.label16.Location = new System.Drawing.Point(571, 82);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(13, 13);
             this.label16.TabIndex = 153;
@@ -111,21 +110,21 @@
             // 
             // dt_promised
             // 
-            this.dt_promised.Location = new System.Drawing.Point(507, 274);
+            this.dt_promised.Location = new System.Drawing.Point(507, 199);
             this.dt_promised.Name = "dt_promised";
             this.dt_promised.Size = new System.Drawing.Size(233, 20);
             this.dt_promised.TabIndex = 152;
             // 
             // dt_requested
             // 
-            this.dt_requested.Location = new System.Drawing.Point(268, 274);
+            this.dt_requested.Location = new System.Drawing.Point(268, 199);
             this.dt_requested.Name = "dt_requested";
             this.dt_requested.Size = new System.Drawing.Size(233, 20);
             this.dt_requested.TabIndex = 151;
             // 
             // dt_order
             // 
-            this.dt_order.Location = new System.Drawing.Point(29, 274);
+            this.dt_order.Location = new System.Drawing.Point(29, 199);
             this.dt_order.Name = "dt_order";
             this.dt_order.Size = new System.Drawing.Size(233, 20);
             this.dt_order.TabIndex = 150;
@@ -133,20 +132,10 @@
             // supplierRemitToAddressTxt4
             // 
             this.supplierRemitToAddressTxt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.supplierRemitToAddressTxt4.Location = new System.Drawing.Point(764, 274);
+            this.supplierRemitToAddressTxt4.Location = new System.Drawing.Point(764, 199);
             this.supplierRemitToAddressTxt4.Name = "supplierRemitToAddressTxt4";
             this.supplierRemitToAddressTxt4.Size = new System.Drawing.Size(233, 20);
             this.supplierRemitToAddressTxt4.TabIndex = 149;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(362, 54);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(299, 24);
-            this.label15.TabIndex = 148;
-            this.label15.Text = "Add Brand New Product Shipment";
             // 
             // btn_addShipmentDetails
             // 
@@ -163,7 +152,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label11.Location = new System.Drawing.Point(509, 258);
+            this.label11.Location = new System.Drawing.Point(509, 183);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(76, 13);
             this.label11.TabIndex = 146;
@@ -173,7 +162,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label13.Location = new System.Drawing.Point(270, 258);
+            this.label13.Location = new System.Drawing.Point(270, 183);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(79, 13);
             this.label13.TabIndex = 145;
@@ -183,7 +172,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label14.Location = new System.Drawing.Point(31, 259);
+            this.label14.Location = new System.Drawing.Point(31, 184);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(59, 13);
             this.label14.TabIndex = 144;
@@ -192,7 +181,7 @@
             // orderNumberTxt
             // 
             this.orderNumberTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.orderNumberTxt.Location = new System.Drawing.Point(114, 183);
+            this.orderNumberTxt.Location = new System.Drawing.Point(114, 108);
             this.orderNumberTxt.Name = "orderNumberTxt";
             this.orderNumberTxt.Size = new System.Drawing.Size(233, 20);
             this.orderNumberTxt.TabIndex = 143;
@@ -201,7 +190,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label7.Location = new System.Drawing.Point(35, 186);
+            this.label7.Location = new System.Drawing.Point(35, 111);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(73, 13);
             this.label7.TabIndex = 142;
@@ -210,7 +199,7 @@
             // orderLineTxt
             // 
             this.orderLineTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.orderLineTxt.Location = new System.Drawing.Point(114, 154);
+            this.orderLineTxt.Location = new System.Drawing.Point(114, 79);
             this.orderLineTxt.Name = "orderLineTxt";
             this.orderLineTxt.Size = new System.Drawing.Size(233, 20);
             this.orderLineTxt.TabIndex = 141;
@@ -219,7 +208,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label8.Location = new System.Drawing.Point(52, 157);
+            this.label8.Location = new System.Drawing.Point(52, 82);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(56, 13);
             this.label8.TabIndex = 140;
@@ -228,7 +217,7 @@
             // invoiceTotalTxt
             // 
             this.invoiceTotalTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.invoiceTotalTxt.Location = new System.Drawing.Point(439, 154);
+            this.invoiceTotalTxt.Location = new System.Drawing.Point(439, 79);
             this.invoiceTotalTxt.Name = "invoiceTotalTxt";
             this.invoiceTotalTxt.Size = new System.Drawing.Size(126, 20);
             this.invoiceTotalTxt.TabIndex = 139;
@@ -237,7 +226,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label9.Location = new System.Drawing.Point(364, 157);
+            this.label9.Location = new System.Drawing.Point(364, 82);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 13);
             this.label9.TabIndex = 138;
@@ -246,7 +235,7 @@
             // VATTxt
             // 
             this.VATTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.VATTxt.Location = new System.Drawing.Point(439, 180);
+            this.VATTxt.Location = new System.Drawing.Point(439, 105);
             this.VATTxt.Name = "VATTxt";
             this.VATTxt.Size = new System.Drawing.Size(153, 20);
             this.VATTxt.TabIndex = 137;
@@ -255,7 +244,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label4.Location = new System.Drawing.Point(405, 183);
+            this.label4.Location = new System.Drawing.Point(405, 108);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(28, 13);
             this.label4.TabIndex = 136;
@@ -264,7 +253,7 @@
             // extendedPriceTxt
             // 
             this.extendedPriceTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.extendedPriceTxt.Location = new System.Drawing.Point(439, 128);
+            this.extendedPriceTxt.Location = new System.Drawing.Point(439, 53);
             this.extendedPriceTxt.Name = "extendedPriceTxt";
             this.extendedPriceTxt.Size = new System.Drawing.Size(126, 20);
             this.extendedPriceTxt.TabIndex = 135;
@@ -273,7 +262,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label5.Location = new System.Drawing.Point(354, 131);
+            this.label5.Location = new System.Drawing.Point(354, 56);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 13);
             this.label5.TabIndex = 134;
@@ -282,7 +271,7 @@
             // goodsAndServicesAddressTxt4
             // 
             this.goodsAndServicesAddressTxt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.goodsAndServicesAddressTxt4.Location = new System.Drawing.Point(764, 174);
+            this.goodsAndServicesAddressTxt4.Location = new System.Drawing.Point(764, 99);
             this.goodsAndServicesAddressTxt4.Name = "goodsAndServicesAddressTxt4";
             this.goodsAndServicesAddressTxt4.Size = new System.Drawing.Size(233, 20);
             this.goodsAndServicesAddressTxt4.TabIndex = 133;
@@ -290,7 +279,7 @@
             // goodsAndServicesAddressTxt3
             // 
             this.goodsAndServicesAddressTxt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.goodsAndServicesAddressTxt3.Location = new System.Drawing.Point(764, 149);
+            this.goodsAndServicesAddressTxt3.Location = new System.Drawing.Point(764, 74);
             this.goodsAndServicesAddressTxt3.Name = "goodsAndServicesAddressTxt3";
             this.goodsAndServicesAddressTxt3.Size = new System.Drawing.Size(233, 20);
             this.goodsAndServicesAddressTxt3.TabIndex = 132;
@@ -298,7 +287,7 @@
             // goodsAndServicesAddressTxt2
             // 
             this.goodsAndServicesAddressTxt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.goodsAndServicesAddressTxt2.Location = new System.Drawing.Point(764, 126);
+            this.goodsAndServicesAddressTxt2.Location = new System.Drawing.Point(764, 51);
             this.goodsAndServicesAddressTxt2.Name = "goodsAndServicesAddressTxt2";
             this.goodsAndServicesAddressTxt2.Size = new System.Drawing.Size(233, 20);
             this.goodsAndServicesAddressTxt2.TabIndex = 131;
@@ -306,7 +295,7 @@
             // goodsAndServicesAddressTxt1
             // 
             this.goodsAndServicesAddressTxt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.goodsAndServicesAddressTxt1.Location = new System.Drawing.Point(764, 102);
+            this.goodsAndServicesAddressTxt1.Location = new System.Drawing.Point(764, 27);
             this.goodsAndServicesAddressTxt1.Name = "goodsAndServicesAddressTxt1";
             this.goodsAndServicesAddressTxt1.Size = new System.Drawing.Size(233, 20);
             this.goodsAndServicesAddressTxt1.TabIndex = 130;
@@ -315,7 +304,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label6.Location = new System.Drawing.Point(613, 105);
+            this.label6.Location = new System.Drawing.Point(613, 30);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(145, 13);
             this.label6.TabIndex = 129;
@@ -324,7 +313,7 @@
             // unitOfPriceTxt
             // 
             this.unitOfPriceTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.unitOfPriceTxt.Location = new System.Drawing.Point(439, 102);
+            this.unitOfPriceTxt.Location = new System.Drawing.Point(439, 27);
             this.unitOfPriceTxt.Name = "unitOfPriceTxt";
             this.unitOfPriceTxt.Size = new System.Drawing.Size(153, 20);
             this.unitOfPriceTxt.TabIndex = 128;
@@ -333,7 +322,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label10.Location = new System.Drawing.Point(366, 105);
+            this.label10.Location = new System.Drawing.Point(366, 30);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(67, 13);
             this.label10.TabIndex = 127;
@@ -342,7 +331,7 @@
             // supplierSiteNameTxt
             // 
             this.supplierSiteNameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.supplierSiteNameTxt.Location = new System.Drawing.Point(114, 128);
+            this.supplierSiteNameTxt.Location = new System.Drawing.Point(114, 53);
             this.supplierSiteNameTxt.Name = "supplierSiteNameTxt";
             this.supplierSiteNameTxt.Size = new System.Drawing.Size(233, 20);
             this.supplierSiteNameTxt.TabIndex = 126;
@@ -351,7 +340,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(11, 131);
+            this.label3.Location = new System.Drawing.Point(11, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 13);
             this.label3.TabIndex = 125;
@@ -360,7 +349,7 @@
             // supplierNameTxt
             // 
             this.supplierNameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.supplierNameTxt.Location = new System.Drawing.Point(114, 102);
+            this.supplierNameTxt.Location = new System.Drawing.Point(114, 27);
             this.supplierNameTxt.Name = "supplierNameTxt";
             this.supplierNameTxt.Size = new System.Drawing.Size(233, 20);
             this.supplierNameTxt.TabIndex = 124;
@@ -369,7 +358,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label2.Location = new System.Drawing.Point(32, 105);
+            this.label2.Location = new System.Drawing.Point(32, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 13);
             this.label2.TabIndex = 123;
@@ -378,7 +367,7 @@
             // supplierRemitToAddressTxt3
             // 
             this.supplierRemitToAddressTxt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.supplierRemitToAddressTxt3.Location = new System.Drawing.Point(764, 249);
+            this.supplierRemitToAddressTxt3.Location = new System.Drawing.Point(764, 174);
             this.supplierRemitToAddressTxt3.Name = "supplierRemitToAddressTxt3";
             this.supplierRemitToAddressTxt3.Size = new System.Drawing.Size(233, 20);
             this.supplierRemitToAddressTxt3.TabIndex = 122;
@@ -386,7 +375,7 @@
             // supplierRemitToAddressTxt2
             // 
             this.supplierRemitToAddressTxt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.supplierRemitToAddressTxt2.Location = new System.Drawing.Point(764, 224);
+            this.supplierRemitToAddressTxt2.Location = new System.Drawing.Point(764, 149);
             this.supplierRemitToAddressTxt2.Name = "supplierRemitToAddressTxt2";
             this.supplierRemitToAddressTxt2.Size = new System.Drawing.Size(233, 20);
             this.supplierRemitToAddressTxt2.TabIndex = 121;
@@ -394,7 +383,7 @@
             // supplierRemitToAddressTxt1
             // 
             this.supplierRemitToAddressTxt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.supplierRemitToAddressTxt1.Location = new System.Drawing.Point(764, 200);
+            this.supplierRemitToAddressTxt1.Location = new System.Drawing.Point(764, 125);
             this.supplierRemitToAddressTxt1.Name = "supplierRemitToAddressTxt1";
             this.supplierRemitToAddressTxt1.Size = new System.Drawing.Size(233, 20);
             this.supplierRemitToAddressTxt1.TabIndex = 120;
@@ -403,7 +392,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label12.Location = new System.Drawing.Point(630, 203);
+            this.label12.Location = new System.Drawing.Point(630, 128);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(128, 13);
             this.label12.TabIndex = 119;
@@ -412,7 +401,7 @@
             // orderHeadTxt
             // 
             this.orderHeadTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.orderHeadTxt.Location = new System.Drawing.Point(114, 209);
+            this.orderHeadTxt.Location = new System.Drawing.Point(114, 134);
             this.orderHeadTxt.Name = "orderHeadTxt";
             this.orderHeadTxt.Size = new System.Drawing.Size(233, 20);
             this.orderHeadTxt.TabIndex = 118;
@@ -421,7 +410,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label1.Location = new System.Drawing.Point(48, 212);
+            this.label1.Location = new System.Drawing.Point(48, 137);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 117;
@@ -440,7 +429,6 @@
             this.Controls.Add(this.dt_requested);
             this.Controls.Add(this.dt_order);
             this.Controls.Add(this.supplierRemitToAddressTxt4);
-            this.Controls.Add(this.label15);
             this.Controls.Add(this.btn_addShipmentDetails);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label13);
@@ -479,7 +467,7 @@
             this.Name = "ExpectedDelivery";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ExpectedDelivery";
+            this.Text = "Expected Delivery";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -495,7 +483,6 @@
         private System.Windows.Forms.DateTimePicker dt_requested;
         private System.Windows.Forms.DateTimePicker dt_order;
         private System.Windows.Forms.TextBox supplierRemitToAddressTxt4;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btn_addShipmentDetails;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;

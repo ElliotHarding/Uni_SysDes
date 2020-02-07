@@ -32,7 +32,7 @@ namespace StockManagementSystem.Pages
 
             if (m_currentUser.role != "admin")
             {
-                btn_checkIn.Hide();
+                btn_checkInOut.Hide();
                 btn_editMapLocation.Hide();
                 lbl_supplierCode.Hide();
                 btn_saveChanges.Hide();
@@ -82,43 +82,13 @@ namespace StockManagementSystem.Pages
             {
                 Product p = new Product(product);
                 p.quantity = txt_actionQuantitiy.Text;
-                //todo add to checkin page....
+                Basket.products.Add(p);
             }
             else
             {
                 notifyUser("Enter correct quantitiy");
             }
-        }
-
-        private void btn_checkout_Click(object sender, EventArgs e)
-        {
-            int quantitiy = 0;
-            if (Int32.TryParse(txt_actionQuantitiy.Text, out quantitiy))
-            {
-                int currentQuantitiy = 0;
-                if (Int32.TryParse(product.quantity, out currentQuantitiy))
-                {
-                    if (quantitiy > 0 && quantitiy <= currentQuantitiy)
-                    {
-                        Product p = new Product(product);
-                        p.quantity = txt_actionQuantitiy.Text;
-                        //todo add to checkout page....
-                    }
-                    else
-                    {
-                        notifyUser("Invalid ammount");
-                    }
-                }
-                else
-                {
-                    notifyUser("Database error #E1");
-                }           
-            }
-            else
-            {
-                notifyUser("Enter correct quantitiy");
-            }
-        }
+        }        
 
         private void btn_saveChanges_Click(object sender, EventArgs e)
         {

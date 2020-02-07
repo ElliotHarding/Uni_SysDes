@@ -30,20 +30,19 @@
         {
             this.btn_editMapLocation = new System.Windows.Forms.Button();
             this.txt_actionQuantitiy = new System.Windows.Forms.TextBox();
-            this.btn_checkout = new System.Windows.Forms.Button();
-            this.btn_checkIn = new System.Windows.Forms.Button();
+            this.btn_checkInOut = new System.Windows.Forms.Button();
             this.lbl_quantitiy = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_productInfo = new System.Windows.Forms.Label();
             this.lbl_currentStock = new System.Windows.Forms.Label();
             this.lbl_supplierCode = new System.Windows.Forms.Label();
             this.lbl_productName = new System.Windows.Forms.Label();
-            this.pictureBoxMap = new System.Windows.Forms.PictureBox();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.btn_saveChanges = new System.Windows.Forms.Button();
             this.btn_removeProduct = new System.Windows.Forms.Button();
             this.lbl_vat = new System.Windows.Forms.Label();
             this.lbl_price = new System.Windows.Forms.Label();
+            this.pictureBoxMap = new System.Windows.Forms.PictureBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
@@ -66,25 +65,15 @@
             this.txt_actionQuantitiy.Size = new System.Drawing.Size(100, 20);
             this.txt_actionQuantitiy.TabIndex = 9;
             // 
-            // btn_checkout
+            // btn_checkInOut
             // 
-            this.btn_checkout.Location = new System.Drawing.Point(428, 247);
-            this.btn_checkout.Name = "btn_checkout";
-            this.btn_checkout.Size = new System.Drawing.Size(93, 23);
-            this.btn_checkout.TabIndex = 8;
-            this.btn_checkout.Text = "Check-Out";
-            this.btn_checkout.UseVisualStyleBackColor = true;
-            this.btn_checkout.Click += new System.EventHandler(this.btn_checkout_Click);
-            // 
-            // btn_checkIn
-            // 
-            this.btn_checkIn.Location = new System.Drawing.Point(527, 247);
-            this.btn_checkIn.Name = "btn_checkIn";
-            this.btn_checkIn.Size = new System.Drawing.Size(93, 23);
-            this.btn_checkIn.TabIndex = 7;
-            this.btn_checkIn.Text = "Check-In";
-            this.btn_checkIn.UseVisualStyleBackColor = true;
-            this.btn_checkIn.Click += new System.EventHandler(this.btn_checkIn_Click);
+            this.btn_checkInOut.Location = new System.Drawing.Point(427, 247);
+            this.btn_checkInOut.Name = "btn_checkInOut";
+            this.btn_checkInOut.Size = new System.Drawing.Size(93, 23);
+            this.btn_checkInOut.TabIndex = 7;
+            this.btn_checkInOut.Text = "Check In/Out";
+            this.btn_checkInOut.UseVisualStyleBackColor = true;
+            this.btn_checkInOut.Click += new System.EventHandler(this.btn_checkIn_Click);
             // 
             // lbl_quantitiy
             // 
@@ -147,29 +136,6 @@
             this.lbl_productName.Text = "label1";
             this.lbl_productName.Click += new System.EventHandler(this.lbl_productName_Click);
             // 
-            // pictureBoxMap
-            // 
-            this.pictureBoxMap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxMap.Location = new System.Drawing.Point(255, 276);
-            this.pictureBoxMap.Name = "pictureBoxMap";
-            this.pictureBoxMap.Size = new System.Drawing.Size(500, 300);
-            this.pictureBoxMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxMap.TabIndex = 12;
-            this.pictureBoxMap.TabStop = false;
-            this.pictureBoxMap.Click += new System.EventHandler(this.PictureBoxMap_Click);
-            // 
-            // pictureBox
-            // 
-            this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox.Image = global::StockManagementSystem.Properties.Resources.NoImage;
-            this.pictureBox.Location = new System.Drawing.Point(219, 61);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(143, 116);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox.TabIndex = 0;
-            this.pictureBox.TabStop = false;
-            this.pictureBox.Click += new System.EventHandler(this.pictureBox_Click);
-            // 
             // btn_saveChanges
             // 
             this.btn_saveChanges.Location = new System.Drawing.Point(660, 582);
@@ -212,6 +178,29 @@
             this.lbl_price.Text = "Pirce :";
             this.lbl_price.Click += new System.EventHandler(this.lbl_price_Click);
             // 
+            // pictureBoxMap
+            // 
+            this.pictureBoxMap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxMap.Location = new System.Drawing.Point(255, 276);
+            this.pictureBoxMap.Name = "pictureBoxMap";
+            this.pictureBoxMap.Size = new System.Drawing.Size(500, 300);
+            this.pictureBoxMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxMap.TabIndex = 12;
+            this.pictureBoxMap.TabStop = false;
+            this.pictureBoxMap.Click += new System.EventHandler(this.PictureBoxMap_Click);
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox.Image = global::StockManagementSystem.Properties.Resources.NoImage;
+            this.pictureBox.Location = new System.Drawing.Point(219, 61);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(143, 116);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox.TabIndex = 0;
+            this.pictureBox.TabStop = false;
+            this.pictureBox.Click += new System.EventHandler(this.pictureBox_Click);
+            // 
             // ViewProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,8 +215,7 @@
             this.Controls.Add(this.btn_editMapLocation);
             this.Controls.Add(this.pictureBoxMap);
             this.Controls.Add(this.txt_actionQuantitiy);
-            this.Controls.Add(this.btn_checkout);
-            this.Controls.Add(this.btn_checkIn);
+            this.Controls.Add(this.btn_checkInOut);
             this.Controls.Add(this.lbl_quantitiy);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbl_productName);
@@ -256,8 +244,7 @@
         private System.Windows.Forms.Label lbl_productInfo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_quantitiy;
-        private System.Windows.Forms.Button btn_checkIn;
-        private System.Windows.Forms.Button btn_checkout;
+        private System.Windows.Forms.Button btn_checkInOut;
         private System.Windows.Forms.TextBox txt_actionQuantitiy;
         private System.Windows.Forms.PictureBox pictureBoxMap;
         private System.Windows.Forms.Button btn_editMapLocation;

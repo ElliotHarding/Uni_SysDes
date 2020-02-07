@@ -24,17 +24,14 @@ namespace StockManagementSystem
                     case SystemPage.Login:
                         currentPage = new Login();
                         break;
-                    case SystemPage.CheckOut:
-                        currentPage = new CheckOut();
+                    case SystemPage.Basket:
+                        currentPage = new Basket();
                         break;
                     case SystemPage.ProductsPage:
                         currentPage = new ProductsPage();
                         break;
                     case SystemPage.SignUp:
                         currentPage = new SignUp();
-                        break;
-                    case SystemPage.CheckIn:
-                        currentPage = new CheckIn();
                         break;
                     case SystemPage.ExpectedDelivery:
                         currentPage = new ExpectedDelivery();

@@ -34,16 +34,15 @@
             this.btn_invoices = new System.Windows.Forms.Button();
             this.btn_expectedDelivery = new System.Windows.Forms.Button();
             this.btn_newShipment = new System.Windows.Forms.Button();
-            this.btn_checkIn = new System.Windows.Forms.Button();
-            this.btn_checkout = new System.Windows.Forms.Button();
             this.lbl_numMessages = new System.Windows.Forms.Label();
             this.btn_settings = new System.Windows.Forms.Button();
+            this.btn_basket = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_messages
             // 
             this.btn_messages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_messages.Location = new System.Drawing.Point(61, 11);
+            this.btn_messages.Location = new System.Drawing.Point(112, 10);
             this.btn_messages.Name = "btn_messages";
             this.btn_messages.Size = new System.Drawing.Size(102, 29);
             this.btn_messages.TabIndex = 0;
@@ -55,7 +54,7 @@
             // btn_products
             // 
             this.btn_products.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_products.Location = new System.Drawing.Point(161, 11);
+            this.btn_products.Location = new System.Drawing.Point(212, 10);
             this.btn_products.Name = "btn_products";
             this.btn_products.Size = new System.Drawing.Size(102, 29);
             this.btn_products.TabIndex = 1;
@@ -67,7 +66,7 @@
             // btn_inspection
             // 
             this.btn_inspection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_inspection.Location = new System.Drawing.Point(261, 11);
+            this.btn_inspection.Location = new System.Drawing.Point(312, 10);
             this.btn_inspection.Name = "btn_inspection";
             this.btn_inspection.Size = new System.Drawing.Size(102, 29);
             this.btn_inspection.TabIndex = 2;
@@ -79,7 +78,7 @@
             // btn_invoices
             // 
             this.btn_invoices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_invoices.Location = new System.Drawing.Point(361, 11);
+            this.btn_invoices.Location = new System.Drawing.Point(412, 10);
             this.btn_invoices.Name = "btn_invoices";
             this.btn_invoices.Size = new System.Drawing.Size(102, 29);
             this.btn_invoices.TabIndex = 3;
@@ -91,7 +90,7 @@
             // btn_expectedDelivery
             // 
             this.btn_expectedDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_expectedDelivery.Location = new System.Drawing.Point(461, 11);
+            this.btn_expectedDelivery.Location = new System.Drawing.Point(512, 10);
             this.btn_expectedDelivery.Name = "btn_expectedDelivery";
             this.btn_expectedDelivery.Size = new System.Drawing.Size(103, 29);
             this.btn_expectedDelivery.TabIndex = 4;
@@ -103,7 +102,7 @@
             // btn_newShipment
             // 
             this.btn_newShipment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_newShipment.Location = new System.Drawing.Point(562, 11);
+            this.btn_newShipment.Location = new System.Drawing.Point(613, 10);
             this.btn_newShipment.Name = "btn_newShipment";
             this.btn_newShipment.Size = new System.Drawing.Size(102, 29);
             this.btn_newShipment.TabIndex = 5;
@@ -112,36 +111,11 @@
             this.btn_newShipment.UseVisualStyleBackColor = true;
             this.btn_newShipment.Click += new System.EventHandler(this.btn_newShipment_Click);
             // 
-            // btn_checkIn
-            // 
-            this.btn_checkIn.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_checkIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_checkIn.Location = new System.Drawing.Point(662, 11);
-            this.btn_checkIn.Name = "btn_checkIn";
-            this.btn_checkIn.Size = new System.Drawing.Size(102, 29);
-            this.btn_checkIn.TabIndex = 6;
-            this.btn_checkIn.TabStop = false;
-            this.btn_checkIn.Text = "Check-In";
-            this.btn_checkIn.UseVisualStyleBackColor = false;
-            this.btn_checkIn.Click += new System.EventHandler(this.btn_checkIn_Click);
-            // 
-            // btn_checkout
-            // 
-            this.btn_checkout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_checkout.Location = new System.Drawing.Point(762, 11);
-            this.btn_checkout.Name = "btn_checkout";
-            this.btn_checkout.Size = new System.Drawing.Size(102, 29);
-            this.btn_checkout.TabIndex = 7;
-            this.btn_checkout.TabStop = false;
-            this.btn_checkout.Text = "Check-Out";
-            this.btn_checkout.UseVisualStyleBackColor = true;
-            this.btn_checkout.Click += new System.EventHandler(this.btn_checkout_Click);
-            // 
             // lbl_numMessages
             // 
             this.lbl_numMessages.AutoSize = true;
             this.lbl_numMessages.ForeColor = System.Drawing.Color.Red;
-            this.lbl_numMessages.Location = new System.Drawing.Point(146, 14);
+            this.lbl_numMessages.Location = new System.Drawing.Point(197, 13);
             this.lbl_numMessages.Name = "lbl_numMessages";
             this.lbl_numMessages.Size = new System.Drawing.Size(13, 13);
             this.lbl_numMessages.TabIndex = 8;
@@ -150,7 +124,7 @@
             // btn_settings
             // 
             this.btn_settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_settings.Location = new System.Drawing.Point(863, 11);
+            this.btn_settings.Location = new System.Drawing.Point(815, 10);
             this.btn_settings.Name = "btn_settings";
             this.btn_settings.Size = new System.Drawing.Size(102, 29);
             this.btn_settings.TabIndex = 9;
@@ -159,14 +133,25 @@
             this.btn_settings.UseVisualStyleBackColor = true;
             this.btn_settings.Click += new System.EventHandler(this.btn_settings_Click);
             // 
+            // btn_basket
+            // 
+            this.btn_basket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_basket.Location = new System.Drawing.Point(714, 10);
+            this.btn_basket.Name = "btn_basket";
+            this.btn_basket.Size = new System.Drawing.Size(102, 29);
+            this.btn_basket.TabIndex = 10;
+            this.btn_basket.TabStop = false;
+            this.btn_basket.Text = "Basket";
+            this.btn_basket.UseVisualStyleBackColor = true;
+            this.btn_basket.Click += new System.EventHandler(this.btn_basket_Click);
+            // 
             // StaffNavBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_basket);
             this.Controls.Add(this.btn_settings);
             this.Controls.Add(this.lbl_numMessages);
-            this.Controls.Add(this.btn_checkout);
-            this.Controls.Add(this.btn_checkIn);
             this.Controls.Add(this.btn_newShipment);
             this.Controls.Add(this.btn_expectedDelivery);
             this.Controls.Add(this.btn_invoices);
@@ -190,9 +175,8 @@
         private System.Windows.Forms.Button btn_invoices;
         private System.Windows.Forms.Button btn_expectedDelivery;
         private System.Windows.Forms.Button btn_newShipment;
-        private System.Windows.Forms.Button btn_checkIn;
-        private System.Windows.Forms.Button btn_checkout;
         private System.Windows.Forms.Label lbl_numMessages;
         private System.Windows.Forms.Button btn_settings;
+        private System.Windows.Forms.Button btn_basket;
     }
 }

@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using StockManagementSystem.Pages;
 
@@ -30,9 +24,9 @@ namespace StockManagementSystem.Classes
             {
                 btn_messages.BackColor = Color.Green;
             }
-            else if (currentForm.GetType() == typeof(CheckOut))
+            else if (currentForm.GetType() == typeof(Basket))
             {
-                btn_checkOut.BackColor = Color.Green;
+                btn_basket.BackColor = Color.Green;
             }
             else if(currentForm.GetType() == typeof(Settings))
             {
@@ -55,14 +49,14 @@ namespace StockManagementSystem.Classes
             m_currentForm.goToNextPage(SystemPage.ProductsPage);
         }
 
-        private void btn_checkout_Click(object sender, EventArgs e)
-        {
-            m_currentForm.goToNextPage(SystemPage.CheckOut);
-        }
-
         private void btn_settings_Click(object sender, EventArgs e)
         {
             m_currentForm.goToNextPage(SystemPage.Settings);
+        }
+
+        private void btn_basket_Click(object sender, EventArgs e)
+        {
+            m_currentForm.goToNextPage(SystemPage.Basket);
         }
     }
 }

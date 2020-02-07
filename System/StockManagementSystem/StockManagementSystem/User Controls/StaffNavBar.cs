@@ -45,17 +45,13 @@ namespace StockManagementSystem.Classes
             {
                 btn_newShipment.BackColor = Color.Green;
             }
-            else if (currentForm.GetType() == typeof(CheckIn))
-            {
-                btn_checkIn.BackColor = Color.Green;
-            }
             else if (currentForm.GetType() == typeof(Invoices))
             {
                 btn_invoices.BackColor = Color.Green;
             }
-            else if (currentForm.GetType() == typeof(CheckOut))
+            else if (currentForm.GetType() == typeof(Basket))
             {
-                btn_checkout.BackColor = Color.Green;
+                btn_basket.BackColor = Color.Green;
             }
             else if (currentForm.GetType() == typeof(Settings) || currentForm.GetType() == typeof(AdminSettings))
             {
@@ -98,22 +94,17 @@ namespace StockManagementSystem.Classes
             m_currentForm.goToNextPage(SystemPage.NewShipment);
         }
 
-        private void btn_checkIn_Click(object sender, EventArgs e)
-        {
-            m_currentForm.goToNextPage(SystemPage.CheckIn);
-        }
-
-        private void btn_checkout_Click(object sender, EventArgs e)
-        {
-            m_currentForm.goToNextPage(SystemPage.CheckOut);
-        }
-
         private void btn_settings_Click(object sender, EventArgs e)
         {
             if (m_bIsAdmin)
                 m_currentForm.goToNextPage(SystemPage.AdminSettings);
             else
                 m_currentForm.goToNextPage(SystemPage.Settings);
+        }
+
+        private void btn_basket_Click(object sender, EventArgs e)
+        {
+            m_currentForm.goToNextPage(SystemPage.Basket);
         }
     }
 }

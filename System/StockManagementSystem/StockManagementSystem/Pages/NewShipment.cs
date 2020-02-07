@@ -75,18 +75,6 @@ namespace StockManagementSystem.Pages
             m_iRowIndex++;
         }
 
-        private void updateProductQuantityCallback(bool success)
-        {
-            if(success)
-            {
-                notifyUser("Success in adding items", "Success");
-            }
-            else
-            {
-                notifyUser("Failed to add items, check codes, or internet.");
-            }
-        }
-
         private void btn_addNewProductRow_Click(object sender, EventArgs e)
         {
             addRow(new NewProductRow(this));
@@ -100,9 +88,21 @@ namespace StockManagementSystem.Pages
                 m_newProducts.Add(npr.GetProduct());
             }
 
-            if(m_newProducts.Count > 0)
+            if (m_newProducts.Count > 0)
                 DatabaseComms.uploadProducts(m_newProducts, uploadProductsCallback);
-        }       
+        }
+
+        private void updateProductQuantityCallback(bool success)
+        {
+            if(success)
+            {
+                notifyUser("Success in adding items", "Success");
+            }
+            else
+            {
+                notifyUser("Failed to add items, check codes, or internet.");
+            }
+        }     
 
         private void uploadProductsCallback(bool success)
         {

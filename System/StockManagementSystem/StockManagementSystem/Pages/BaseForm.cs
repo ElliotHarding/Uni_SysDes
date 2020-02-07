@@ -7,8 +7,7 @@ namespace StockManagementSystem.Pages
     {
         Messages,
         Login,
-        CheckOut,
-        CheckIn,
+        Basket,
         ProductsPage,
         ViewProduct,
         SignUp,

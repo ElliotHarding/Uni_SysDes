@@ -56,12 +56,6 @@
     <Compile Include="Pages\AdminSettings.Designer.cs">
       <DependentUpon>AdminSettings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\CheckIn.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pages\CheckIn.Designer.cs">
-      <DependentUpon>CheckIn.cs</DependentUpon>
-    </Compile>
     <Compile Include="Pages\ExpectedDelivery.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +103,12 @@
     </Compile>
     <Compile Include="Pages\ViewProduct.Designer.cs">
       <DependentUpon>ViewProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\BasketRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\BasketRow.Designer.cs">
+      <DependentUpon>BasketRow.cs</DependentUpon>
     </Compile>
     <Compile Include="User Controls\NewProductRow.cs">
       <SubType>Form</SubType>
@@ -171,11 +171,11 @@
     <Compile Include="Pages\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\CheckOut.cs">
+    <Compile Include="Pages\Basket.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\CheckOut.Designer.cs">
-      <DependentUpon>CheckOut.cs</DependentUpon>
+    <Compile Include="Pages\Basket.Designer.cs">
+      <DependentUpon>Basket.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\Login.cs">
       <SubType>Form</SubType>
@@ -208,11 +208,8 @@
     <EmbeddedResource Include="Pages\AdminSettings.resx">
       <DependentUpon>AdminSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\CheckIn.resx">
-      <DependentUpon>CheckIn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\CheckOut.resx">
-      <DependentUpon>CheckOut.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\Basket.resx">
+      <DependentUpon>Basket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ExpectedDelivery.resx">
       <DependentUpon>ExpectedDelivery.cs</DependentUpon>
@@ -240,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ViewProduct.resx">
       <DependentUpon>ViewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\BasketRow.resx">
+      <DependentUpon>BasketRow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\NewProductRow.resx">
       <DependentUpon>NewProductRow.cs</DependentUpon>

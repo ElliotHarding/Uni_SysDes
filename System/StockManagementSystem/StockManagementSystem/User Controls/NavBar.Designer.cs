@@ -30,7 +30,7 @@
         {
             this.btn_messages = new System.Windows.Forms.Button();
             this.btn_products = new System.Windows.Forms.Button();
-            this.btn_checkOut = new System.Windows.Forms.Button();
+            this.btn_basket = new System.Windows.Forms.Button();
             this.lbl_messageCount = new System.Windows.Forms.Label();
             this.btn_settings = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -59,17 +59,17 @@
             this.btn_products.UseVisualStyleBackColor = true;
             this.btn_products.Click += new System.EventHandler(this.btn_products_Click);
             // 
-            // btn_checkOut
+            // btn_basket
             // 
-            this.btn_checkOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_checkOut.Location = new System.Drawing.Point(511, 6);
-            this.btn_checkOut.Name = "btn_checkOut";
-            this.btn_checkOut.Size = new System.Drawing.Size(220, 41);
-            this.btn_checkOut.TabIndex = 5;
-            this.btn_checkOut.TabStop = false;
-            this.btn_checkOut.Text = "Check Out";
-            this.btn_checkOut.UseVisualStyleBackColor = true;
-            this.btn_checkOut.Click += new System.EventHandler(this.btn_checkout_Click);
+            this.btn_basket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_basket.Location = new System.Drawing.Point(511, 6);
+            this.btn_basket.Name = "btn_basket";
+            this.btn_basket.Size = new System.Drawing.Size(220, 41);
+            this.btn_basket.TabIndex = 5;
+            this.btn_basket.TabStop = false;
+            this.btn_basket.Text = "Basket";
+            this.btn_basket.UseVisualStyleBackColor = true;
+            this.btn_basket.Click += new System.EventHandler(this.btn_basket_Click);
             // 
             // lbl_messageCount
             // 
@@ -99,7 +99,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btn_settings);
             this.Controls.Add(this.lbl_messageCount);
-            this.Controls.Add(this.btn_checkOut);
+            this.Controls.Add(this.btn_basket);
             this.Controls.Add(this.btn_products);
             this.Controls.Add(this.btn_messages);
             this.MaximumSize = new System.Drawing.Size(1024, 50);
@@ -115,7 +115,7 @@
 
         private System.Windows.Forms.Button btn_messages;
         private System.Windows.Forms.Button btn_products;
-        private System.Windows.Forms.Button btn_checkOut;
+        private System.Windows.Forms.Button btn_basket;
         private System.Windows.Forms.Label lbl_messageCount;
         private System.Windows.Forms.Button btn_settings;
     }

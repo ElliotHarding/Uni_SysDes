@@ -62,12 +62,12 @@
             // 
             this.txt_actionQuantitiy.Location = new System.Drawing.Point(321, 248);
             this.txt_actionQuantitiy.Name = "txt_actionQuantitiy";
-            this.txt_actionQuantitiy.Size = new System.Drawing.Size(100, 20);
+            this.txt_actionQuantitiy.Size = new System.Drawing.Size(41, 20);
             this.txt_actionQuantitiy.TabIndex = 9;
             // 
             // btn_checkInOut
             // 
-            this.btn_checkInOut.Location = new System.Drawing.Point(427, 247);
+            this.btn_checkInOut.Location = new System.Drawing.Point(368, 247);
             this.btn_checkInOut.Name = "btn_checkInOut";
             this.btn_checkInOut.Size = new System.Drawing.Size(93, 23);
             this.btn_checkInOut.TabIndex = 7;

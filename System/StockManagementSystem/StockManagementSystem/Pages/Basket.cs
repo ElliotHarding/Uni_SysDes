@@ -19,6 +19,9 @@ namespace StockManagementSystem.Pages
             {
                 addRow(new BasketRow(p, this));
             }
+
+            if (products.Count > 0)
+                lbl_noProducts.Hide();
         }
 
         private void addRow(BasketRow productRow)

@@ -27,11 +27,13 @@ namespace StockManagementSystem.Pages
             {
                 if(itemCode != null && itemCode != "")
                 {
-                    DatabaseComms.updateProductQuantity(updateProductQuantityCallback, quantitiy,  "id = '" + itemCode + "'");
+                    //Todo get quantities of origional product
+                    //DatabaseComms.updateProductQuantity(updateProductQuantityCallback, quantitiy,  "id = '" + itemCode + "'");
                 }
                 else if(itemSupplierCode != null && itemSupplierCode != "")
                 {
-                    DatabaseComms.updateProductQuantity(updateProductQuantityCallback, quantitiy, "externalId = '" + itemSupplierCode + "'");
+                    //Todo get quantities of origional product
+                    //DatabaseComms.updateProductQuantity(updateProductQuantityCallback, quantitiy, "externalId = '" + itemSupplierCode + "'");
                 }
                 else
                 {

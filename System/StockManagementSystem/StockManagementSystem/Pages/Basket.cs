@@ -75,8 +75,15 @@ namespace StockManagementSystem.Pages
         private void btn_returnItems_Click(object sender, EventArgs e)
         {
             List<Product> products = getProducts();
-            //todo
+
+
+
             clearAll();
+        }
+
+        private void returnItemsCallback(bool success)
+        {
+
         }
 
         private void btn_checkout_Click(object sender, EventArgs e)

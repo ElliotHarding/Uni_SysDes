@@ -81,7 +81,7 @@ namespace StockManagementSystem.Pages
             if (Int32.TryParse(txt_actionQuantitiy.Text, out quantitiy))
             {
                 Product p = new Product(product);
-                p.quantity = txt_actionQuantitiy.Text;
+                p.requestedQuantitiy = quantitiy;
                 Basket.products.Add(p);
 
                 DialogResult dialogResult = MessageBox.Show("Added to basket. Visit basket?", "Visit basket?", MessageBoxButtons.YesNo);

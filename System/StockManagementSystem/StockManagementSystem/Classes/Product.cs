@@ -75,6 +75,8 @@ namespace StockManagementSystem
         public string dangerDescription { get; set; }//If null not dangerous
         public string retProductNo { get; set; }//if null not return product
 
+        public int requestedQuantitiy = 0;
+
         public Bitmap getBitmap()
         {
             if (image == null)

@@ -24,14 +24,12 @@ namespace StockManagementSystem.User_Controls
 
             pb_image.Image = product.getBitmap();
 
-            int quantity = 0;
-            if (Int32.TryParse(product.quantity, out quantity))
-                c_quantitiy.Value = quantity;
+            c_quantitiy.Value = product.requestedQuantitiy;
         }
 
         public Product GetProduct()
         {
-            m_product.quantity = c_quantitiy.Value.ToString();
+            m_product.requestedQuantitiy = Decimal.ToInt32(c_quantitiy.Value);
             return m_product;
         }
 

@@ -154,6 +154,34 @@ namespace StockManagementSystem
             }).Start();
         }
 
+        public static async void updateProductQuantities(Action<bool> callback, List<Product> products)
+        {
+            new Task(() =>
+            {
+                try
+                {
+                    string updates = "";
+                    foreach (Product p in products)
+                    {
+                        updates += "UPDATE PRODUCTS SET quantity = '" + p.quantity + "' WHERE id = " + p.id + ";";
+                    }                    
+
+                    SqlConnection connection = new SqlConnection(m_connectionString);
+                    SqlCommand command = new SqlCommand(updates, connection);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+
+                    callback(true);
+                }
+                catch (Exception e)
+                {
+                    callback(false);
+                }
+            }).Start();
+        }
+
         public static async void getProducts(Action<List<Product>> callback, string where = null)
         {
             new Task(() =>

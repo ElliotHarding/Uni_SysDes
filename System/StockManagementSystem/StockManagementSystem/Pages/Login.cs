@@ -12,10 +12,6 @@ namespace StockManagementSystem.Pages
             InitializeComponent();
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-        }
-
         private void btn_login_Click(object sender, EventArgs e)
         {
             string nNumber = txt_username.Text;

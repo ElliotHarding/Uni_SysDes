@@ -42,20 +42,32 @@ namespace StockManagementSystem.Pages
 
         private void refreshMapLocation()
         {
-            //todo get map image...
-            Bitmap bitmap = StockManagementSystem.Properties.Resources.NoImage;
+            pictureBoxMap.Image = new Bitmap(AdminSettings.FloorMap);
+
             int mapX = 0;
-            int mapY = 0;           
+            int mapY = 0;
             if (Int32.TryParse(product.locationX, out mapX) && Int32.TryParse(product.locationY, out mapY))
             {
-                const int drawOffsetX = -11; //TODO: VALUES BASED OF HALF IMAGE SIZE THAT IS USED AS MARKER
-                const int drawOffsety = -20;
-                Graphics graphics = Graphics.FromImage(bitmap);
-                graphics.DrawString("x", new Font(new FontFamily("Calibri"), 32, FontStyle.Regular, GraphicsUnit.Pixel),
-                    new SolidBrush(Color.Black), mapX + drawOffsetX, mapY + drawOffsety);
-            }
+                Graphics graphics = Graphics.FromImage(pictureBoxMap.Image);
+                Point unscaled_p = new Point();
 
-            pictureBoxMap.Image = bitmap;
+                float imageRatio = pictureBoxMap.Image.Width / (float)pictureBoxMap.Image.Height; // image W:H ratio
+                float containerRatio = pictureBoxMap.Width / (float)pictureBoxMap.Height; // container W:H ratio
+
+                if (imageRatio >= containerRatio)
+                {
+                    // horizontal image
+                    float scaleFactor = pictureBoxMap.Width / (float)pictureBoxMap.Image.Width;
+                    float scaledHeight = pictureBoxMap.Image.Height * scaleFactor;
+                    // calculate gap between top of container and top of image
+                    float filler = Math.Abs(pictureBoxMap.Height - scaledHeight) / 2;
+                    unscaled_p.X = (int)(mapX / scaleFactor);
+                    unscaled_p.Y = (int)((mapY - filler) / scaleFactor);
+                }
+
+                graphics.DrawString("x", new Font(new FontFamily("Calibri"), 32, FontStyle.Regular, GraphicsUnit.Point),
+                    new SolidBrush(Color.Black), unscaled_p);
+            }
         }
 
         private void btn_editMapLocation_Click(object sender, EventArgs e)
@@ -67,7 +79,8 @@ namespace StockManagementSystem.Pages
         {
             if(m_bAwaitingClick)
             {
-                Point p = pictureBoxMap.PointToClient(Cursor.Position);
+                Point clientPoint = PointToClient(Cursor.Position);
+                Point p = new Point(clientPoint.X - pictureBoxMap.Location.X, clientPoint.Y - pictureBoxMap.Location.Y);
                 product.locationX = p.X.ToString();
                 product.locationY = p.Y.ToString();
                 m_bAwaitingClick = false;
@@ -104,7 +117,7 @@ namespace StockManagementSystem.Pages
         private void onUpdateProductRequest(bool success)
         {
             if(success)
-                notifyUser("Updated product");
+                notifyUser("Updated product", "Success");
             else
                 notifyUser("Failed to upload product changes");
         }

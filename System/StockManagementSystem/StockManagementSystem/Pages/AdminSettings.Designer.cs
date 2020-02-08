@@ -44,6 +44,9 @@
             this.tb_newPassword2 = new System.Windows.Forms.TextBox();
             this.tb_newPassword1 = new System.Windows.Forms.TextBox();
             this.btn_setPassword = new System.Windows.Forms.Button();
+            this.pictureBoxMap = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
             this.SuspendLayout();
             // 
             // cb_privilege
@@ -120,7 +123,7 @@
             // lbl_departments
             // 
             this.lbl_departments.AutoSize = true;
-            this.lbl_departments.Location = new System.Drawing.Point(540, 238);
+            this.lbl_departments.Location = new System.Drawing.Point(651, 364);
             this.lbl_departments.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_departments.Name = "lbl_departments";
             this.lbl_departments.Size = new System.Drawing.Size(67, 13);
@@ -129,7 +132,7 @@
             // 
             // btn_updateDepartments
             // 
-            this.btn_updateDepartments.Location = new System.Drawing.Point(574, 407);
+            this.btn_updateDepartments.Location = new System.Drawing.Point(685, 533);
             this.btn_updateDepartments.Margin = new System.Windows.Forms.Padding(2);
             this.btn_updateDepartments.Name = "btn_updateDepartments";
             this.btn_updateDepartments.Size = new System.Drawing.Size(132, 26);
@@ -141,14 +144,14 @@
             // pnl_departments
             // 
             this.pnl_departments.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_departments.Location = new System.Drawing.Point(543, 254);
+            this.pnl_departments.Location = new System.Drawing.Point(654, 380);
             this.pnl_departments.Name = "pnl_departments";
             this.pnl_departments.Size = new System.Drawing.Size(197, 150);
             this.pnl_departments.TabIndex = 27;
             // 
             // btn_addDepartment
             // 
-            this.btn_addDepartment.Location = new System.Drawing.Point(745, 254);
+            this.btn_addDepartment.Location = new System.Drawing.Point(856, 380);
             this.btn_addDepartment.Margin = new System.Windows.Forms.Padding(2);
             this.btn_addDepartment.Name = "btn_addDepartment";
             this.btn_addDepartment.Size = new System.Drawing.Size(26, 26);
@@ -201,11 +204,33 @@
             this.btn_setPassword.UseVisualStyleBackColor = true;
             this.btn_setPassword.Click += new System.EventHandler(this.btn_setPassword_Click);
             // 
+            // pictureBoxMap
+            // 
+            this.pictureBoxMap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxMap.Location = new System.Drawing.Point(473, 31);
+            this.pictureBoxMap.Name = "pictureBoxMap";
+            this.pictureBoxMap.Size = new System.Drawing.Size(500, 300);
+            this.pictureBoxMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxMap.TabIndex = 34;
+            this.pictureBoxMap.TabStop = false;
+            this.pictureBoxMap.Click += new System.EventHandler(this.pictureBoxMap_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(470, 15);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(110, 13);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Current Products Map";
+            // 
             // AdminSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 681);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.pictureBoxMap);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tb_newPassword2);
@@ -230,6 +255,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Settings";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,5 +278,7 @@
         private System.Windows.Forms.TextBox tb_newPassword2;
         private System.Windows.Forms.TextBox tb_newPassword1;
         private System.Windows.Forms.Button btn_setPassword;
+        private System.Windows.Forms.PictureBox pictureBoxMap;
+        private System.Windows.Forms.Label label5;
     }
 }

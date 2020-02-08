@@ -180,7 +180,6 @@
             // 
             // pictureBoxMap
             // 
-            this.pictureBoxMap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxMap.Location = new System.Drawing.Point(255, 276);
             this.pictureBoxMap.Name = "pictureBoxMap";
             this.pictureBoxMap.Size = new System.Drawing.Size(500, 300);

@@ -1,6 +1,8 @@
-﻿using System;
+﻿using StockManagementSystem.Classes;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -836,6 +838,59 @@ namespace StockManagementSystem
                 catch (Exception e)
                 {
                     callback(false);
+                }
+            }).Start();
+        }
+
+        public static void uploadItemsMap(Bitmap map, Action<bool> callback)
+        {
+            new Task(() =>
+            {
+                try
+                {
+                    SqlConnection connection = new SqlConnection(m_connectionString);
+                    Tools t = new Tools();
+                    SqlCommand command = new SqlCommand("INSERT INTO SETTINGS (map) VALUES ('"+ t.bitmapToBase64(map) + "')", connection);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+
+                    callback(true);
+                }
+                catch (Exception e)
+                {
+                    callback(false);
+                }
+            }).Start();
+        }
+
+        public static void getItemsMap(Action<Bitmap> callback)
+        {
+            new Task(() =>
+            {
+                try
+                {
+                    //Prep connection to database & query for user with given id
+                    SqlConnection connection = new SqlConnection(m_connectionString);
+                    SqlCommand command = new SqlCommand("SELECT * FROM SETTINGS;", connection);
+
+                    //Execute connection
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    Bitmap bmp = null;
+
+                    //Read results of query into list
+                    if (reader.Read())
+                        bmp = new Tools().base64ToBitmap(reader["map"].ToString());
+
+                    connection.Close();
+                    callback(bmp);
+                }
+                catch (Exception e)
+                {
+                    callback(null);
                 }
             }).Start();
         }

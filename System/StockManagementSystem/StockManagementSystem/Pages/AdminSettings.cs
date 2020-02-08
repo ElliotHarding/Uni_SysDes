@@ -8,6 +8,9 @@ namespace StockManagementSystem.Pages
 {
     public partial class AdminSettings : BaseForm
     {
+        //Public member accessed in ViewProducts, set when application starts, result from sql server
+        public static Bitmap FloorMap = null;
+
         private const int c_rowInc = 26;
         private int m_rowIndex = 0;
         private bool m_bGettingDepartments = true;
@@ -16,8 +19,10 @@ namespace StockManagementSystem.Pages
         {
             InitializeComponent();
             addNavBar();
+            pictureBoxMap.Image = FloorMap;
             DatabaseComms.getDepartments(getDepartmentsCallback);
         }
+
         private void getDepartmentsCallback(List<string> departments)
         {
             if (departments != null && departments.Count > 0)
@@ -195,6 +200,41 @@ namespace StockManagementSystem.Pages
             else
             {
                 notifyUser("Failed to update password! Check network?");
+            }
+        }
+
+        private void pictureBoxMap_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                dlg.Title = "Open Image";
+
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        Bitmap bmp = new Bitmap(dlg.FileName);
+                        pictureBoxMap.Image = bmp;
+                        FloorMap = bmp;
+                        DatabaseComms.uploadItemsMap(new Bitmap(bmp), uploadNewMapCallback);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw;
+                    }
+                }
+            }
+        }
+
+        private void uploadNewMapCallback(bool success)
+        {
+            if(success)
+            {
+                notifyUser("Saved new map.", "Success");
+            }
+            else
+            {
+                notifyUser("Failed to save new map. Check internet.");
             }
         }
     }

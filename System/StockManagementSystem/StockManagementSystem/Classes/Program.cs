@@ -1,5 +1,6 @@
 ﻿using StockManagementSystem.Pages;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace StockManagementSystem
@@ -11,6 +12,8 @@ namespace StockManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            DatabaseComms.getItemsMap(getMapCallback);
 
             BaseForm currentPage = null;
             SystemPage nextPage = SystemPage.Login;
@@ -69,6 +72,11 @@ namespace StockManagementSystem
                     nextPage = currentPage.getNextPage();
                 }                
             }
+        }
+
+        private static void getMapCallback(Bitmap map)
+        {
+            AdminSettings.FloorMap = map;
         }
     }
 }

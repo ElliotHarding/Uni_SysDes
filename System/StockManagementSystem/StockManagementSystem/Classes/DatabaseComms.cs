@@ -60,7 +60,7 @@ namespace StockManagementSystem
                     string productsValues = "";
                     foreach(Product product in products)
                     {
-                        productsValues += " ( 'NEWID()', '" + product.externalId + "', '" + product.image + "', '" + product.information + "', '" + product.locationX + "', '" + product.locationY + "', '" + product.quantity + "', '" + product.expiryDate + "', '" + product.price + "', '" + product.vat + "', '" + product.dangerDescription + "', '" + product.retProductNo + "', '" + product.name + "'),";
+                        productsValues += " ( NEWID(), '" + product.externalId + "', '" + product.image + "', '" + product.information + "', '" + product.locationX + "', '" + product.locationY + "', '" + product.quantity + "', '" + product.expiryDate + "', '" + product.price + "', '" + product.vat + "', '" + product.dangerDescription + "', '" + product.retProductNo + "', '" + product.name + "'),";
                     }
                     productsValues = productsValues.Substring(0, productsValues.Length - 1);
 

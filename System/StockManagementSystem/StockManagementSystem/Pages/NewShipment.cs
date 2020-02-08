@@ -7,8 +7,7 @@ namespace StockManagementSystem.Pages
 {
     public partial class NewShipment : BaseForm
     {
-        private int m_iRowIndex = 0;
-        List<Product> m_newProducts = new List<Product>();
+        private int m_iRowIndex = 0;       
 
         public NewShipment()
         {
@@ -84,14 +83,14 @@ namespace StockManagementSystem.Pages
 
         private void btn_addNewProducts_Click(object sender, EventArgs e)
         {
-            m_newProducts = new List<Product>();
+            List<Product> newProducts = new List<Product>();
             foreach (NewProductRow npr in pnl_newProducts.Controls)
             {
-                m_newProducts.Add(npr.GetProduct());
+                newProducts.Add(npr.GetProduct());
             }
 
-            if (m_newProducts.Count > 0)
-                DatabaseComms.uploadProducts(m_newProducts, uploadProductsCallback);
+            if (newProducts.Count > 0)
+                DatabaseComms.uploadProducts(newProducts, uploadProductsCallback);
         }
 
         private void updateProductQuantityCallback(bool success)
@@ -110,8 +109,8 @@ namespace StockManagementSystem.Pages
         {
             if (success)
             {
-                notifyUser("Added shipment and products.", "Success");
-                this.Invoke((Action)delegate { goToNextPage(SystemPage.NewShipment); });
+                notifyUser("Added products.", "Success");
+                this.Invoke((Action)delegate { pnl_newProducts.Controls.Clear(); });
             }
             else
             {

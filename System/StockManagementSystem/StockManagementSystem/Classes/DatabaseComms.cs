@@ -163,7 +163,7 @@ namespace StockManagementSystem
                     string updates = "";
                     foreach (Product p in products)
                     {
-                        updates += "UPDATE PRODUCTS SET quantity = '" + p.quantity + "' WHERE id = " + p.id + ";";
+                        updates += "UPDATE PRODUCTS SET quantity = '" + p.quantity + "' WHERE id = '" + p.id + "';";
                     }                    
 
                     SqlConnection connection = new SqlConnection(m_connectionString);

@@ -82,7 +82,7 @@ namespace StockManagementSystem.Pages
             {
                 Product p = new Product(product);
                 p.requestedQuantitiy = quantitiy;
-                Basket.products.Add(p);
+                Basket.addToBasket(p);
 
                 DialogResult dialogResult = MessageBox.Show("Added to basket. Visit basket?", "Visit basket?", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)

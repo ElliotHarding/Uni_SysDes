@@ -59,6 +59,7 @@ namespace StockManagementSystem
             dangerDescription = p.dangerDescription;
             retProductNo = p.retProductNo;
             name = p.name;
+            requestedQuantitiy = p.requestedQuantitiy;
         }
 
         public string id { get; set; }

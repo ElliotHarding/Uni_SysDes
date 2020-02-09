@@ -49,24 +49,15 @@ namespace StockManagementSystem.Pages
             if (Int32.TryParse(product.locationX, out mapX) && Int32.TryParse(product.locationY, out mapY))
             {
                 Graphics graphics = Graphics.FromImage(pictureBoxMap.Image);
-                Point unscaled_p = new Point();
 
-                float imageRatio = pictureBoxMap.Image.Width / (float)pictureBoxMap.Image.Height; // image W:H ratio
-                float containerRatio = pictureBoxMap.Width / (float)pictureBoxMap.Height; // container W:H ratio
+                float scaleFactor = pictureBoxMap.Width / (float)pictureBoxMap.Image.Width;
+                float scaledHeight = pictureBoxMap.Image.Height * scaleFactor;
+                float filler = Math.Abs(pictureBoxMap.Height - scaledHeight) / 2;
+                float X = (int)((mapX - 20) / scaleFactor);
+                float Y = (int)((mapY - filler - 20) / scaleFactor);
 
-                if (imageRatio >= containerRatio)
-                {
-                    // horizontal image
-                    float scaleFactor = pictureBoxMap.Width / (float)pictureBoxMap.Image.Width;
-                    float scaledHeight = pictureBoxMap.Image.Height * scaleFactor;
-                    // calculate gap between top of container and top of image
-                    float filler = Math.Abs(pictureBoxMap.Height - scaledHeight) / 2;
-                    unscaled_p.X = (int)(mapX / scaleFactor);
-                    unscaled_p.Y = (int)((mapY - filler) / scaleFactor);
-                }
-
-                graphics.DrawString("x", new Font(new FontFamily("Calibri"), 32, FontStyle.Regular, GraphicsUnit.Point),
-                    new SolidBrush(Color.Black), unscaled_p);
+                graphics.DrawString("x", new Font(new FontFamily("Calibri"), 28, FontStyle.Regular, GraphicsUnit.Point),
+                    new SolidBrush(Color.Red), X, Y);
             }
         }
 

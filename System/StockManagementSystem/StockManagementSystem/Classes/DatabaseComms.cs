@@ -184,7 +184,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void getProducts(Action<List<Product>> callback, string where = null)
+        public static async void getProducts(Action<List<Product>> callback, int rowCount = 0, string where = null)
         {
             new Task(() =>
             {
@@ -197,11 +197,19 @@ namespace StockManagementSystem
                     {
                         command = new SqlCommand("SELECT * FROM PRODUCTS;", connection);
                     }
+                    else if (where == null && rowCount != 0)
+                    {
+                        command = new SqlCommand("SELECT * FROM PRODUCTS LIMIT " + rowCount.ToString() + ";", connection);
+                    }
+                    else if(rowCount != 0)
+                    {                      
+                        command = new SqlCommand("SET ROWCOUNT "+ rowCount.ToString() +"; SELECT * FROM PRODUCTS WHERE " + where + ";", connection);
+                    }
                     else
                     {
                         command = new SqlCommand("SELECT * FROM PRODUCTS WHERE " + where + ";", connection);
                     }
-                
+
                     //Execute connection
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
@@ -850,7 +858,7 @@ namespace StockManagementSystem
                 {
                     SqlConnection connection = new SqlConnection(m_connectionString);
                     Tools t = new Tools();
-                    SqlCommand command = new SqlCommand("INSERT INTO SETTINGS (map) VALUES ('"+ t.bitmapToBase64(map) + "')", connection);
+                    SqlCommand command = new SqlCommand("UPDATE SETTINGS SET map = '"+ t.bitmapToBase64(map) + "';", connection);
 
                     connection.Open();
                     command.ExecuteNonQuery();

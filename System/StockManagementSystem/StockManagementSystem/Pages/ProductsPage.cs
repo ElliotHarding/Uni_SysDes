@@ -13,7 +13,7 @@ namespace StockManagementSystem.Pages
             addNavBar();
             panel_products.AutoScroll = true;
 
-            DatabaseComms.getProducts(productsCallback);
+            DatabaseComms.getProducts(productsCallback, 100);
         }
 
         //Populate panel_products with products
@@ -56,12 +56,12 @@ namespace StockManagementSystem.Pages
         {
             if(tb_search.Text == "")
             {
-                DatabaseComms.getProducts(productsCallback);
+                DatabaseComms.getProducts(productsCallback, 100);
             }
             else
             {
                 //todo add supplier code
-                DatabaseComms.getProducts(productsCallback, "name LIKE '%" + tb_search.Text + "%' OR id LIKE '%" + tb_search.Text + "%' OR externalId LIKE '%" + tb_search.Text + "%'");
+                DatabaseComms.getProducts(productsCallback, 100, "name LIKE '%" + tb_search.Text + "%' OR id LIKE '%" + tb_search.Text + "%' OR externalId LIKE '%" + tb_search.Text + "%'");
             }
         }
     }

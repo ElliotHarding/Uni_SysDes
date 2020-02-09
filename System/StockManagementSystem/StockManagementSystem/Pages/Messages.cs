@@ -30,6 +30,7 @@ namespace StockManagementSystem.Pages
             messages.Clear();
             string currentDate = DateTime.Now.AddDays(30).ToString("dd-MM-yyyy");
 
+            //DatabaseComms.getShipments(Shipments, "promisedDate < " + currentDate);
             //DatabaseComms.getProducts(ExpiringProducts, "expiryDate < " + currentDate);
         }
 
@@ -42,6 +43,17 @@ namespace StockManagementSystem.Pages
                     messages.Add(p.name + " is about to expire : " + p.expiryDate);
                 }
             }            
+        }
+
+        private static void Shipments(List<Shipment> shipments)
+        {
+            if (shipments != null)
+            {
+                foreach (Shipment s in shipments)
+                {
+                    messages.Add("Shipment " + s.id + " from : " + s.supplierName + "is expected");
+                }
+            }
         }
     }
 }

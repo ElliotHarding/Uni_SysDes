@@ -44,9 +44,9 @@
             this.pnl_inspection.Controls.Add(this.lbl_quality);
             this.pnl_inspection.Controls.Add(this.lbl_quantity);
             this.pnl_inspection.Controls.Add(this.lbl_item);
-            this.pnl_inspection.Location = new System.Drawing.Point(106, 186);
+            this.pnl_inspection.Location = new System.Drawing.Point(53, 58);
             this.pnl_inspection.Name = "pnl_inspection";
-            this.pnl_inspection.Size = new System.Drawing.Size(776, 179);
+            this.pnl_inspection.Size = new System.Drawing.Size(904, 466);
             this.pnl_inspection.TabIndex = 34;
             // 
             // lbl_info
@@ -87,7 +87,7 @@
             // 
             // btn_sendToStores
             // 
-            this.btn_sendToStores.Location = new System.Drawing.Point(451, 371);
+            this.btn_sendToStores.Location = new System.Drawing.Point(447, 530);
             this.btn_sendToStores.Name = "btn_sendToStores";
             this.btn_sendToStores.Size = new System.Drawing.Size(91, 20);
             this.btn_sendToStores.TabIndex = 35;

@@ -98,6 +98,12 @@
     <Compile Include="Pages\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Shipments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Shipments.Designer.cs">
+      <DependentUpon>Shipments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\UserInputParagraphDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,12 @@
     <Compile Include="Pages\ViewProduct.Designer.cs">
       <DependentUpon>ViewProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ViewShipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\ViewShipment.Designer.cs">
+      <DependentUpon>ViewShipment.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Controls\BasketRow.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -127,6 +139,12 @@
     </Compile>
     <Compile Include="User Controls\NewProductRow.Designer.cs">
       <DependentUpon>NewProductRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\ShipmentRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\ShipmentRow.Designer.cs">
+      <DependentUpon>ShipmentRow.cs</DependentUpon>
     </Compile>
     <Compile Include="User Controls\TextfieldRow.cs">
       <SubType>UserControl</SubType>
@@ -244,6 +262,9 @@
     <EmbeddedResource Include="Pages\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Shipments.resx">
+      <DependentUpon>Shipments.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\UserInputParagraphDialog.resx">
       <DependentUpon>UserInputParagraphDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,11 +274,17 @@
     <EmbeddedResource Include="Pages\ViewProduct.resx">
       <DependentUpon>ViewProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ViewShipment.resx">
+      <DependentUpon>ViewShipment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Controls\BasketRow.resx">
       <DependentUpon>BasketRow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\NewProductRow.resx">
       <DependentUpon>NewProductRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\ShipmentRow.resx">
+      <DependentUpon>ShipmentRow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\TextfieldRow.resx">
       <DependentUpon>TextfieldRow.cs</DependentUpon>

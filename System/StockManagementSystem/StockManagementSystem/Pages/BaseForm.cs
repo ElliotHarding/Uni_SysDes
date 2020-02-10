@@ -10,6 +10,8 @@ namespace StockManagementSystem.Pages
         Basket,
         ProductsPage,
         ViewProduct,
+        ViewShipment,
+        Shipment,
         SignUp,
         Inspection,
         Invoices,

@@ -41,9 +41,9 @@ namespace StockManagementSystem.Classes
             {
                 btn_expectedDelivery.BackColor = Color.Green;
             }
-            else if (currentForm.GetType() == typeof(NewShipment))
+            else if (currentForm.GetType() == typeof(Shipment))
             {
-                btn_newShipment.BackColor = Color.Green;
+                btn_shipment.BackColor = Color.Green;
             }
             else if (currentForm.GetType() == typeof(Invoices))
             {
@@ -91,7 +91,7 @@ namespace StockManagementSystem.Classes
 
         private void btn_newShipment_Click(object sender, EventArgs e)
         {
-            m_currentForm.goToNextPage(SystemPage.NewShipment);
+            m_currentForm.goToNextPage(SystemPage.Shipment);
         }
 
         private void btn_settings_Click(object sender, EventArgs e)

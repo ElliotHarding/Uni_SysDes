@@ -15,6 +15,8 @@ namespace StockManagementSystem.Pages
             addNavBar();
         }
 
+        //todo test:
+        int m_updateQuantity = 0;
         private void btn_add_Click(object sender, EventArgs e)
         {
             string itemCode = tb_itemCode.Text;
@@ -24,15 +26,14 @@ namespace StockManagementSystem.Pages
             int iQuantitiy;
             if (Int32.TryParse(quantitiy, out iQuantitiy))
             {
-                if(itemCode != null && itemCode != "")
-                {
-                    //Todo get quantities of origional product
-                    //DatabaseComms.updateProductQuantity(updateProductQuantityCallback, quantitiy,  "id = '" + itemCode + "'");
+                m_updateQuantity = iQuantitiy;
+                if (itemCode != null && itemCode != "")
+                {                    
+                    DatabaseComms.getProducts(getOrigionalProductForUpdateCallback, 100, "id = '" + itemCode + "'");
                 }
                 else if(itemSupplierCode != null && itemSupplierCode != "")
-                {
-                    //Todo get quantities of origional product
-                    //DatabaseComms.updateProductQuantity(updateProductQuantityCallback, quantitiy, "externalId = '" + itemSupplierCode + "'");
+                {                    
+                    DatabaseComms.getProducts(getOrigionalProductForUpdateCallback, 100, "externalId = '" + itemSupplierCode + "'");
                 }
                 else
                 {
@@ -42,6 +43,27 @@ namespace StockManagementSystem.Pages
             else
             {
                 notifyUser("Invalid quantitiy input.");
+            }
+        }
+
+        private void getOrigionalProductForUpdateCallback(List<Product> products)
+        {
+            if(products != null && products.Count > 0 && products[0] != null)
+            {
+                int iCurrentQuantity;
+                if (Int32.TryParse(products[0].quantity, out iCurrentQuantity))
+                {
+                    iCurrentQuantity += m_updateQuantity;
+                    DatabaseComms.updateProductQuantity(updateProductQuantityCallback, iCurrentQuantity.ToString(), "id = '" + products[0].id + "'");
+                }
+                else
+                {
+                    notifyUser("Unable to update product");
+                }                
+            }
+            else
+            {
+                notifyUser("Unable to find product");
             }
         }
 

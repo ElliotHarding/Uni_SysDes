@@ -52,6 +52,7 @@ namespace StockManagementSystem.Pages
         private void Btn_send_invoice_Click(object sender, EventArgs e)
         {
             //Todo
+            //new Tools() tools
             //Tools.sendEmail("", );
         }
 

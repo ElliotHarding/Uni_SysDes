@@ -1,13 +1,14 @@
 package com.example.ntustores;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.Manifest;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.budiyev.android.codescanner.CodeScanner;
 import com.budiyev.android.codescanner.CodeScannerView;
@@ -20,8 +21,18 @@ import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
+import java.io.InputStream;
+import java.io.OutputStreamWriter;
+import java.net.URL;
+import java.net.URLConnection;
+import java.nio.charset.StandardCharsets;
+import java.util.concurrent.Callable;
+
+import org.apache.commons.io.IOUtils;
+
 public class Scanner extends AppCompatActivity {
 
+    private final String m_dbPostUrl = "http://stockmanagersystem.gearhostpreview.com/dbPost.php?";
     CodeScanner mCodeScanner;
     CodeScannerView mScannerView;
 
@@ -43,8 +54,14 @@ public class Scanner extends AppCompatActivity {
                 runOnUiThread(new Runnable() { // will allow the user to scan multiple times without going off the scannerView
                     @Override
                     public void run() {
+                        BaseCallback baseCallback = new BaseCallback();
+                        baseCallback.nNumber = "";
+                        baseCallback.pid = "";
+                        new UploadData().execute(baseCallback);
+
                         Log.d("CodeDecoded", "QR Code Decoded Successfully. Result: " + result);
-                        Toast.makeText(Scanner.this,"Scanned Successfully!", Toast.LENGTH_LONG).show();
+                       // Toast.makeText(Scanner.this,"Scanned Successfully!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Scanner.this,result.toString(), Toast.LENGTH_LONG).show();
 
                     }
                 });
@@ -85,6 +102,62 @@ public class Scanner extends AppCompatActivity {
                 token.continuePermissionRequest();// keep asking for permission until user accepts
             }
         }).check();
+    }
 
+    private class UploadData extends AsyncTask<BaseCallback, String, String>
+    {
+        @Override
+        protected String doInBackground(BaseCallback... params)
+        {
+            try
+            {
+                URLConnection connection = new URL(m_dbPostUrl+"?nNumber=" + params[0].nNumber + "&pid="+params[0].pid).openConnection();
+                connection.setDoOutput(true);
+                InputStream res = connection.getInputStream();
+                String result = IOUtils.toString(res, StandardCharsets.UTF_8);
+
+//         todo       if (result = )
+                params[0].success = true;
+            }
+            catch (Exception e)
+            {
+                params[0].success = false;
+            }
+
+            try
+            {
+                params[0].call();
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+
+            return "Executed";
+        }
+    }
+
+    public class BaseCallback implements Callable<Void>
+    {
+        public String pid;
+        public String nNumber;
+        public boolean success;
+
+        @Override
+        public Void call() throws Exception
+        {
+            if(!success)
+            {
+                // call run on ui thread and notify user
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                    }
+                });
+            }
+
+            return null;
+        }
     }
 }

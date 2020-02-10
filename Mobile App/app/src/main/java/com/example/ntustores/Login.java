@@ -96,11 +96,11 @@ public class Login extends AppCompatActivity {
 
     }
 
-//    public void attemptLogin(View view){
-//        Intent intent = new Intent(Login.this, MainActivity.class);
-//        finish();
-//        startActivity(intent);
-//    }
+    public void attemptLogin(View view){
+        Intent intent = new Intent(Login.this, MainActivity.class);
+        finish();
+        startActivity(intent);
+    }
 
     // @SuppressLint("NewApi")
     // public Connection connectionClass(String user, String pass, String database, String server)

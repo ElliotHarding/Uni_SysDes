@@ -1,2 +1,2 @@
-include ':app', ':jtds-1.3.1', ':jtds-1.3.0', ':IOUtils'
+include ':app', ':jtds-1.3.1', ':jtds-1.3.0', ':IOUtils', ':commons-io-2.6', ':commons-io-2.6-copy'
 rootProject.name='NTU Stores'

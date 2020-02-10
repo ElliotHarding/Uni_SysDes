@@ -547,7 +547,7 @@ namespace StockManagementSystem
                 {
                     SqlConnection connection = new SqlConnection(m_connectionString);
                     SqlCommand command = new SqlCommand("INSERT INTO TRANSACTIONS VALUES (" +
-                        "@id, @date, @productId, @quantitiy, @nNumber, @department);", connection);
+                        "@id, @date, @productId, @quantitiy, @nNumber, @department, @price);", connection);
 
                     command.Parameters.AddWithValue("@id", "NEWID()");
                     command.Parameters.AddWithValue("@date", transaction.date);
@@ -555,6 +555,7 @@ namespace StockManagementSystem
                     command.Parameters.AddWithValue("@quantitiy", transaction.quantity);
                     command.Parameters.AddWithValue("@nNumber", transaction.nNumber);
                     command.Parameters.AddWithValue("@department", transaction.department);
+                    command.Parameters.AddWithValue("@price", transaction.price);
 
                     connection.Open();
                     command.ExecuteNonQuery();
@@ -605,7 +606,8 @@ namespace StockManagementSystem
                         reader["productId"].ToString(),
                         reader["quantity"].ToString(),
                         reader["nNumber"].ToString(),
-                        reader["department"].ToString()
+                        reader["department"].ToString(),
+                        reader["price"].ToString()
                         ));
                     }
 

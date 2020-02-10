@@ -14,13 +14,16 @@ namespace StockManagementSystem.Classes
     public partial class StaffNavBar : UserControl
     {
         BaseForm m_currentForm;
+        bool m_bIsAdmin;
 
-        public StaffNavBar(BaseForm currentForm)
+        public StaffNavBar(BaseForm currentForm, bool isAdmin)
         {
             m_currentForm = currentForm;
+            m_bIsAdmin = isAdmin;
+
             SetBounds(0, currentForm.Height - 100, currentForm.Width, 100);
 
-            InitializeComponent();
+            InitializeComponent();            
 
             if (currentForm.GetType() == typeof(ProductsPage))
             {
@@ -42,18 +45,23 @@ namespace StockManagementSystem.Classes
             {
                 btn_newShipment.BackColor = Color.Green;
             }
-            else if (currentForm.GetType() == typeof(CheckIn))
-            {
-                btn_checkIn.BackColor = Color.Green;
-            }
             else if (currentForm.GetType() == typeof(Invoices))
             {
                 btn_invoices.BackColor = Color.Green;
             }
-            else if (currentForm.GetType() == typeof(CheckOut))
+            else if (currentForm.GetType() == typeof(Basket))
             {
-                btn_checkout.BackColor = Color.Green;
+                btn_basket.BackColor = Color.Green;
             }
+            else if (currentForm.GetType() == typeof(Settings) || currentForm.GetType() == typeof(AdminSettings))
+            {
+                btn_settings.BackColor = Color.Green;
+            }
+
+            if (currentForm.GetType() != typeof(Messages) && Messages.messages.Count > 0)
+                lbl_numMessages.Text = Messages.messages.Count.ToString();
+            else
+                lbl_numMessages.Hide();
         }
 
         private void btn_messages_Click(object sender, EventArgs e)
@@ -86,14 +94,17 @@ namespace StockManagementSystem.Classes
             m_currentForm.goToNextPage(SystemPage.NewShipment);
         }
 
-        private void btn_checkIn_Click(object sender, EventArgs e)
+        private void btn_settings_Click(object sender, EventArgs e)
         {
-            m_currentForm.goToNextPage(SystemPage.CheckIn);
+            if (m_bIsAdmin)
+                m_currentForm.goToNextPage(SystemPage.AdminSettings);
+            else
+                m_currentForm.goToNextPage(SystemPage.Settings);
         }
 
-        private void btn_checkout_Click(object sender, EventArgs e)
+        private void btn_basket_Click(object sender, EventArgs e)
         {
-            m_currentForm.goToNextPage(SystemPage.CheckOut);
+            m_currentForm.goToNextPage(SystemPage.Basket);
         }
     }
 }

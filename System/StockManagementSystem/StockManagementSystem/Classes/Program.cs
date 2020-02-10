@@ -1,19 +1,19 @@
 ﻿using StockManagementSystem.Pages;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace StockManagementSystem
 {
-    static class Program
+    static class Program //Elliot
     {
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            DatabaseComms.getItemsMap(getMapCallback);
 
             BaseForm currentPage = null;
             SystemPage nextPage = SystemPage.Login;
@@ -27,17 +27,14 @@ namespace StockManagementSystem
                     case SystemPage.Login:
                         currentPage = new Login();
                         break;
-                    case SystemPage.CheckOut:
-                        currentPage = new CheckOut();
+                    case SystemPage.Basket:
+                        currentPage = new Basket();
                         break;
                     case SystemPage.ProductsPage:
                         currentPage = new ProductsPage();
                         break;
                     case SystemPage.SignUp:
                         currentPage = new SignUp();
-                        break;
-                    case SystemPage.CheckIn:
-                        currentPage = new CheckIn();
                         break;
                     case SystemPage.ExpectedDelivery:
                         currentPage = new ExpectedDelivery();
@@ -54,6 +51,12 @@ namespace StockManagementSystem
                     case SystemPage.ViewProduct:
                         currentPage = new ViewProduct();
                         break;
+                    case SystemPage.AdminSettings:
+                        currentPage = new AdminSettings();
+                        break;
+                    case SystemPage.Settings:
+                        currentPage = new Settings();
+                        break;
 
                     //End cases:
                     case SystemPage.EndPage:                        
@@ -69,6 +72,11 @@ namespace StockManagementSystem
                     nextPage = currentPage.getNextPage();
                 }                
             }
+        }
+
+        private static void getMapCallback(Bitmap map)
+        {
+            AdminSettings.FloorMap = map;
         }
     }
 }

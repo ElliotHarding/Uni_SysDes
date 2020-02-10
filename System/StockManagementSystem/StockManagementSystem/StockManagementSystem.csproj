@@ -50,11 +50,11 @@
     <Compile Include="Classes\Address.cs" />
     <Compile Include="Classes\DatabaseComms.cs" />
     <Compile Include="Classes\ExpectedShipment.cs" />
-    <Compile Include="Pages\CheckIn.cs">
+    <Compile Include="Pages\AdminSettings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\CheckIn.Designer.cs">
-      <DependentUpon>CheckIn.cs</DependentUpon>
+    <Compile Include="Pages\AdminSettings.Designer.cs">
+      <DependentUpon>AdminSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\ExpectedDelivery.cs">
       <SubType>Form</SubType>
@@ -80,17 +80,65 @@
     <Compile Include="Pages\NewShipment.Designer.cs">
       <DependentUpon>NewShipment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserInputParagraphDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\UserInputParagraphDialog.Designer.cs">
+      <DependentUpon>UserInputParagraphDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserInputStringDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\UserInputStringDialog.Designer.cs">
+      <DependentUpon>UserInputStringDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ViewProduct.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pages\ViewProduct.Designer.cs">
       <DependentUpon>ViewProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Controls\BasketRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\BasketRow.Designer.cs">
+      <DependentUpon>BasketRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\NewProductRow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Controls\NewProductRow.Designer.cs">
+      <DependentUpon>NewProductRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\TextfieldRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\TextfieldRow.Designer.cs">
+      <DependentUpon>TextfieldRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\TransationRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\TransationRow.Designer.cs">
+      <DependentUpon>TransationRow.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Controls\LogOut.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="User Controls\LogOut.Designer.cs">
       <DependentUpon>LogOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\MessageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\MessageControl.Designer.cs">
+      <DependentUpon>MessageControl.cs</DependentUpon>
     </Compile>
     <Compile Include="User Controls\NavBar.cs">
       <SubType>UserControl</SubType>
@@ -123,11 +171,11 @@
     <Compile Include="Pages\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\CheckOut.cs">
+    <Compile Include="Pages\Basket.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\CheckOut.Designer.cs">
-      <DependentUpon>CheckOut.cs</DependentUpon>
+    <Compile Include="Pages\Basket.Designer.cs">
+      <DependentUpon>Basket.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\Login.cs">
       <SubType>Form</SubType>
@@ -157,11 +205,11 @@
     <Compile Include="Classes\Shipment.cs" />
     <Compile Include="Classes\Transation.cs" />
     <Compile Include="Classes\User.cs" />
-    <EmbeddedResource Include="Pages\CheckIn.resx">
-      <DependentUpon>CheckIn.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\AdminSettings.resx">
+      <DependentUpon>AdminSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\CheckOut.resx">
-      <DependentUpon>CheckOut.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\Basket.resx">
+      <DependentUpon>Basket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ExpectedDelivery.resx">
       <DependentUpon>ExpectedDelivery.cs</DependentUpon>
@@ -178,11 +226,35 @@
     <EmbeddedResource Include="Pages\NewShipment.resx">
       <DependentUpon>NewShipment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\UserInputParagraphDialog.resx">
+      <DependentUpon>UserInputParagraphDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\UserInputStringDialog.resx">
+      <DependentUpon>UserInputStringDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\ViewProduct.resx">
       <DependentUpon>ViewProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\BasketRow.resx">
+      <DependentUpon>BasketRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\NewProductRow.resx">
+      <DependentUpon>NewProductRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\TextfieldRow.resx">
+      <DependentUpon>TextfieldRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\TransationRow.resx">
+      <DependentUpon>TransationRow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Controls\LogOut.resx">
       <DependentUpon>LogOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\MessageControl.resx">
+      <DependentUpon>MessageControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\NavBar.resx">
       <DependentUpon>NavBar.cs</DependentUpon>

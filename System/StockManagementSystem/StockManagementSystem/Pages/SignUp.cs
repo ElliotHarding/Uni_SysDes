@@ -16,22 +16,35 @@ namespace StockManagementSystem.Pages
         public SignUp()
         {
             InitializeComponent();
-            lbl_error.Text = "";
-            lbl_error.Visible = false;
 
-            //Todo query database for departments & fill cb_department from callback
-            cb_department.Items.Add("Department 1");
-            cb_department.Items.Add("Department 2");
-            cb_department.Items.Add("Department 3");
+            DatabaseComms.getDepartments(getDepartmentsCallback);
+        }
+        private void getDepartmentsCallback(List<string> departments)
+        {
+            if (departments != null && departments.Count > 0)
+            {
+                cb_department.Invoke((Action)delegate {
+
+                    foreach (string department in departments)
+                    {
+                        cb_department.Items.Add(department);
+                    }
+                });
+            }
+            else
+            {
+                notifyUser("Network connection error.", "Warning");
+            }
         }
 
         private void btn_signUp_Click(object sender, EventArgs e)
         {
-            lbl_error.Visible = false;
             string nNumber = txt_username.Text;
             string password = txt_password.Text;
             string department = cb_department.Text;
             string passwordHash = Tools.passwordHash(password);
+
+            //todo validate...
 
             DatabaseComms.uploadUser(new User(nNumber, passwordHash, department, "user"), uploadUserCallback);
         }
@@ -44,9 +57,7 @@ namespace StockManagementSystem.Pages
             }
             else
             {
-                //Need to invoke since properties of GUI thread items are changed in callback function
-                lbl_error.Invoke((Action)delegate { lbl_error.Text = "Failed to register details."; });
-                lbl_error.Invoke((Action)delegate { lbl_error.Visible = true; });
+                notifyUser("Failed to register details");
             }
         }
 

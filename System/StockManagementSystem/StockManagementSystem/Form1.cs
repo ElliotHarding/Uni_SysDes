@@ -99,7 +99,7 @@ namespace StockManagementSystem
         {
             if(invoices != null && invoices.Count() > 0)
             {
-                Shipment shipment = new Shipment("test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test");
+                Shipment shipment = new Shipment("test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test");
                 DatabaseComms.uploadShipment(shipment, uploadShipmentCallback);
             }
         }

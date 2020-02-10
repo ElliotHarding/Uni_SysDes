@@ -1,9 +1,4 @@
 ﻿using StockManagementSystem.Classes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StockManagementSystem.Pages
@@ -12,8 +7,7 @@ namespace StockManagementSystem.Pages
     {
         Messages,
         Login,
-        CheckOut,
-        CheckIn,
+        Basket,
         ProductsPage,
         ViewProduct,
         SignUp,
@@ -21,12 +15,14 @@ namespace StockManagementSystem.Pages
         Invoices,
         ExpectedDelivery,
         NewShipment,
+        AdminSettings,
+        Settings,
         EndPage
     }
 
     public class BaseForm : Form
     {
-        protected SystemPage m_nextPage { get; private set; } = SystemPage.EndPage;
+        protected SystemPage m_nextPage { get; private set; } = SystemPage.Login;
         protected static User m_currentUser = null;
 
         public BaseForm()
@@ -34,12 +30,12 @@ namespace StockManagementSystem.Pages
         }
 
         protected void addNavBar()
-        {
+        {            
             if(m_currentUser != null)
             {
                 if(m_currentUser.role == "admin" || m_currentUser.role == "staff")
                 {
-                    StaffNavBar navigationBar = new StaffNavBar(this);
+                    StaffNavBar navigationBar = new StaffNavBar(this, m_currentUser.role == "admin");
                     Controls.Add(navigationBar);
                 }
                 else
@@ -65,6 +61,11 @@ namespace StockManagementSystem.Pages
         public SystemPage getNextPage()
         {
             return m_nextPage;
+        }
+
+        protected void notifyUser(string error, string title = "Warning")
+        {
+            MessageBox.Show(error, title);
         }
     }
 }

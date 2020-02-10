@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StockManagementSystem.Pages
+namespace StockManagementSystem.User_Controls
 {
-    public partial class CheckIn : BaseForm
+    public partial class MessageControl : UserControl
     {
-        public CheckIn()
+        public MessageControl(string message)
         {
             InitializeComponent();
-            addNavBar();
+            lbl_message.Text = message;
         }
     }
 }

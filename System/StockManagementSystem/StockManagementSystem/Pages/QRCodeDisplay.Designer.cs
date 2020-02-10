@@ -40,6 +40,7 @@
             this.pbox_qr.Location = new System.Drawing.Point(12, 12);
             this.pbox_qr.Name = "pbox_qr";
             this.pbox_qr.Size = new System.Drawing.Size(400, 400);
+            this.pbox_qr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbox_qr.TabIndex = 1;
             this.pbox_qr.TabStop = false;
             // 

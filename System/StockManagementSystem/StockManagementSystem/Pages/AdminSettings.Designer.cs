@@ -52,7 +52,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(256, 303);
+            this.label5.Location = new System.Drawing.Point(256, 281);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(110, 13);
             this.label5.TabIndex = 35;
@@ -61,7 +61,7 @@
             // pictureBoxMap
             // 
             this.pictureBoxMap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxMap.Location = new System.Drawing.Point(259, 319);
+            this.pictureBoxMap.Location = new System.Drawing.Point(259, 297);
             this.pictureBoxMap.Name = "pictureBoxMap";
             this.pictureBoxMap.Size = new System.Drawing.Size(500, 300);
             this.pictureBoxMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -115,7 +115,7 @@
             // 
             // btn_addDepartment
             // 
-            this.btn_addDepartment.Location = new System.Drawing.Point(915, 46);
+            this.btn_addDepartment.Location = new System.Drawing.Point(915, 52);
             this.btn_addDepartment.Margin = new System.Windows.Forms.Padding(2);
             this.btn_addDepartment.Name = "btn_addDepartment";
             this.btn_addDepartment.Size = new System.Drawing.Size(26, 26);
@@ -126,15 +126,16 @@
             // 
             // pnl_departments
             // 
+            this.pnl_departments.AutoScroll = true;
             this.pnl_departments.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_departments.Location = new System.Drawing.Point(713, 46);
+            this.pnl_departments.Location = new System.Drawing.Point(713, 52);
             this.pnl_departments.Name = "pnl_departments";
             this.pnl_departments.Size = new System.Drawing.Size(197, 150);
             this.pnl_departments.TabIndex = 27;
             // 
             // btn_updateDepartments
             // 
-            this.btn_updateDepartments.Location = new System.Drawing.Point(744, 199);
+            this.btn_updateDepartments.Location = new System.Drawing.Point(744, 205);
             this.btn_updateDepartments.Margin = new System.Windows.Forms.Padding(2);
             this.btn_updateDepartments.Name = "btn_updateDepartments";
             this.btn_updateDepartments.Size = new System.Drawing.Size(132, 26);
@@ -146,7 +147,7 @@
             // lbl_departments
             // 
             this.lbl_departments.AutoSize = true;
-            this.lbl_departments.Location = new System.Drawing.Point(710, 30);
+            this.lbl_departments.Location = new System.Drawing.Point(710, 36);
             this.lbl_departments.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_departments.Name = "lbl_departments";
             this.lbl_departments.Size = new System.Drawing.Size(67, 13);
@@ -178,7 +179,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(381, 85);
+            this.label2.Location = new System.Drawing.Point(381, 86);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
@@ -197,7 +198,7 @@
             // 
             // txt_password
             // 
-            this.txt_password.Location = new System.Drawing.Point(381, 102);
+            this.txt_password.Location = new System.Drawing.Point(381, 103);
             this.txt_password.Margin = new System.Windows.Forms.Padding(2);
             this.txt_password.Name = "txt_password";
             this.txt_password.PasswordChar = '*';

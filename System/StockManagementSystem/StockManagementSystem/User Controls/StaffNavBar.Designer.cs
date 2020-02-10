@@ -94,7 +94,7 @@
             this.btn_shipment.Size = new System.Drawing.Size(102, 29);
             this.btn_shipment.TabIndex = 5;
             this.btn_shipment.TabStop = false;
-            this.btn_shipment.Text = "Shipment";
+            this.btn_shipment.Text = "Shipments";
             this.btn_shipment.UseVisualStyleBackColor = true;
             this.btn_shipment.Click += new System.EventHandler(this.btn_newShipment_Click);
             // 

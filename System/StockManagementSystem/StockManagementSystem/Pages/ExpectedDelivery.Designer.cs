@@ -81,7 +81,7 @@
             this.pnl_newProducts.BackColor = System.Drawing.SystemColors.Control;
             this.pnl_newProducts.Location = new System.Drawing.Point(60, 269);
             this.pnl_newProducts.Name = "pnl_newProducts";
-            this.pnl_newProducts.Size = new System.Drawing.Size(910, 325);
+            this.pnl_newProducts.Size = new System.Drawing.Size(910, 312);
             this.pnl_newProducts.TabIndex = 155;
             // 
             // label16
@@ -126,7 +126,7 @@
             // btn_addShipmentDetails
             // 
             this.btn_addShipmentDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btn_addShipmentDetails.Location = new System.Drawing.Point(389, 600);
+            this.btn_addShipmentDetails.Location = new System.Drawing.Point(389, 587);
             this.btn_addShipmentDetails.Name = "btn_addShipmentDetails";
             this.btn_addShipmentDetails.Size = new System.Drawing.Size(233, 27);
             this.btn_addShipmentDetails.TabIndex = 147;

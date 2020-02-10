@@ -51,7 +51,7 @@ namespace StockManagementSystem.Pages
             {
                 foreach (Shipment s in shipments)
                 {
-                    messages.Add("Shipment " + s.id + " from : " + s.supplierName + "is expected");
+                    messages.Add("Shipment " + s.id + " from : " + s.supplierName + "is expected at : " + s.promisedDate);
                 }
             }
         }

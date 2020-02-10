@@ -31,11 +31,14 @@ namespace StockManagementSystem.Pages
 
             if (m_currentUser.role != "admin")
             {
-                btn_checkInOut.Hide();
-                btn_editMapLocation.Hide();
-                lbl_supplierCode.Hide();
-                btn_saveChanges.Hide();
                 btn_removeProduct.Hide();
+                if (m_currentUser.role != "staff")
+                {                    
+                    btn_editMapLocation.Hide();
+                    lbl_supplierCode.Hide();
+                    btn_saveChanges.Hide();                    
+                    btn_viewQrCode.Hide();
+                }                
             }
         }
 
@@ -283,7 +286,6 @@ namespace StockManagementSystem.Pages
 
         private void Btn_viewQrCode_Click(object sender, EventArgs e)
         {
-            //todo test:
             QRCodeDisplay qRCodeDisplay = new QRCodeDisplay(product.id);
             qRCodeDisplay.ShowDialog();
         }

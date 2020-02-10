@@ -120,6 +120,7 @@ namespace StockManagementSystem.Pages
                 }                
             }
 
+            //TODO ADD TRANSACTIONS isReturn = true
             DatabaseComms.updateProductQuantities(returnItemsCallback, products);            
         }
 
@@ -159,7 +160,7 @@ namespace StockManagementSystem.Pages
                 }
             }
 
-            if(notEnough.Count == 0)
+            if(notEnough.Count == 0)//TODO ADD TRANSACTIONS isReturn = false
                 DatabaseComms.updateProductQuantities(checkoutItemsCallback, products);
             else
             {

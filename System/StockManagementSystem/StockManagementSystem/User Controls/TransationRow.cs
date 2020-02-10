@@ -41,7 +41,8 @@ namespace StockManagementSystem.User_Controls
 
         public Transation getTransation()
         {
-            Transation t = new Transation(m_transation.id, dateTime.Text, txt_productId.Text, txt_quantity.Text, txt_nNumber.Text, m_transation.department);
+            //todo validation of price ect...
+            Transation t = new Transation(m_transation.id, dateTime.Text, txt_productId.Text, txt_quantity.Text, txt_nNumber.Text, m_transation.department, txt_price.Text, "false");
             return t;
         }
 

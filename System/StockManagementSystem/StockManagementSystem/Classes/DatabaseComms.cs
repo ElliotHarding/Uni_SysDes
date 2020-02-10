@@ -607,7 +607,8 @@ namespace StockManagementSystem
                         reader["quantity"].ToString(),
                         reader["nNumber"].ToString(),
                         reader["department"].ToString(),
-                        reader["price"].ToString()
+                        reader["price"].ToString(),
+                        reader["isReturn"].ToString()
                         ));
                     }
 

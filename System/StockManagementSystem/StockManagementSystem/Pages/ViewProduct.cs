@@ -8,7 +8,6 @@ namespace StockManagementSystem.Pages
     {
         public static Product product = null;
         private bool m_bAwaitingClick = false;
-
         public ViewProduct()
         {
             InitializeComponent();
@@ -280,6 +279,13 @@ namespace StockManagementSystem.Pages
                     lbl_productInfo.Text = userInputParagraphDialog.paragraph;
                 }
             }
+        }
+
+        private void Btn_viewQrCode_Click(object sender, EventArgs e)
+        {
+            //todo test:
+            QRCodeDisplay qRCodeDisplay = new QRCodeDisplay(product.id);
+            qRCodeDisplay.ShowDialog();
         }
     }
 }

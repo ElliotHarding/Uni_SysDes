@@ -43,6 +43,7 @@
             this.lbl_price = new System.Windows.Forms.Label();
             this.pictureBoxMap = new System.Windows.Forms.PictureBox();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.btn_viewQrCode = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
@@ -200,11 +201,22 @@
             this.pictureBox.TabStop = false;
             this.pictureBox.Click += new System.EventHandler(this.pictureBox_Click);
             // 
+            // btn_viewQrCode
+            // 
+            this.btn_viewQrCode.Location = new System.Drawing.Point(545, 248);
+            this.btn_viewQrCode.Name = "btn_viewQrCode";
+            this.btn_viewQrCode.Size = new System.Drawing.Size(93, 23);
+            this.btn_viewQrCode.TabIndex = 21;
+            this.btn_viewQrCode.Text = "View QR Code";
+            this.btn_viewQrCode.UseVisualStyleBackColor = true;
+            this.btn_viewQrCode.Click += new System.EventHandler(this.Btn_viewQrCode_Click);
+            // 
             // ViewProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 681);
+            this.Controls.Add(this.btn_viewQrCode);
             this.Controls.Add(this.lbl_price);
             this.Controls.Add(this.lbl_currentStock);
             this.Controls.Add(this.lbl_vat);
@@ -253,5 +265,6 @@
         private System.Windows.Forms.Button btn_removeProduct;
         private System.Windows.Forms.Label lbl_vat;
         private System.Windows.Forms.Label lbl_price;
+        private System.Windows.Forms.Button btn_viewQrCode;
     }
 }

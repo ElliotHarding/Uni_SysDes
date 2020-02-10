@@ -64,8 +64,6 @@ C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManageme
 C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.exe
 C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.pdb
 C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csprojAssemblyReference.cache
-C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.CheckIn.resources
-C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.CheckOut.resources
 C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ExpectedDelivery.resources
 C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Inspection.resources
 C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Invoices.resources
@@ -127,3 +125,17 @@ C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockMa
 C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.NewProductRow.resources
 C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Basket.resources
 C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.BasketRow.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.dll
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.presentation.dll
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.pdb
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.xml
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.presentation.pdb
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.presentation.xml
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Basket.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.QRCodeDisplay.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Settings.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.BasketRow.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.NewProductRow.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.TextfieldRow.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.TransationRow.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.CopyComplete

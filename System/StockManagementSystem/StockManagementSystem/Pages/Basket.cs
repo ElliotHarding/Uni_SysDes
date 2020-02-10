@@ -75,9 +75,12 @@ namespace StockManagementSystem.Pages
         private void btn_returnItems_Click(object sender, EventArgs e)
         {
             List<Product> products = new List<Product>();
+            List<Transation> transations = new List<Transation>();
             foreach (BasketRow npr in pnl_products.Controls)
             {
                 Product p = npr.GetProduct();
+
+                transations.Add(new Transation("", DateTime.Now.ToString("yyyy-MM-dd"), p.id, p.requestedQuantitiy.ToString(), m_currentUser.nNumber, m_currentUser.department, p.price, "true"));
 
                 int currentQuantiy = 0;
                 if (Int32.TryParse(p.quantity, out currentQuantiy))
@@ -88,8 +91,7 @@ namespace StockManagementSystem.Pages
                 }                
             }
 
-            //TODO ADD TRANSACTIONS isReturn = true
-            DatabaseComms.updateProductQuantities(returnItemsCallback, products);            
+            DatabaseComms.updateProductQuantities(returnItemsCallback, products, transations);
         }
 
         private void returnItemsCallback(bool success)
@@ -108,6 +110,7 @@ namespace StockManagementSystem.Pages
         {
             List<Product> notEnough = new List<Product>();
             List<Product> products = new List<Product>();
+            List<Transation> transations = new List<Transation>();
             foreach (BasketRow npr in pnl_products.Controls)
             {
                 Product p = new Product(npr.GetProduct());
@@ -120,6 +123,7 @@ namespace StockManagementSystem.Pages
                     {
                         p.quantity = currentQuantiy.ToString();
                         products.Add(p);
+                        transations.Add(new Transation("", DateTime.Now.ToString("yyyy-MM-dd"), p.id, p.requestedQuantitiy.ToString(), m_currentUser.nNumber, m_currentUser.department, p.price, "false"));
                     }
                     else
                     {
@@ -128,8 +132,8 @@ namespace StockManagementSystem.Pages
                 }
             }
 
-            if(notEnough.Count == 0)//TODO ADD TRANSACTIONS isReturn = false
-                DatabaseComms.updateProductQuantities(checkoutItemsCallback, products);
+            if(notEnough.Count == 0)
+                DatabaseComms.updateProductQuantities(checkoutItemsCallback, products, transations);
             else
             {
                 foreach(Product p in notEnough)
@@ -143,7 +147,7 @@ namespace StockManagementSystem.Pages
         {
             if (success)
             {
-                clearAll();
+                this.Invoke((Action)delegate { clearAll(); });
             }
             else
             {

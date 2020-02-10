@@ -95,13 +95,16 @@ namespace StockManagementSystem.Pages
             }
             else
             {
-                foreach (Transation transation in transations)
+                this.Invoke((Action)delegate 
                 {
-                    TransationRow productRow = new TransationRow(this, transation);
-                    productRow.Location = new Point(0, m_rowIndex * m_rowInc);
-                    pnl_invoice.Invoke((Action)delegate { productRow.Parent = pnl_invoice; });
-                    m_rowIndex++;
-                }
+                    foreach (Transation transation in transations)
+                    {
+                        TransationRow productRow = new TransationRow(this, transation);
+                        productRow.Location = new Point(0, m_rowIndex * m_rowInc);
+                        pnl_invoice.Invoke((Action)delegate { productRow.Parent = pnl_invoice; });
+                        m_rowIndex++;
+                    }
+                });                
             }
         }
 

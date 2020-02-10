@@ -3,11 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace StockManagementSystem
@@ -15,43 +10,6 @@ namespace StockManagementSystem
     class DatabaseComms
     {
         private const string m_connectionString = "Data Source=den1.mssql7.gear.host;Initial Catalog=smdatabase;User ID=smdatabase;Password=Jj80-f1I!M3c";
-
-        public static void uploadProduct(Product product, Action<bool> callback)
-        {
-            new Task(() => 
-            {
-                try
-                {
-                    SqlConnection connection = new SqlConnection(m_connectionString);
-                    SqlCommand command = new SqlCommand("INSERT INTO PRODUCTS VALUES(" +
-                        "@id,  @externalId, @image,  @information, @locationX,  @locationY, @quantity, @expiryDate, @price, @vat, @dangerDescription, @retProductNo, @name);", connection);
-
-                    command.Parameters.AddWithValue("@id", "NEWID()");
-                    command.Parameters.AddWithValue("@externalId", product.externalId);
-                    command.Parameters.AddWithValue("@image", product.image);
-                    command.Parameters.AddWithValue("@information", product.information);
-                    command.Parameters.AddWithValue("@locationX", product.locationX);
-                    command.Parameters.AddWithValue("@locationY", product.locationY);
-                    command.Parameters.AddWithValue("@quantity", product.quantity);
-                    command.Parameters.AddWithValue("@expiryDate", product.expiryDate);
-                    command.Parameters.AddWithValue("@price", product.price);
-                    command.Parameters.AddWithValue("@vat", product.vat);
-                    command.Parameters.AddWithValue("@dangerDescription", product.dangerDescription);
-                    command.Parameters.AddWithValue("@retProductNo", product.retProductNo);
-                    command.Parameters.AddWithValue("@name", product.name);
-
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                    connection.Close();
-
-                    callback(true);
-                }
-                catch (Exception e)
-                {
-                    callback(false);
-                }
-            }).Start();
-        }
 
         public static void uploadProducts(List<Product> products, Action<bool> callback)
         {
@@ -83,7 +41,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void updateProduct(Product product, Action<bool> callback)
+        public static void updateProduct(Product product, Action<bool> callback)
         {
             new Task(() =>
             {
@@ -132,7 +90,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void updateProductQuantity(Action<bool> callback, string quantity, string where)
+        public static void updateProductQuantity(Action<bool> callback, string quantity, string where)
         {
             new Task(() =>
             {
@@ -156,17 +114,24 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void updateProductQuantities(Action<bool> callback, List<Product> products)
+        public static void updateProductQuantities(Action<bool> callback, List<Product> products, List<Transation> transations)
         {
             new Task(() =>
             {
                 try
                 {
-                    string updates = "";
-                    foreach (Product p in products)
+                    if(products.Count != transations.Count)
                     {
-                        updates += "UPDATE PRODUCTS SET quantity = '" + p.quantity + "' WHERE id = '" + p.id + "';";
-                    }                    
+                        callback(false);
+                        return;
+                    }
+
+                    string updates = "";
+                    for (int i = 0; i < products.Count; i++)
+                    {
+                        updates += "UPDATE PRODUCTS SET quantity = '" + products[i].quantity + "' WHERE id = '" + products[i].id + "';";
+                        updates += "INSERT INTO TRANSACTIONS VALUES (NEWID(), '"+ transations[i].date + "', '"+ transations[i].productId + "', '"+ transations[i].quantity + "', '"+ transations[i].nNumber + "', '"+ transations[i].department + "', '"+ transations[i].price+ "', '"+ transations[i].isReturn+ "');";
+                    }                 
 
                     SqlConnection connection = new SqlConnection(m_connectionString);
                     SqlCommand command = new SqlCommand(updates, connection);
@@ -184,7 +149,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void getProducts(Action<List<Product>> callback, int rowCount = 0, string where = null)
+        public static void getProducts(Action<List<Product>> callback, int rowCount = 0, string where = null)
         {
             new Task(() =>
             {
@@ -245,7 +210,7 @@ namespace StockManagementSystem
             }).Start();
         }    
 
-        public static async void uploadShipment(Shipment shipment, Action<bool> callback)
+        public static void uploadShipment(Shipment shipment, Action<bool> callback)
         {
             new Task(() =>
             {
@@ -304,7 +269,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void updateShipment(Shipment shipment, Action<bool> callback)
+        public static void updateShipment(Shipment shipment, Action<bool> callback)
         {
             new Task(() =>
             {
@@ -360,7 +325,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void getShipments(Action<List<Shipment>> callback, string where = null)
+        public static void getShipments(Action<List<Shipment>> callback, string where = null)
         {
             new Task(() =>
             {
@@ -418,7 +383,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void uploadTransation(Transation transaction, Action<bool> callback)
+        public static void uploadTransation(Transation transaction, Action<bool> callback)
         {
             new Task(() =>
             {
@@ -450,11 +415,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        /*public static async void updateTransation(Transation product, Action<bool> callback)
-        {
-        }*/
-
-        public static async void getTransations(Action<List<Transation>> callback, string where = null)
+        public static void getTransations(Action<List<Transation>> callback, string where = null)
         {
             new Task(() =>
             {
@@ -502,7 +463,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void uploadUser(User user, Action<bool> callback)
+        public static void uploadUser(User user, Action<bool> callback)
         {
             new Task(() =>
             {
@@ -530,7 +491,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void updateUser(User user, Action<bool> callback)
+        public static void updateUser(User user, Action<bool> callback)
         {
             new Task(() =>
             {
@@ -561,7 +522,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void getUsers(Action<List<User>> callback, string where = null)
+        public static void getUsers(Action<List<User>> callback, string where = null)
         {
             new Task(() =>
             {
@@ -606,7 +567,7 @@ namespace StockManagementSystem
         }
 
 
-        public static async void getDepartments(Action<List<string>> callback)
+        public static void getDepartments(Action<List<string>> callback)
         {
             new Task(() =>
             {
@@ -635,7 +596,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void setDepartments(List<string> departments, Action<bool> callback)
+        public static void setDepartments(List<string> departments, Action<bool> callback)
         {
             new Task(() =>
             {
@@ -711,7 +672,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void query(string query, Action<bool> callback)
+        public static void query(string query, Action<bool> callback)
         {
             new Task(() =>
             {

@@ -27,11 +27,7 @@ namespace StockManagementSystem.Classes
             {
                 btn_messages.BackColor = Color.Green;
             }
-            else if (currentForm.GetType() == typeof(Inspection))
-            {
-                btn_inspection.BackColor = Color.Green;
-            }
-            else if (currentForm.GetType() == typeof(Shipment))
+            else if (currentForm.GetType() == typeof(Shipments))
             {
                 btn_shipment.BackColor = Color.Green;
             }
@@ -62,11 +58,6 @@ namespace StockManagementSystem.Classes
         private void btn_products_Click(object sender, EventArgs e)
         {
             m_currentForm.goToNextPage(SystemPage.ProductsPage);
-        }
-
-        private void btn_inspection_Click(object sender, EventArgs e)
-        {
-            m_currentForm.goToNextPage(SystemPage.Inspection);
         }
 
         private void btn_invoices_Click(object sender, EventArgs e)

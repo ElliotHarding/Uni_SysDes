@@ -51,6 +51,7 @@
             // pnl_invoice
             // 
             this.pnl_invoice.AutoScroll = true;
+            this.pnl_invoice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_invoice.Location = new System.Drawing.Point(42, 211);
             this.pnl_invoice.Name = "pnl_invoice";
             this.pnl_invoice.Size = new System.Drawing.Size(938, 320);

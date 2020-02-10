@@ -34,9 +34,9 @@ namespace StockManagementSystem.Pages
             goodsAndServicesAddressTxt4.Text = ShipmentToView.goodsAndServicesAddress.postCode;            
             VATTxt.Text = ShipmentToView.vat;
             invoiceTotalTxt.Text = ShipmentToView.invoiceTotal;
-            dt_order.Value = DateTime.ParseExact(ShipmentToView.orderDate, "yyyy-MM-dd", CultureInfo.InvariantCulture);
-            dt_requested.Value = DateTime.ParseExact(ShipmentToView.requestedDate, "yyyy-MM-dd", CultureInfo.InvariantCulture);
-            dt_promised.Value = DateTime.ParseExact(ShipmentToView.promisedDate, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            dt_order.Text = DateTime.ParseExact(ShipmentToView.orderDate, "yyyy-MM-dd", CultureInfo.InvariantCulture).ToString();
+            dt_requested.Text = DateTime.ParseExact(ShipmentToView.requestedDate, "yyyy-MM-dd", CultureInfo.InvariantCulture).ToString();
+            dt_promised.Text = DateTime.ParseExact(ShipmentToView.promisedDate, "yyyy-MM-dd", CultureInfo.InvariantCulture).ToString();
         }
 
         private void btn_saveChanges_Click(object sender, EventArgs e)

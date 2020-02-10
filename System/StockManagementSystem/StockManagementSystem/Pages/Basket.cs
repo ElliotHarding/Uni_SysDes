@@ -72,38 +72,6 @@ namespace StockManagementSystem.Pages
             this.ResumeLayout();
         }
 
-        private void btn_sendToInspection_Click(object sender, EventArgs e)
-        {
-            List<Product> products = new List<Product>();
-            foreach (BasketRow npr in pnl_products.Controls)
-            {
-                Product p = new Product(npr.GetProduct());
-
-                int currentQuantiy = 0;
-                if (Int32.TryParse(p.quantity, out currentQuantiy))
-                {
-                    currentQuantiy += p.requestedQuantitiy;
-                    p.quantity = currentQuantiy.ToString();
-                    products.Add(p);
-                }
-            }
-
-            //todo
-            //sendToInspectionCallback
-        }
-
-        private void sendToInspectionCallback(bool success)
-        {
-            if (success)
-            {
-                clearAll();
-            }
-            else
-            {
-                notifyUser("Failed to send items to inspection.");
-            }
-        }
-
         private void btn_returnItems_Click(object sender, EventArgs e)
         {
             List<Product> products = new List<Product>();

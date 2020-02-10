@@ -13,7 +13,6 @@ namespace StockManagementSystem.Pages
         ViewShipment,
         Shipment,
         SignUp,
-        Inspection,
         Invoices,
         ExpectedDelivery,
         NewShipment,

@@ -67,12 +67,6 @@
     <Compile Include="Pages\ExpectedDelivery.Designer.cs">
       <DependentUpon>ExpectedDelivery.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Inspection.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pages\Inspection.Designer.cs">
-      <DependentUpon>Inspection.cs</DependentUpon>
-    </Compile>
     <Compile Include="Pages\Invoices.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,9 +229,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ExpectedDelivery.resx">
       <DependentUpon>ExpectedDelivery.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Inspection.resx">
-      <DependentUpon>Inspection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Invoices.resx">
       <DependentUpon>Invoices.cs</DependentUpon>

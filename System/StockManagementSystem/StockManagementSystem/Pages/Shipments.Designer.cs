@@ -77,6 +77,7 @@
             // pnl_shipments
             // 
             this.pnl_shipments.AutoScroll = true;
+            this.pnl_shipments.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_shipments.Location = new System.Drawing.Point(35, 185);
             this.pnl_shipments.Name = "pnl_shipments";
             this.pnl_shipments.Size = new System.Drawing.Size(938, 400);

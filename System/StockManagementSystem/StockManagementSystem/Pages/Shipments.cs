@@ -25,7 +25,7 @@ namespace StockManagementSystem.Pages
 
             if (fromDate != null && toDate != null)
             {
-                DatabaseComms.getShipments(getShipmentsCallback, "' AND orderDate > '" + fromDate.ToString("yyyy-MM-dd") + "' AND orderDate < '" + toDate.ToString("yyyy-MM-dd") + "'");
+                DatabaseComms.getShipments(getShipmentsCallback, "orderDate > '" + fromDate.ToString("yyyy-MM-dd") + "' AND orderDate < '" + toDate.ToString("yyyy-MM-dd") + "'");
             }
             else
             {
@@ -37,15 +37,17 @@ namespace StockManagementSystem.Pages
         {
             if(shipments != null && shipments.Count > 0)
             {
-                pnl_shipments.Controls.Clear();
-                int rowIndex = 0;
-                foreach (Shipment shipment in shipments)
-                {
-                    ShipmentRow productRow = new ShipmentRow(this, shipment);
-                    productRow.Parent = pnl_shipments;
-                    productRow.Location = new Point(0, rowIndex * productRow.Height);
-                    rowIndex++;
-                }
+                pnl_shipments.Invoke((Action)delegate {
+                    pnl_shipments.Controls.Clear();
+                    int rowIndex = 0;
+                    foreach (Shipment shipment in shipments)
+                    {
+                        ShipmentRow productRow = new ShipmentRow(this, shipment);
+                        productRow.Parent = pnl_shipments;
+                        productRow.Location = new Point(0, rowIndex * productRow.Height);
+                        rowIndex++;
+                    }
+                });                
             }
             else
             {
@@ -57,6 +59,11 @@ namespace StockManagementSystem.Pages
         {
             ViewShipment.ShipmentToView = shipment;
             goToNextPage(SystemPage.ViewShipment);
+        }
+
+        private void btn_addExpectedDelivery_Click(object sender, EventArgs e)
+        {
+            goToNextPage(SystemPage.ExpectedDelivery);
         }
     }
 }

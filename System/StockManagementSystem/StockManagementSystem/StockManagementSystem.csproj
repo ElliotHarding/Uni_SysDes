@@ -55,7 +55,6 @@
   <ItemGroup>
     <Compile Include="Classes\Address.cs" />
     <Compile Include="Classes\DatabaseComms.cs" />
-    <Compile Include="Classes\ExpectedShipment.cs" />
     <Compile Include="Pages\AdminSettings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,13 +188,6 @@
       <DependentUpon>StaffNavBar.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Tools.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Classes\Invoice.cs" />
     <Compile Include="Classes\Product.cs" />
     <Compile Include="Classes\Program.cs" />
     <Compile Include="Pages\BaseForm.cs">
@@ -306,9 +298,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\StaffNavBar.resx">
       <DependentUpon>StaffNavBar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

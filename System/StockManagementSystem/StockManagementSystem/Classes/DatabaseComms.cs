@@ -243,127 +243,7 @@ namespace StockManagementSystem
                     callback(null);
                 }
             }).Start();
-        }
-
-        public static async void uploadInvoice(Invoice invoice, Action<bool> callback)
-        {
-            new Task(() =>
-            {
-                try
-                {
-                    SqlConnection connection = new SqlConnection(m_connectionString);
-                    SqlCommand command = new SqlCommand("INSERT INTO INVOICES VALUES (" +
-                        "@id," +
-                        "@departmentId," +
-                        "@productId," +
-                        "@date," +
-                        "@price," +
-                        "@quantity," +
-                        "@vat);", connection);
-
-                    command.Parameters.AddWithValue("@id", invoice.id);
-                    command.Parameters.AddWithValue("@departmentId", invoice.departmentId);
-                    command.Parameters.AddWithValue("@productId", invoice.productId);
-                    command.Parameters.AddWithValue("@date", invoice.date);
-                    command.Parameters.AddWithValue("@price", invoice.price);
-                    command.Parameters.AddWithValue("@quantity", invoice.quantitiy);
-                    command.Parameters.AddWithValue("@vat", invoice.vat);
-
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                    connection.Close();
-
-                    callback(true);
-                }
-                catch (Exception e)
-                {
-                    callback(false);
-                }
-            }).Start();
-        }
-
-        public static async void updateInvoice(Invoice invoice, Action<bool> callback)
-        {
-            new Task(() =>
-            {
-                try
-                {
-                    SqlConnection connection = new SqlConnection(m_connectionString);
-                    SqlCommand command = new SqlCommand("UPDATE INVOICES SET" +
-                        " departmentId = @departmentId," +
-                        " productId = @productId," +
-                        " date = @date," +
-                        " price = @price," +
-                        " quantity = @quantity," +
-                        " vat = @vat; WHERE id=@id", connection);
-
-                    command.Parameters.AddWithValue("@id", invoice.id);
-                    command.Parameters.AddWithValue("@departmentId", invoice.departmentId);
-                    command.Parameters.AddWithValue("@productId", invoice.productId);
-                    command.Parameters.AddWithValue("@date", invoice.date);
-                    command.Parameters.AddWithValue("@price", invoice.price);
-                    command.Parameters.AddWithValue("@quantity", invoice.quantitiy);
-                    command.Parameters.AddWithValue("@vat", invoice.vat);
-
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                    connection.Close();
-
-                    callback(true);
-                }
-                catch (Exception e)
-                {
-                    callback(false);
-                }
-            }).Start();
-        }
-
-        public static async void getInvoices(Action<List<Invoice>> callback, string where = null)
-        {
-            new Task(() =>
-            {
-                try
-                {
-                    //Prep connection to database & query for user with given id
-                    SqlConnection connection = new SqlConnection(m_connectionString);
-                    SqlCommand command;
-                    if (where == null)
-                    {
-                        command = new SqlCommand("SELECT * FROM INVOICES;", connection);
-                    }
-                    else
-                    {
-                        command = new SqlCommand("SELECT * FROM INVOICES WHERE " + where + ";", connection);
-                    }
-
-                    //Execute connection
-                    connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    //Read results of query into list
-                    List<Invoice> results = new List<Invoice>();
-                    while (reader.Read())
-                    {
-                        results.Add(new Invoice(
-                        reader["id"].ToString(),
-                        reader["departmentId"].ToString(),
-                        reader["productId"].ToString(),
-                        reader["date"].ToString(),
-                        reader["price"].ToString(),
-                        reader["quantitiy"].ToString(),
-                        reader["vat"].ToString()
-                        ));
-                    }
-
-                    connection.Close();
-                    callback(results);
-                }
-                catch (Exception e)
-                {
-                    callback(null);
-                }
-            }).Start();
-        }
+        }    
 
         public static async void uploadShipment(Shipment shipment, Action<bool> callback)
         {
@@ -374,7 +254,7 @@ namespace StockManagementSystem
                 {
                     SqlConnection connection = new SqlConnection(m_connectionString);
                     SqlCommand command = new SqlCommand("INSERT INTO SHIPMENTS VALUES (" +
-                        "@id," +
+                        "NEWID()," +
                         "@supplierName," +
                         "@supplierSiteName," +
                         "@supplierRemitToAddressLine1," +
@@ -393,7 +273,6 @@ namespace StockManagementSystem
                         "@vat," +
                         "@invoiceTotal);", connection);
 
-                    command.Parameters.AddWithValue("@id", "NEWID()");
                     command.Parameters.AddWithValue("@supplierName", shipment.supplierName);
                     command.Parameters.AddWithValue("@supplierSiteName", shipment.supplierSiteName);
                     command.Parameters.AddWithValue("@supplierRemitToAddressLine1", shipment.supplierRemitToAddress.line1);
@@ -448,7 +327,7 @@ namespace StockManagementSystem
                         "goodsAndServicesAddressLine3=@goodsAndServicesAddressLine3," +
                         "goodsAndServicesAddressLine4=@goodsAndServicesAddressLine4," +
                         "vat=@vat," +
-                        "invoiceTotal=@invoiceTotal, where id = @id;", connection);
+                        "invoiceTotal=@invoiceTotal where id = @id;", connection);
 
                     command.Parameters.AddWithValue("@id", shipment.id);
                     command.Parameters.AddWithValue("@supplierName", shipment.supplierName);
@@ -547,7 +426,7 @@ namespace StockManagementSystem
                 {
                     SqlConnection connection = new SqlConnection(m_connectionString);
                     SqlCommand command = new SqlCommand("INSERT INTO TRANSACTIONS VALUES (" +
-                        "@id, @date, @productId, @quantitiy, @nNumber, @department, @price);", connection);
+                        "@id, @date, @productId, @quantitiy, @nNumber, @department, @price, @isReturn);", connection);
 
                     command.Parameters.AddWithValue("@id", "NEWID()");
                     command.Parameters.AddWithValue("@date", transaction.date);
@@ -556,6 +435,7 @@ namespace StockManagementSystem
                     command.Parameters.AddWithValue("@nNumber", transaction.nNumber);
                     command.Parameters.AddWithValue("@department", transaction.department);
                     command.Parameters.AddWithValue("@price", transaction.price);
+                    command.Parameters.AddWithValue("@isReturn", transaction.isReturn);
 
                     connection.Open();
                     command.ExecuteNonQuery();
@@ -725,81 +605,6 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void uploadExpectedShipment(ExpectedShipment expectedShipment, Action<bool> callback)
-        {
-            new Task(() =>
-            {
-                try
-                {
-                    SqlConnection connection = new SqlConnection(m_connectionString);
-                    SqlCommand command = new SqlCommand("INSERT INTO EXPECTED_SHIPMENTS VALUES (" +
-                        "@shipmentId, @dateExpected, @supplierName, @supplierId);", connection);
-
-                    command.Parameters.AddWithValue("@shipmentId", expectedShipment.shipmentId);
-                    command.Parameters.AddWithValue("@dateExpected", expectedShipment.dateExpected);
-                    command.Parameters.AddWithValue("@supplierName", expectedShipment.supplierName);
-                    command.Parameters.AddWithValue("@supplierId", expectedShipment.supplierId);
-
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                    connection.Close();
-
-                    callback(true);
-                }
-                catch (Exception e)
-                {
-                    callback(false);
-                }
-            }).Start();
-        }
-
-        //public static async void updateExpectedShipment(ExpectedShipment product, Action<bool> callback)
-        //{
-        //}
-
-        public static async void getExpectedShipment(Action<List<ExpectedShipment>> callback, string where = null)
-        {
-            new Task(() =>
-            {
-                try
-                {
-                    //Prep connection to database & query for user with given id
-                    SqlConnection connection = new SqlConnection(m_connectionString);
-                    SqlCommand command;
-                    if (where == null)
-                    {
-                        command = new SqlCommand("SELECT * FROM EXPECTED_SHIPMENTS;", connection);
-                    }
-                    else
-                    {
-                        command = new SqlCommand("SELECT * FROM EXPECTED_SHIPMENTS WHERE " + where + ";", connection);
-                    }
-
-                    //Execute connection
-                    connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    //Read results of query into list
-                    List<ExpectedShipment> results = new List<ExpectedShipment>();
-                    while (reader.Read())
-                    {
-                        results.Add(new ExpectedShipment(
-                        reader["shipmentId"].ToString(),
-                        reader["dateExpected"].ToString(),
-                        reader["supplierName"].ToString(),
-                        reader["supplierId"].ToString()
-                        ));
-                    }
-
-                    connection.Close();
-                    callback(results);
-                }
-                catch (Exception e)
-                {
-                    callback(null);
-                }
-            }).Start();
-        }
 
         public static async void getDepartments(Action<List<string>> callback)
         {

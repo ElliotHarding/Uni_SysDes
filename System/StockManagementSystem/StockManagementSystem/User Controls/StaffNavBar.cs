@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using StockManagementSystem.Pages;
 
@@ -36,10 +30,6 @@ namespace StockManagementSystem.Classes
             else if (currentForm.GetType() == typeof(Inspection))
             {
                 btn_inspection.BackColor = Color.Green;
-            }
-            else if (currentForm.GetType() == typeof(ExpectedDelivery))
-            {
-                btn_expectedDelivery.BackColor = Color.Green;
             }
             else if (currentForm.GetType() == typeof(Shipment))
             {

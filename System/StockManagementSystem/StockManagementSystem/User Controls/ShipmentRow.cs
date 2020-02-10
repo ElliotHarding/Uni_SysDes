@@ -19,6 +19,13 @@ namespace StockManagementSystem.User_Controls
         public ShipmentRow(Shipments shipmentsPage, Shipment shipment)
         {
             InitializeComponent();
+            m_shipmentsPage = shipmentsPage;
+            m_shipment = shipment;
+
+            lbl_supplierSiteName.Text = shipment.supplierSiteName;
+            lbl_orderNo.Text = shipment.orderNo;
+            lbl_requestedDate.Text = shipment.requestedDate;
+            lbl_supplierName.Text = shipment.supplierName;
         }
 
         private void Btn_view_Click(object sender, EventArgs e)

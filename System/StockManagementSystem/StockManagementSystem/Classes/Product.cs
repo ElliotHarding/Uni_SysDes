@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StockManagementSystem.Classes;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -80,39 +81,12 @@ namespace StockManagementSystem
 
         public Bitmap getBitmap()
         {
-            if (image == null)
-                return null;
-
-            Bitmap bmp = null;
-            try
-            {
-                System.IO.MemoryStream memoryStream = new System.IO.MemoryStream(Convert.FromBase64String(image));
-                memoryStream.Position = 0;
-
-                bmp = (Bitmap)Bitmap.FromStream(memoryStream);
-
-                memoryStream.Close();
-            }
-            catch (Exception)
-            {               
-            }            
-
-            return bmp;
+            return new Tools().base64ToBitmap(image);            
         }
 
         public void setBitmap(Bitmap bmp)
         {
-            if(bmp != null)
-            {
-                System.IO.MemoryStream ms = new System.IO.MemoryStream();
-
-                var encoder = ImageCodecInfo.GetImageEncoders().First(c => c.FormatID == ImageFormat.Jpeg.Guid);
-                var encParams = new EncoderParameters() { Param = new[] { new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, 10L) } };
-
-                bmp.Save(ms, encoder, encParams);
-                byte[] byteImage = ms.ToArray();
-                image = Convert.ToBase64String(byteImage);
-            }            
+            image = new Tools().bitmapToBase64(bmp);                     
         }
 
     }

@@ -693,5 +693,49 @@ namespace StockManagementSystem
                 }
             }).Start();
         }
+
+        public static void getScannedProduct(string nNumber, Action<Product> callback)
+        {
+            new Task(() =>
+            {
+                try
+                {
+                    //Prep connection to database & query for user with given id
+                    SqlConnection connection = new SqlConnection(m_connectionString);
+                    SqlCommand command = new SqlCommand("SELECT * FROM PRODUCTS WHERE id = (SELECT pid FROM SCANS WHERE nNumber = '"+nNumber+ "'); DELETE FROM SCANS WHERE nNumber = '" + nNumber + "';", connection);
+
+                    //Execute connection
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    //Read results of query into list
+                    Product product = null;
+                    if (reader.Read())
+                    {
+                        product = new Product(
+                        reader["id"].ToString(),
+                        reader["externalId"].ToString(),
+                        reader["image"].ToString(),
+                        reader["information"].ToString(),
+                        reader["locationX"].ToString(),
+                        reader["locationY"].ToString(),
+                        reader["quantity"].ToString(),
+                        reader["expiryDate"].ToString(),
+                        reader["price"].ToString(),
+                        reader["vat"].ToString(),
+                        reader["dangerDescription"].ToString(),
+                        reader["retProductNo"].ToString(),
+                        reader["name"].ToString());
+                    }                     
+
+                    connection.Close();
+                    callback(product);
+                }
+                catch (Exception e)
+                {
+                    callback(null);
+                }
+            }).Start();
+        }
     }
 }

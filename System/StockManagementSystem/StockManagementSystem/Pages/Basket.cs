@@ -39,6 +39,8 @@ namespace StockManagementSystem.Pages
 
             if (m_products.Count > 0)
                 lbl_noProducts.Hide();
+
+            getScannedProduct();//testing
         }
 
         private void addRow(BasketRow productRow)
@@ -165,6 +167,35 @@ namespace StockManagementSystem.Pages
             m_products.Clear();
             m_products = new List<Product>();
             pnl_products.Controls.Clear();
+        }
+
+        private void getScannedProduct()
+        {
+            DatabaseComms.getScannedProduct(m_currentUser.nNumber, getScannedProductCallback);
+        }
+
+        private void getScannedProductCallback(Product p)
+        {
+            if(p != null)
+            {
+                p.requestedQuantitiy = 1;
+                
+                bool bAlreadyInBasket = false;
+                foreach (Product existingProduct in m_products)
+                {
+                    if (existingProduct.id == p.id)
+                    {
+                        existingProduct.requestedQuantitiy += p.requestedQuantitiy;
+                        bAlreadyInBasket = true;
+                    }
+                }
+
+                if (!bAlreadyInBasket)
+                {
+                    m_products.Add(p);
+                    this.Invoke((Action)delegate { addRow(new BasketRow(p, this)); });                    
+                }                    
+            }
         }
     }
 }

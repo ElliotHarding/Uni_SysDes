@@ -55,6 +55,7 @@
             this.lbl_name.Size = new System.Drawing.Size(45, 16);
             this.lbl_name.TabIndex = 1;
             this.lbl_name.Text = "Name";
+            this.lbl_name.Click += new System.EventHandler(this.lbl_name_Click);
             // 
             // c_quantitiy
             // 

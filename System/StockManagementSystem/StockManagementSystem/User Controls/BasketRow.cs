@@ -16,7 +16,7 @@ namespace StockManagementSystem.User_Controls
             m_product = product;
 
             pb_image.Image = product.getBitmap();
-
+            lbl_name.Text = product.name;
             c_quantitiy.Value = product.requestedQuantitiy;
         }
 
@@ -39,6 +39,12 @@ namespace StockManagementSystem.User_Controls
         private void btn_remove_Click(object sender, EventArgs e)
         {
             m_basketPage.removeRow(this);
+        }
+
+        private void lbl_name_Click(object sender, EventArgs e)
+        {
+            ViewProduct.product = m_product;
+            m_basketPage.goToNextPage(SystemPage.ViewProduct);
         }
     }
 }

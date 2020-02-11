@@ -37,7 +37,7 @@
             // 
             // btn_view
             // 
-            this.btn_view.Location = new System.Drawing.Point(842, 3);
+            this.btn_view.Location = new System.Drawing.Point(837, 3);
             this.btn_view.Name = "btn_view";
             this.btn_view.Size = new System.Drawing.Size(75, 23);
             this.btn_view.TabIndex = 0;
@@ -91,7 +91,7 @@
             this.Controls.Add(this.lbl_supplierName);
             this.Controls.Add(this.btn_view);
             this.Name = "ShipmentRow";
-            this.Size = new System.Drawing.Size(920, 28);
+            this.Size = new System.Drawing.Size(916, 28);
             this.ResumeLayout(false);
             this.PerformLayout();
 

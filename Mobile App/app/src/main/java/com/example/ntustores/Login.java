@@ -24,15 +24,7 @@ public class Login extends AppCompatActivity {
 
     // layout variables
     AutoCompleteTextView userName;
-    EditText password;
     Button loginBtn;
-
-    // connection variables
-    Connection con;
-    String un,
-        pass,
-        db,
-        ip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +32,6 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         userName = findViewById(R.id.userName_EditText);
-        password = findViewById(R.id.password_EditText);
         loginBtn = findViewById(R.id.login_btn);
 
 
@@ -101,7 +92,7 @@ public class Login extends AppCompatActivity {
         finish();
         startActivity(intent);
     }
-    
+
 
     private void showErrorDialog(String message)
     {

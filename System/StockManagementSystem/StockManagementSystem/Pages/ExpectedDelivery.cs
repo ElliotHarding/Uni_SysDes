@@ -59,6 +59,11 @@ namespace StockManagementSystem.Pages
             {
                 if (newProducts.Count > 0)
                     DatabaseComms.uploadProducts(newProducts, uploadProductsCallback);
+                else
+                {
+                    notifyUser("Added shipment and products.", "Success");
+                    this.Invoke((Action)delegate { goToNextPage(SystemPage.NewShipment); });
+                }
             }
             else
             {

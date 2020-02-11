@@ -34,9 +34,10 @@
             // lbl_message
             // 
             this.lbl_message.AutoSize = true;
-            this.lbl_message.Location = new System.Drawing.Point(18, 18);
+            this.lbl_message.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_message.Location = new System.Drawing.Point(16, 12);
             this.lbl_message.Name = "lbl_message";
-            this.lbl_message.Size = new System.Drawing.Size(35, 13);
+            this.lbl_message.Size = new System.Drawing.Size(45, 16);
             this.lbl_message.TabIndex = 0;
             this.lbl_message.Text = "label1";
             // 
@@ -46,7 +47,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lbl_message);
             this.Name = "MessageControl";
-            this.Size = new System.Drawing.Size(700, 50);
+            this.Size = new System.Drawing.Size(700, 40);
             this.ResumeLayout(false);
             this.PerformLayout();
 

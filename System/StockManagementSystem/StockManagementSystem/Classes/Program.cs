@@ -45,9 +45,6 @@ namespace StockManagementSystem
                     case SystemPage.NewShipment:
                         currentPage = new NewShipment();
                         break;
-                    case SystemPage.Inspection:
-                        currentPage = new Inspection();
-                        break;
                     case SystemPage.ViewProduct:
                         currentPage = new ViewProduct();
                         break;
@@ -56,6 +53,12 @@ namespace StockManagementSystem
                         break;
                     case SystemPage.Settings:
                         currentPage = new Settings();
+                        break;
+                    case SystemPage.Shipment:
+                        currentPage = new Shipments();
+                        break;
+                    case SystemPage.ViewShipment:
+                        currentPage = new ViewShipment();
                         break;
 
                     //End cases:

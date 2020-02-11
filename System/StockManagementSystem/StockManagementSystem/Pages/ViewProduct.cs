@@ -8,7 +8,6 @@ namespace StockManagementSystem.Pages
     {
         public static Product product = null;
         private bool m_bAwaitingClick = false;
-
         public ViewProduct()
         {
             InitializeComponent();
@@ -32,11 +31,14 @@ namespace StockManagementSystem.Pages
 
             if (m_currentUser.role != "admin")
             {
-                btn_checkInOut.Hide();
-                btn_editMapLocation.Hide();
-                lbl_supplierCode.Hide();
-                btn_saveChanges.Hide();
                 btn_removeProduct.Hide();
+                if (m_currentUser.role != "staff")
+                {                    
+                    btn_editMapLocation.Hide();
+                    lbl_supplierCode.Hide();
+                    btn_saveChanges.Hide();                    
+                    btn_viewQrCode.Hide();
+                }                
             }
         }
 
@@ -280,6 +282,12 @@ namespace StockManagementSystem.Pages
                     lbl_productInfo.Text = userInputParagraphDialog.paragraph;
                 }
             }
+        }
+
+        private void Btn_viewQrCode_Click(object sender, EventArgs e)
+        {
+            QRCodeDisplay qRCodeDisplay = new QRCodeDisplay(product.id);
+            qRCodeDisplay.ShowDialog();
         }
     }
 }

@@ -52,12 +52,13 @@ namespace StockManagementSystem.Pages
         private void Btn_send_invoice_Click(object sender, EventArgs e)
         {
             //Todo
+            //new Tools() tools
             //Tools.sendEmail("", );
         }
 
         private void Btn_add_row_Click(object sender, EventArgs e)
         {
-            TransationRow productRow = new TransationRow(this, new Transation("Custom invoice row", "", "", "", "", cmb_department.Text));
+            TransationRow productRow = new TransationRow(this, new Transation("Custom invoice row", "", "", "", "", cmb_department.Text, "0", ""));
             productRow.Parent = pnl_invoice;
             productRow.Location = new Point(0, m_rowIndex * m_rowInc);
             m_rowIndex++;
@@ -73,7 +74,7 @@ namespace StockManagementSystem.Pages
 
                 if (fromDate != null && toDate != null)
                 {                
-                    DatabaseComms.getTransations(transactionsCallback, "department = '" + cmb_department.Text + "' AND date > '" + fromDate.ToString("yyyy-MM-dd") + "' AND date < '" + toDate.ToString("yyyy-MM-dd") + "'");
+                    DatabaseComms.getTransations(transactionsCallback, "department = '" + cmb_department.Text + "' AND date > '" + fromDate.ToString("yyyy-MM-dd") + "' AND date < '" + toDate.ToString("yyyy-MM-dd") + "' AND isReturn = 'false'");
                 }
                 else
                 {
@@ -94,13 +95,16 @@ namespace StockManagementSystem.Pages
             }
             else
             {
-                foreach (Transation transation in transations)
+                this.Invoke((Action)delegate 
                 {
-                    TransationRow productRow = new TransationRow(this, transation);
-                    productRow.Location = new Point(0, m_rowIndex * m_rowInc);
-                    pnl_invoice.Invoke((Action)delegate { productRow.Parent = pnl_invoice; });
-                    m_rowIndex++;
-                }
+                    foreach (Transation transation in transations)
+                    {
+                        TransationRow productRow = new TransationRow(this, transation);
+                        productRow.Location = new Point(0, m_rowIndex * m_rowInc);
+                        pnl_invoice.Invoke((Action)delegate { productRow.Parent = pnl_invoice; });
+                        m_rowIndex++;
+                    }
+                });                
             }
         }
 

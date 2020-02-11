@@ -55,10 +55,11 @@
             this.lbl_name.Size = new System.Drawing.Size(45, 16);
             this.lbl_name.TabIndex = 1;
             this.lbl_name.Text = "Name";
+            this.lbl_name.Click += new System.EventHandler(this.lbl_name_Click);
             // 
             // c_quantitiy
             // 
-            this.c_quantitiy.Location = new System.Drawing.Point(835, 17);
+            this.c_quantitiy.Location = new System.Drawing.Point(835, 16);
             this.c_quantitiy.Margin = new System.Windows.Forms.Padding(1);
             this.c_quantitiy.Name = "c_quantitiy";
             this.c_quantitiy.Size = new System.Drawing.Size(45, 20);
@@ -67,7 +68,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(787, 20);
+            this.label1.Location = new System.Drawing.Point(787, 19);
             this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);

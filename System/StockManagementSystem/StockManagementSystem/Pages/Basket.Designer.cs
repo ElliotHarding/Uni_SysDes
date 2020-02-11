@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btn_clearAll = new System.Windows.Forms.Button();
             this.pnl_products = new System.Windows.Forms.Panel();
             this.btn_checkout = new System.Windows.Forms.Button();
-            this.btn_sendToInspection = new System.Windows.Forms.Button();
             this.btn_returnItems = new System.Windows.Forms.Button();
             this.lbl_noProducts = new System.Windows.Forms.Label();
+            this.m_scanedProductTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btn_clearAll
@@ -56,7 +57,7 @@
             // 
             // btn_checkout
             // 
-            this.btn_checkout.Location = new System.Drawing.Point(582, 569);
+            this.btn_checkout.Location = new System.Drawing.Point(508, 569);
             this.btn_checkout.Margin = new System.Windows.Forms.Padding(1);
             this.btn_checkout.Name = "btn_checkout";
             this.btn_checkout.Size = new System.Drawing.Size(152, 26);
@@ -65,20 +66,9 @@
             this.btn_checkout.UseVisualStyleBackColor = true;
             this.btn_checkout.Click += new System.EventHandler(this.btn_checkout_Click);
             // 
-            // btn_sendToInspection
-            // 
-            this.btn_sendToInspection.Location = new System.Drawing.Point(274, 569);
-            this.btn_sendToInspection.Margin = new System.Windows.Forms.Padding(1);
-            this.btn_sendToInspection.Name = "btn_sendToInspection";
-            this.btn_sendToInspection.Size = new System.Drawing.Size(152, 26);
-            this.btn_sendToInspection.TabIndex = 8;
-            this.btn_sendToInspection.Text = "Send Items To Inspection";
-            this.btn_sendToInspection.UseVisualStyleBackColor = true;
-            this.btn_sendToInspection.Click += new System.EventHandler(this.btn_sendToInspection_Click);
-            // 
             // btn_returnItems
             // 
-            this.btn_returnItems.Location = new System.Drawing.Point(428, 569);
+            this.btn_returnItems.Location = new System.Drawing.Point(354, 569);
             this.btn_returnItems.Margin = new System.Windows.Forms.Padding(1);
             this.btn_returnItems.Name = "btn_returnItems";
             this.btn_returnItems.Size = new System.Drawing.Size(152, 26);
@@ -96,6 +86,12 @@
             this.lbl_noProducts.TabIndex = 12;
             this.lbl_noProducts.Text = "No Products";
             // 
+            // m_scanedProductTimer
+            // 
+            this.m_scanedProductTimer.Enabled = true;
+            this.m_scanedProductTimer.Interval = 500;
+            this.m_scanedProductTimer.Tick += new System.EventHandler(this.m_scanedProductTimer_Tick);
+            // 
             // Basket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -105,7 +101,6 @@
             this.Controls.Add(this.btn_clearAll);
             this.Controls.Add(this.pnl_products);
             this.Controls.Add(this.btn_checkout);
-            this.Controls.Add(this.btn_sendToInspection);
             this.Controls.Add(this.btn_returnItems);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1024, 720);
@@ -121,12 +116,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_sendToInspection;
         private System.Windows.Forms.Button btn_returnItems;
         private System.Windows.Forms.Button btn_checkout;
         private System.Windows.Forms.Panel pnl_products;
         private System.Windows.Forms.Button btn_clearAll;
         private System.Windows.Forms.Label lbl_noProducts;
+        private System.Windows.Forms.Timer m_scanedProductTimer;
     }
 }

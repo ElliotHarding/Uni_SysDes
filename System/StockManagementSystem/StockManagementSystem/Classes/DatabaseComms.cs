@@ -3,11 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace StockManagementSystem
@@ -15,43 +10,6 @@ namespace StockManagementSystem
     class DatabaseComms
     {
         private const string m_connectionString = "Data Source=den1.mssql7.gear.host;Initial Catalog=smdatabase;User ID=smdatabase;Password=Jj80-f1I!M3c";
-
-        public static void uploadProduct(Product product, Action<bool> callback)
-        {
-            new Task(() => 
-            {
-                try
-                {
-                    SqlConnection connection = new SqlConnection(m_connectionString);
-                    SqlCommand command = new SqlCommand("INSERT INTO PRODUCTS VALUES(" +
-                        "@id,  @externalId, @image,  @information, @locationX,  @locationY, @quantity, @expiryDate, @price, @vat, @dangerDescription, @retProductNo, @name);", connection);
-
-                    command.Parameters.AddWithValue("@id", "NEWID()");
-                    command.Parameters.AddWithValue("@externalId", product.externalId);
-                    command.Parameters.AddWithValue("@image", product.image);
-                    command.Parameters.AddWithValue("@information", product.information);
-                    command.Parameters.AddWithValue("@locationX", product.locationX);
-                    command.Parameters.AddWithValue("@locationY", product.locationY);
-                    command.Parameters.AddWithValue("@quantity", product.quantity);
-                    command.Parameters.AddWithValue("@expiryDate", product.expiryDate);
-                    command.Parameters.AddWithValue("@price", product.price);
-                    command.Parameters.AddWithValue("@vat", product.vat);
-                    command.Parameters.AddWithValue("@dangerDescription", product.dangerDescription);
-                    command.Parameters.AddWithValue("@retProductNo", product.retProductNo);
-                    command.Parameters.AddWithValue("@name", product.name);
-
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                    connection.Close();
-
-                    callback(true);
-                }
-                catch (Exception e)
-                {
-                    callback(false);
-                }
-            }).Start();
-        }
 
         public static void uploadProducts(List<Product> products, Action<bool> callback)
         {
@@ -83,7 +41,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void updateProduct(Product product, Action<bool> callback)
+        public static void updateProduct(Product product, Action<bool> callback)
         {
             new Task(() =>
             {
@@ -132,7 +90,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void updateProductQuantity(Action<bool> callback, string quantity, string where)
+        public static void updateProductQuantity(Action<bool> callback, string quantity, string where)
         {
             new Task(() =>
             {
@@ -156,17 +114,24 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void updateProductQuantities(Action<bool> callback, List<Product> products)
+        public static void updateProductQuantities(Action<bool> callback, List<Product> products, List<Transation> transations)
         {
             new Task(() =>
             {
                 try
                 {
-                    string updates = "";
-                    foreach (Product p in products)
+                    if(products.Count != transations.Count)
                     {
-                        updates += "UPDATE PRODUCTS SET quantity = '" + p.quantity + "' WHERE id = '" + p.id + "';";
-                    }                    
+                        callback(false);
+                        return;
+                    }
+
+                    string updates = "";
+                    for (int i = 0; i < products.Count; i++)
+                    {
+                        updates += "UPDATE PRODUCTS SET quantity = '" + products[i].quantity + "' WHERE id = '" + products[i].id + "';";
+                        updates += "INSERT INTO TRANSACTIONS VALUES (NEWID(), '"+ transations[i].date + "', '"+ transations[i].productId + "', '"+ transations[i].quantity + "', '"+ transations[i].nNumber + "', '"+ transations[i].department + "', '"+ transations[i].price+ "', '"+ transations[i].isReturn+ "');";
+                    }                 
 
                     SqlConnection connection = new SqlConnection(m_connectionString);
                     SqlCommand command = new SqlCommand(updates, connection);
@@ -184,7 +149,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void getProducts(Action<List<Product>> callback, int rowCount = 0, string where = null)
+        public static void getProducts(Action<List<Product>> callback, int rowCount = 0, string where = null)
         {
             new Task(() =>
             {
@@ -243,129 +208,9 @@ namespace StockManagementSystem
                     callback(null);
                 }
             }).Start();
-        }
+        }    
 
-        public static async void uploadInvoice(Invoice invoice, Action<bool> callback)
-        {
-            new Task(() =>
-            {
-                try
-                {
-                    SqlConnection connection = new SqlConnection(m_connectionString);
-                    SqlCommand command = new SqlCommand("INSERT INTO INVOICES VALUES (" +
-                        "@id," +
-                        "@departmentId," +
-                        "@productId," +
-                        "@date," +
-                        "@price," +
-                        "@quantity," +
-                        "@vat);", connection);
-
-                    command.Parameters.AddWithValue("@id", invoice.id);
-                    command.Parameters.AddWithValue("@departmentId", invoice.departmentId);
-                    command.Parameters.AddWithValue("@productId", invoice.productId);
-                    command.Parameters.AddWithValue("@date", invoice.date);
-                    command.Parameters.AddWithValue("@price", invoice.price);
-                    command.Parameters.AddWithValue("@quantity", invoice.quantitiy);
-                    command.Parameters.AddWithValue("@vat", invoice.vat);
-
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                    connection.Close();
-
-                    callback(true);
-                }
-                catch (Exception e)
-                {
-                    callback(false);
-                }
-            }).Start();
-        }
-
-        public static async void updateInvoice(Invoice invoice, Action<bool> callback)
-        {
-            new Task(() =>
-            {
-                try
-                {
-                    SqlConnection connection = new SqlConnection(m_connectionString);
-                    SqlCommand command = new SqlCommand("UPDATE INVOICES SET" +
-                        " departmentId = @departmentId," +
-                        " productId = @productId," +
-                        " date = @date," +
-                        " price = @price," +
-                        " quantity = @quantity," +
-                        " vat = @vat; WHERE id=@id", connection);
-
-                    command.Parameters.AddWithValue("@id", invoice.id);
-                    command.Parameters.AddWithValue("@departmentId", invoice.departmentId);
-                    command.Parameters.AddWithValue("@productId", invoice.productId);
-                    command.Parameters.AddWithValue("@date", invoice.date);
-                    command.Parameters.AddWithValue("@price", invoice.price);
-                    command.Parameters.AddWithValue("@quantity", invoice.quantitiy);
-                    command.Parameters.AddWithValue("@vat", invoice.vat);
-
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                    connection.Close();
-
-                    callback(true);
-                }
-                catch (Exception e)
-                {
-                    callback(false);
-                }
-            }).Start();
-        }
-
-        public static async void getInvoices(Action<List<Invoice>> callback, string where = null)
-        {
-            new Task(() =>
-            {
-                try
-                {
-                    //Prep connection to database & query for user with given id
-                    SqlConnection connection = new SqlConnection(m_connectionString);
-                    SqlCommand command;
-                    if (where == null)
-                    {
-                        command = new SqlCommand("SELECT * FROM INVOICES;", connection);
-                    }
-                    else
-                    {
-                        command = new SqlCommand("SELECT * FROM INVOICES WHERE " + where + ";", connection);
-                    }
-
-                    //Execute connection
-                    connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    //Read results of query into list
-                    List<Invoice> results = new List<Invoice>();
-                    while (reader.Read())
-                    {
-                        results.Add(new Invoice(
-                        reader["id"].ToString(),
-                        reader["departmentId"].ToString(),
-                        reader["productId"].ToString(),
-                        reader["date"].ToString(),
-                        reader["price"].ToString(),
-                        reader["quantitiy"].ToString(),
-                        reader["vat"].ToString()
-                        ));
-                    }
-
-                    connection.Close();
-                    callback(results);
-                }
-                catch (Exception e)
-                {
-                    callback(null);
-                }
-            }).Start();
-        }
-
-        public static async void uploadShipment(Shipment shipment, Action<bool> callback)
+        public static void uploadShipment(Shipment shipment, Action<bool> callback)
         {
             new Task(() =>
             {
@@ -374,7 +219,7 @@ namespace StockManagementSystem
                 {
                     SqlConnection connection = new SqlConnection(m_connectionString);
                     SqlCommand command = new SqlCommand("INSERT INTO SHIPMENTS VALUES (" +
-                        "@id," +
+                        "NEWID()," +
                         "@supplierName," +
                         "@supplierSiteName," +
                         "@supplierRemitToAddressLine1," +
@@ -393,7 +238,6 @@ namespace StockManagementSystem
                         "@vat," +
                         "@invoiceTotal);", connection);
 
-                    command.Parameters.AddWithValue("@id", "NEWID()");
                     command.Parameters.AddWithValue("@supplierName", shipment.supplierName);
                     command.Parameters.AddWithValue("@supplierSiteName", shipment.supplierSiteName);
                     command.Parameters.AddWithValue("@supplierRemitToAddressLine1", shipment.supplierRemitToAddress.line1);
@@ -425,7 +269,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void updateShipment(Shipment shipment, Action<bool> callback)
+        public static void updateShipment(Shipment shipment, Action<bool> callback)
         {
             new Task(() =>
             {
@@ -448,7 +292,7 @@ namespace StockManagementSystem
                         "goodsAndServicesAddressLine3=@goodsAndServicesAddressLine3," +
                         "goodsAndServicesAddressLine4=@goodsAndServicesAddressLine4," +
                         "vat=@vat," +
-                        "invoiceTotal=@invoiceTotal, where id = @id;", connection);
+                        "invoiceTotal=@invoiceTotal where id = @id;", connection);
 
                     command.Parameters.AddWithValue("@id", shipment.id);
                     command.Parameters.AddWithValue("@supplierName", shipment.supplierName);
@@ -481,7 +325,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void getShipments(Action<List<Shipment>> callback, string where = null)
+        public static void getShipments(Action<List<Shipment>> callback, string where = null)
         {
             new Task(() =>
             {
@@ -539,7 +383,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void uploadTransation(Transation transaction, Action<bool> callback)
+        public static void uploadTransation(Transation transaction, Action<bool> callback)
         {
             new Task(() =>
             {
@@ -547,7 +391,7 @@ namespace StockManagementSystem
                 {
                     SqlConnection connection = new SqlConnection(m_connectionString);
                     SqlCommand command = new SqlCommand("INSERT INTO TRANSACTIONS VALUES (" +
-                        "@id, @date, @productId, @quantitiy, @nNumber, @department);", connection);
+                        "@id, @date, @productId, @quantitiy, @nNumber, @department, @price, @isReturn);", connection);
 
                     command.Parameters.AddWithValue("@id", "NEWID()");
                     command.Parameters.AddWithValue("@date", transaction.date);
@@ -555,6 +399,8 @@ namespace StockManagementSystem
                     command.Parameters.AddWithValue("@quantitiy", transaction.quantity);
                     command.Parameters.AddWithValue("@nNumber", transaction.nNumber);
                     command.Parameters.AddWithValue("@department", transaction.department);
+                    command.Parameters.AddWithValue("@price", transaction.price);
+                    command.Parameters.AddWithValue("@isReturn", transaction.isReturn);
 
                     connection.Open();
                     command.ExecuteNonQuery();
@@ -569,11 +415,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        /*public static async void updateTransation(Transation product, Action<bool> callback)
-        {
-        }*/
-
-        public static async void getTransations(Action<List<Transation>> callback, string where = null)
+        public static void getTransations(Action<List<Transation>> callback, string where = null)
         {
             new Task(() =>
             {
@@ -605,7 +447,9 @@ namespace StockManagementSystem
                         reader["productId"].ToString(),
                         reader["quantity"].ToString(),
                         reader["nNumber"].ToString(),
-                        reader["department"].ToString()
+                        reader["department"].ToString(),
+                        reader["price"].ToString(),
+                        reader["isReturn"].ToString()
                         ));
                     }
 
@@ -619,7 +463,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void uploadUser(User user, Action<bool> callback)
+        public static void uploadUser(User user, Action<bool> callback)
         {
             new Task(() =>
             {
@@ -647,7 +491,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void updateUser(User user, Action<bool> callback)
+        public static void updateUser(User user, Action<bool> callback)
         {
             new Task(() =>
             {
@@ -678,7 +522,31 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void getUsers(Action<List<User>> callback, string where = null)
+        public static void resetUserPassword(Action<bool> callback, string userNumber, string newPasswordHash)
+        {
+            new Task(() =>
+            {
+                try
+                {
+                    //Prep connection to database & query for user with given id
+                    SqlConnection connection = new SqlConnection(m_connectionString);
+                    SqlCommand command = new SqlCommand("UPDATE USERS SET password = '"+ newPasswordHash + "' WHERE nNumber = '" + userNumber + "';", connection);
+
+                    //Execute connection
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+
+                    callback(true);
+                }
+                catch (Exception e)
+                {
+                    callback(false);
+                }
+            }).Start();
+        }
+
+        public static void getUsers(Action<List<User>> callback, string where = null)
         {
             new Task(() =>
             {
@@ -722,83 +590,8 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void uploadExpectedShipment(ExpectedShipment expectedShipment, Action<bool> callback)
-        {
-            new Task(() =>
-            {
-                try
-                {
-                    SqlConnection connection = new SqlConnection(m_connectionString);
-                    SqlCommand command = new SqlCommand("INSERT INTO EXPECTED_SHIPMENTS VALUES (" +
-                        "@shipmentId, @dateExpected, @supplierName, @supplierId);", connection);
 
-                    command.Parameters.AddWithValue("@shipmentId", expectedShipment.shipmentId);
-                    command.Parameters.AddWithValue("@dateExpected", expectedShipment.dateExpected);
-                    command.Parameters.AddWithValue("@supplierName", expectedShipment.supplierName);
-                    command.Parameters.AddWithValue("@supplierId", expectedShipment.supplierId);
-
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                    connection.Close();
-
-                    callback(true);
-                }
-                catch (Exception e)
-                {
-                    callback(false);
-                }
-            }).Start();
-        }
-
-        //public static async void updateExpectedShipment(ExpectedShipment product, Action<bool> callback)
-        //{
-        //}
-
-        public static async void getExpectedShipment(Action<List<ExpectedShipment>> callback, string where = null)
-        {
-            new Task(() =>
-            {
-                try
-                {
-                    //Prep connection to database & query for user with given id
-                    SqlConnection connection = new SqlConnection(m_connectionString);
-                    SqlCommand command;
-                    if (where == null)
-                    {
-                        command = new SqlCommand("SELECT * FROM EXPECTED_SHIPMENTS;", connection);
-                    }
-                    else
-                    {
-                        command = new SqlCommand("SELECT * FROM EXPECTED_SHIPMENTS WHERE " + where + ";", connection);
-                    }
-
-                    //Execute connection
-                    connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    //Read results of query into list
-                    List<ExpectedShipment> results = new List<ExpectedShipment>();
-                    while (reader.Read())
-                    {
-                        results.Add(new ExpectedShipment(
-                        reader["shipmentId"].ToString(),
-                        reader["dateExpected"].ToString(),
-                        reader["supplierName"].ToString(),
-                        reader["supplierId"].ToString()
-                        ));
-                    }
-
-                    connection.Close();
-                    callback(results);
-                }
-                catch (Exception e)
-                {
-                    callback(null);
-                }
-            }).Start();
-        }
-
-        public static async void getDepartments(Action<List<string>> callback)
+        public static void getDepartments(Action<List<string>> callback)
         {
             new Task(() =>
             {
@@ -827,7 +620,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void setDepartments(List<string> departments, Action<bool> callback)
+        public static void setDepartments(List<string> departments, Action<bool> callback)
         {
             new Task(() =>
             {
@@ -903,7 +696,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static async void query(string query, Action<bool> callback)
+        public static void query(string query, Action<bool> callback)
         {
             new Task(() =>
             {
@@ -921,6 +714,50 @@ namespace StockManagementSystem
                 catch (Exception e)
                 {
                     callback(false);
+                }
+            }).Start();
+        }
+
+        public static void getScannedProduct(string nNumber, Action<Product> callback)
+        {
+            new Task(() =>
+            {
+                try
+                {
+                    //Prep connection to database & query for user with given id
+                    SqlConnection connection = new SqlConnection(m_connectionString);
+                    SqlCommand command = new SqlCommand("SELECT * FROM PRODUCTS WHERE id = (SELECT pid FROM SCANS WHERE nNumber = '"+nNumber+ "'); DELETE FROM SCANS WHERE nNumber = '" + nNumber + "';", connection);
+
+                    //Execute connection
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    //Read results of query into list
+                    Product product = null;
+                    if (reader.Read())
+                    {
+                        product = new Product(
+                        reader["id"].ToString(),
+                        reader["externalId"].ToString(),
+                        reader["image"].ToString(),
+                        reader["information"].ToString(),
+                        reader["locationX"].ToString(),
+                        reader["locationY"].ToString(),
+                        reader["quantity"].ToString(),
+                        reader["expiryDate"].ToString(),
+                        reader["price"].ToString(),
+                        reader["vat"].ToString(),
+                        reader["dangerDescription"].ToString(),
+                        reader["retProductNo"].ToString(),
+                        reader["name"].ToString());
+                    }                     
+
+                    connection.Close();
+                    callback(product);
+                }
+                catch (Exception e)
+                {
+                    callback(null);
                 }
             }).Start();
         }

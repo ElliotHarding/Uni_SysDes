@@ -28,10 +28,15 @@ namespace StockManagementSystem.Pages
         public static void checkMessages()
         {
             messages.Clear();
-            string currentDate = DateTime.Now.AddDays(30).ToString("dd-MM-yyyy");
 
-            //DatabaseComms.getShipments(Shipments, "promisedDate < " + currentDate);
-            //DatabaseComms.getProducts(ExpiringProducts, "expiryDate < " + currentDate);
+            if(m_currentUser.role == "admin" || m_currentUser.role == "staff")
+            {
+                string currentDate = DateTime.Now.ToString("yyyy-MM-dd");
+                string futureDate = DateTime.Now.AddDays(30).ToString("yyyy-MM-dd");
+
+                DatabaseComms.getShipments(Shipments, "promisedDate < '" + futureDate + "' AND promisedDate > '" + currentDate + "'");
+                DatabaseComms.getProducts(ExpiringProducts, 100, "expiryDate < '" + futureDate + "' AND expiryDate > '" + currentDate + "'");//todo sort expiryDate...
+            }            
         }
 
         private static void ExpiringProducts(List<Product> products)
@@ -51,7 +56,7 @@ namespace StockManagementSystem.Pages
             {
                 foreach (Shipment s in shipments)
                 {
-                    messages.Add("Shipment " + s.id + " from : " + s.supplierName + "is expected");
+                    messages.Add("Shipment " + s.id + " from : " + s.supplierName + " is expected at : " + s.promisedDate);
                 }
             }
         }

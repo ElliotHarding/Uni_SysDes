@@ -7,14 +7,14 @@ namespace StockManagementSystem.Pages
 {
     public partial class Basket : BaseForm
     {
-        private static List<Product> m_products = new List<Product>();  
-        
+        private static List<Product> m_products = new List<Product>();
+
         public static void addToBasket(Product product)
         {
             bool bAlreadyInBasket = false;
-            foreach(Product p in m_products)
+            foreach (Product p in m_products)
             {
-                if(p.id == product.id)
+                if (p.id == product.id)
                 {
                     p.requestedQuantitiy += product.requestedQuantitiy;
                     bAlreadyInBasket = true;
@@ -72,44 +72,15 @@ namespace StockManagementSystem.Pages
             this.ResumeLayout();
         }
 
-        private void btn_sendToInspection_Click(object sender, EventArgs e)
-        {
-            List<Product> products = new List<Product>();
-            foreach (BasketRow npr in pnl_products.Controls)
-            {
-                Product p = new Product(npr.GetProduct());
-
-                int currentQuantiy = 0;
-                if (Int32.TryParse(p.quantity, out currentQuantiy))
-                {
-                    currentQuantiy += p.requestedQuantitiy;
-                    p.quantity = currentQuantiy.ToString();
-                    products.Add(p);
-                }
-            }
-
-            //todo
-            //sendToInspectionCallback
-        }
-
-        private void sendToInspectionCallback(bool success)
-        {
-            if (success)
-            {
-                clearAll();
-            }
-            else
-            {
-                notifyUser("Failed to send items to inspection.");
-            }
-        }
-
         private void btn_returnItems_Click(object sender, EventArgs e)
         {
             List<Product> products = new List<Product>();
+            List<Transation> transations = new List<Transation>();
             foreach (BasketRow npr in pnl_products.Controls)
             {
                 Product p = npr.GetProduct();
+
+                transations.Add(new Transation("", DateTime.Now.ToString("yyyy-MM-dd"), p.id, p.requestedQuantitiy.ToString(), m_currentUser.nNumber, m_currentUser.department, p.price, "true"));
 
                 int currentQuantiy = 0;
                 if (Int32.TryParse(p.quantity, out currentQuantiy))
@@ -120,7 +91,7 @@ namespace StockManagementSystem.Pages
                 }                
             }
 
-            DatabaseComms.updateProductQuantities(returnItemsCallback, products);            
+            DatabaseComms.updateProductQuantities(returnItemsCallback, products, transations);
         }
 
         private void returnItemsCallback(bool success)
@@ -139,6 +110,7 @@ namespace StockManagementSystem.Pages
         {
             List<Product> notEnough = new List<Product>();
             List<Product> products = new List<Product>();
+            List<Transation> transations = new List<Transation>();
             foreach (BasketRow npr in pnl_products.Controls)
             {
                 Product p = new Product(npr.GetProduct());
@@ -151,6 +123,7 @@ namespace StockManagementSystem.Pages
                     {
                         p.quantity = currentQuantiy.ToString();
                         products.Add(p);
+                        transations.Add(new Transation("", DateTime.Now.ToString("yyyy-MM-dd"), p.id, p.requestedQuantitiy.ToString(), m_currentUser.nNumber, m_currentUser.department, p.price, "false"));
                     }
                     else
                     {
@@ -160,7 +133,7 @@ namespace StockManagementSystem.Pages
             }
 
             if(notEnough.Count == 0)
-                DatabaseComms.updateProductQuantities(checkoutItemsCallback, products);
+                DatabaseComms.updateProductQuantities(checkoutItemsCallback, products, transations);
             else
             {
                 foreach(Product p in notEnough)
@@ -174,7 +147,7 @@ namespace StockManagementSystem.Pages
         {
             if (success)
             {
-                clearAll();
+                this.Invoke((Action)delegate { clearAll(); });
             }
             else
             {
@@ -192,6 +165,38 @@ namespace StockManagementSystem.Pages
             m_products.Clear();
             m_products = new List<Product>();
             pnl_products.Controls.Clear();
+        }
+
+        private void getScannedProductCallback(Product p)
+        {
+            if(p != null)
+            {
+                this.Invoke((Action)delegate 
+                {
+                    p.requestedQuantitiy = 1;
+
+                    bool bAlreadyInBasket = false;
+                    foreach (BasketRow basketRow in pnl_products.Controls)
+                    {
+                        if (basketRow.getProductId() == p.id)
+                        {
+                            basketRow.addQuantity(p.requestedQuantitiy);
+                            bAlreadyInBasket = true;
+                        }
+                    }
+
+                    if (!bAlreadyInBasket)
+                    {
+                        m_products.Add(p);
+                        addRow(new BasketRow(p, this));
+                    }
+                });                                    
+            }
+        }
+
+        private void m_scanedProductTimer_Tick(object sender, EventArgs e)
+        {
+            DatabaseComms.getScannedProduct(m_currentUser.nNumber, getScannedProductCallback);
         }
     }
 }

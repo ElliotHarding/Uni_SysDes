@@ -33,6 +33,7 @@
             // 
             // messagesPanel
             // 
+            this.messagesPanel.AutoScroll = true;
             this.messagesPanel.Location = new System.Drawing.Point(41, 94);
             this.messagesPanel.Name = "messagesPanel";
             this.messagesPanel.Size = new System.Drawing.Size(924, 512);

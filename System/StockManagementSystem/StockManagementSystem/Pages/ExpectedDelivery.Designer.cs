@@ -30,7 +30,6 @@
         {
             this.btn_addNewProductRow = new System.Windows.Forms.Button();
             this.pnl_newProducts = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.dt_promised = new System.Windows.Forms.DateTimePicker();
             this.dt_requested = new System.Windows.Forms.DateTimePicker();
@@ -48,15 +47,11 @@
             this.label9 = new System.Windows.Forms.Label();
             this.VATTxt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.extendedPriceTxt = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.goodsAndServicesAddressTxt4 = new System.Windows.Forms.TextBox();
             this.goodsAndServicesAddressTxt3 = new System.Windows.Forms.TextBox();
             this.goodsAndServicesAddressTxt2 = new System.Windows.Forms.TextBox();
             this.goodsAndServicesAddressTxt1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.unitOfPriceTxt = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.supplierSiteNameTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.supplierNameTxt = new System.Windows.Forms.TextBox();
@@ -86,24 +81,14 @@
             this.pnl_newProducts.BackColor = System.Drawing.SystemColors.Control;
             this.pnl_newProducts.Location = new System.Drawing.Point(60, 269);
             this.pnl_newProducts.Name = "pnl_newProducts";
-            this.pnl_newProducts.Size = new System.Drawing.Size(910, 325);
+            this.pnl_newProducts.Size = new System.Drawing.Size(910, 312);
             this.pnl_newProducts.TabIndex = 155;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label17.Location = new System.Drawing.Point(571, 56);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(13, 13);
-            this.label17.TabIndex = 154;
-            this.label17.Text = "£";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label16.Location = new System.Drawing.Point(571, 82);
+            this.label16.Location = new System.Drawing.Point(569, 68);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(13, 13);
             this.label16.TabIndex = 153;
@@ -141,7 +126,7 @@
             // btn_addShipmentDetails
             // 
             this.btn_addShipmentDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btn_addShipmentDetails.Location = new System.Drawing.Point(389, 600);
+            this.btn_addShipmentDetails.Location = new System.Drawing.Point(389, 587);
             this.btn_addShipmentDetails.Name = "btn_addShipmentDetails";
             this.btn_addShipmentDetails.Size = new System.Drawing.Size(233, 27);
             this.btn_addShipmentDetails.TabIndex = 147;
@@ -218,7 +203,7 @@
             // invoiceTotalTxt
             // 
             this.invoiceTotalTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.invoiceTotalTxt.Location = new System.Drawing.Point(439, 79);
+            this.invoiceTotalTxt.Location = new System.Drawing.Point(437, 65);
             this.invoiceTotalTxt.Name = "invoiceTotalTxt";
             this.invoiceTotalTxt.Size = new System.Drawing.Size(126, 20);
             this.invoiceTotalTxt.TabIndex = 139;
@@ -227,7 +212,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label9.Location = new System.Drawing.Point(364, 82);
+            this.label9.Location = new System.Drawing.Point(362, 68);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 13);
             this.label9.TabIndex = 138;
@@ -236,7 +221,7 @@
             // VATTxt
             // 
             this.VATTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.VATTxt.Location = new System.Drawing.Point(439, 105);
+            this.VATTxt.Location = new System.Drawing.Point(437, 91);
             this.VATTxt.Name = "VATTxt";
             this.VATTxt.Size = new System.Drawing.Size(126, 20);
             this.VATTxt.TabIndex = 137;
@@ -245,29 +230,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label4.Location = new System.Drawing.Point(405, 108);
+            this.label4.Location = new System.Drawing.Point(403, 94);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(28, 13);
             this.label4.TabIndex = 136;
             this.label4.Text = "VAT";
-            // 
-            // extendedPriceTxt
-            // 
-            this.extendedPriceTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.extendedPriceTxt.Location = new System.Drawing.Point(439, 53);
-            this.extendedPriceTxt.Name = "extendedPriceTxt";
-            this.extendedPriceTxt.Size = new System.Drawing.Size(126, 20);
-            this.extendedPriceTxt.TabIndex = 135;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label5.Location = new System.Drawing.Point(354, 56);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 13);
-            this.label5.TabIndex = 134;
-            this.label5.Text = "Extended Price";
             // 
             // goodsAndServicesAddressTxt4
             // 
@@ -310,24 +277,6 @@
             this.label6.Size = new System.Drawing.Size(145, 13);
             this.label6.TabIndex = 129;
             this.label6.Text = "Goods And Services Address";
-            // 
-            // unitOfPriceTxt
-            // 
-            this.unitOfPriceTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.unitOfPriceTxt.Location = new System.Drawing.Point(439, 27);
-            this.unitOfPriceTxt.Name = "unitOfPriceTxt";
-            this.unitOfPriceTxt.Size = new System.Drawing.Size(153, 20);
-            this.unitOfPriceTxt.TabIndex = 128;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label10.Location = new System.Drawing.Point(366, 30);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(67, 13);
-            this.label10.TabIndex = 127;
-            this.label10.Text = "Unit Of Price";
             // 
             // supplierSiteNameTxt
             // 
@@ -421,7 +370,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label15.Location = new System.Drawing.Point(571, 108);
+            this.label15.Location = new System.Drawing.Point(569, 94);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(13, 13);
             this.label15.TabIndex = 157;
@@ -435,7 +384,6 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.btn_addNewProductRow);
             this.Controls.Add(this.pnl_newProducts);
-            this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.dt_promised);
             this.Controls.Add(this.dt_requested);
@@ -453,15 +401,11 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.VATTxt);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.extendedPriceTxt);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.goodsAndServicesAddressTxt4);
             this.Controls.Add(this.goodsAndServicesAddressTxt3);
             this.Controls.Add(this.goodsAndServicesAddressTxt2);
             this.Controls.Add(this.goodsAndServicesAddressTxt1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.unitOfPriceTxt);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.supplierSiteNameTxt);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.supplierNameTxt);
@@ -489,7 +433,6 @@
 
         private System.Windows.Forms.Button btn_addNewProductRow;
         private System.Windows.Forms.Panel pnl_newProducts;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DateTimePicker dt_promised;
         private System.Windows.Forms.DateTimePicker dt_requested;
@@ -507,15 +450,11 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox VATTxt;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox extendedPriceTxt;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox goodsAndServicesAddressTxt4;
         private System.Windows.Forms.TextBox goodsAndServicesAddressTxt3;
         private System.Windows.Forms.TextBox goodsAndServicesAddressTxt2;
         private System.Windows.Forms.TextBox goodsAndServicesAddressTxt1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox unitOfPriceTxt;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox supplierSiteNameTxt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox supplierNameTxt;

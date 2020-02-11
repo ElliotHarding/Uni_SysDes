@@ -22,9 +22,9 @@ namespace StockManagementSystem.User_Controls
             m_invoicesPage = invoicesPage;
             m_transation = transation;
 
-            txt_name.Text = "todo";
+            txt_name.Text = transation.id;
             txt_nNumber.Text = transation.nNumber;
-            txt_price.Text = "todo" + "£";
+            txt_price.Text = transation.price + "£";
             txt_quantity.Text = transation.quantity;
             txt_productId.Text = transation.productId;
             DateTime dt;
@@ -41,7 +41,8 @@ namespace StockManagementSystem.User_Controls
 
         public Transation getTransation()
         {
-            Transation t = new Transation(m_transation.id, dateTime.Text, txt_productId.Text, txt_quantity.Text, txt_nNumber.Text, m_transation.department);
+            //todo validation of price ect...
+            Transation t = new Transation(m_transation.id, dateTime.Text, txt_productId.Text, txt_quantity.Text, txt_nNumber.Text, m_transation.department, txt_price.Text, "false");
             return t;
         }
 

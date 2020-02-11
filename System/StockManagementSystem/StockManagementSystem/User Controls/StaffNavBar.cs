@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using StockManagementSystem.Pages;
 
@@ -33,17 +27,9 @@ namespace StockManagementSystem.Classes
             {
                 btn_messages.BackColor = Color.Green;
             }
-            else if (currentForm.GetType() == typeof(Inspection))
+            else if (currentForm.GetType() == typeof(Shipments))
             {
-                btn_inspection.BackColor = Color.Green;
-            }
-            else if (currentForm.GetType() == typeof(ExpectedDelivery))
-            {
-                btn_expectedDelivery.BackColor = Color.Green;
-            }
-            else if (currentForm.GetType() == typeof(NewShipment))
-            {
-                btn_newShipment.BackColor = Color.Green;
+                btn_shipment.BackColor = Color.Green;
             }
             else if (currentForm.GetType() == typeof(Invoices))
             {
@@ -74,11 +60,6 @@ namespace StockManagementSystem.Classes
             m_currentForm.goToNextPage(SystemPage.ProductsPage);
         }
 
-        private void btn_inspection_Click(object sender, EventArgs e)
-        {
-            m_currentForm.goToNextPage(SystemPage.Inspection);
-        }
-
         private void btn_invoices_Click(object sender, EventArgs e)
         {
             m_currentForm.goToNextPage(SystemPage.Invoices);
@@ -91,7 +72,7 @@ namespace StockManagementSystem.Classes
 
         private void btn_newShipment_Click(object sender, EventArgs e)
         {
-            m_currentForm.goToNextPage(SystemPage.NewShipment);
+            m_currentForm.goToNextPage(SystemPage.Shipment);
         }
 
         private void btn_settings_Click(object sender, EventArgs e)

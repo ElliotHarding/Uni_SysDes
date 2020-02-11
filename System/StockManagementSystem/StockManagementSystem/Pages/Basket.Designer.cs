@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btn_clearAll = new System.Windows.Forms.Button();
             this.pnl_products = new System.Windows.Forms.Panel();
             this.btn_checkout = new System.Windows.Forms.Button();
             this.btn_returnItems = new System.Windows.Forms.Button();
             this.lbl_noProducts = new System.Windows.Forms.Label();
+            this.m_scanedProductTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btn_clearAll
@@ -84,6 +86,11 @@
             this.lbl_noProducts.TabIndex = 12;
             this.lbl_noProducts.Text = "No Products";
             // 
+            // m_scanedProductTimer
+            // 
+            this.m_scanedProductTimer.Enabled = true;
+            this.m_scanedProductTimer.Tick += new System.EventHandler(this.m_scanedProductTimer_Tick);
+            // 
             // Basket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -113,5 +120,6 @@
         private System.Windows.Forms.Panel pnl_products;
         private System.Windows.Forms.Button btn_clearAll;
         private System.Windows.Forms.Label lbl_noProducts;
+        private System.Windows.Forms.Timer m_scanedProductTimer;
     }
 }

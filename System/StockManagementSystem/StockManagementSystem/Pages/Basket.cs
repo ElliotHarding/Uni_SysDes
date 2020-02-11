@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading;
 using StockManagementSystem.User_Controls;
 
 namespace StockManagementSystem.Pages
 {
     public partial class Basket : BaseForm
     {
-        private static List<Product> m_products = new List<Product>();  
-        
+        private static List<Product> m_products = new List<Product>();
+
         public static void addToBasket(Product product)
         {
             bool bAlreadyInBasket = false;
-            foreach(Product p in m_products)
+            foreach (Product p in m_products)
             {
-                if(p.id == product.id)
+                if (p.id == product.id)
                 {
                     p.requestedQuantitiy += product.requestedQuantitiy;
                     bAlreadyInBasket = true;
@@ -39,8 +40,6 @@ namespace StockManagementSystem.Pages
 
             if (m_products.Count > 0)
                 lbl_noProducts.Hide();
-
-            getScannedProduct();//testing
         }
 
         private void addRow(BasketRow productRow)
@@ -169,11 +168,6 @@ namespace StockManagementSystem.Pages
             pnl_products.Controls.Clear();
         }
 
-        private void getScannedProduct()
-        {
-            DatabaseComms.getScannedProduct(m_currentUser.nNumber, getScannedProductCallback);
-        }
-
         private void getScannedProductCallback(Product p)
         {
             if(p != null)
@@ -196,6 +190,11 @@ namespace StockManagementSystem.Pages
                     this.Invoke((Action)delegate { addRow(new BasketRow(p, this)); });                    
                 }                    
             }
+        }
+
+        private void m_scanedProductTimer_Tick(object sender, EventArgs e)
+        {
+            DatabaseComms.getScannedProduct(m_currentUser.nNumber, getScannedProductCallback);
         }
     }
 }

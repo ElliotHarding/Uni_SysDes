@@ -1,6 +1,7 @@
 ﻿using StockManagementSystem.Classes;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace StockManagementSystem.Pages
@@ -51,25 +52,41 @@ namespace StockManagementSystem.Pages
             DatabaseComms.getUsers(loginCallback, "nNumber = 'n0688119' AND password = '" + passwordHash + "'");
         }
 
+        private static Random random = new Random();
+        private string RandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
+        private string m_newPassowrdString = null;
+        private string m_resetUserNnumber = null;
         private void btn_forgottenDetails_Click(object sender, EventArgs e)
         {
             UserInputStringDialog nNumberDialog = new UserInputStringDialog("Enter your nNumber");
             DialogResult dialogResult = nNumberDialog.ShowDialog();
 
             if (dialogResult == DialogResult.OK)
-                DatabaseComms.getUsers(forgottenPassowrdCallback, "nNumber = '" + nNumberDialog.result + "'");
+            {
+                m_newPassowrdString = RandomString(10);
+                string newPasswordHash = Tools.passwordHash(m_newPassowrdString);
+                m_resetUserNnumber = nNumberDialog.result;
+                DatabaseComms.resetUserPassword(forgottenPassowrdCallback, m_resetUserNnumber, newPasswordHash);
+            }                  
         }
 
-        private void forgottenPassowrdCallback(List<User> users)
+        private void forgottenPassowrdCallback(bool success)
         {
-            if (users == null)
+            if(!success)
             {
-                notifyUser("Failed to send email. Check internet?");
+                notifyUser("Inocrrect details. Or check internet?");
             }
-            else if (users.Count > 0)
+            else
             {
-                string[] contents = { "Dear, " + users[0].nNumber, "Your password for ntu stores is: " + users[0].password };
-                if (Tools.sendEmail(users[0].nNumber + "@my.ntu.ac.uk", contents))
+                string[] contents = { "Dear, " + m_resetUserNnumber, "Your password for ntu stores is: " + m_newPassowrdString };
+                Tools emailSender = new Tools();
+                if (emailSender.sendEmail(m_resetUserNnumber + "@my.ntu.ac.uk", "Password reset", contents))
                 {
                     notifyUser("Password sent to corresponding email.", "Message");
                 }
@@ -77,11 +94,7 @@ namespace StockManagementSystem.Pages
                 {
                     notifyUser("Failed to send email. Check internet?");
                 }
-            }
-            else
-            {
-                notifyUser("Inocrrect details.");
-            }
+            }            
         }
     }
 }

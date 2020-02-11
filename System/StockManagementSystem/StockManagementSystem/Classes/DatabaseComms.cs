@@ -522,6 +522,30 @@ namespace StockManagementSystem
             }).Start();
         }
 
+        public static void resetUserPassword(Action<bool> callback, string userNumber, string newPasswordHash)
+        {
+            new Task(() =>
+            {
+                try
+                {
+                    //Prep connection to database & query for user with given id
+                    SqlConnection connection = new SqlConnection(m_connectionString);
+                    SqlCommand command = new SqlCommand("UPDATE USERS SET password = '"+ newPasswordHash + "' WHERE nNumber = '" + userNumber + "';", connection);
+
+                    //Execute connection
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+
+                    callback(true);
+                }
+                catch (Exception e)
+                {
+                    callback(false);
+                }
+            }).Start();
+        }
+
         public static void getUsers(Action<List<User>> callback, string where = null)
         {
             new Task(() =>

@@ -2,6 +2,8 @@
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -16,10 +18,32 @@ namespace StockManagementSystem.Classes
             return Convert.ToBase64String(md5data);
         }
         
-        public static bool sendEmail(string recipient, string[] contents)
+        public bool sendEmail(string recipient, string subject, string[] contents)
         {
-            //todo
-            return false;
+            try
+            {
+                MailMessage mail = new MailMessage();
+                mail.To.Add(recipient);
+                mail.From = new MailAddress("stockMan675412@gmail.com");
+                mail.Subject = subject;
+                foreach (string s in contents)
+                {
+                    mail.Body = s + "\n";
+                }
+                mail.IsBodyHtml = true;
+
+                using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
+                {
+                    smtp.Credentials = new NetworkCredential("stockMan675412@gmail.com", "StockMan66");
+                    smtp.EnableSsl = true;
+                    smtp.Send(mail);
+                }
+            }
+            catch(Exception)
+            {
+                return false;
+            }         
+            return true;
         }
 
         public Bitmap base64ToBitmap(string base64)

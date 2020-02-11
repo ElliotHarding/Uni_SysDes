@@ -32,7 +32,7 @@ import org.apache.commons.io.IOUtils;
 
 public class Scanner extends AppCompatActivity {
 
-    private final String m_dbPostUrl = "http://stockmanagersystem.gearhostpreview.com/dbPost.php?";
+    private final String m_dbPostUrl = "https://stockmanagersystem.gearhostpreview.com/dbPost.php?";
     CodeScanner mCodeScanner;
     CodeScannerView mScannerView;
 
@@ -111,16 +111,18 @@ public class Scanner extends AppCompatActivity {
         {
             try
             {
+                Log.e("APIConnection","function accessed");
                 URLConnection connection = new URL(m_dbPostUrl+"?nNumber=" + params[0].nNumber + "&pid="+params[0].pid).openConnection();
                 connection.setDoOutput(true);
                 InputStream res = connection.getInputStream();
                 String result = IOUtils.toString(res, StandardCharsets.UTF_8);
-
+                Log.e("APIConnection","Connection result" + result);
 //         todo       if (result = )
                 params[0].success = true;
             }
             catch (Exception e)
             {
+                Log.e("APIConnection", e.getMessage());
                 params[0].success = false;
             }
 

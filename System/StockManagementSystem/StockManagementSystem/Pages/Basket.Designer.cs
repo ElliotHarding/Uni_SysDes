@@ -89,6 +89,7 @@
             // m_scanedProductTimer
             // 
             this.m_scanedProductTimer.Enabled = true;
+            this.m_scanedProductTimer.Interval = 500;
             this.m_scanedProductTimer.Tick += new System.EventHandler(this.m_scanedProductTimer_Tick);
             // 
             // Basket

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using StockManagementSystem.Pages;
 
@@ -25,6 +18,16 @@ namespace StockManagementSystem.User_Controls
             pb_image.Image = product.getBitmap();
 
             c_quantitiy.Value = product.requestedQuantitiy;
+        }
+
+        public string getProductId()
+        {
+            return m_product.id;
+        }
+
+        public void addQuantity(int amount)
+        {
+            c_quantitiy.Value = c_quantitiy.Value + amount;
         }
 
         public Product GetProduct()

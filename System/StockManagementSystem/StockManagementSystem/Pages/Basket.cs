@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Threading;
 using StockManagementSystem.User_Controls;
 
 namespace StockManagementSystem.Pages
@@ -172,23 +171,26 @@ namespace StockManagementSystem.Pages
         {
             if(p != null)
             {
-                p.requestedQuantitiy = 1;
-                
-                bool bAlreadyInBasket = false;
-                foreach (Product existingProduct in m_products)
+                this.Invoke((Action)delegate 
                 {
-                    if (existingProduct.id == p.id)
-                    {
-                        existingProduct.requestedQuantitiy += p.requestedQuantitiy;
-                        bAlreadyInBasket = true;
-                    }
-                }
+                    p.requestedQuantitiy = 1;
 
-                if (!bAlreadyInBasket)
-                {
-                    m_products.Add(p);
-                    this.Invoke((Action)delegate { addRow(new BasketRow(p, this)); });                    
-                }                    
+                    bool bAlreadyInBasket = false;
+                    foreach (BasketRow basketRow in pnl_products.Controls)
+                    {
+                        if (basketRow.getProductId() == p.id)
+                        {
+                            basketRow.addQuantity(p.requestedQuantitiy);
+                            bAlreadyInBasket = true;
+                        }
+                    }
+
+                    if (!bAlreadyInBasket)
+                    {
+                        m_products.Add(p);
+                        addRow(new BasketRow(p, this));
+                    }
+                });                                    
             }
         }
 

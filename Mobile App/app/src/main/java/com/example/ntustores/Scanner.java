@@ -1,6 +1,7 @@
 package com.example.ntustores;
 
 import android.Manifest;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -55,7 +56,8 @@ public class Scanner extends AppCompatActivity {
                     @Override
                     public void run() {
                         BaseCallback baseCallback = new BaseCallback();
-                        baseCallback.nNumber = "";
+                      //  baseCallback.nNumber = getIntent().getExtras().getString("userName");
+                        baseCallback.nNumber = getIntent().getExtras().getString("userName"); // getting username from main acclivity which got it from login page
                         baseCallback.pid = result.toString();
                         new UploadData().execute(baseCallback);
 

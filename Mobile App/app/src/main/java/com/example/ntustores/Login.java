@@ -101,35 +101,7 @@ public class Login extends AppCompatActivity {
         finish();
         startActivity(intent);
     }
-
-    // @SuppressLint("NewApi")
-    // public Connection connectionClass(String user, String pass, String database, String server)
-    // {
-    //     StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-    //     StrictMode.setThreadPolicy(policy);
-    //     Connection connection = null;
-    //     String ConnectionURL;
-    //     try
-    //     {
-    //         Log.d("SQL Connection", "Trying to connect");
-    //         Class.forName("net.sourceforge.jtds.jdbc.Driver");
-    //         ConnectionURL = "jdbc:jtds:sqlserver://" + server + database + ";user=" + user + ";password=" + pass + ";";
-    //         connection = DriverManager.getConnection(ConnectionURL);
-    //     }
-    //     catch (SQLException se)
-    //     {
-    //         Log.e("Error 1: ", se.getMessage());
-    //     }
-    //     catch (ClassNotFoundException e)
-    //     {
-    //         Log.e("Error 2: ", e.getMessage());
-    //     }
-    //     catch (Exception e)
-    //     {
-    //         Log.e("Erro 3: ", e.getMessage());
-    //     }
-    //     return  connection;
-    // }
+    
 
     private void showErrorDialog(String message)
     {

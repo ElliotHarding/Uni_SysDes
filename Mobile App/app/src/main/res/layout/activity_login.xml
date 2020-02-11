@@ -30,7 +30,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.55">
+        app:layout_constraintVertical_bias="0.609">
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -52,25 +52,13 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/password_EditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_medium"
-                android:hint="@string/prompt_password"
-                android:imeOptions="actionUnspecified"
-                android:inputType="textPassword"
-                android:maxLines="1" />
-
-        </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="84dp"
         android:gravity="bottom"
         android:orientation="vertical"
         android:paddingLeft="10dp"

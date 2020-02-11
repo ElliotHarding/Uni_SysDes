@@ -32,7 +32,7 @@ import org.apache.commons.io.IOUtils;
 
 public class Scanner extends AppCompatActivity {
 
-    private final String m_dbPostUrl = "https://stockmanagersystem.gearhostpreview.com/dbPost.php?";
+    private final String m_dbPostUrl = "http://stockmanagersystem.gearhostpreview.com/dbPost.php";
     CodeScanner mCodeScanner;
     CodeScannerView mScannerView;
 
@@ -56,7 +56,7 @@ public class Scanner extends AppCompatActivity {
                     public void run() {
                         BaseCallback baseCallback = new BaseCallback();
                         baseCallback.nNumber = "";
-                        baseCallback.pid = "";
+                        baseCallback.pid = result.toString();
                         new UploadData().execute(baseCallback);
 
                         Log.d("CodeDecoded", "QR Code Decoded Successfully. Result: " + result);
@@ -138,6 +138,8 @@ public class Scanner extends AppCompatActivity {
             return "Executed";
         }
     }
+
+
 
     public class BaseCallback implements Callable<Void>
     {

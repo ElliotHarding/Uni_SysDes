@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Windows.Forms;
 using ZXing;
 using ZXing.Common;
@@ -10,6 +11,8 @@ namespace StockManagementSystem.Pages
 {
     public partial class QRCodeDisplay : Form
     {
+        Bitmap m_bitmap = null;
+
         public QRCodeDisplay(string code)
         {
             InitializeComponent();
@@ -21,13 +24,29 @@ namespace StockManagementSystem.Pages
             barcodeWriter.Options = encodingOptions;
             barcodeWriter.Format = BarcodeFormat.QR_CODE;
 
-            Bitmap bitmap = barcodeWriter.Write(code);
-            pbox_qr.Image = bitmap;
+            m_bitmap = barcodeWriter.Write(code);
+            pbox_qr.Image = m_bitmap;
         }
 
         private void Btn_save_Click(object sender, EventArgs e)
         {
-            //todo
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Images|*.png;*.bmp;*.jpg";
+            ImageFormat format = ImageFormat.Png;
+            if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                string ext = System.IO.Path.GetExtension(sfd.FileName);
+                switch (ext)
+                {
+                    case ".jpg":
+                        format = ImageFormat.Jpeg;
+                        break;
+                    case ".bmp":
+                        format = ImageFormat.Bmp;
+                        break;
+                }
+                m_bitmap.Save(sfd.FileName, format);
+            }
         }
     }
 }

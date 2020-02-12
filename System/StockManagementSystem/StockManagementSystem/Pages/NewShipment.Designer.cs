@@ -36,25 +36,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btn_scanItem = new System.Windows.Forms.Button();
             this.btn_addNewProductRow = new System.Windows.Forms.Button();
             this.pnl_newProducts = new System.Windows.Forms.Panel();
             this.btn_addNewProducts = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tb_itemCode
             // 
-            this.tb_itemCode.Location = new System.Drawing.Point(218, 74);
+            this.tb_itemCode.Location = new System.Drawing.Point(275, 67);
             this.tb_itemCode.Name = "tb_itemCode";
             this.tb_itemCode.Size = new System.Drawing.Size(212, 20);
             this.tb_itemCode.TabIndex = 0;
             // 
             // tb_supplierItemCode
             // 
-            this.tb_supplierItemCode.Location = new System.Drawing.Point(460, 74);
+            this.tb_supplierItemCode.Location = new System.Drawing.Point(517, 67);
             this.tb_supplierItemCode.Name = "tb_supplierItemCode";
             this.tb_supplierItemCode.Size = new System.Drawing.Size(212, 20);
             this.tb_supplierItemCode.TabIndex = 1;
@@ -79,7 +77,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(218, 55);
+            this.label1.Location = new System.Drawing.Point(275, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 4;
@@ -88,7 +86,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(460, 58);
+            this.label2.Location = new System.Drawing.Point(517, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 13);
             this.label2.TabIndex = 5;
@@ -106,20 +104,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(436, 77);
+            this.label4.Location = new System.Drawing.Point(493, 70);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(18, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "Or";
-            // 
-            // btn_scanItem
-            // 
-            this.btn_scanItem.Location = new System.Drawing.Point(702, 71);
-            this.btn_scanItem.Name = "btn_scanItem";
-            this.btn_scanItem.Size = new System.Drawing.Size(75, 23);
-            this.btn_scanItem.TabIndex = 8;
-            this.btn_scanItem.Text = "Scan Item";
-            this.btn_scanItem.UseVisualStyleBackColor = true;
             // 
             // btn_addNewProductRow
             // 
@@ -151,15 +140,6 @@
             this.btn_addNewProducts.UseVisualStyleBackColor = true;
             this.btn_addNewProducts.Click += new System.EventHandler(this.btn_addNewProducts_Click);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(678, 77);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(18, 13);
-            this.label5.TabIndex = 160;
-            this.label5.Text = "Or";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -185,11 +165,9 @@
             this.ClientSize = new System.Drawing.Size(1008, 681);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.btn_addNewProductRow);
             this.Controls.Add(this.pnl_newProducts);
             this.Controls.Add(this.btn_addNewProducts);
-            this.Controls.Add(this.btn_scanItem);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -221,11 +199,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btn_scanItem;
         private System.Windows.Forms.Button btn_addNewProductRow;
         private System.Windows.Forms.Panel pnl_newProducts;
         private System.Windows.Forms.Button btn_addNewProducts;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
     }

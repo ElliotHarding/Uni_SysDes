@@ -59,7 +59,53 @@ namespace StockManagementSystem.Pages
             string vat = VATTxt.Text;
             string invoiceTotal = invoiceTotalTxt.Text;
 
-            //Todo validation
+            if (DateTime.Parse(orderDate) < DateTime.Parse(requestedDate))
+            {
+                notifyUser("The requested date cannot occur before the order date");
+                return;
+            }            
+
+            if (vat == null || vat == "" || !int.TryParse(vat, out int i))
+            {
+                notifyUser("Please enter a valid VAT amount");
+                return;
+            }
+
+            if (invoiceTotal == null || invoiceTotal == "" || !int.TryParse(invoiceTotal, out int ii))
+            {
+                notifyUser("Please enter a valid invoice total");
+                return;
+            }
+
+            if(supplierName == null || supplierName == "")
+            {
+                notifyUser("Please enter a supplier name");
+                return;
+            }
+
+            if (supplierSiteName == null || supplierSiteName == "")
+            {
+                notifyUser("Please enter a supplier site name");
+                return;
+            }
+
+            if (supplierRemitToAddressLine1 == null || supplierRemitToAddressLine1 == "")
+            {
+                notifyUser("Please enter a supplier remit to address");
+                return;
+            }
+
+            if (orderNo == null || orderNo == "")
+            {
+                notifyUser("Please enter an order number");
+                return;
+            }
+
+            if(goodsAndServicesAddressLine1 == null || goodsAndServicesAddressLine1 == "")
+            {
+                notifyUser("Please enter an goods and services address");
+                return;
+            }
 
             Shipment shipment = new Shipment(ShipmentToView.id, supplierName, supplierSiteName,
                 supplierRemitToAddressLine1, supplierRemitToAddressLine2, supplierRemitToAddressLine3, supplierRemitToAddressLine4,

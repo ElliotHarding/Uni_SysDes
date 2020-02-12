@@ -33,6 +33,43 @@ namespace StockManagementSystem.Pages
             string department = cb_department.Text;
             string passwordHash = Tools.passwordHash(password);
 
+            bool lowerCase = false;
+            bool upperCase = false;
+            bool hasNum = false;
+
+            if(nNumber == "" || nNumber.Length!=8 || nNumber.ElementAt(0)!='N' || nNumber.ElementAt(0)!='T')
+            {
+                notifyUser("Please enter a valid N number");
+                return;
+            }
+            for(int i = 1; i<nNumber.Length; i++)
+            {
+                if (!Char.IsDigit(nNumber.ElementAt(i))
+                   {
+                    notifyUser("Please enter a valid N number");
+                    return;
+                   } 
+                if(Char.IsUpper(password.ElementAt(i)))
+                {
+                    upperCase = true;
+                }
+                if (Char.IsLower(password.ElementAt(i)))
+                {
+                    lowerCase = true;
+                }
+                if(Char.IsDigit(password.ElementAt(i))
+                    {
+                    hasNum = true;
+                }
+                if (lowerCase == false || upperCase == false || hasNum == false)
+                {
+                    notifyUser("Sorry, your password must contain lowercase, uppercase and a number");
+                    return;
+                }
+            }
+
+
+
             DatabaseComms.uploadUser(new User(nNumber, passwordHash, department, "user"), uploadUserCallback);
         }
 

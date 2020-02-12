@@ -1,13 +1,6 @@
 ﻿using StockManagementSystem.Classes;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace StockManagementSystem.Pages
 {
@@ -19,6 +12,7 @@ namespace StockManagementSystem.Pages
 
             DatabaseComms.getDepartments(getDepartmentsCallback);
         }
+
         private void getDepartmentsCallback(List<string> departments)
         {
             if (departments != null && departments.Count > 0)

@@ -25,9 +25,27 @@ namespace StockManagementSystem.User_Controls
 
         public Product GetProduct()
         {
-            //TODO validation of input params            
+            //TODO validation of input params     
 
-            return new Product("", tb_suppliersId.Text, m_bitmap, tb_description.Text, "", "", "0", "", tb_price.Text, tb_vat.Text, "", "", tb_name.Text);
+            if ((tb_name.Text == string.Empty) || (tb_description.Text == string.Empty))
+            {
+                MessageBox.Show("Enter Valid Product Details!");
+            }
+            if (mskTB_price.Text == "00000")
+            {
+                MessageBox.Show("Enter The Price!");
+            }
+            if (mskTB_vat.Text == "00000")
+            {
+                MessageBox.Show("Enter The VAT!");
+            }
+            if (mskTB_expectedQuantity.Text.Length < 1)
+            {
+                MessageBox.Show("Enter The Quantity!");
+            }
+
+
+            return new Product("", tb_suppliersId.Text, m_bitmap, tb_description.Text, "", "", "0", "", mskTB_price.Text, mskTB_vat.Text, "", "", tb_name.Text);
         }
 
         private void btn_remove_Click(object sender, System.EventArgs e)
@@ -61,5 +79,7 @@ namespace StockManagementSystem.User_Controls
         {
             //Todo
         }
+
+        
     }
 }

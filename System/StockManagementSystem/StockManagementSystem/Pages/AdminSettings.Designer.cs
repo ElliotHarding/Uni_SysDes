@@ -46,13 +46,14 @@
             this.txt_password = new System.Windows.Forms.TextBox();
             this.txt_username = new System.Windows.Forms.TextBox();
             this.btn_addUser = new System.Windows.Forms.Button();
+            this.btn_stopSystem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(256, 281);
+            this.label5.Location = new System.Drawing.Point(418, 290);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(110, 13);
             this.label5.TabIndex = 35;
@@ -61,7 +62,7 @@
             // pictureBoxMap
             // 
             this.pictureBoxMap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxMap.Location = new System.Drawing.Point(259, 297);
+            this.pictureBoxMap.Location = new System.Drawing.Point(421, 306);
             this.pictureBoxMap.Name = "pictureBoxMap";
             this.pictureBoxMap.Size = new System.Drawing.Size(500, 300);
             this.pictureBoxMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -72,7 +73,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(61, 116);
+            this.label3.Location = new System.Drawing.Point(418, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 13);
             this.label3.TabIndex = 33;
@@ -81,7 +82,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(61, 67);
+            this.label4.Location = new System.Drawing.Point(418, 72);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 13);
             this.label4.TabIndex = 32;
@@ -89,7 +90,7 @@
             // 
             // tb_newPassword2
             // 
-            this.tb_newPassword2.Location = new System.Drawing.Point(61, 132);
+            this.tb_newPassword2.Location = new System.Drawing.Point(418, 137);
             this.tb_newPassword2.Name = "tb_newPassword2";
             this.tb_newPassword2.Size = new System.Drawing.Size(226, 20);
             this.tb_newPassword2.TabIndex = 31;
@@ -97,7 +98,7 @@
             // 
             // tb_newPassword1
             // 
-            this.tb_newPassword1.Location = new System.Drawing.Point(61, 83);
+            this.tb_newPassword1.Location = new System.Drawing.Point(418, 88);
             this.tb_newPassword1.Name = "tb_newPassword1";
             this.tb_newPassword1.Size = new System.Drawing.Size(226, 20);
             this.tb_newPassword1.TabIndex = 30;
@@ -105,7 +106,7 @@
             // 
             // btn_setPassword
             // 
-            this.btn_setPassword.Location = new System.Drawing.Point(64, 159);
+            this.btn_setPassword.Location = new System.Drawing.Point(421, 164);
             this.btn_setPassword.Name = "btn_setPassword";
             this.btn_setPassword.Size = new System.Drawing.Size(118, 23);
             this.btn_setPassword.TabIndex = 29;
@@ -115,7 +116,7 @@
             // 
             // btn_addDepartment
             // 
-            this.btn_addDepartment.Location = new System.Drawing.Point(915, 52);
+            this.btn_addDepartment.Location = new System.Drawing.Point(260, 306);
             this.btn_addDepartment.Margin = new System.Windows.Forms.Padding(2);
             this.btn_addDepartment.Name = "btn_addDepartment";
             this.btn_addDepartment.Size = new System.Drawing.Size(26, 26);
@@ -128,14 +129,14 @@
             // 
             this.pnl_departments.AutoScroll = true;
             this.pnl_departments.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_departments.Location = new System.Drawing.Point(713, 52);
+            this.pnl_departments.Location = new System.Drawing.Point(58, 306);
             this.pnl_departments.Name = "pnl_departments";
-            this.pnl_departments.Size = new System.Drawing.Size(197, 150);
+            this.pnl_departments.Size = new System.Drawing.Size(197, 269);
             this.pnl_departments.TabIndex = 27;
             // 
             // btn_updateDepartments
             // 
-            this.btn_updateDepartments.Location = new System.Drawing.Point(744, 205);
+            this.btn_updateDepartments.Location = new System.Drawing.Point(90, 580);
             this.btn_updateDepartments.Margin = new System.Windows.Forms.Padding(2);
             this.btn_updateDepartments.Name = "btn_updateDepartments";
             this.btn_updateDepartments.Size = new System.Drawing.Size(132, 26);
@@ -147,7 +148,7 @@
             // lbl_departments
             // 
             this.lbl_departments.AutoSize = true;
-            this.lbl_departments.Location = new System.Drawing.Point(710, 36);
+            this.lbl_departments.Location = new System.Drawing.Point(55, 290);
             this.lbl_departments.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_departments.Name = "lbl_departments";
             this.lbl_departments.Size = new System.Drawing.Size(67, 13);
@@ -160,7 +161,7 @@
             this.cb_privilege.Items.AddRange(new object[] {
             "admin",
             "staff"});
-            this.cb_privilege.Location = new System.Drawing.Point(381, 156);
+            this.cb_privilege.Location = new System.Drawing.Point(58, 192);
             this.cb_privilege.Margin = new System.Windows.Forms.Padding(2);
             this.cb_privilege.Name = "cb_privilege";
             this.cb_privilege.Size = new System.Drawing.Size(226, 21);
@@ -169,7 +170,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(381, 139);
+            this.label1.Location = new System.Drawing.Point(58, 175);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
@@ -179,7 +180,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(381, 86);
+            this.label2.Location = new System.Drawing.Point(58, 122);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
@@ -189,7 +190,7 @@
             // Username
             // 
             this.Username.AutoSize = true;
-            this.Username.Location = new System.Drawing.Point(381, 36);
+            this.Username.Location = new System.Drawing.Point(58, 72);
             this.Username.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Username.Name = "Username";
             this.Username.Size = new System.Drawing.Size(55, 13);
@@ -198,7 +199,7 @@
             // 
             // txt_password
             // 
-            this.txt_password.Location = new System.Drawing.Point(381, 103);
+            this.txt_password.Location = new System.Drawing.Point(58, 139);
             this.txt_password.Margin = new System.Windows.Forms.Padding(2);
             this.txt_password.Name = "txt_password";
             this.txt_password.PasswordChar = '*';
@@ -208,7 +209,7 @@
             // 
             // txt_username
             // 
-            this.txt_username.Location = new System.Drawing.Point(381, 52);
+            this.txt_username.Location = new System.Drawing.Point(58, 88);
             this.txt_username.Margin = new System.Windows.Forms.Padding(2);
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(226, 20);
@@ -216,7 +217,7 @@
             // 
             // btn_addUser
             // 
-            this.btn_addUser.Location = new System.Drawing.Point(384, 189);
+            this.btn_addUser.Location = new System.Drawing.Point(61, 225);
             this.btn_addUser.Margin = new System.Windows.Forms.Padding(2);
             this.btn_addUser.Name = "btn_addUser";
             this.btn_addUser.Size = new System.Drawing.Size(87, 26);
@@ -225,11 +226,23 @@
             this.btn_addUser.UseVisualStyleBackColor = true;
             this.btn_addUser.Click += new System.EventHandler(this.Btn_addUser_Click);
             // 
+            // btn_stopSystem
+            // 
+            this.btn_stopSystem.ForeColor = System.Drawing.Color.DarkRed;
+            this.btn_stopSystem.Location = new System.Drawing.Point(776, 112);
+            this.btn_stopSystem.Name = "btn_stopSystem";
+            this.btn_stopSystem.Size = new System.Drawing.Size(118, 23);
+            this.btn_stopSystem.TabIndex = 36;
+            this.btn_stopSystem.Text = "Stop System";
+            this.btn_stopSystem.UseVisualStyleBackColor = true;
+            this.btn_stopSystem.Click += new System.EventHandler(this.btn_stopSystem_Click);
+            // 
             // AdminSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 681);
+            this.Controls.Add(this.btn_stopSystem);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBoxMap);
             this.Controls.Add(this.label3);
@@ -281,5 +294,6 @@
         private System.Windows.Forms.Button btn_setPassword;
         private System.Windows.Forms.PictureBox pictureBoxMap;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btn_stopSystem;
     }
 }

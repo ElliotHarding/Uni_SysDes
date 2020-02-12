@@ -33,6 +33,7 @@
             this.tb_newPassword2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_stopSystem = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_setPassword
@@ -79,11 +80,23 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "New Password";
             // 
+            // btn_stopSystem
+            // 
+            this.btn_stopSystem.ForeColor = System.Drawing.Color.DarkRed;
+            this.btn_stopSystem.Location = new System.Drawing.Point(449, 143);
+            this.btn_stopSystem.Name = "btn_stopSystem";
+            this.btn_stopSystem.Size = new System.Drawing.Size(118, 23);
+            this.btn_stopSystem.TabIndex = 37;
+            this.btn_stopSystem.Text = "Stop System";
+            this.btn_stopSystem.UseVisualStyleBackColor = true;
+            this.btn_stopSystem.Click += new System.EventHandler(this.btn_stopSystem_Click);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 681);
+            this.Controls.Add(this.btn_stopSystem);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tb_newPassword2);
@@ -109,5 +122,6 @@
         private System.Windows.Forms.TextBox tb_newPassword2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btn_stopSystem;
     }
 }

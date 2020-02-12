@@ -9,6 +9,9 @@ namespace StockManagementSystem.Pages
         {
             InitializeComponent();
             addNavBar();
+
+            if(m_currentUser.role != "staff")
+                btn_stopSystem.Hide();
         }
 
         private void btn_setPassword_Click(object sender, EventArgs e)
@@ -50,6 +53,11 @@ namespace StockManagementSystem.Pages
             {
                 notifyUser("Failed to update password! Check network?");
             }
+        }
+
+        private void btn_stopSystem_Click(object sender, EventArgs e)
+        {
+            goToNextPage(SystemPage.EndPage);
         }
     }
 }

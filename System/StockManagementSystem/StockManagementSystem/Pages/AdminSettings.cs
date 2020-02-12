@@ -237,5 +237,10 @@ namespace StockManagementSystem.Pages
                 notifyUser("Failed to save new map. Check internet.");
             }
         }
+
+        private void btn_stopSystem_Click(object sender, EventArgs e)
+        {
+            goToNextPage(SystemPage.EndPage);
+        }
     }
 }

@@ -62,7 +62,8 @@ namespace StockManagementSystem
                         break;
 
                     //End cases:
-                    case SystemPage.EndPage:                        
+                    case SystemPage.EndPage:
+                        currentPage = null;
                         break;
                     default:
                         nextPage = SystemPage.EndPage;

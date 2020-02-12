@@ -17,8 +17,8 @@ namespace StockManagementSystem.Pages
             lbl_productName.Text = product.name;
             lbl_productInfo.Text = product.information;
             lbl_currentStock.Text = "Current Stock : " + product.quantity;
-            lbl_price.Text = "Price : " + product.price + "£";
-            lbl_vat.Text = "VAT : " + product.vat + "£";
+            lbl_price.Text = "Price : £" + product.price;
+            lbl_vat.Text = "VAT : £" + product.vat;
             lbl_supplierCode.Text = "Supplier Id : " + product.externalId;
 
             Bitmap bitmap = product.getBitmap();

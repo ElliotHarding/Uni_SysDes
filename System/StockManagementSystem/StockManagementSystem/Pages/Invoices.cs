@@ -3,6 +3,7 @@ using StockManagementSystem.User_Controls;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace StockManagementSystem.Pages
@@ -26,7 +27,8 @@ namespace StockManagementSystem.Pages
                     foreach(string department in departments)
                     {
                         cmb_department.Items.Add(department);
-                    }                    
+                    }
+                    cmb_department.Items.Add("All");
                 });
             }
             else
@@ -51,14 +53,24 @@ namespace StockManagementSystem.Pages
 
         private void Btn_send_invoice_Click(object sender, EventArgs e)
         {
-            //Todo
-            //new Tools() tools
-            //Tools.sendEmail("", );
+            int charge = 0;
+            string fileContents = "Item, ProductId, N-Number, Date, Quantity, Charge (£)" + Environment.NewLine;
+            foreach (TransationRow tr in pnl_invoice.Controls)
+            {
+                Transation t = tr.getTransation();
+                fileContents += t.id + "," + t.productId + "," + t.nNumber + "," + t.date + "," + t.quantity + "," + t.price.Replace("£", "") + Environment.NewLine;
+                charge += tr.getCharge();
+            }
+            fileContents += "Total charge : £" + charge.ToString();
+
+            File.WriteAllText("Invocies.csv", fileContents);
+
+            notifyUser("Created invoices.csv", "Success");
         }
 
         private void Btn_add_row_Click(object sender, EventArgs e)
         {
-            TransationRow productRow = new TransationRow(this, new Transation("Custom invoice row", "", "", "", "", cmb_department.Text, "0", ""));
+            TransationRow productRow = new TransationRow(this, new Transation("", "", "", "", "", cmb_department.Text, "0", ""));
             productRow.Parent = pnl_invoice;
             productRow.Location = new Point(0, m_rowIndex * m_rowInc);
             m_rowIndex++;
@@ -74,7 +86,10 @@ namespace StockManagementSystem.Pages
 
                 if (fromDate != null && toDate != null)
                 {                
-                    DatabaseComms.getTransations(transactionsCallback, "department = '" + cmb_department.Text + "' AND date > '" + fromDate.ToString("yyyy-MM-dd") + "' AND date < '" + toDate.ToString("yyyy-MM-dd") + "' AND isReturn = 'false'");
+                    if(cmb_department.Text == "All" || cmb_department.Text == "")
+                        DatabaseComms.getTransations(transactionsCallback, "date > '" + fromDate.ToString("yyyy-MM-dd") + "' AND date < '" + toDate.ToString("yyyy-MM-dd") + "' AND isReturn = 'false'");
+                    else
+                        DatabaseComms.getTransations(transactionsCallback, "department = '" + cmb_department.Text + "' AND date > '" + fromDate.ToString("yyyy-MM-dd") + "' AND date < '" + toDate.ToString("yyyy-MM-dd") + "' AND isReturn = 'false'");
                 }
                 else
                 {

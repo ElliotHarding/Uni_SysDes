@@ -24,7 +24,7 @@ namespace StockManagementSystem.User_Controls
 
             txt_name.Text = transation.id;
             txt_nNumber.Text = transation.nNumber;
-            txt_price.Text = transation.price + "£";
+            txt_price.Text = "£" + transation.price;
             txt_quantity.Text = transation.quantity;
             txt_productId.Text = transation.productId;
             DateTime dt;

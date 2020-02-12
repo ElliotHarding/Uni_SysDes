@@ -80,7 +80,15 @@ namespace StockManagementSystem.Pages
             {
                 Product p = npr.GetProduct();
 
-                transations.Add(new Transation("", DateTime.Now.ToString("yyyy-MM-dd"), p.id, p.requestedQuantitiy.ToString(), m_currentUser.nNumber, m_currentUser.department, p.price, "true"));
+                int vat;
+                int price;
+                string transactionPrice = "";
+                if (Int32.TryParse(p.vat, out vat) && Int32.TryParse(p.price, out price))
+                    transactionPrice = (price + vat).ToString();
+                else
+                    transactionPrice = p.price;
+
+                transations.Add(new Transation("", DateTime.Now.ToString("yyyy-MM-dd"), p.id, p.requestedQuantitiy.ToString(), m_currentUser.nNumber, m_currentUser.department, transactionPrice, "true"));
 
                 int currentQuantiy = 0;
                 if (Int32.TryParse(p.quantity, out currentQuantiy))
@@ -119,11 +127,20 @@ namespace StockManagementSystem.Pages
                 if (Int32.TryParse(p.quantity, out currentQuantiy))
                 {
                     currentQuantiy -= p.requestedQuantitiy;
-                    if(currentQuantiy > 0)
+                    if(currentQuantiy >= 0)
                     {
                         p.quantity = currentQuantiy.ToString();
                         products.Add(p);
-                        transations.Add(new Transation("", DateTime.Now.ToString("yyyy-MM-dd"), p.id, p.requestedQuantitiy.ToString(), m_currentUser.nNumber, m_currentUser.department, p.price, "false"));
+
+                        int vat;
+                        int price;
+                        string transactionPrice = "";
+                        if (Int32.TryParse(p.vat, out vat) && Int32.TryParse(p.price, out price))
+                            transactionPrice = (price + vat).ToString();
+                        else
+                            transactionPrice = p.price;
+
+                        transations.Add(new Transation("", DateTime.Now.ToString("yyyy-MM-dd"), p.id, p.requestedQuantitiy.ToString(), m_currentUser.nNumber, m_currentUser.department, transactionPrice, "false"));
                     }
                     else
                     {

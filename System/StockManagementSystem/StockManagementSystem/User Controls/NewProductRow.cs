@@ -56,10 +56,5 @@ namespace StockManagementSystem.User_Controls
                 }
             }
         }
-
-        private void btn_setMapLocation_Click(object sender, System.EventArgs e)
-        {
-            //Todo
-        }
     }
 }

@@ -15,7 +15,6 @@ namespace StockManagementSystem.Pages
             addNavBar();
         }
 
-        //todo test:
         int m_updateQuantity = 0;
         private void btn_add_Click(object sender, EventArgs e)
         {

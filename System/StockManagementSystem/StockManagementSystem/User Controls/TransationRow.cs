@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using StockManagementSystem.Pages;
 
@@ -41,7 +34,6 @@ namespace StockManagementSystem.User_Controls
 
         public Transation getTransation()
         {
-            //todo validation of price ect...
             Transation t = new Transation(m_transation.id, dateTime.Text, txt_productId.Text, txt_quantity.Text, txt_nNumber.Text, m_transation.department, txt_price.Text, "false");
             return t;
         }

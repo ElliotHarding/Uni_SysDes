@@ -44,7 +44,6 @@
             this.tb_expectedQuantitiy = new System.Windows.Forms.TextBox();
             this.btn_remove = new System.Windows.Forms.Button();
             this.btn_setImage = new System.Windows.Forms.Button();
-            this.btn_setMapLocation = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tb_suppliersId
@@ -182,21 +181,10 @@
             this.btn_setImage.UseVisualStyleBackColor = true;
             this.btn_setImage.Click += new System.EventHandler(this.btn_setImage_Click);
             // 
-            // btn_setMapLocation
-            // 
-            this.btn_setMapLocation.Location = new System.Drawing.Point(93, 93);
-            this.btn_setMapLocation.Name = "btn_setMapLocation";
-            this.btn_setMapLocation.Size = new System.Drawing.Size(108, 23);
-            this.btn_setMapLocation.TabIndex = 17;
-            this.btn_setMapLocation.Text = "Set Map Location";
-            this.btn_setMapLocation.UseVisualStyleBackColor = true;
-            this.btn_setMapLocation.Click += new System.EventHandler(this.btn_setMapLocation_Click);
-            // 
             // NewProductRow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btn_setMapLocation);
             this.Controls.Add(this.btn_setImage);
             this.Controls.Add(this.btn_remove);
             this.Controls.Add(this.label8);
@@ -238,6 +226,5 @@
         private System.Windows.Forms.TextBox tb_expectedQuantitiy;
         private System.Windows.Forms.Button btn_remove;
         private System.Windows.Forms.Button btn_setImage;
-        private System.Windows.Forms.Button btn_setMapLocation;
     }
 }

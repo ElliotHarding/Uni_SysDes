@@ -76,7 +76,6 @@ namespace StockManagementSystem.Pages
                 Point p = new Point(clientPoint.X - pictureBoxMap.Location.X, clientPoint.Y - pictureBoxMap.Location.Y);
                 product.locationX = p.X.ToString();
                 product.locationY = p.Y.ToString();
-                m_bAwaitingClick = false;
                 refreshMapLocation();
             }
         }

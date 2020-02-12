@@ -43,9 +43,11 @@ namespace StockManagementSystem.Pages
             string department = cb_department.Text;
             string passwordHash = Tools.passwordHash(password);
 
-            bool lowerCase = false;
-            bool upperCase = false;
-            bool hasNum = false;
+            if(password != txt_password1.Text)
+            {
+                notifyUser("Passwords do not match");
+                return;
+            }
 
             if (nNumber == "" || nNumber.Length > 10)
             {
@@ -53,6 +55,9 @@ namespace StockManagementSystem.Pages
                 return;
             }
 
+            bool lowerCase = false;
+            bool upperCase = false;
+            bool hasNum = false;
             for (int i = 1; i < nNumber.Length; i++)
             {
                 if (!Char.IsDigit(nNumber.ElementAt(i)))
@@ -94,7 +99,25 @@ namespace StockManagementSystem.Pages
             }
 
             m_potentialNewUser = new User(nNumber, passwordHash, department, "user");
-            DatabaseComms.uploadUser(m_potentialNewUser, uploadUserCallback);
+            
+            //Check user dosent exist...
+            DatabaseComms.getUsers(getUserCallback, "nNumber = '" + nNumber + "'");
+        }
+
+        private void getUserCallback(List<User> users)
+        {
+            if(users == null)
+            {
+                notifyUser("Error, check internet connection.");
+            }
+            else if(users.Count == 0)
+            {
+                DatabaseComms.uploadUser(m_potentialNewUser, uploadUserCallback);
+            }
+            else
+            {
+                notifyUser("That nNumber already exists!");
+            }           
         }
 
         private void uploadUserCallback(bool uploaded)

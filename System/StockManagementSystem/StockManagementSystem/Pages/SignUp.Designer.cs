@@ -36,6 +36,8 @@
             this.txt_username = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cb_department = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_password1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btn_signUp
@@ -63,7 +65,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(391, 343);
+            this.label2.Location = new System.Drawing.Point(391, 298);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
@@ -73,7 +75,7 @@
             // Username
             // 
             this.Username.AutoSize = true;
-            this.Username.Location = new System.Drawing.Point(391, 294);
+            this.Username.Location = new System.Drawing.Point(391, 249);
             this.Username.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Username.Name = "Username";
             this.Username.Size = new System.Drawing.Size(55, 13);
@@ -82,7 +84,7 @@
             // 
             // txt_password
             // 
-            this.txt_password.Location = new System.Drawing.Point(391, 360);
+            this.txt_password.Location = new System.Drawing.Point(391, 315);
             this.txt_password.Margin = new System.Windows.Forms.Padding(2);
             this.txt_password.Name = "txt_password";
             this.txt_password.PasswordChar = '*';
@@ -92,7 +94,7 @@
             // 
             // txt_username
             // 
-            this.txt_username.Location = new System.Drawing.Point(391, 310);
+            this.txt_username.Location = new System.Drawing.Point(391, 265);
             this.txt_username.Margin = new System.Windows.Forms.Padding(2);
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(226, 20);
@@ -117,11 +119,33 @@
             this.cb_department.Size = new System.Drawing.Size(226, 21);
             this.cb_department.TabIndex = 15;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(391, 348);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Repeat Password";
+            // 
+            // txt_password1
+            // 
+            this.txt_password1.Location = new System.Drawing.Point(391, 365);
+            this.txt_password1.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_password1.Name = "txt_password1";
+            this.txt_password1.PasswordChar = '*';
+            this.txt_password1.Size = new System.Drawing.Size(226, 20);
+            this.txt_password1.TabIndex = 16;
+            this.txt_password1.UseSystemPasswordChar = true;
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 681);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txt_password1);
             this.Controls.Add(this.cb_department);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -153,5 +177,7 @@
         private System.Windows.Forms.TextBox txt_username;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cb_department;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txt_password1;
     }
 }

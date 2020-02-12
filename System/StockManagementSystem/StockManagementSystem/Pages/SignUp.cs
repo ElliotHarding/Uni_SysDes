@@ -1,11 +1,14 @@
 ﻿using StockManagementSystem.Classes;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace StockManagementSystem.Pages
 {
     public partial class SignUp : BaseForm
     {
+        List<string> m_departments = new List<string>();
+
         public SignUp()
         {
             InitializeComponent();
@@ -22,6 +25,7 @@ namespace StockManagementSystem.Pages
                     foreach (string department in departments)
                     {
                         cb_department.Items.Add(department);
+                        m_departments.Add(department);
                     }
                 });
             }
@@ -31,6 +35,7 @@ namespace StockManagementSystem.Pages
             }
         }
 
+        private User m_potentialNewUser = null;
         private void btn_signUp_Click(object sender, EventArgs e)
         {
             string nNumber = txt_username.Text;
@@ -38,16 +43,70 @@ namespace StockManagementSystem.Pages
             string department = cb_department.Text;
             string passwordHash = Tools.passwordHash(password);
 
-            //todo validate...
+            bool lowerCase = false;
+            bool upperCase = false;
+            bool hasNum = false;
 
-            DatabaseComms.uploadUser(new User(nNumber, passwordHash, department, "user"), uploadUserCallback);
+            if (nNumber == "" || nNumber.Length > 10)
+            {
+                notifyUser("Please enter a valid N number");
+                return;
+            }
+
+            for (int i = 1; i < nNumber.Length; i++)
+            {
+                if (!Char.IsDigit(nNumber.ElementAt(i)))
+                {
+                    notifyUser("Please enter a valid N number");
+                    return;
+                }
+                else if (Char.IsUpper(password.ElementAt(i)))
+                {
+                    upperCase = true;
+                }
+                else if (Char.IsLower(password.ElementAt(i)))
+                {
+                    lowerCase = true;
+                }
+                else if (Char.IsDigit(password.ElementAt(i)))
+                {
+                    hasNum = true;
+                }                
+            }
+
+            if (!lowerCase && !upperCase && !hasNum)
+            {
+                notifyUser("Sorry, your password must contain lowercase, uppercase and a number");
+                return;
+            }
+
+            bool departmentFound = false;
+            foreach(string validDepartment in m_departments)
+            {
+                if(validDepartment == department)
+                    departmentFound = true;
+            }
+
+            if (!departmentFound)
+            {
+                notifyUser("Please choose a valid department.");
+                return;
+            }
+
+            m_potentialNewUser = new User(nNumber, passwordHash, department, "user");
+            DatabaseComms.uploadUser(m_potentialNewUser, uploadUserCallback);
         }
 
         private void uploadUserCallback(bool uploaded)
         {
             if(uploaded)
             {
-                this.Invoke((Action)delegate { goToNextPage(SystemPage.ProductsPage); });
+                this.Invoke((Action)delegate 
+                {
+                    m_currentUser = m_potentialNewUser;
+                    Messages.checkMessages();
+                    goToNextPage(SystemPage.ProductsPage);
+                });
             }
             else
             {

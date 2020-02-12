@@ -78,7 +78,7 @@
             this.Username.Name = "Username";
             this.Username.Size = new System.Drawing.Size(55, 13);
             this.Username.TabIndex = 12;
-            this.Username.Text = "Username";
+            this.Username.Text = "N-Number";
             // 
             // txt_password
             // 

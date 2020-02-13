@@ -25,8 +25,6 @@ namespace StockManagementSystem.User_Controls
 
         public Product GetProduct()
         {
-            //TODO validation of input params            
-
             return new Product("", tb_suppliersId.Text, m_bitmap, tb_description.Text, "", "", "0", "", tb_price.Text, tb_vat.Text, "", "", tb_name.Text);
         }
 

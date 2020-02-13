@@ -109,7 +109,8 @@ namespace StockManagementSystem.Pages
 
         private void onUpdateProductRequest(bool success)
         {
-            if(success)
+            this.Invoke((Action)delegate { stopProgressBar(); });
+            if (success)
                 notifyUser("Updated product", "Success");
             else
                 notifyUser("Failed to upload product changes");

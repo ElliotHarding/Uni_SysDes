@@ -101,23 +101,23 @@ namespace StockManagementSystem.Pages
         }
 
         private void addShipmentCallback(bool success)
-        {
-            this.Invoke((Action)delegate { stopProgressBar(); });
+        {            
             if (success)
             {
                 if (newProducts.Count > 0)
                 {
-                    startProgressBar();
                     DatabaseComms.uploadProducts(newProducts, uploadProductsCallback);
                 }                    
                 else
                 {
-                    notifyUser("Added shipment and products.", "Success");
+                    notifyUser("Added shipment.", "Success");
+                    this.Invoke((Action)delegate { stopProgressBar(); });
                     this.Invoke((Action)delegate { goToNextPage(SystemPage.NewShipment); });
                 }
             }
             else
             {
+                this.Invoke((Action)delegate { stopProgressBar(); });
                 notifyUser("Failed to upload new shipment. Check internet.");
             }
         }

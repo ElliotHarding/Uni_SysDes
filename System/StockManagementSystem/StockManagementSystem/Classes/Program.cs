@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace StockManagementSystem
 {
-    static class Program //Elliot
+    static class Program
     {
         [STAThread]
         static void Main()
@@ -15,10 +15,15 @@ namespace StockManagementSystem
 
             DatabaseComms.getItemsMap(getMapCallback);
 
-            BaseForm currentPage = null;
+            BaseForm currentPage = new Login();
             SystemPage nextPage = SystemPage.Login;
+            Point currentLocation;
             while(nextPage != SystemPage.EndPage)
             {
+                Application.Run(currentPage);
+                nextPage = currentPage.getNextPage();
+                currentLocation = currentPage.Location;
+
                 switch (nextPage)
                 {
                     case SystemPage.Messages:
@@ -70,11 +75,8 @@ namespace StockManagementSystem
                         break;
                 }
 
-                if(currentPage != null)
-                {
-                    Application.Run(currentPage);
-                    nextPage = currentPage.getNextPage();
-                }                
+                currentPage.StartPosition = FormStartPosition.Manual;
+                currentPage.Location = currentLocation;
             }
         }
 

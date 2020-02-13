@@ -12,7 +12,7 @@ namespace StockManagementSystem.Pages
         public NewShipment()
         {
             InitializeComponent();
-            addNavBar();
+            setupGlobalControls(this);
         }
 
         int m_updateQuantity = 0;
@@ -27,11 +27,13 @@ namespace StockManagementSystem.Pages
             {
                 m_updateQuantity = iQuantitiy;
                 if (itemCode != null && itemCode != "")
-                {                    
+                {
+                    startProgressBar();
                     DatabaseComms.getProducts(getOrigionalProductForUpdateCallback, 100, "id = '" + itemCode + "'");
                 }
                 else if(itemSupplierCode != null && itemSupplierCode != "")
-                {                    
+                {
+                    startProgressBar();
                     DatabaseComms.getProducts(getOrigionalProductForUpdateCallback, 100, "externalId = '" + itemSupplierCode + "'");
                 }
                 else
@@ -58,11 +60,13 @@ namespace StockManagementSystem.Pages
                 else
                 {
                     notifyUser("Unable to update product");
+                    this.Invoke((Action)delegate { stopProgressBar(); });
                 }                
             }
             else
             {
                 notifyUser("Unable to find product");
+                this.Invoke((Action)delegate { stopProgressBar(); });
             }
         }
 
@@ -111,12 +115,16 @@ namespace StockManagementSystem.Pages
             }
 
             if (newProducts.Count > 0)
+            {
+                startProgressBar();
                 DatabaseComms.uploadProducts(newProducts, uploadProductsCallback);
+            }                
         }
 
         private void updateProductQuantityCallback(bool success)
         {
-            if(success)
+            this.Invoke((Action)delegate { stopProgressBar(); });
+            if (success)
             {
                 notifyUser("Success in adding items", "Success");
             }
@@ -128,6 +136,7 @@ namespace StockManagementSystem.Pages
 
         private void uploadProductsCallback(bool success)
         {
+            this.Invoke((Action)delegate { stopProgressBar(); });
             if (success)
             {
                 notifyUser("Added products.", "Success");

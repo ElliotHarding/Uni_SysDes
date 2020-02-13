@@ -10,7 +10,7 @@ namespace StockManagementSystem.Pages
         public Shipments()
         {
             InitializeComponent();
-            addNavBar();
+            setupGlobalControls(this);
         }
 
         private void Btn_newShipment_Click(object sender, EventArgs e)
@@ -25,6 +25,7 @@ namespace StockManagementSystem.Pages
 
             if (fromDate != null && toDate != null)
             {
+                startProgressBar();
                 DatabaseComms.getShipments(getShipmentsCallback, "orderDate > '" + fromDate.ToString("yyyy-MM-dd") + "' AND orderDate < '" + toDate.ToString("yyyy-MM-dd") + "'");
             }
             else
@@ -35,7 +36,8 @@ namespace StockManagementSystem.Pages
 
         private void getShipmentsCallback(List<Shipment> shipments)
         {
-            if(shipments != null && shipments.Count > 0)
+            this.Invoke((Action)delegate { stopProgressBar(); });
+            if (shipments != null && shipments.Count > 0)
             {
                 pnl_shipments.Invoke((Action)delegate {
                     pnl_shipments.Controls.Clear();

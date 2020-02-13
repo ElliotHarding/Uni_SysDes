@@ -12,7 +12,7 @@ namespace StockManagementSystem.Pages
         {
             InitializeComponent();
 
-            addNavBar();
+            setupGlobalControls(this);
 
             lbl_productName.Text = product.name;
             lbl_productInfo.Text = product.information;
@@ -103,6 +103,7 @@ namespace StockManagementSystem.Pages
 
         private void btn_saveChanges_Click(object sender, EventArgs e)
         {
+            startProgressBar();
             DatabaseComms.updateProduct(product, onUpdateProductRequest);
         }
 
@@ -119,13 +120,15 @@ namespace StockManagementSystem.Pages
             DialogResult dialogResult = MessageBox.Show("Are you sure you wish to remove the product and all it's information?", "Remove product?", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
+                startProgressBar();
                 DatabaseComms.query("DELETE FROM PRODUCTS WHERE id = '" + product.id + "';", removeProductCallback);
             }            
         }
 
         private void removeProductCallback(bool success)
         {
-            if(success)
+            this.Invoke((Action)delegate { stopProgressBar(); });
+            if (success)
             {
                 notifyUser("Product removed");
                 this.Invoke((Action)delegate { goToNextPage(SystemPage.ProductsPage); });

@@ -128,7 +128,7 @@
       <DependentUpon>BasketRow.cs</DependentUpon>
     </Compile>
     <Compile Include="User Controls\NewProductRow.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="User Controls\NewProductRow.Designer.cs">
       <DependentUpon>NewProductRow.cs</DependentUpon>

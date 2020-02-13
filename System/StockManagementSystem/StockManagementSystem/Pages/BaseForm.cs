@@ -25,12 +25,13 @@ namespace StockManagementSystem.Pages
     {
         protected SystemPage m_nextPage { get; private set; } = SystemPage.Login;
         protected static User m_currentUser = null;
+        protected ProgressBar m_progressBar = new ProgressBar();
 
         public BaseForm()
         {
         }
 
-        protected void addNavBar()
+        protected void setupGlobalControls(BaseForm baseForm)
         {            
             if(m_currentUser != null)
             {
@@ -45,6 +46,29 @@ namespace StockManagementSystem.Pages
                     Controls.Add(navigationBar);
                 };
             }
+
+            addProgressBar(baseForm);
+        }
+
+        protected void addProgressBar(BaseForm baseForm)
+        {
+            m_progressBar.SetBounds(0, 660, 25, 25);
+            m_progressBar.Hide();
+            baseForm.Controls.Add(m_progressBar);
+        }
+
+        protected void startProgressBar()
+        {
+            m_progressBar.Show();
+            m_progressBar.Style = ProgressBarStyle.Marquee;
+            m_progressBar.MarqueeAnimationSpeed = 25;
+        }
+
+        protected void stopProgressBar()
+        {
+            m_progressBar.Hide();
+            m_progressBar.Style = ProgressBarStyle.Continuous;
+            m_progressBar.MarqueeAnimationSpeed = 0;
         }
 
         public void goToNextPage(SystemPage page)

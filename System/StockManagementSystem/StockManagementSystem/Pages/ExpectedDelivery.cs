@@ -13,7 +13,7 @@ namespace StockManagementSystem.Pages
         public ExpectedDelivery()
         {
             InitializeComponent();
-            addNavBar();
+            setupGlobalControls(this);
         }
 
         private void btn_addShipmentDetails_Click(object sender, EventArgs e)
@@ -96,15 +96,20 @@ namespace StockManagementSystem.Pages
                 newProducts.Add(npr.GetProduct());
             }
 
+            startProgressBar();
             DatabaseComms.uploadShipment(shipment, addShipmentCallback);
         }
 
         private void addShipmentCallback(bool success)
         {
+            this.Invoke((Action)delegate { stopProgressBar(); });
             if (success)
             {
                 if (newProducts.Count > 0)
+                {
+                    startProgressBar();
                     DatabaseComms.uploadProducts(newProducts, uploadProductsCallback);
+                }                    
                 else
                 {
                     notifyUser("Added shipment and products.", "Success");
@@ -119,6 +124,7 @@ namespace StockManagementSystem.Pages
 
         private void uploadProductsCallback(bool success)
         {
+            this.Invoke((Action)delegate { stopProgressBar(); });
             if (success)
             {
                 notifyUser("Added shipment and products.", "Success");

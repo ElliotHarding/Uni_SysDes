@@ -18,7 +18,7 @@ namespace StockManagementSystem.Pages
         public ViewShipment()
         {
             InitializeComponent();
-            addNavBar();
+            setupGlobalControls(this);
 
             supplierNameTxt.Text = ShipmentToView.supplierName;
             supplierSiteNameTxt.Text = ShipmentToView.supplierSiteName;
@@ -113,12 +113,14 @@ namespace StockManagementSystem.Pages
                 goodsAndServicesAddressLine1, goodsAndServicesAddressLine2, goodsAndServicesAddressLine3, goodsAndServicesAddressLine4,
                 vat, invoiceTotal);
 
+            startProgressBar();
             DatabaseComms.updateShipment(shipment, updateShipmentCallback);
         }
 
         private void updateShipmentCallback(bool success)
         {
-            if(success)
+            this.Invoke((Action)delegate { stopProgressBar(); });
+            if (success)
             {
                 notifyUser("Updated", "Success");
             }

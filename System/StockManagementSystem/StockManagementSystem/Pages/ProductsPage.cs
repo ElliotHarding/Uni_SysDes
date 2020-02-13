@@ -10,7 +10,7 @@ namespace StockManagementSystem.Pages
         public ProductsPage()
         {
             InitializeComponent();
-            addNavBar();
+            setupGlobalControls(this);
             panel_products.AutoScroll = true;
 
             DatabaseComms.getProducts(productsCallback, 100);
@@ -23,6 +23,7 @@ namespace StockManagementSystem.Pages
                 return;
 
             panel_products.Invoke((Action)delegate { panel_products.Controls.Clear(); });
+            this.Invoke((Action)delegate { stopProgressBar(); });
 
             if (products != null && products.Count() > 0)
             {

@@ -13,14 +13,16 @@ namespace StockManagementSystem.Pages
         public Invoices()
         {
             InitializeComponent();
-            addNavBar();
+            setupGlobalControls(this);
 
+            startProgressBar();
             DatabaseComms.getDepartments(getDepartmentsCallback);
         }
 
         private void getDepartmentsCallback(List<string> departments)
         {
-            if(departments != null && departments.Count > 0)
+            this.Invoke((Action)delegate { stopProgressBar(); });
+            if (departments != null && departments.Count > 0)
             {
                 cmb_department.Invoke((Action)delegate {
 
@@ -85,8 +87,9 @@ namespace StockManagementSystem.Pages
                 DateTime toDate = dateTo.Value;
 
                 if (fromDate != null && toDate != null)
-                {                
-                    if(cmb_department.Text == "All" || cmb_department.Text == "")
+                {
+                    startProgressBar();
+                    if (cmb_department.Text == "All" || cmb_department.Text == "")
                         DatabaseComms.getTransations(transactionsCallback, "date > '" + fromDate.ToString("yyyy-MM-dd") + "' AND date < '" + toDate.ToString("yyyy-MM-dd") + "' AND isReturn = 'false'");
                     else
                         DatabaseComms.getTransations(transactionsCallback, "department = '" + cmb_department.Text + "' AND date > '" + fromDate.ToString("yyyy-MM-dd") + "' AND date < '" + toDate.ToString("yyyy-MM-dd") + "' AND isReturn = 'false'");
@@ -104,6 +107,7 @@ namespace StockManagementSystem.Pages
 
         private void transactionsCallback(List<Transation> transations)
         {
+            this.Invoke((Action)delegate { stopProgressBar(); });
             if (transations == null || transations.Count == 0)
             {
                 notifyUser("No transactions found matching the deparment selected", "Warning");

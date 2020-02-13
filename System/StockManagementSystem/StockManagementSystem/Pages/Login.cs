@@ -11,6 +11,7 @@ namespace StockManagementSystem.Pages
         public Login()
         {
             InitializeComponent();
+            addProgressBar(this);
         }
 
         private void btn_login_Click(object sender, EventArgs e)
@@ -20,12 +21,14 @@ namespace StockManagementSystem.Pages
 
             string passwordHash = Tools.passwordHash(password);
 
+            startProgressBar();
             DatabaseComms.getUsers(loginCallback, "nNumber = '" + nNumber + "' AND password = '" + passwordHash + "'") ;
         }
 
         private void loginCallback(List<User> users)
         {
-            if(users == null)
+            this.Invoke((Action)delegate { stopProgressBar(); });
+            if (users == null)
             {
                 notifyUser("Network connection error. Check internet");
             }
@@ -72,13 +75,14 @@ namespace StockManagementSystem.Pages
                 m_newPassowrdString = RandomString(10);
                 string newPasswordHash = Tools.passwordHash(m_newPassowrdString);
                 m_resetUserNnumber = nNumberDialog.result;
+                startProgressBar();
                 DatabaseComms.resetUserPassword(forgottenPassowrdCallback, m_resetUserNnumber, newPasswordHash);
             }                  
         }
 
         private void forgottenPassowrdCallback(bool success)
         {
-            if(!success)
+            if (!success)
             {
                 notifyUser("Inocrrect details. Or check internet?");
             }
@@ -94,7 +98,8 @@ namespace StockManagementSystem.Pages
                 {
                     notifyUser("Failed to send email. Check internet?");
                 }
-            }            
+            }
+            this.Invoke((Action)delegate { stopProgressBar(); });
         }
     }
 }

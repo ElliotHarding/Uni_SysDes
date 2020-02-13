@@ -18,13 +18,15 @@ namespace StockManagementSystem.Pages
         public AdminSettings()
         {
             InitializeComponent();
-            addNavBar();
+            setupGlobalControls(this);
             pictureBoxMap.Image = FloorMap;
+            startProgressBar();
             DatabaseComms.getDepartments(getDepartmentsCallback);
         }
 
         private void getDepartmentsCallback(List<string> departments)
         {
+            this.Invoke((Action)delegate { stopProgressBar(); });
             if (departments != null && departments.Count > 0)
             {
                 pnl_departments.Invoke((Action)delegate 
@@ -88,6 +90,7 @@ namespace StockManagementSystem.Pages
                     if(cb_privilege.Text.Length > 0)
                     {
                         User newUser = new User(txt_username.Text, txt_password.Text, "StoreStaff", cb_privilege.Text);
+                        startProgressBar();
                         DatabaseComms.uploadUser(newUser, uploadCallback);
                     }
                     else
@@ -108,7 +111,8 @@ namespace StockManagementSystem.Pages
 
         private void uploadCallback(bool success)
         {
-            if(success)
+            this.Invoke((Action)delegate { stopProgressBar(); });
+            if (success)
             {
                 notifyUser("User created.", "Success");
             }
@@ -132,12 +136,14 @@ namespace StockManagementSystem.Pages
             }
             else
             {
+                startProgressBar();
                 DatabaseComms.setDepartments(departments, uploadDepartmentsCallback);
             }            
         }
 
         private void uploadDepartmentsCallback(bool success)
         {
+            this.Invoke((Action)delegate { stopProgressBar(); });
             if (success)
             {
                 notifyUser("Departments set.", "Success");
@@ -173,6 +179,7 @@ namespace StockManagementSystem.Pages
                     if (newPassword1.Length > 3)
                     {
                         m_currentUser.password = Classes.Tools.passwordHash(newPassword1);
+                        startProgressBar();
                         DatabaseComms.updateUser(m_currentUser, updateUserCallback);
                     }
                     else
@@ -193,6 +200,7 @@ namespace StockManagementSystem.Pages
 
         private void updateUserCallback(bool success)
         {
+            this.Invoke((Action)delegate { stopProgressBar(); });
             if (success)
             {
                 notifyUser("Updated password", "Success");
@@ -216,6 +224,7 @@ namespace StockManagementSystem.Pages
                         Bitmap bmp = new Bitmap(dlg.FileName);
                         pictureBoxMap.Image = bmp;
                         FloorMap = bmp;
+                        startProgressBar();
                         DatabaseComms.uploadItemsMap(new Bitmap(bmp), uploadNewMapCallback);
                     }
                     catch (Exception ex)
@@ -228,7 +237,8 @@ namespace StockManagementSystem.Pages
 
         private void uploadNewMapCallback(bool success)
         {
-            if(success)
+            this.Invoke((Action)delegate { stopProgressBar(); });
+            if (success)
             {
                 notifyUser("Saved new map.", "Success");
             }

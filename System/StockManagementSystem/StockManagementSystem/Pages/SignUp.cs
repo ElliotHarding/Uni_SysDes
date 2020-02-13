@@ -12,12 +12,13 @@ namespace StockManagementSystem.Pages
         public SignUp()
         {
             InitializeComponent();
-
+            startProgressBar();
             DatabaseComms.getDepartments(getDepartmentsCallback);
         }
 
         private void getDepartmentsCallback(List<string> departments)
         {
+            this.Invoke((Action)delegate { stopProgressBar(); });
             if (departments != null && departments.Count > 0)
             {
                 cb_department.Invoke((Action)delegate {
@@ -99,8 +100,8 @@ namespace StockManagementSystem.Pages
             }
 
             m_potentialNewUser = new User(nNumber, passwordHash, department, "user");
-            
-            //Check user dosent exist...
+
+            startProgressBar();
             DatabaseComms.getUsers(getUserCallback, "nNumber = '" + nNumber + "'");
         }
 
@@ -109,6 +110,7 @@ namespace StockManagementSystem.Pages
             if(users == null)
             {
                 notifyUser("Error, check internet connection.");
+                this.Invoke((Action)delegate { stopProgressBar(); });
             }
             else if(users.Count == 0)
             {
@@ -117,12 +119,14 @@ namespace StockManagementSystem.Pages
             else
             {
                 notifyUser("That nNumber already exists!");
+                this.Invoke((Action)delegate { stopProgressBar(); });
             }           
         }
 
         private void uploadUserCallback(bool uploaded)
         {
-            if(uploaded)
+            this.Invoke((Action)delegate { stopProgressBar(); });
+            if (uploaded)
             {
                 this.Invoke((Action)delegate 
                 {

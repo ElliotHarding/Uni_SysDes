@@ -8,7 +8,7 @@ namespace StockManagementSystem.Pages
         public Settings()
         {
             InitializeComponent();
-            addNavBar();
+            setupGlobalControls(this);
 
             if(m_currentUser.role != "staff")
                 btn_stopSystem.Hide();
@@ -25,6 +25,7 @@ namespace StockManagementSystem.Pages
                     if(newPassword1.Length > 3)
                     {
                         m_currentUser.password = Tools.passwordHash(newPassword1);
+                        startProgressBar();
                         DatabaseComms.updateUser(m_currentUser, updateUserCallback);
                     }
                     else
@@ -45,7 +46,8 @@ namespace StockManagementSystem.Pages
 
         private void updateUserCallback(bool success)
         {
-            if(success)
+            this.Invoke((Action)delegate { stopProgressBar(); });
+            if (success)
             {
                 notifyUser("Updated password", "Success");
             }

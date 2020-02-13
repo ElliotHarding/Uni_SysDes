@@ -30,7 +30,7 @@ namespace StockManagementSystem.Pages
         public Basket()
         {
             InitializeComponent();
-            addNavBar();
+            setupGlobalControls(this);
 
             foreach(Product p in m_products)
             {
@@ -99,11 +99,13 @@ namespace StockManagementSystem.Pages
                 }                
             }
 
+            startProgressBar();
             DatabaseComms.updateProductQuantities(returnItemsCallback, products, transations);
         }
 
         private void returnItemsCallback(bool success)
         {
+            this.Invoke((Action)delegate { stopProgressBar(); });
             if (success)
             {
                 this.Invoke((Action)delegate { clearAll(); });                
@@ -150,7 +152,10 @@ namespace StockManagementSystem.Pages
             }
 
             if(notEnough.Count == 0)
+            {
+                startProgressBar();
                 DatabaseComms.updateProductQuantities(checkoutItemsCallback, products, transations);
+            }                
             else
             {
                 foreach(Product p in notEnough)
@@ -162,6 +167,7 @@ namespace StockManagementSystem.Pages
 
         private void checkoutItemsCallback(bool success)
         {
+            this.Invoke((Action)delegate { stopProgressBar(); });
             if (success)
             {
                 this.Invoke((Action)delegate { clearAll(); });

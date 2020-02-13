@@ -12,7 +12,7 @@ namespace StockManagementSystem.Pages
         public Messages()
         {
             InitializeComponent();
-            addNavBar();
+            setupGlobalControls(this);
 
             int yPos = 0;
             const int yInc = 55;
@@ -35,7 +35,7 @@ namespace StockManagementSystem.Pages
                 string futureDate = DateTime.Now.AddDays(30).ToString("yyyy-MM-dd");
 
                 DatabaseComms.getShipments(Shipments, "promisedDate < '" + futureDate + "' AND promisedDate > '" + currentDate + "'");
-                DatabaseComms.getProducts(ExpiringProducts, 100, "expiryDate < '" + futureDate + "' AND expiryDate > '" + currentDate + "'");//todo sort expiryDate...
+                DatabaseComms.getProducts(ExpiringProducts, 100, "expiryDate < '" + futureDate + "' AND expiryDate > '" + currentDate + "'");
             }            
         }
 

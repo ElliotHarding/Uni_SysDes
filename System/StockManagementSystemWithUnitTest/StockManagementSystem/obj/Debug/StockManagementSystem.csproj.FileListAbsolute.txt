@@ -1,0 +1,251 @@
+C:\Users\User\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.exe.config
+C:\Users\User\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.exe
+C:\Users\User\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.pdb
+C:\Users\User\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csprojAssemblyReference.cache
+C:\Users\User\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Properties.Resources.resources
+C:\Users\User\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.GenerateResource.cache
+C:\Users\User\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.exe
+C:\Users\User\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.pdb
+C:\Users\User\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Form1.resources
+C:\Users\User\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Login.resources
+C:\Users\User\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.SignUp.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.exe.config
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.exe
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.pdb
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csprojAssemblyReference.cache
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Classes.NavBar.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Login.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ProductsPage.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.SignUp.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Properties.Resources.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.GenerateResource.cache
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.exe
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.pdb
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Classes.StaffNavBar.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.LogOut.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ExpectedDelivery.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Invoices.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Messages.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.NewShipment.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.ProductDisplay.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ViewProduct.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.exe.config
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.exe
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.pdb
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csprojAssemblyReference.cache
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ExpectedDelivery.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Invoices.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Messages.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.NewShipment.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ViewProduct.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.LogOut.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Classes.NavBar.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.ProductDisplay.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Classes.StaffNavBar.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Login.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ProductsPage.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.SignUp.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Properties.Resources.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.GenerateResource.cache
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.exe
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.pdb
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.UserInputParagraphDialog.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.UserInputStringDialog.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.MessageControl.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.exe.config
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.exe
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.pdb
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csprojAssemblyReference.cache
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ExpectedDelivery.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Inspection.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Invoices.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Messages.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.NewShipment.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.UserInputParagraphDialog.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.UserInputStringDialog.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ViewProduct.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.LogOut.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.MessageControl.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Classes.NavBar.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.ProductDisplay.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Classes.StaffNavBar.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Form1.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Login.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ProductsPage.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.SignUp.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Properties.Resources.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.GenerateResource.cache
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.exe
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.pdb
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.AdminSettings.resources
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csprojAssemblyReference.cache
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.AdminSettings.resources
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.CheckIn.resources
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.CheckOut.resources
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ExpectedDelivery.resources
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Inspection.resources
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Invoices.resources
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Messages.resources
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.NewShipment.resources
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.UserInputParagraphDialog.resources
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.UserInputStringDialog.resources
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ViewProduct.resources
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.LogOut.resources
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.MessageControl.resources
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Classes.NavBar.resources
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.ProductDisplay.resources
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Classes.StaffNavBar.resources
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Form1.resources
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Login.resources
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ProductsPage.resources
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.SignUp.resources
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Properties.Resources.resources
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.GenerateResource.cache
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.exe
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.pdb
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.exe.config
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.exe
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.pdb
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.TransationRow.resources
+C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.TextfieldRow.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.AdminSettings.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.TextfieldRow.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.TransationRow.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Settings.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.NewProductRow.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Basket.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.BasketRow.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.dll
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.presentation.dll
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.pdb
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.xml
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.presentation.pdb
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.presentation.xml
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Basket.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.QRCodeDisplay.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Settings.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.BasketRow.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.NewProductRow.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.TextfieldRow.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.TransationRow.resources
+C:\Users\n0688119\Projects\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.CopyComplete
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.QRCodeDisplay.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Shipments.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ViewShipment.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.ShipmentRow.resources
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.dll
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.presentation.dll
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.pdb
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.xml
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.presentation.pdb
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.presentation.xml
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.CopyComplete
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.dll
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.presentation.dll
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.pdb
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.xml
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.presentation.pdb
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.presentation.xml
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.AdminSettings.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Basket.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.QRCodeDisplay.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Settings.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Shipments.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.UserInputParagraphDialog.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.UserInputStringDialog.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ViewShipment.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.BasketRow.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.NewProductRow.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.ShipmentRow.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.TextfieldRow.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.TransationRow.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.MessageControl.resources
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.CopyComplete
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.exe.config
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.exe
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.pdb
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.dll
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.presentation.dll
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.pdb
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.xml
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.presentation.pdb
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.presentation.xml
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csprojAssemblyReference.cache
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.AdminSettings.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Basket.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ExpectedDelivery.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Invoices.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Messages.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.NewShipment.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.QRCodeDisplay.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Settings.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Shipments.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.UserInputParagraphDialog.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.UserInputStringDialog.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ViewProduct.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ViewShipment.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.BasketRow.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.NewProductRow.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.ShipmentRow.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.TextfieldRow.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.TransationRow.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.LogOut.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.MessageControl.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Classes.NavBar.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.ProductDisplay.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Classes.StaffNavBar.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Login.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ProductsPage.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.SignUp.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Properties.Resources.resources
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.GenerateResource.cache
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.CopyComplete
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.exe
+C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.pdb
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.exe.config
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.exe
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.pdb
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.dll
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.presentation.dll
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.pdb
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.xml
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.presentation.pdb
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\bin\Debug\zxing.presentation.xml
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csprojAssemblyReference.cache
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.AdminSettings.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Basket.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ExpectedDelivery.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Invoices.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Messages.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.NewShipment.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.QRCodeDisplay.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Settings.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Shipments.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.UserInputParagraphDialog.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.UserInputStringDialog.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ViewProduct.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ViewShipment.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.BasketRow.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.NewProductRow.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.ShipmentRow.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.TextfieldRow.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.TransationRow.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.LogOut.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.MessageControl.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Classes.NavBar.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.ProductDisplay.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Classes.StaffNavBar.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Login.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.ProductsPage.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.SignUp.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Properties.Resources.resources
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.GenerateResource.cache
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.CopyComplete
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.exe
+C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.pdb

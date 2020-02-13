@@ -61,9 +61,7 @@ public class Scanner extends AppCompatActivity {
                         baseCallback.pid = result.toString();
                         new UploadData().execute(baseCallback);
 
-                        Log.d("CodeDecoded", "QR Code Decoded Successfully. Result: " + result);
-                       // Toast.makeText(Scanner.this,"Scanned Successfully!", Toast.LENGTH_LONG).show();
-                        Toast.makeText(Scanner.this,result.toString(), Toast.LENGTH_LONG).show();
+
 
                     }
                 });
@@ -119,8 +117,12 @@ public class Scanner extends AppCompatActivity {
                 InputStream res = connection.getInputStream();
                 String result = IOUtils.toString(res, StandardCharsets.UTF_8);
                 Log.e("APIConnection","Connection result" + result);
-//         todo       if (result = )
-                params[0].success = true;
+//
+                if (result.equals("null"))
+                {
+                    params[0].success = true;
+                }
+
             }
             catch (Exception e)
             {
@@ -152,13 +154,13 @@ public class Scanner extends AppCompatActivity {
         @Override
         public Void call() throws Exception
         {
-            if(!success)
+            if(success)
             {
                 // call run on ui thread and notify user
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-
+                        Toast.makeText(Scanner.this,"Scanned Successfully! Tap screen to scan again!", Toast.LENGTH_LONG).show();
                     }
                 });
             }

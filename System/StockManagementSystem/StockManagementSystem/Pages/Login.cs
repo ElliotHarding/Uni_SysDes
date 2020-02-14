@@ -49,12 +49,6 @@ namespace StockManagementSystem.Pages
             goToNextPage(SystemPage.SignUp);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string passwordHash = Tools.passwordHash("password");
-            DatabaseComms.getUsers(loginCallback, "nNumber = 'n0688119' AND password = '" + passwordHash + "'");
-        }
-
         private static Random random = new Random();
         private string RandomString(int length)
         {

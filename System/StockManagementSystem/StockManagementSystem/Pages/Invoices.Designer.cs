@@ -135,7 +135,7 @@
             this.btn_send_invoice.Name = "btn_send_invoice";
             this.btn_send_invoice.Size = new System.Drawing.Size(139, 22);
             this.btn_send_invoice.TabIndex = 40;
-            this.btn_send_invoice.Text = "Create and Send Invoice";
+            this.btn_send_invoice.Text = "Create Invoice";
             this.btn_send_invoice.UseVisualStyleBackColor = true;
             this.btn_send_invoice.Click += new System.EventHandler(this.Btn_send_invoice_Click);
             // 

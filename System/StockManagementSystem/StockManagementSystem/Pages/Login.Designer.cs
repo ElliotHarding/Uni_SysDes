@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btn_forgottenDetails = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.btn_login = new System.Windows.Forms.Button();
             this.btn_signUp = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,17 +47,6 @@
             this.btn_forgottenDetails.Text = "Forgotten password?";
             this.btn_forgottenDetails.UseVisualStyleBackColor = true;
             this.btn_forgottenDetails.Click += new System.EventHandler(this.btn_forgottenDetails_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(522, 125);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 70);
-            this.button1.TabIndex = 13;
-            this.button1.TabStop = false;
-            this.button1.Text = "Developer button (gives admin access)";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_login
             // 
@@ -127,7 +115,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 681);
             this.Controls.Add(this.btn_forgottenDetails);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.btn_signUp);
             this.Controls.Add(this.label2);
@@ -156,7 +143,6 @@
         private System.Windows.Forms.Label Username;
         private System.Windows.Forms.TextBox txt_password;
         private System.Windows.Forms.TextBox txt_username;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_forgottenDetails;
     }
 }

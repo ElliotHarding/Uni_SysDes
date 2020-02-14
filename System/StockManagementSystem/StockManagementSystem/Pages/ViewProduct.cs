@@ -44,7 +44,10 @@ namespace StockManagementSystem.Pages
 
         private void refreshMapLocation()
         {
-            pictureBoxMap.Image = new Bitmap(AdminSettings.FloorMap);
+            if(AdminSettings.FloorMap != null)            
+                pictureBoxMap.Image = new Bitmap(AdminSettings.FloorMap);            
+            else
+                pictureBoxMap.Image = StockManagementSystem.Properties.Resources.NoImage;
 
             int mapX = 0;
             int mapY = 0;

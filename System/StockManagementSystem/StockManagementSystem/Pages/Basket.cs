@@ -174,7 +174,7 @@ namespace StockManagementSystem.Pages
             }
             else
             {
-                notifyUser("Failed to return products.");
+                notifyUser("Failed to checkout products.");
             }
         }
 

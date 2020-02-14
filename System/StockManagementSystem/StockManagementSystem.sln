@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29613.14
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockManagementSystem", "StockManagementSystem\StockManagementSystem.csproj", "{3C8EEFED-9032-43D1-8D48-8A3C568E60EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{A85D85D6-864E-445F-9A91-A45A486D8DEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{3C8EEFED-9032-43D1-8D48-8A3C568E60EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C8EEFED-9032-43D1-8D48-8A3C568E60EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C8EEFED-9032-43D1-8D48-8A3C568E60EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A85D85D6-864E-445F-9A91-A45A486D8DEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A85D85D6-864E-445F-9A91-A45A486D8DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A85D85D6-864E-445F-9A91-A45A486D8DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A85D85D6-864E-445F-9A91-A45A486D8DEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

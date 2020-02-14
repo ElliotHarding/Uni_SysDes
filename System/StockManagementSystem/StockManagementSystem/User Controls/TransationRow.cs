@@ -4,24 +4,24 @@ using StockManagementSystem.Pages;
 
 namespace StockManagementSystem.User_Controls
 {
-    public partial class TransationRow : UserControl
+    public partial class TransactionRow : UserControl
     {
         Invoices m_invoicesPage;
-        Transation m_transation;
+        Transaction m_Transaction;
 
-        public TransationRow(Invoices invoicesPage, Transation transation)
+        public TransactionRow(Invoices invoicesPage, Transaction Transaction)
         {
             InitializeComponent();
             m_invoicesPage = invoicesPage;
-            m_transation = transation;
+            m_Transaction = Transaction;
 
-            txt_name.Text = transation.id;
-            txt_nNumber.Text = transation.nNumber;
-            txt_price.Text = "£" + transation.price;
-            txt_quantity.Text = transation.quantity;
-            txt_productId.Text = transation.productId;
+            txt_name.Text = Transaction.id;
+            txt_nNumber.Text = Transaction.nNumber;
+            txt_price.Text = "£" + Transaction.price;
+            txt_quantity.Text = Transaction.quantity;
+            txt_productId.Text = Transaction.productId;
             DateTime dt;
-            if(DateTime.TryParse(transation.date, out dt))
+            if(DateTime.TryParse(Transaction.date, out dt))
             {
                 dateTime.Value = dt;
             }
@@ -32,9 +32,9 @@ namespace StockManagementSystem.User_Controls
             m_invoicesPage.removeElement(this);
         }
 
-        public Transation getTransation()
+        public Transaction getTransaction()
         {
-            Transation t = new Transation(m_transation.id, dateTime.Text, txt_productId.Text, txt_quantity.Text, txt_nNumber.Text, m_transation.department, txt_price.Text, "false");
+            Transaction t = new Transaction(m_Transaction.id, dateTime.Text, txt_productId.Text, txt_quantity.Text, txt_nNumber.Text, m_Transaction.department, txt_price.Text, "false");
             return t;
         }
 

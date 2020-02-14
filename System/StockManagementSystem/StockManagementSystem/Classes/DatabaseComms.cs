@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StockManagementSystem
 {
-    class DatabaseComms
+    public class DatabaseComms
     {
         private const string m_connectionString = "Data Source=den1.mssql7.gear.host;Initial Catalog=smdatabase;User ID=smdatabase;Password=Jj80-f1I!M3c";
 
@@ -114,13 +114,13 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static void updateProductQuantities(Action<bool> callback, List<Product> products, List<Transation> transations)
+        public static void updateProductQuantities(Action<bool> callback, List<Product> products, List<Transaction> transactions)
         {
             new Task(() =>
             {
                 try
                 {
-                    if(products.Count != transations.Count)
+                    if(products.Count != transactions.Count)
                     {
                         callback(false);
                         return;
@@ -130,7 +130,7 @@ namespace StockManagementSystem
                     for (int i = 0; i < products.Count; i++)
                     {
                         updates += "UPDATE PRODUCTS SET quantity = '" + products[i].quantity + "' WHERE id = '" + products[i].id + "';";
-                        updates += "INSERT INTO TRANSACTIONS VALUES (NEWID(), '"+ transations[i].date + "', '"+ transations[i].productId + "', '"+ transations[i].quantity + "', '"+ transations[i].nNumber + "', '"+ transations[i].department + "', '"+ transations[i].price+ "', '"+ transations[i].isReturn+ "');";
+                        updates += "INSERT INTO TRANSACTIONS VALUES (NEWID(), '"+ transactions[i].date + "', '"+ transactions[i].productId + "', '"+ transactions[i].quantity + "', '"+ transactions[i].nNumber + "', '"+ transactions[i].department + "', '"+ transactions[i].price+ "', '"+ transactions[i].isReturn+ "');";
                     }                 
 
                     SqlConnection connection = new SqlConnection(m_connectionString);
@@ -383,7 +383,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static void uploadTransation(Transation transaction, Action<bool> callback)
+        public static void uploadTransaction(Transaction transaction, Action<bool> callback)
         {
             new Task(() =>
             {
@@ -415,7 +415,7 @@ namespace StockManagementSystem
             }).Start();
         }
 
-        public static void getTransations(Action<List<Transation>> callback, string where = null)
+        public static void getTransactions(Action<List<Transaction>> callback, string where = null)
         {
             new Task(() =>
             {
@@ -438,10 +438,10 @@ namespace StockManagementSystem
                     SqlDataReader reader = command.ExecuteReader();
 
                     //Read results of query into list
-                    List<Transation> results = new List<Transation>();
+                    List<Transaction> results = new List<Transaction>();
                     while (reader.Read())
                     {
-                        results.Add(new Transation(
+                        results.Add(new Transaction(
                         reader["id"].ToString(),
                         reader["date"].ToString(),
                         reader["productId"].ToString(),

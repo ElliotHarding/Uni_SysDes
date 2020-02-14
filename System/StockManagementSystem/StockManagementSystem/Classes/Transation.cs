@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace StockManagementSystem
 {
-    public class Transation
+    public class Transaction
     {
-        public Transation(string id_, string date_, string productId_, string quantitiy_, string nNumber_, string department_, string price_, string isReturn_)
+        public Transaction(string id_, string date_, string productId_, string quantitiy_, string nNumber_, string department_, string price_, string isReturn_)
         {
             id = id_;
             date = date_;

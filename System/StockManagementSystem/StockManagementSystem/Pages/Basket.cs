@@ -75,7 +75,7 @@ namespace StockManagementSystem.Pages
         private void btn_returnItems_Click(object sender, EventArgs e)
         {
             List<Product> products = new List<Product>();
-            List<Transation> transations = new List<Transation>();
+            List<Transaction> Transactions = new List<Transaction>();
             foreach (BasketRow npr in pnl_products.Controls)
             {
                 Product p = npr.GetProduct();
@@ -88,7 +88,7 @@ namespace StockManagementSystem.Pages
                 else
                     transactionPrice = p.price;
 
-                transations.Add(new Transation("", DateTime.Now.ToString("yyyy-MM-dd"), p.id, p.requestedQuantitiy.ToString(), m_currentUser.nNumber, m_currentUser.department, transactionPrice, "true"));
+                Transactions.Add(new Transaction("", DateTime.Now.ToString("yyyy-MM-dd"), p.id, p.requestedQuantitiy.ToString(), m_currentUser.nNumber, m_currentUser.department, transactionPrice, "true"));
 
                 int currentQuantiy = 0;
                 if (Int32.TryParse(p.quantity, out currentQuantiy))
@@ -100,7 +100,7 @@ namespace StockManagementSystem.Pages
             }
 
             startProgressBar();
-            DatabaseComms.updateProductQuantities(returnItemsCallback, products, transations);
+            DatabaseComms.updateProductQuantities(returnItemsCallback, products, Transactions);
         }
 
         private void returnItemsCallback(bool success)
@@ -120,7 +120,7 @@ namespace StockManagementSystem.Pages
         {
             List<Product> notEnough = new List<Product>();
             List<Product> products = new List<Product>();
-            List<Transation> transations = new List<Transation>();
+            List<Transaction> Transactions = new List<Transaction>();
             foreach (BasketRow npr in pnl_products.Controls)
             {
                 Product p = new Product(npr.GetProduct());
@@ -142,7 +142,7 @@ namespace StockManagementSystem.Pages
                         else
                             transactionPrice = p.price;
 
-                        transations.Add(new Transation("", DateTime.Now.ToString("yyyy-MM-dd"), p.id, p.requestedQuantitiy.ToString(), m_currentUser.nNumber, m_currentUser.department, transactionPrice, "false"));
+                        Transactions.Add(new Transaction("", DateTime.Now.ToString("yyyy-MM-dd"), p.id, p.requestedQuantitiy.ToString(), m_currentUser.nNumber, m_currentUser.department, transactionPrice, "false"));
                     }
                     else
                     {
@@ -154,7 +154,7 @@ namespace StockManagementSystem.Pages
             if(notEnough.Count == 0)
             {
                 startProgressBar();
-                DatabaseComms.updateProductQuantities(checkoutItemsCallback, products, transations);
+                DatabaseComms.updateProductQuantities(checkoutItemsCallback, products, Transactions);
             }                
             else
             {

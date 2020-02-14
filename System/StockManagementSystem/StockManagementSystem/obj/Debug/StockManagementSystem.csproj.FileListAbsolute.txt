@@ -114,7 +114,6 @@ C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagement
 C:\Users\n0688119\source\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.TextfieldRow.resources
 C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.AdminSettings.resources
 C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.TextfieldRow.resources
-C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.TransationRow.resources
 C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Settings.resources
 C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.NewProductRow.resources
 C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Pages.Basket.resources
@@ -207,3 +206,4 @@ C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug
 C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.CopyComplete
 C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.exe
 C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.pdb
+C:\Users\elliot\Documents\Github\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.TransactionRow.resources

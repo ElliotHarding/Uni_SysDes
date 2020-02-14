@@ -42,11 +42,11 @@ namespace StockManagementSystem.Pages
         const int m_rowInc = 30;
         int m_rowIndex = 0;
 
-        private void addTransactions(List<Transation> transations)
+        private void addTransactions(List<Transaction> Transactions)
         {
-            foreach (Transation transation in transations)
+            foreach (Transaction Transaction in Transactions)
             {
-                TransationRow productRow = new TransationRow(this, transation);
+                TransactionRow productRow = new TransactionRow(this, Transaction);
                 productRow.Parent = pnl_invoice;
                 productRow.Location = new Point(0, m_rowIndex * m_rowInc);
                 m_rowIndex++;
@@ -57,9 +57,9 @@ namespace StockManagementSystem.Pages
         {
             int charge = 0;
             string fileContents = "Item, ProductId, N-Number, Date, Quantity, Charge (£)" + Environment.NewLine;
-            foreach (TransationRow tr in pnl_invoice.Controls)
+            foreach (TransactionRow tr in pnl_invoice.Controls)
             {
-                Transation t = tr.getTransation();
+                Transaction t = tr.getTransaction();
                 fileContents += t.id + "," + t.productId + "," + t.nNumber + "," + t.date + "," + t.quantity + "," + t.price.Replace("£", "") + Environment.NewLine;
                 charge += tr.getCharge();
             }
@@ -72,7 +72,7 @@ namespace StockManagementSystem.Pages
 
         private void Btn_add_row_Click(object sender, EventArgs e)
         {
-            TransationRow productRow = new TransationRow(this, new Transation("", "", "", "", "", cmb_department.Text, "0", ""));
+            TransactionRow productRow = new TransactionRow(this, new Transaction("", "", "", "", "", cmb_department.Text, "0", ""));
             productRow.Parent = pnl_invoice;
             productRow.Location = new Point(0, m_rowIndex * m_rowInc);
             m_rowIndex++;
@@ -90,9 +90,9 @@ namespace StockManagementSystem.Pages
                 {
                     startProgressBar();
                     if (cmb_department.Text == "All" || cmb_department.Text == "")
-                        DatabaseComms.getTransations(transactionsCallback, "date > '" + fromDate.ToString("yyyy-MM-dd") + "' AND date < '" + toDate.ToString("yyyy-MM-dd") + "' AND isReturn = 'false'");
+                        DatabaseComms.getTransactions(transactionsCallback, "date > '" + fromDate.ToString("yyyy-MM-dd") + "' AND date < '" + toDate.ToString("yyyy-MM-dd") + "' AND isReturn = 'false'");
                     else
-                        DatabaseComms.getTransations(transactionsCallback, "department = '" + cmb_department.Text + "' AND date > '" + fromDate.ToString("yyyy-MM-dd") + "' AND date < '" + toDate.ToString("yyyy-MM-dd") + "' AND isReturn = 'false'");
+                        DatabaseComms.getTransactions(transactionsCallback, "department = '" + cmb_department.Text + "' AND date > '" + fromDate.ToString("yyyy-MM-dd") + "' AND date < '" + toDate.ToString("yyyy-MM-dd") + "' AND isReturn = 'false'");
                 }
                 else
                 {
@@ -105,10 +105,10 @@ namespace StockManagementSystem.Pages
             }            
         }
 
-        private void transactionsCallback(List<Transation> transations)
+        private void transactionsCallback(List<Transaction> Transactions)
         {
             this.Invoke((Action)delegate { stopProgressBar(); });
-            if (transations == null || transations.Count == 0)
+            if (Transactions == null || Transactions.Count == 0)
             {
                 notifyUser("No transactions found matching the deparment selected", "Warning");
             }
@@ -116,9 +116,9 @@ namespace StockManagementSystem.Pages
             {
                 this.Invoke((Action)delegate 
                 {
-                    foreach (Transation transation in transations)
+                    foreach (Transaction Transaction in Transactions)
                     {
-                        TransationRow productRow = new TransationRow(this, transation);
+                        TransactionRow productRow = new TransactionRow(this, Transaction);
                         productRow.Location = new Point(0, m_rowIndex * m_rowInc);
                         pnl_invoice.Invoke((Action)delegate { productRow.Parent = pnl_invoice; });
                         m_rowIndex++;
@@ -141,21 +141,21 @@ namespace StockManagementSystem.Pages
         public void calculateTotalCharge()
         {
             int charge = 0;
-            foreach (TransationRow tr in pnl_invoice.Controls)
+            foreach (TransactionRow tr in pnl_invoice.Controls)
             {
                 charge += tr.getCharge();
             }
             lbl_total.Text = "Total Charge : £" + charge.ToString();
         }
 
-        public void removeElement(TransationRow t)
+        public void removeElement(TransactionRow t)
         {
-            List<TransationRow> transationRows = new List<TransationRow>();
-            foreach(TransationRow tr in pnl_invoice.Controls)
+            List<TransactionRow> TransactionRows = new List<TransactionRow>();
+            foreach(TransactionRow tr in pnl_invoice.Controls)
             {
                 if(t != tr)
                 {
-                    transationRows.Add(tr);
+                    TransactionRows.Add(tr);
                 }
             }
 
@@ -163,10 +163,10 @@ namespace StockManagementSystem.Pages
 
             clearElements();
 
-            foreach (TransationRow transationRow in transationRows)
+            foreach (TransactionRow TransactionRow in TransactionRows)
             {
-                transationRow.Parent = pnl_invoice;
-                transationRow.Location = new Point(0, m_rowIndex * m_rowInc);
+                TransactionRow.Parent = pnl_invoice;
+                TransactionRow.Location = new Point(0, m_rowIndex * m_rowInc);
                 m_rowIndex++;
             }
 

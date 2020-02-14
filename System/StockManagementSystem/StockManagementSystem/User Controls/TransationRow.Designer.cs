@@ -1,6 +1,6 @@
 ﻿namespace StockManagementSystem.User_Controls
 {
-    partial class TransationRow
+    partial class TransactionRow
     {
         /// <summary> 
         /// Required designer variable.
@@ -90,7 +90,7 @@
             this.txt_price.TabIndex = 45;
             this.txt_price.TextChanged += new System.EventHandler(this.txt_price_TextChanged);
             // 
-            // TransationRow
+            // TransactionRow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -101,7 +101,7 @@
             this.Controls.Add(this.dateTime);
             this.Controls.Add(this.txt_quantity);
             this.Controls.Add(this.btn_remove);
-            this.Name = "TransationRow";
+            this.Name = "TransactionRow";
             this.Size = new System.Drawing.Size(920, 28);
             this.ResumeLayout(false);
             this.PerformLayout();

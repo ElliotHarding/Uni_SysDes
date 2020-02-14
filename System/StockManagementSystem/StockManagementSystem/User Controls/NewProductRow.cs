@@ -25,7 +25,7 @@ namespace StockManagementSystem.User_Controls
 
         public Product GetProduct()
         {
-            Product p = new Product("", tb_suppliersId.Text, "", tb_description.Text, "", "", "0", "", tb_price.Text, tb_vat.Text, "", "", tb_name.Text);
+            Product p = new Product("", tb_suppliersId.Text, "", tb_description.Text, "", "", tb_expectedQuantitiy.Text, "", tb_price.Text, tb_vat.Text, "", "", tb_name.Text);
             p.setBitmap(m_bitmap);
             return p;
         }

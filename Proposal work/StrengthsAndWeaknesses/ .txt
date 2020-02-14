@@ -1,0 +1,9 @@
+Strength
+That’s a good software development environment (SDE) which has C#, C#.NET and SQL is Visual Studio. 
+.NET has a good toolbox for everything we need
+SQL has a good query with append and move out
+
+Weakness
+Html CSS and javascript might easy to use
+C# might be challenging for someone who have never used it
+Database could be replaced alternatively by cloud databse.

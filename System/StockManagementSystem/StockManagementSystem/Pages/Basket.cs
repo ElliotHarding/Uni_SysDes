@@ -80,15 +80,7 @@ namespace StockManagementSystem.Pages
             {
                 Product p = npr.GetProduct();
 
-                int vat;
-                int price;
-                string transactionPrice = "";
-                if (Int32.TryParse(p.vat, out vat) && Int32.TryParse(p.price, out price))
-                    transactionPrice = (price + vat).ToString();
-                else
-                    transactionPrice = p.price;
-
-                Transactions.Add(new Transaction("", DateTime.Now.ToString("yyyy-MM-dd"), p.id, p.requestedQuantitiy.ToString(), m_currentUser.nNumber, m_currentUser.department, transactionPrice, "true"));
+                Transactions.Add(new Transaction("", DateTime.Now.ToString("yyyy-MM-dd"), p.id, p.requestedQuantitiy.ToString(), m_currentUser.nNumber, m_currentUser.department, "0", "true"));
 
                 int currentQuantiy = 0;
                 if (Int32.TryParse(p.quantity, out currentQuantiy))
@@ -138,9 +130,9 @@ namespace StockManagementSystem.Pages
                         int price;
                         string transactionPrice = "";
                         if (Int32.TryParse(p.vat, out vat) && Int32.TryParse(p.price, out price))
-                            transactionPrice = (price + vat).ToString();
+                            transactionPrice = ((price + vat) * p.requestedQuantitiy).ToString();
                         else
-                            transactionPrice = p.price;
+                            transactionPrice = p.price + " x " + p.requestedQuantitiy.ToString();
 
                         Transactions.Add(new Transaction("", DateTime.Now.ToString("yyyy-MM-dd"), p.id, p.requestedQuantitiy.ToString(), m_currentUser.nNumber, m_currentUser.department, transactionPrice, "false"));
                     }

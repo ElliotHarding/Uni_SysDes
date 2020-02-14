@@ -88,14 +88,21 @@ namespace StockManagementSystem.Pages
             int quantitiy = 0;
             if (Int32.TryParse(txt_actionQuantitiy.Text, out quantitiy))
             {
-                Product p = new Product(product);
-                p.requestedQuantitiy = quantitiy;
-                Basket.addToBasket(p);
-
-                DialogResult dialogResult = MessageBox.Show("Added to basket. Visit basket?", "Visit basket?", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                if(quantitiy > 0)
                 {
-                    goToNextPage(SystemPage.Basket);
+                    Product p = new Product(product);
+                    p.requestedQuantitiy = quantitiy;
+                    Basket.addToBasket(p);
+
+                    DialogResult dialogResult = MessageBox.Show("Added to basket. Visit basket?", "Visit basket?", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        goToNextPage(SystemPage.Basket);
+                    }
+                }
+                else
+                {
+                    notifyUser("Enter correct quantitiy");
                 }
             }
             else

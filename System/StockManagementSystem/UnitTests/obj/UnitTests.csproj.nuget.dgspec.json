@@ -1,32 +1,37 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Michael\\Documents\\GitHub\\Uni_SysDes\\System\\StockManagementSystem\\UnitTests\\UnitTests.csproj": {}
+    "C:\\Users\\n0688119\\Documents\\GitHub\\Uni_SysDes\\System\\StockManagementSystem\\UnitTests\\UnitTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Michael\\Documents\\GitHub\\Uni_SysDes\\System\\StockManagementSystem\\StockManagementSystem\\StockManagementSystem.csproj": {
+    "C:\\Users\\n0688119\\Documents\\GitHub\\Uni_SysDes\\System\\StockManagementSystem\\StockManagementSystem\\StockManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Michael\\Documents\\GitHub\\Uni_SysDes\\System\\StockManagementSystem\\StockManagementSystem\\StockManagementSystem.csproj",
+        "projectUniqueName": "C:\\Users\\n0688119\\Documents\\GitHub\\Uni_SysDes\\System\\StockManagementSystem\\StockManagementSystem\\StockManagementSystem.csproj",
         "projectName": "StockManagementSystem",
-        "projectPath": "C:\\Users\\Michael\\Documents\\GitHub\\Uni_SysDes\\System\\StockManagementSystem\\StockManagementSystem\\StockManagementSystem.csproj"
+        "projectPath": "C:\\Users\\n0688119\\Documents\\GitHub\\Uni_SysDes\\System\\StockManagementSystem\\StockManagementSystem\\StockManagementSystem.csproj"
       },
       "frameworks": {
         "net461": {}
       }
     },
-    "C:\\Users\\Michael\\Documents\\GitHub\\Uni_SysDes\\System\\StockManagementSystem\\UnitTests\\UnitTests.csproj": {
+    "C:\\Users\\n0688119\\Documents\\GitHub\\Uni_SysDes\\System\\StockManagementSystem\\UnitTests\\UnitTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Michael\\Documents\\GitHub\\Uni_SysDes\\System\\StockManagementSystem\\UnitTests\\UnitTests.csproj",
+        "projectUniqueName": "C:\\Users\\n0688119\\Documents\\GitHub\\Uni_SysDes\\System\\StockManagementSystem\\UnitTests\\UnitTests.csproj",
         "projectName": "UnitTests",
-        "projectPath": "C:\\Users\\Michael\\Documents\\GitHub\\Uni_SysDes\\System\\StockManagementSystem\\UnitTests\\UnitTests.csproj",
-        "packagesPath": "C:\\Users\\Michael\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Michael\\Documents\\GitHub\\Uni_SysDes\\System\\StockManagementSystem\\UnitTests\\obj\\",
+        "projectPath": "C:\\Users\\n0688119\\Documents\\GitHub\\Uni_SysDes\\System\\StockManagementSystem\\UnitTests\\UnitTests.csproj",
+        "packagesPath": "C:\\Users\\n0688119\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\n0688119\\Documents\\GitHub\\Uni_SysDes\\System\\StockManagementSystem\\UnitTests\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Michael\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\n0688119\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
@@ -38,8 +43,8 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\Michael\\Documents\\GitHub\\Uni_SysDes\\System\\StockManagementSystem\\StockManagementSystem\\StockManagementSystem.csproj": {
-                "projectPath": "C:\\Users\\Michael\\Documents\\GitHub\\Uni_SysDes\\System\\StockManagementSystem\\StockManagementSystem\\StockManagementSystem.csproj"
+              "C:\\Users\\n0688119\\Documents\\GitHub\\Uni_SysDes\\System\\StockManagementSystem\\StockManagementSystem\\StockManagementSystem.csproj": {
+                "projectPath": "C:\\Users\\n0688119\\Documents\\GitHub\\Uni_SysDes\\System\\StockManagementSystem\\StockManagementSystem\\StockManagementSystem.csproj"
               }
             }
           }
@@ -73,16 +78,10 @@
             }
           },
           "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
+            "net461"
           ],
           "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "warn": true
         }
       }
     }

@@ -123,6 +123,8 @@ namespace StockManagementSystem.Pages
                         pnl_invoice.Invoke((Action)delegate { productRow.Parent = pnl_invoice; });
                         m_rowIndex++;
                     }
+
+                    calculateTotalCharge();
                 });                
             }
         }

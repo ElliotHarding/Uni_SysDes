@@ -161,7 +161,6 @@ C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\Stock
 C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.NewProductRow.resources
 C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.ShipmentRow.resources
 C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.TextfieldRow.resources
-C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.TransationRow.resources
 C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.MessageControl.resources
 C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.CopyComplete
 C:\Users\n0688119\Projects\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.exe.config
@@ -248,3 +247,4 @@ C:\Users\Michael\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockM
 C:\Users\Michael\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.CopyComplete
 C:\Users\Michael\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.exe
 C:\Users\Michael\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.pdb
+C:\Users\n0688119\Documents\GitHub\Uni_SysDes\System\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.User_Controls.TransactionRow.resources

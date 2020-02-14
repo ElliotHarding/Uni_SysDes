@@ -1,0 +1,5 @@
+https://www.youtube.com/watch?v=0UJNYrhH05w
+
+OpenCover.Console.exe -target:"Dir\.exe" -output:"Dir\coverage.xml" -register:user
+
+ReportGenerator.exe -reports:"Dir\coverage.xml" -targetdir:"Dir\report" -sourcedirs:"Dir"

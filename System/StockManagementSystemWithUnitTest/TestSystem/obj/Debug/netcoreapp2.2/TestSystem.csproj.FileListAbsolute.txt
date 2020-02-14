@@ -19,3 +19,23 @@ C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockM
 C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\TestSystem\obj\Debug\netcoreapp2.2\TestSystem.csproj.CopyComplete
 C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\TestSystem\obj\Debug\netcoreapp2.2\TestSystem.dll
 C:\Users\t0084963\Projects\Uni_SysDes-elliot (1)\Uni_SysDes-elliot\System\StockManagementSystem\TestSystem\obj\Debug\netcoreapp2.2\TestSystem.pdb
+C:\Users\Harvy\Documents\GitHub\Uni_SysDes\System\StockManagementSystemWithUnitTest\TestSystem\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Harvy\Documents\GitHub\Uni_SysDes\System\StockManagementSystemWithUnitTest\TestSystem\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Harvy\Documents\GitHub\Uni_SysDes\System\StockManagementSystemWithUnitTest\TestSystem\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Harvy\Documents\GitHub\Uni_SysDes\System\StockManagementSystemWithUnitTest\TestSystem\bin\Debug\netcoreapp2.2\TestSystem.deps.json
+C:\Users\Harvy\Documents\GitHub\Uni_SysDes\System\StockManagementSystemWithUnitTest\TestSystem\bin\Debug\netcoreapp2.2\TestSystem.runtimeconfig.json
+C:\Users\Harvy\Documents\GitHub\Uni_SysDes\System\StockManagementSystemWithUnitTest\TestSystem\bin\Debug\netcoreapp2.2\TestSystem.runtimeconfig.dev.json
+C:\Users\Harvy\Documents\GitHub\Uni_SysDes\System\StockManagementSystemWithUnitTest\TestSystem\bin\Debug\netcoreapp2.2\TestSystem.dll
+C:\Users\Harvy\Documents\GitHub\Uni_SysDes\System\StockManagementSystemWithUnitTest\TestSystem\bin\Debug\netcoreapp2.2\TestSystem.pdb
+C:\Users\Harvy\Documents\GitHub\Uni_SysDes\System\StockManagementSystemWithUnitTest\TestSystem\bin\Debug\netcoreapp2.2\StockManagementSystem.exe
+C:\Users\Harvy\Documents\GitHub\Uni_SysDes\System\StockManagementSystemWithUnitTest\TestSystem\bin\Debug\netcoreapp2.2\zxing.dll
+C:\Users\Harvy\Documents\GitHub\Uni_SysDes\System\StockManagementSystemWithUnitTest\TestSystem\bin\Debug\netcoreapp2.2\StockManagementSystem.pdb
+C:\Users\Harvy\Documents\GitHub\Uni_SysDes\System\StockManagementSystemWithUnitTest\TestSystem\bin\Debug\netcoreapp2.2\StockManagementSystem.exe.config
+C:\Users\Harvy\Documents\GitHub\Uni_SysDes\System\StockManagementSystemWithUnitTest\TestSystem\bin\Debug\netcoreapp2.2\zxing.pdb
+C:\Users\Harvy\Documents\GitHub\Uni_SysDes\System\StockManagementSystemWithUnitTest\TestSystem\bin\Debug\netcoreapp2.2\zxing.xml
+C:\Users\Harvy\Documents\GitHub\Uni_SysDes\System\StockManagementSystemWithUnitTest\TestSystem\obj\Debug\netcoreapp2.2\TestSystem.csprojAssemblyReference.cache
+C:\Users\Harvy\Documents\GitHub\Uni_SysDes\System\StockManagementSystemWithUnitTest\TestSystem\obj\Debug\netcoreapp2.2\TestSystem.AssemblyInfoInputs.cache
+C:\Users\Harvy\Documents\GitHub\Uni_SysDes\System\StockManagementSystemWithUnitTest\TestSystem\obj\Debug\netcoreapp2.2\TestSystem.AssemblyInfo.cs
+C:\Users\Harvy\Documents\GitHub\Uni_SysDes\System\StockManagementSystemWithUnitTest\TestSystem\obj\Debug\netcoreapp2.2\TestSystem.csproj.CopyComplete
+C:\Users\Harvy\Documents\GitHub\Uni_SysDes\System\StockManagementSystemWithUnitTest\TestSystem\obj\Debug\netcoreapp2.2\TestSystem.dll
+C:\Users\Harvy\Documents\GitHub\Uni_SysDes\System\StockManagementSystemWithUnitTest\TestSystem\obj\Debug\netcoreapp2.2\TestSystem.pdb

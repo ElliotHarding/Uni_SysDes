@@ -14,6 +14,13 @@ namespace TestSystem
 
         public Product product2 = new Product(null);//"103", "3521", "lel.jpg", "aye", "101.110", "982.101", "5", "01/03/2020", "20", "73412", "flamable", "0901", "chocolate");
 
+        
+        [TestMethod]
+        public void test(int i)
+        {
+            int excepted = 5;
+            Assert.AreEqual(i, excepted);
+        }
         //OK
         [TestMethod]
         public void NewShipmentUpdateQuantity()

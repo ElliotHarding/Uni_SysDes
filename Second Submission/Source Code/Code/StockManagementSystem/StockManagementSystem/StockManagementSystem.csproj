@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3C8EEFED-9032-43D1-8D48-8A3C568E60EE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>StockManagementSystem</RootNamespace>
+    <AssemblyName>StockManagementSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="zxing, Version=0.16.5.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.5\lib\net461\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.5.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.5\lib\net461\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Address.cs" />
+    <Compile Include="Classes\DatabaseComms.cs" />
+    <Compile Include="Pages\AdminSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\AdminSettings.Designer.cs">
+      <DependentUpon>AdminSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ExpectedDelivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\ExpectedDelivery.Designer.cs">
+      <DependentUpon>ExpectedDelivery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Invoices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Invoices.Designer.cs">
+      <DependentUpon>Invoices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NewShipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\NewShipment.Designer.cs">
+      <DependentUpon>NewShipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QRCodeDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\QRCodeDisplay.Designer.cs">
+      <DependentUpon>QRCodeDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Shipments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Shipments.Designer.cs">
+      <DependentUpon>Shipments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserInputParagraphDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\UserInputParagraphDialog.Designer.cs">
+      <DependentUpon>UserInputParagraphDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserInputStringDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\UserInputStringDialog.Designer.cs">
+      <DependentUpon>UserInputStringDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ViewProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\ViewProduct.Designer.cs">
+      <DependentUpon>ViewProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ViewShipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\ViewShipment.Designer.cs">
+      <DependentUpon>ViewShipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\BasketRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\BasketRow.Designer.cs">
+      <DependentUpon>BasketRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\NewProductRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\NewProductRow.Designer.cs">
+      <DependentUpon>NewProductRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\ShipmentRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\ShipmentRow.Designer.cs">
+      <DependentUpon>ShipmentRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\TextfieldRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\TextfieldRow.Designer.cs">
+      <DependentUpon>TextfieldRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\TransationRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\TransationRow.Designer.cs">
+      <DependentUpon>TransationRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\LogOut.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\LogOut.Designer.cs">
+      <DependentUpon>LogOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\MessageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\MessageControl.Designer.cs">
+      <DependentUpon>MessageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\NavBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\NavBar.Designer.cs">
+      <DependentUpon>NavBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\ProductDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\ProductDisplay.Designer.cs">
+      <DependentUpon>ProductDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\StaffNavBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\StaffNavBar.Designer.cs">
+      <DependentUpon>StaffNavBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Tools.cs" />
+    <Compile Include="Classes\Product.cs" />
+    <Compile Include="Classes\Program.cs" />
+    <Compile Include="Pages\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Basket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Basket.Designer.cs">
+      <DependentUpon>Basket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Messages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Messages.Designer.cs">
+      <DependentUpon>Messages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProductsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\ProductsPage.Designer.cs">
+      <DependentUpon>ProductsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\SignUp.Designer.cs">
+      <DependentUpon>SignUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\Shipment.cs" />
+    <Compile Include="Classes\Transation.cs" />
+    <Compile Include="Classes\User.cs" />
+    <EmbeddedResource Include="Pages\AdminSettings.resx">
+      <DependentUpon>AdminSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Basket.resx">
+      <DependentUpon>Basket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ExpectedDelivery.resx">
+      <DependentUpon>ExpectedDelivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Invoices.resx">
+      <DependentUpon>Invoices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Messages.resx">
+      <DependentUpon>Messages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\NewShipment.resx">
+      <DependentUpon>NewShipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\QRCodeDisplay.resx">
+      <DependentUpon>QRCodeDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Shipments.resx">
+      <DependentUpon>Shipments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\UserInputParagraphDialog.resx">
+      <DependentUpon>UserInputParagraphDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\UserInputStringDialog.resx">
+      <DependentUpon>UserInputStringDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ViewProduct.resx">
+      <DependentUpon>ViewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ViewShipment.resx">
+      <DependentUpon>ViewShipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\BasketRow.resx">
+      <DependentUpon>BasketRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\NewProductRow.resx">
+      <DependentUpon>NewProductRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\ShipmentRow.resx">
+      <DependentUpon>ShipmentRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\TextfieldRow.resx">
+      <DependentUpon>TextfieldRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\TransationRow.resx">
+      <DependentUpon>TransationRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\LogOut.resx">
+      <DependentUpon>LogOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\MessageControl.resx">
+      <DependentUpon>MessageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\NavBar.resx">
+      <DependentUpon>NavBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\ProductDisplay.resx">
+      <DependentUpon>ProductDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\StaffNavBar.resx">
+      <DependentUpon>StaffNavBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ProductsPage.resx">
+      <DependentUpon>ProductsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\SignUp.resx">
+      <DependentUpon>SignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\NoImage.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
